@@ -1,0 +1,19 @@
+Execução: 20260718_170534
+Escolas nas bases de entrada: 56
+Fichas HTML individuais geradas: 56
+Gráficos gerados: 168
+HTML compilado: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/fichas_escolas/execucao_20260718_170534/fichas_escolas_compiladas.html
+PDF compilado gerado: Sim
+Escolas com painel incompleto: 4
+Escolas com interpretação cautelosa do índice: 3
+Escolas com complexidade administrativa: 7
+Fichas com erro: 0
+Erros críticos: 0
+
+Observações metodológicas:
+- As fichas são descritivas e observacionais.
+- Resultados educacionais não representam efeito causal do assessoramento.
+- O índice de carga potencial não representa qualidade da escola ou da assessora.
+- As faixas do índice são quartis relativos ao universo analisado.
+- Mudanças de participação e composição condicionam comparações temporais.
+- A conversão para PDF é opcional; o HTML compilado é sempre o produto principal imprimível.

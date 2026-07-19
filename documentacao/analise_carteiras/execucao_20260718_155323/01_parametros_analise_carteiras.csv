@@ -1,0 +1,9 @@
+parametro,valor,justificativa
+carteira_nominal,assessora_gerencial diferente de 'outras' e 'Sem vinculação informada',Somente carteiras nominais entram nas médias e percentis de referência entre carteiras comparáveis.
+carga_potencial_acumulada,soma do índice escolar,Combina quantidade de escolas e carga potencial relativa de cada unidade.
+complexidade_tipica,média e mediana do índice escolar,Descreve a composição típica da carteira sem substituir a carga total.
+caso_maior_carga_relativa,Faixa 4 — maior carga potencial relativa,"Faixa superior é quartil relativo, não categoria absoluta."
+caso_administrativo_especial,score_dimensao_administrativa > 0,Identifica presença de componente administrativo especial no índice.
+sensibilidade_elevada,mudança de faixa em dois ou três cenários,Sinaliza dependência relevante da especificação de pesos.
+concentracao_interna,participação das maiores escolas e HHI,Mostra se a carga acumulada está concentrada em poucos casos dentro da carteira.
+resultados_educacionais,sínteses ponderadas de 2026,São descritivos e não representam efeito ou qualidade da assessora.

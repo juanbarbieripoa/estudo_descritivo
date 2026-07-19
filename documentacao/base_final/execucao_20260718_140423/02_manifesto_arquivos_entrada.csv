@@ -1,0 +1,6 @@
+fonte,caminho,tamanho_bytes,data_modificacao,md5,numero_linhas,numero_colunas
+dim_escola,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_intermediarios/dim_escola.csv,21921,2026-07-18 11:13:46,607655beeb418da8f7ea82a695546fd8,56,22
+contexto_2024,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_processados/dim_contexto_escola_2024_final.csv,69669,2026-07-18 11:13:46,8d66b205a399be438541310304b24733,56,176
+base_integrada_anterior,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_processados/base_analitica_escola_serie_contexto_2024.csv,245230,2026-07-18 11:13:46,e698f237552f0b0e9658950001c2138a,280,84
+estratos_corrigidos,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_processados/base_contexto_desempenho_estratos_corrigidos.csv,249858,2026-07-18 11:45:40,7b7e7a89e6a22bef2de577f2a1031ac1,265,88
+variacao_qualidade,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_processados/variacao_escola_serie_com_qualidade.csv,133612,2026-07-17 01:59:12,d0e55b440f75d82adf638d25b4ec71d4,280,47

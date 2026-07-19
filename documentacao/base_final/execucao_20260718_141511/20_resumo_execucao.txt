@@ -1,0 +1,12 @@
+Execução: 20260718_141511
+Escolas na dimensão final: 56
+Escolas na base analítica: 56
+Linhas escola × série: 280
+Colunas da base final: 231
+Linhas da amostra principal descritiva: 265
+Escolas com contexto de 2024: 56
+Conflitos de atributos documentados: 0
+Avisos de validação: 0
+
+Observação metodológica:
+A base é descritiva e observacional. Resultados não devem ser interpretados como efeito causal do programa ou como medida de qualidade das assessoras.

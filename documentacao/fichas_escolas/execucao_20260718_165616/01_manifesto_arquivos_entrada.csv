@@ -1,0 +1,5 @@
+fonte,formato_utilizado,caminho,tamanho_bytes,modificado_em,md5,numero_linhas,numero_colunas
+perfil_escola,RDS,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_gerencial.rds,20362,2026-07-18 14:41:15.521492,55eec136dbe6f9a74f58a85d38d8a9f7,56,119
+perfil_serie,RDS,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_serie_compacto.rds,31316,2026-07-18 14:41:15.558161,6faa59eab9e918e6ac57afb2da91d63d,280,41
+indice_escola,RDS,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_carga_potencial_escola.rds,11334,2026-07-18 15:14:21.835699,26071e7d689b336cd0037df58fe42ac8,56,72
+detalhe_carteira,RDS,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.rds,7918,2026-07-18 15:53:24.108179,4e4728dcd2011339bc6fb1b26533eadb,56,48

@@ -1,0 +1,73 @@
+ordem_coluna,variavel,classe_r,descricao
+1,id_escola,character,Variável do módulo 17: id escola. Consulte os parâmetros de componentes e pesos para a definição operacional.
+2,codigo_inep,character,Variável do módulo 17: codigo inep. Consulte os parâmetros de componentes e pesos para a definição operacional.
+3,nome_canonico,character,Variável do módulo 17: nome canonico. Consulte os parâmetros de componentes e pesos para a definição operacional.
+4,assessora_gerencial,character,Variável do módulo 17: assessora gerencial. Consulte os parâmetros de componentes e pesos para a definição operacional.
+5,grupo_administrativo_2024_final,character,Variável do módulo 17: grupo administrativo 2024 final. Consulte os parâmetros de componentes e pesos para a definição operacional.
+6,tipo_vinculo_rede_final,character,Variável do módulo 17: tipo vinculo rede final. Consulte os parâmetros de componentes e pesos para a definição operacional.
+7,status_rede_2025_final,character,Variável do módulo 17: status rede 2025 final. Consulte os parâmetros de componentes e pesos para a definição operacional.
+8,matriculas_anos_iniciais,numeric,Variável do módulo 17: matriculas anos iniciais. Consulte os parâmetros de componentes e pesos para a definição operacional.
+9,turmas_anos_iniciais,numeric,Variável do módulo 17: turmas anos iniciais. Consulte os parâmetros de componentes e pesos para a definição operacional.
+10,numero_etapas_amplas_ofertadas,numeric,Variável do módulo 17: numero etapas amplas ofertadas. Consulte os parâmetros de componentes e pesos para a definição operacional.
+11,indice_infraestrutura_basica,numeric,Variável do módulo 17: indice infraestrutura basica. Consulte os parâmetros de componentes e pesos para a definição operacional.
+12,alunos_por_turma_anos_iniciais,numeric,Variável do módulo 17: alunos por turma anos iniciais. Consulte os parâmetros de componentes e pesos para a definição operacional.
+13,alunos_por_docente_anos_iniciais,numeric,Variável do módulo 17: alunos por docente anos iniciais. Consulte os parâmetros de componentes e pesos para a definição operacional.
+14,pct_matriculas_educacao_especial,numeric,Variável do módulo 17: pct matriculas educacao especial. Consulte os parâmetros de componentes e pesos para a definição operacional.
+15,pct_matriculas_anos_iniciais_integral,numeric,Variável do módulo 17: pct matriculas anos iniciais integral. Consulte os parâmetros de componentes e pesos para a definição operacional.
+16,pct_matriculas_transporte_publico,numeric,Variável do módulo 17: pct matriculas transporte publico. Consulte os parâmetros de componentes e pesos para a definição operacional.
+17,numero_series_resultado_2026,integer,Variável do módulo 17: numero series resultado 2026. Consulte os parâmetros de componentes e pesos para a definição operacional.
+18,numero_series_comparaveis,integer,Variável do módulo 17: numero series comparaveis. Consulte os parâmetros de componentes e pesos para a definição operacional.
+19,painel_completo_cinco_series,logical,Variável do módulo 17: painel completo cinco series. Consulte os parâmetros de componentes e pesos para a definição operacional.
+20,score_volume_matriculas,numeric,Variável do módulo 17: score volume matriculas. Consulte os parâmetros de componentes e pesos para a definição operacional.
+21,score_volume_turmas,numeric,Variável do módulo 17: score volume turmas. Consulte os parâmetros de componentes e pesos para a definição operacional.
+22,score_volume_etapas,numeric,Variável do módulo 17: score volume etapas. Consulte os parâmetros de componentes e pesos para a definição operacional.
+23,score_estrutural_infraestrutura,numeric,Variável do módulo 17: score estrutural infraestrutura. Consulte os parâmetros de componentes e pesos para a definição operacional.
+24,score_estrutural_alunos_turma,numeric,Variável do módulo 17: score estrutural alunos turma. Consulte os parâmetros de componentes e pesos para a definição operacional.
+25,score_estrutural_alunos_docente,numeric,Variável do módulo 17: score estrutural alunos docente. Consulte os parâmetros de componentes e pesos para a definição operacional.
+26,score_estrutural_educacao_especial,numeric,Variável do módulo 17: score estrutural educacao especial. Consulte os parâmetros de componentes e pesos para a definição operacional.
+27,score_estrutural_tempo_integral,numeric,Variável do módulo 17: score estrutural tempo integral. Consulte os parâmetros de componentes e pesos para a definição operacional.
+28,score_estrutural_transporte,numeric,Variável do módulo 17: score estrutural transporte. Consulte os parâmetros de componentes e pesos para a definição operacional.
+29,score_educacional_desempenho,numeric,Variável do módulo 17: score educacional desempenho. Consulte os parâmetros de componentes e pesos para a definição operacional.
+30,score_educacional_baixa_participacao,numeric,Variável do módulo 17: score educacional baixa participacao. Consulte os parâmetros de componentes e pesos para a definição operacional.
+31,score_educacional_instabilidade_composicao,numeric,Variável do módulo 17: score educacional instabilidade composicao. Consulte os parâmetros de componentes e pesos para a definição operacional.
+32,score_educacional_heterogeneidade,numeric,Variável do módulo 17: score educacional heterogeneidade. Consulte os parâmetros de componentes e pesos para a definição operacional.
+33,heterogeneidade_desempenho_bruta,numeric,Variável do módulo 17: heterogeneidade desempenho bruta. Consulte os parâmetros de componentes e pesos para a definição operacional.
+34,numero_series_resultado_2026_calculado,integer,Variável do módulo 17: numero series resultado 2026 calculado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+35,numero_series_participacao_2026_calculado,integer,Variável do módulo 17: numero series participacao 2026 calculado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+36,numero_series_comparaveis_calculado,integer,Variável do módulo 17: numero series comparaveis calculado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+37,proporcao_series_resultado_2026_indice,numeric,Variável do módulo 17: proporcao series resultado 2026 indice. Consulte os parâmetros de componentes e pesos para a definição operacional.
+38,proporcao_series_comparaveis_indice,numeric,Variável do módulo 17: proporcao series comparaveis indice. Consulte os parâmetros de componentes e pesos para a definição operacional.
+39,qualidade_evidencia_educacional,character,Classificação da quantidade de séries com resultados de 2026 disponíveis.
+40,interpretacao_educacional_cautelosa,logical,Indica cobertura educacional limitada ou cobertura insuficiente de componentes.
+41,score_administrativo_arranjo_especial,numeric,Variável do módulo 17: score administrativo arranjo especial. Consulte os parâmetros de componentes e pesos para a definição operacional.
+42,score_administrativo_transicao_recente,numeric,Variável do módulo 17: score administrativo transicao recente. Consulte os parâmetros de componentes e pesos para a definição operacional.
+43,score_administrativo_historico_cadastral,numeric,Variável do módulo 17: score administrativo historico cadastral. Consulte os parâmetros de componentes e pesos para a definição operacional.
+44,score_administrativo_sem_vinculo,numeric,Variável do módulo 17: score administrativo sem vinculo. Consulte os parâmetros de componentes e pesos para a definição operacional.
+45,score_dimensao_volume,numeric,"Escore de volume de atendimento, de 0 a 100."
+46,score_dimensao_estrutural,numeric,"Escore de complexidade estrutural, de 0 a 100."
+47,score_dimensao_educacional,numeric,"Escore de desafio educacional observado, de 0 a 100, sem interpretação causal."
+48,score_dimensao_administrativa,numeric,"Escore de complexidade administrativa, de 0 a 100."
+49,cobertura_componentes_volume,numeric,Variável do módulo 17: cobertura componentes volume. Consulte os parâmetros de componentes e pesos para a definição operacional.
+50,cobertura_componentes_estrutural,numeric,Variável do módulo 17: cobertura componentes estrutural. Consulte os parâmetros de componentes e pesos para a definição operacional.
+51,cobertura_componentes_educacional,numeric,Variável do módulo 17: cobertura componentes educacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+52,cobertura_componentes_administrativa,numeric,Variável do módulo 17: cobertura componentes administrativa. Consulte os parâmetros de componentes e pesos para a definição operacional.
+53,indice_carga_potencial_equilibrado,numeric,Variável do módulo 17: indice carga potencial equilibrado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+54,indice_carga_potencial_operacional,numeric,Variável do módulo 17: indice carga potencial operacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+55,indice_carga_potencial_desafio_educacional,numeric,Variável do módulo 17: indice carga potencial desafio educacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+56,indice_carga_potencial_transicao_administrativa,numeric,Variável do módulo 17: indice carga potencial transicao administrativa. Consulte os parâmetros de componentes e pesos para a definição operacional.
+57,cobertura_indice_equilibrado,numeric,Variável do módulo 17: cobertura indice equilibrado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+58,cobertura_indice_operacional,numeric,Variável do módulo 17: cobertura indice operacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+59,cobertura_indice_desafio_educacional,numeric,Variável do módulo 17: cobertura indice desafio educacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+60,cobertura_indice_transicao_administrativa,numeric,Variável do módulo 17: cobertura indice transicao administrativa. Consulte os parâmetros de componentes e pesos para a definição operacional.
+61,faixa_indice_equilibrado,character,Variável do módulo 17: faixa indice equilibrado. Consulte os parâmetros de componentes e pesos para a definição operacional.
+62,faixa_indice_operacional,character,Variável do módulo 17: faixa indice operacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+63,faixa_indice_desafio_educacional,character,Variável do módulo 17: faixa indice desafio educacional. Consulte os parâmetros de componentes e pesos para a definição operacional.
+64,faixa_indice_transicao_administrativa,character,Variável do módulo 17: faixa indice transicao administrativa. Consulte os parâmetros de componentes e pesos para a definição operacional.
+65,faixa_indice_carga_potencial,character,Faixa relativa do índice principal; não representa qualidade da escola.
+66,indice_carga_potencial,numeric,"Índice principal provisório, de 0 a 100, com pesos iguais entre volume, estrutura, desafio educacional e complexidade administrativa."
+67,percentil_indice_carga_potencial,numeric,Posição percentílica relativa da escola no índice principal dentro do universo analisado.
+68,contribuicao_volume_indice_principal,numeric,Variável do módulo 17: contribuicao volume indice principal. Consulte os parâmetros de componentes e pesos para a definição operacional.
+69,contribuicao_estrutural_indice_principal,numeric,Variável do módulo 17: contribuicao estrutural indice principal. Consulte os parâmetros de componentes e pesos para a definição operacional.
+70,contribuicao_educacional_indice_principal,numeric,Variável do módulo 17: contribuicao educacional indice principal. Consulte os parâmetros de componentes e pesos para a definição operacional.
+71,contribuicao_administrativa_indice_principal,numeric,Variável do módulo 17: contribuicao administrativa indice principal. Consulte os parâmetros de componentes e pesos para a definição operacional.
+72,interpretacao_indice_cautelosa,logical,Indica que ao menos uma dimensão utilizou cobertura incompleta ou evidência educacional limitada.

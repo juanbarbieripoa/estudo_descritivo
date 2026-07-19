@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ficha escolar — EMEF VER CARLOS PESSOA DE BRUM</title><style>
+@page { size: A4; margin: 11mm 10mm 12mm 10mm; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #eef1f4;
+  color: #1f2933;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.ficha {
+  width: 190mm;
+  min-height: 270mm;
+  margin: 8mm auto;
+  padding: 10mm;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,.10);
+  page-break-after: always;
+  break-after: page;
+}
+.ficha:last-child { page-break-after: auto; break-after: auto; }
+.cabecalho {
+  border-bottom: 4px solid #244d70;
+  padding-bottom: 5mm;
+  margin-bottom: 5mm;
+}
+.instituicao {
+  color: #52616f;
+  font-size: 8.5pt;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+h1 { margin: 2mm 0 1mm 0; color: #173953; font-size: 20pt; line-height: 1.12; }
+.subtitulo { color: #52616f; font-size: 10pt; }
+.grade-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin: 4mm 0;
+}
+.card {
+  border: 1px solid #d9e0e6;
+  border-radius: 5px;
+  padding: 3.5mm;
+  min-height: 23mm;
+  background: #fafbfc;
+}
+.card .rotulo { color: #687786; font-size: 8pt; text-transform: uppercase; letter-spacing: .03em; }
+.card .valor { color: #173953; font-size: 16pt; font-weight: bold; margin-top: 1.5mm; }
+.card .nota { color: #687786; font-size: 7.7pt; margin-top: 1mm; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.bloco {
+  border: 1px solid #d9e0e6;
+  border-radius: 5px;
+  padding: 4mm;
+  margin: 4mm 0;
+  break-inside: avoid;
+}
+.bloco h2 {
+  margin: 0 0 3mm 0;
+  color: #244d70;
+  font-size: 12.5pt;
+  border-bottom: 1px solid #d9e0e6;
+  padding-bottom: 1.5mm;
+}
+.tabela { width: 100%; border-collapse: collapse; font-size: 8.7pt; }
+.tabela th { background: #e8eef3; color: #28485f; text-align: left; }
+.tabela th, .tabela td { border: 1px solid #d8dee4; padding: 1.8mm 2mm; vertical-align: top; }
+.tabela td.num, .tabela th.num { text-align: right; }
+.alertas { margin: 0; padding-left: 5mm; }
+.alertas li { margin-bottom: 1.5mm; }
+.selo {
+  display: inline-block;
+  padding: 1.2mm 2.5mm;
+  border-radius: 10px;
+  font-size: 8pt;
+  font-weight: bold;
+  margin: .5mm 1mm .5mm 0;
+}
+.selo-neutro { background: #e8eef3; color: #28485f; }
+.selo-atencao { background: #fff0d5; color: #845313; }
+.selo-cautela { background: #f8dddd; color: #8a2f2f; }
+.selo-ok { background: #e1f1e7; color: #326345; }
+.grafico { width: 100%; max-height: 82mm; object-fit: contain; }
+.nota-metodologica {
+  background: #f3f5f7;
+  border-left: 4px solid #7b8995;
+  padding: 3mm 4mm;
+  color: #53616d;
+  font-size: 8.5pt;
+  margin-top: 5mm;
+}
+.rodape { color: #73808c; font-size: 7.5pt; margin-top: 4mm; text-align: right; }
+@media print {
+  body { background: white; }
+  .ficha { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+}
+</style></head><body><section class="ficha"><div class="cabecalho"><div class="instituicao">UEF-SMED-PMPA · Estudo descritivo do assessoramento escolar</div><h1>EMEF VER CARLOS PESSOA DE BRUM</h1><div class="subtitulo">Código INEP: 43109080 · Ficha descritiva individual</div><div style="margin-top:3mm;"><span class="selo selo-neutro">Carteira: priscila</span><span class="selo selo-atencao">Faixa 4 — maior carga potencial relativa</span><span class="selo selo-ok">Painel completo</span></div></div><div class="grade-cards"><div class="card"><div class="rotulo">Matrículas — anos iniciais</div><div class="valor">574</div><div class="nota">Contexto de 2024</div></div><div class="card"><div class="rotulo">Turmas — anos iniciais</div><div class="valor">22</div><div class="nota">Contexto de 2024</div></div><div class="card"><div class="rotulo">Participação em 2026</div><div class="valor">77,7%</div><div class="nota">Δ 2025–2026: +5,4 p.p.</div></div><div class="card"><div class="rotulo">Carga potencial relativa</div><div class="valor">58,4</div><div class="nota">Escore descritivo de 0 a 100</div></div></div><div class="grid-2"><div class="bloco"><h2>Contexto e oferta</h2><table class="tabela"><tbody><tr><td>Grupo administrativo em 2024</td><td>Rede municipal direta em 2024</td></tr><tr><td>Tipo de vínculo com a rede</td><td>rede_municipal_direta_ou_nao_classificada</td></tr><tr><td>Situação operacional em 2025</td><td>rede_municipal_direta</td></tr><tr><td>Porte dos anos iniciais</td><td>500 matrículas ou mais</td></tr><tr><td>Etapas amplas ofertadas</td><td>4</td></tr><tr><td>Oferta de educação infantil</td><td>Sim</td></tr><tr><td>Oferta de anos finais</td><td>Sim</td></tr><tr><td>Oferta de EJA</td><td>Sim</td></tr><tr><td>Oferta de educação especial</td><td>Sim</td></tr><tr><td>Tempo integral nos anos iniciais</td><td>36,2%</td></tr><tr><td>Matrículas de educação especial</td><td>6,6%</td></tr><tr><td>Uso de transporte público</td><td>3,1%</td></tr></tbody></table></div><div class="bloco"><h2>Infraestrutura e recursos</h2><table class="tabela"><tbody><tr><td>Índice de infraestrutura básica</td><td>90,0</td></tr><tr><td>Itens de infraestrutura presentes</td><td>9</td></tr><tr><td>Salas utilizadas</td><td>24</td></tr><tr><td>Espaço de leitura</td><td>Sim</td></tr><tr><td>Recursos de acessibilidade</td><td>Sim</td></tr><tr><td>Laboratório de ciências</td><td>Não</td></tr><tr><td>Laboratório de informática</td><td>Não</td></tr><tr><td>Quadra de esportes</td><td>Não</td></tr><tr><td>Internet para aprendizagem</td><td>Não</td></tr><tr><td>Internet para estudantes</td><td>Não</td></tr><tr><td>Sala de atendimento especial</td><td>Não</td></tr></tbody></table></div></div><div class="bloco"><h2>Síntese da carga potencial</h2><img class="grafico" src="../graficos/ESC_049_emef-ver-carlos-pessoa-de-brum_dimensoes.png" alt="Dimensões da carga potencial"><div class="grid-3" style="margin-top:2mm;"><div><strong>Alunos por turma:</strong><br>26,1</div><div><strong>Alunos por docente:</strong><br>23,0</div><div><strong>Participação na carga da carteira:</strong><br>32,4%</div></div></div><div class="bloco"><h2>Alertas e cautelas de interpretação</h2><ul class="alertas"><li>Mudança relevante no número de estudantes previstos | Mudança relevante no público previsto e aumento de participação</li></ul></div><div class="bloco"><h2>Contexto administrativo registrado</h2><p>Rede municipal direta em 2024</p><p><strong>Sensibilidade aos pesos do índice:</strong> Estável nos cenários.</p></div><div class="grid-2"><div class="bloco"><img class="grafico" src="../graficos/ESC_049_emef-ver-carlos-pessoa-de-brum_participacao.png" alt="Participação por ano escolar"></div><div class="bloco"><img class="grafico" src="../graficos/ESC_049_emef-ver-carlos-pessoa-de-brum_proficiencia.png" alt="Proficiência por ano escolar"></div></div><div class="bloco"><h2>Resultados observados por ano escolar</h2><table class="tabela"><thead><tr><th class="num">Ano</th><th class="num">Part. 2025</th><th class="num">Part. 2026</th><th class="num">Δ part.</th><th class="num">Prof. 2025</th><th class="num">Prof. 2026</th><th class="num">Δ prof.</th><th>Padrões 2026</th><th>Alerta</th></tr></thead><tbody><tr><td class="num">1º</td><td class="num">71,7%</td><td class="num">78,5%</td><td class="num">+6,8 p.p.</td><td class="num">48,3</td><td class="num">10,9</td><td class="num">-37,4</td><td>D: 85,0% · I: 15,0% · A: 0,0%</td><td>Sim</td></tr><tr><td class="num">2º</td><td class="num">71,0%</td><td class="num">75,6%</td><td class="num">+4,6 p.p.</td><td class="num">66,2</td><td class="num">41,3</td><td class="num">-24,9</td><td>D: 47,3% · I: 28,3% · A: 24,7%</td><td>Não</td></tr><tr><td class="num">3º</td><td class="num">67,7%</td><td class="num">79,1%</td><td class="num">+11,4 p.p.</td><td class="num">34,4</td><td class="num">29,7</td><td class="num">-4,6</td><td>D: 55,1% · I: 27,7% · A: 17,5%</td><td>Sim</td></tr><tr><td class="num">4º</td><td class="num">70,3%</td><td class="num">72,6%</td><td class="num">+2,4 p.p.</td><td class="num">44,2</td><td class="num">37,3</td><td class="num">-6,9</td><td>D: 55,5% · I: 15,4% · A: 28,9%</td><td>Sim</td></tr><tr><td class="num">5º</td><td class="num">81,8%</td><td class="num">80,9%</td><td class="num">-0,9 p.p.</td><td class="num">59,4</td><td class="num">55,3</td><td class="num">-4,1</td><td>D: 24,6% · I: 43,8% · A: 31,6%</td><td>Sim</td></tr></tbody></table><p style="font-size:8pt;color:#687786;margin-top:2mm;">D = defasagem; I = intermediário; A = adequado. As diferenças entre 2025 e 2026 não constituem estimativas de efeito do assessoramento.</p></div><div class="nota-metodologica"><strong>Nota metodológica.</strong> Esta ficha é descritiva e observacional. As características estruturais são referentes ao contexto de 2024. O vínculo com a assessora é administrativo. Resultados escolares não devem ser atribuídos à assessora, e o índice de carga potencial deve ser utilizado como ferramenta de diagnóstico, em conjunto com informações qualitativas, territoriais e operacionais.</div><div class="rodape">Execução 20260718_165616</div></section></body></html>

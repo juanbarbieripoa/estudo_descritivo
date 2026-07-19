@@ -1,0 +1,5 @@
+cenario,descricao,volume,estrutural,educacional,administrativa,principal
+equilibrado,Pesos iguais entre as quatro dimensões; cenário principal provisório.,0.25,0.25,0.25,0.25,TRUE
+operacional,Maior ênfase no volume e na estrutura operacional.,0.4,0.25,0.2,0.15,FALSE
+desafio_educacional,Maior ênfase no desafio educacional observado.,0.2,0.25,0.4,0.15,FALSE
+transicao_administrativa,Maior ênfase nos arranjos e transições administrativas.,0.2,0.2,0.25,0.35,FALSE

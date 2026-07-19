@@ -1,0 +1,5 @@
+id_escola,codigo_inep,nome_canonico,assessora_gerencial,numero_series_resultado_2025,numero_series_resultado_2026,numero_series_comparaveis,proporcao_series_comparaveis,possui_alerta_composicao
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,0,5,0,0,FALSE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,0,5,0,0,FALSE
+ESC_056,43189768,EEF ALDEIA LUMIAR,Sem vinculação informada,5,1,1,20,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,4,5,4,80,TRUE

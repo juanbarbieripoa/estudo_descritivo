@@ -1,0 +1,606 @@
+ano,ano_escolar,componente,id_escola,codigo_inep,nome_canonico,nome_escola_contexto,dimensao,categoria,percentual,numero_estudantes,proficiencia_grupo,valor_original_perfil,valor_original_proficiencia
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_001,,EEF PEQUENA CASA DA CRIANCA,6001 EEF PEQUENA CASA DA CRIANCA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_002,,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,NSE,Alto,17,8,77,17% - 8 estudantes,77
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,NSE,Baixo,23,11,56,23% - 11 estudantes,56
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,NSE,Médio alto,25,12,67,25% - 12 estudantes,67
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,NSE,Médio baixo,35,17,67,35% - 17 estudantes,67
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Raça/cor,Amarela,4,2,60,4% - 2 estudantes,60
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Raça/cor,Branca,33,16,77,33% - 16 estudantes,77
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Raça/cor,Indígena,2,1,33,2% - 1 estudantes,33
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Raça/cor,Parda,46,22,67,46% - 22 estudantes,67
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Raça/cor,Preta,15,7,44,15% - 7 estudantes,44
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Sexo,Feminino,52,25,64,52% - 25 estudantes,64
+2026,5,Língua Portuguesa,ESC_003,,EMEF AFONSO GUERREIRO LIMA,EMEF AFONSO GUERREIRO LIMA,Sexo,Masculino,48,23,68,48% - 23 estudantes,68
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_004,,EMEF AMERICA,EMEF AMERICA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_005,,EMEF ARAMY SILVA,EMEF ARAMY SILVA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,NSE,Alto,19,8,67,19% - 8 estudantes,67
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,NSE,Baixo,24,10,82,24% - 10 estudantes,82
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,NSE,Médio alto,24,10,81,24% - 10 estudantes,81
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,NSE,Médio baixo,33,14,65,33% - 14 estudantes,65
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Raça/cor,Branca,52,22,71,52% - 22 estudantes,71
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Raça/cor,Indígena,10,4,64,10% - 4 estudantes,64
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Raça/cor,Parda,24,10,77,24% - 10 estudantes,77
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Raça/cor,Preta,14,6,82,14% - 6 estudantes,82
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Sexo,Feminino,60,25,69,60% - 25 estudantes,69
+2026,5,Língua Portuguesa,ESC_006,,EMEF CAMPOS DO CRISTAL,EMEF CAMPOS DO CRISTAL,Sexo,Masculino,40,17,79,40% - 17 estudantes,79
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,NSE,Alto,27,16,54,27% - 16 estudantes,54
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,NSE,Baixo,33,20,53,33% - 20 estudantes,53
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,NSE,Médio alto,22,13,73,22% - 13 estudantes,73
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,NSE,Médio baixo,18,11,56,18% - 11 estudantes,56
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Raça/cor,Amarela,2,1,100,2% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Raça/cor,Branca,50,30,58,50% - 30 estudantes,58
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Raça/cor,Parda,35,21,56,35% - 21 estudantes,56
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Raça/cor,Preta,13,8,60,13% - 8 estudantes,60
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Sexo,Feminino,57,34,59,57% - 34 estudantes,59
+2026,5,Língua Portuguesa,ESC_007,,EMEF CHAPEU DO SOL,EMEF CHAPEU DO SOL,Sexo,Masculino,43,26,57,43% - 26 estudantes,57
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_008,,EMEF CHICO MENDES,EMEF CHICO MENDES,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,NSE,Alto,25,13,83,25% - 13 estudantes,83
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,NSE,Baixo,20,10,65,20% - 10 estudantes,65
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,NSE,Médio alto,20,10,64,20% - 10 estudantes,64
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,NSE,Médio baixo,35,18,63,35% - 18 estudantes,63
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Raça/cor,Branca,33,17,63,33% - 17 estudantes,63
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Raça/cor,Indígena,4,2,76,4% - 2 estudantes,76
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Raça/cor,Parda,41,21,72,41% - 21 estudantes,72
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Raça/cor,Preta,22,11,69,22% - 11 estudantes,69
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Sexo,Feminino,49,25,62,49% - 25 estudantes,62
+2026,5,Língua Portuguesa,ESC_009,,EMEF DECIO MARTINS COSTA,EMEF DECIO MARTINS COSTA,Sexo,Masculino,51,26,75,51% - 26 estudantes,75
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,NSE,Alto,10,2,47,10% - 2 estudantes,47
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,NSE,Baixo,30,6,63,30% - 6 estudantes,63
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,NSE,Médio alto,25,5,48,25% - 5 estudantes,48
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,NSE,Médio baixo,35,7,64,35% - 7 estudantes,64
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Raça/cor,Branca,35,7,71,35% - 7 estudantes,71
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Raça/cor,Indígena,10,2,66,10% - 2 estudantes,66
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Raça/cor,Parda,35,7,43,35% - 7 estudantes,43
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Raça/cor,Preta,20,4,55,20% - 4 estudantes,55
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Sexo,Feminino,70,14,54,70% - 14 estudantes,54
+2026,5,Língua Portuguesa,ESC_010,,EMEF DEP MARCIRIO GOULART LOUREIRO,EMEF DEP MARCIRIO GOULART LOUREIRO,Sexo,Masculino,30,6,65,30% - 6 estudantes,65
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,NSE,Alto,100,1,60,100% - 1 estudantes,60
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,NSE,Baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,NSE,Médio alto,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,NSE,Médio baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Raça/cor,Branca,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Raça/cor,Parda,100,1,60,100% - 1 estudantes,60
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Raça/cor,Preta,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Sexo,Feminino,100,1,60,100% - 1 estudantes,60
+2026,5,Língua Portuguesa,ESC_011,,EMEF DEP VICTOR ISSLER,EMEF DEP VICTOR ISSLER,Sexo,Masculino,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,NSE,Alto,23,16,79,23% - 16 estudantes,79
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,NSE,Baixo,25,17,56,25% - 17 estudantes,56
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,NSE,Médio alto,22,15,84,22% - 15 estudantes,84
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,NSE,Médio baixo,30,21,61,30% - 21 estudantes,61
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Raça/cor,Branca,30,21,77,30% - 21 estudantes,77
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Raça/cor,Indígena,4,3,67,4% - 3 estudantes,67
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Raça/cor,Parda,42,29,69,42% - 29 estudantes,69
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Raça/cor,Preta,23,16,58,23% - 16 estudantes,58
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Sexo,Feminino,57,39,70,57% - 39 estudantes,70
+2026,5,Língua Portuguesa,ESC_012,,EMEF DOLORES ALCARAZ CALDAS,EMEF DOLORES ALCARAZ CALDAS,Sexo,Masculino,43,30,68,43% - 30 estudantes,68
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,NSE,Alto,9,1,51,9% - 1 estudantes,51
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,NSE,Baixo,73,8,46,73% - 8 estudantes,46
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,NSE,Médio alto,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,NSE,Médio baixo,18,2,61,18% - 2 estudantes,61
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Raça/cor,Branca,18,2,56,18% - 2 estudantes,56
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Raça/cor,Parda,55,6,31,55% - 6 estudantes,31
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Raça/cor,Preta,27,3,80,27% - 3 estudantes,80
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Sexo,Feminino,45,5,48,45% - 5 estudantes,48
+2026,5,Língua Portuguesa,ESC_013,,EMEF ESPIRITO SANTO,EMEF ESPIRITO SANTO,Sexo,Masculino,55,6,49,55% - 6 estudantes,49
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,NSE,Alto,22,2,61,22% - 2 estudantes,61
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,NSE,Baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,NSE,Médio alto,22,2,90,22% - 2 estudantes,90
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,NSE,Médio baixo,56,5,65,56% - 5 estudantes,65
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Raça/cor,Branca,56,5,69,56% - 5 estudantes,69
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Raça/cor,Parda,33,3,64,33% - 3 estudantes,64
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Raça/cor,Preta,11,1,90,11% - 1 estudantes,90
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Sexo,Feminino,11,1,80,11% - 1 estudantes,80
+2026,5,Língua Portuguesa,ESC_014,,EMEF EVARISTO GONCALVES NETTO,EMEF EVARISTO GONCALVES NETTO,Sexo,Masculino,89,8,68,89% - 8 estudantes,68
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,NSE,Alto,20,4,73,20% - 4 estudantes,73
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,NSE,Baixo,40,8,23,40% - 8 estudantes,23
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,NSE,Médio alto,30,6,27,30% - 6 estudantes,27
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,NSE,Médio baixo,10,2,17,10% - 2 estudantes,17
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Raça/cor,Branca,20,4,23,20% - 4 estudantes,23
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Raça/cor,Indígena,5,1,42,5% - 1 estudantes,42
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Raça/cor,Parda,35,7,54,35% - 7 estudantes,54
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Raça/cor,Preta,40,8,20,40% - 8 estudantes,20
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Sexo,Feminino,55,11,32,55% - 11 estudantes,32
+2026,5,Língua Portuguesa,ESC_015,,EMEF GABRIEL OBINO,EMEF GABRIEL OBINO,Sexo,Masculino,45,9,36,45% - 9 estudantes,36
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,NSE,Alto,10,7,65,10% - 7 estudantes,65
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,NSE,Baixo,36,26,54,36% - 26 estudantes,54
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,NSE,Médio alto,30,22,52,30% - 22 estudantes,52
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,NSE,Médio baixo,25,18,47,25% - 18 estudantes,47
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Raça/cor,Amarela,1,1,100,1% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Raça/cor,Branca,42,31,49,42% - 31 estudantes,49
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Raça/cor,Indígena,3,2,40,3% - 2 estudantes,40
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Raça/cor,Parda,40,29,63,40% - 29 estudantes,63
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Raça/cor,Preta,14,10,34,14% - 10 estudantes,34
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Sexo,Feminino,45,33,54,45% - 33 estudantes,54
+2026,5,Língua Portuguesa,ESC_016,,EMEF GOV ILDO MENEGHETTI,EMEF GOV ILDO MENEGHETTI,Sexo,Masculino,55,40,52,55% - 40 estudantes,52
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_017,,EMEF GRANDE ORIENTE DO RGS,EMEF GRANDE ORIENTE DO RGS,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,NSE,Alto,15,8,71,15% - 8 estudantes,71
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,NSE,Baixo,39,21,62,39% - 21 estudantes,62
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,NSE,Médio alto,15,8,66,15% - 8 estudantes,66
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,NSE,Médio baixo,31,17,61,31% - 17 estudantes,61
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Raça/cor,Amarela,2,1,70,2% - 1 estudantes,70
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Raça/cor,Branca,28,15,65,28% - 15 estudantes,65
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Raça/cor,Indígena,2,1,15,2% - 1 estudantes,15
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Raça/cor,Parda,43,23,61,43% - 23 estudantes,61
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Raça/cor,Preta,26,14,69,26% - 14 estudantes,69
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Sexo,Feminino,54,29,57,54% - 29 estudantes,57
+2026,5,Língua Portuguesa,ESC_018,,EMEF HEITOR VILLA LOBOS,EMEF HEITOR VILLA LOBOS,Sexo,Masculino,46,25,71,46% - 25 estudantes,71
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,NSE,Alto,33,15,78,33% - 15 estudantes,78
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,NSE,Baixo,16,7,61,16% - 7 estudantes,61
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,NSE,Médio alto,31,14,80,31% - 14 estudantes,80
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,NSE,Médio baixo,20,9,57,20% - 9 estudantes,57
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Raça/cor,Branca,40,18,72,40% - 18 estudantes,72
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Raça/cor,Parda,38,17,82,38% - 17 estudantes,82
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Raça/cor,Preta,22,10,54,22% - 10 estudantes,54
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Sexo,Feminino,53,24,75,53% - 24 estudantes,75
+2026,5,Língua Portuguesa,ESC_019,,EMEF JEAN PIAGET,EMEF JEAN PIAGET,Sexo,Masculino,47,21,69,47% - 21 estudantes,69
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_020,,EMEF JOAO ANTONIO SATTE,EMEF JOAO ANTONIO SATTE,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,NSE,Alto,47,9,90,47% - 9 estudantes,90
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,NSE,Baixo,16,3,25,16% - 3 estudantes,25
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,NSE,Médio alto,21,4,100,21% - 4 estudantes,100
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,NSE,Médio baixo,16,3,90,16% - 3 estudantes,90
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Raça/cor,Branca,74,14,86,74% - 14 estudantes,86
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Raça/cor,Parda,16,3,67,16% - 3 estudantes,67
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Raça/cor,Preta,11,2,76,11% - 2 estudantes,76
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Sexo,Feminino,42,8,95,42% - 8 estudantes,95
+2026,5,Língua Portuguesa,ESC_021,,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,Sexo,Masculino,58,11,72,58% - 11 estudantes,72
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,NSE,Alto,22,8,62,22% - 8 estudantes,62
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,NSE,Baixo,28,10,60,28% - 10 estudantes,60
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,NSE,Médio alto,22,8,51,22% - 8 estudantes,51
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,NSE,Médio baixo,28,10,60,28% - 10 estudantes,60
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Raça/cor,Amarela,3,1,0,3% - 1 estudantes,0
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Raça/cor,Branca,31,11,65,31% - 11 estudantes,65
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Raça/cor,Indígena,6,2,71,6% - 2 estudantes,71
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Raça/cor,Parda,31,11,59,31% - 11 estudantes,59
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Raça/cor,Preta,31,11,54,31% - 11 estudantes,54
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Sexo,Feminino,53,19,63,53% - 19 estudantes,63
+2026,5,Língua Portuguesa,ESC_022,,EMEF JOSE LOUREIRO DA SILVA,EMEF JOSE LOUREIRO DA SILVA,Sexo,Masculino,47,17,52,47% - 17 estudantes,52
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_023,,EMEF JOSE MARIANO BECK,EMEF JOSE MARIANO BECK,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,NSE,Alto,100,1,33,100% - 1 estudantes,33
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,NSE,Baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,NSE,Médio alto,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,NSE,Médio baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Raça/cor,Branca,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Raça/cor,Parda,100,1,33,100% - 1 estudantes,33
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Raça/cor,Preta,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Sexo,Feminino,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_024,,EMEF LAURO RODRIGUES,EMEF LAURO RODRIGUES,Sexo,Masculino,100,1,33,100% - 1 estudantes,33
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,NSE,Alto,6,2,85,6% - 2 estudantes,85
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,NSE,Baixo,34,12,42,34% - 12 estudantes,42
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,NSE,Médio alto,37,13,63,37% - 13 estudantes,63
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,NSE,Médio baixo,23,8,77,23% - 8 estudantes,77
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Raça/cor,Branca,40,14,63,40% - 14 estudantes,63
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Raça/cor,Parda,31,11,65,31% - 11 estudantes,65
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Raça/cor,Preta,29,10,52,29% - 10 estudantes,52
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Sexo,Feminino,63,22,59,63% - 22 estudantes,59
+2026,5,Língua Portuguesa,ESC_025,,EMEF LEOCADIA FELIZARDO PRESTES,EMEF LEOCADIA FELIZARDO PRESTES,Sexo,Masculino,37,13,64,37% - 13 estudantes,64
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,NSE,Alto,14,5,32,14% - 5 estudantes,32
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,NSE,Baixo,51,18,48,51% - 18 estudantes,48
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,NSE,Médio alto,9,3,31,9% - 3 estudantes,31
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,NSE,Médio baixo,26,9,50,26% - 9 estudantes,50
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Raça/cor,Branca,40,14,34,40% - 14 estudantes,34
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Raça/cor,Indígena,3,1,24,3% - 1 estudantes,24
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Raça/cor,Parda,49,17,52,49% - 17 estudantes,52
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Raça/cor,Preta,9,3,61,9% - 3 estudantes,61
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Sexo,Feminino,63,22,54,63% - 22 estudantes,54
+2026,5,Língua Portuguesa,ESC_026,,EMEF LIDOVINO FANTON,EMEF LIDOVINO FANTON,Sexo,Masculino,37,13,30,37% - 13 estudantes,30
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,NSE,Alto,11,2,15,11% - 2 estudantes,15
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,NSE,Baixo,42,8,55,42% - 8 estudantes,55
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,NSE,Médio alto,26,5,61,26% - 5 estudantes,61
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,NSE,Médio baixo,21,4,56,21% - 4 estudantes,56
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Raça/cor,Branca,32,6,62,32% - 6 estudantes,62
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Raça/cor,Parda,37,7,59,37% - 7 estudantes,59
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Raça/cor,Preta,32,6,37,32% - 6 estudantes,37
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Sexo,Feminino,63,12,47,63% - 12 estudantes,47
+2026,5,Língua Portuguesa,ESC_027,,EMEF MARIO QUINTANA,EMEF MARIO QUINTANA,Sexo,Masculino,37,7,62,37% - 7 estudantes,62
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_028,,EMEF MIGRANTES,EMEF MIGRANTES,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_029,,EMEF MORADAS DA HIPICA,EMEF MORADAS DA HIPICA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_030,,EMEF MORRO DA CRUZ,EMEF MORRO DA CRUZ,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_031,,EMEF NEUSA GOULART BRIZOLA,EMEF NEUSA GOULART BRIZOLA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_032,,EMEF NOSSA SENHORA DE FATIMA,EMEF NOSSA SENHORA DE FATIMA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,NSE,Alto,15,8,90,15% - 8 estudantes,90
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,NSE,Baixo,42,22,61,42% - 22 estudantes,61
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,NSE,Médio alto,21,11,79,21% - 11 estudantes,79
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,NSE,Médio baixo,21,11,57,21% - 11 estudantes,57
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Raça/cor,Amarela,2,1,0,2% - 1 estudantes,0
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Raça/cor,Branca,33,17,73,33% - 17 estudantes,73
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Raça/cor,Indígena,4,2,50,4% - 2 estudantes,50
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Raça/cor,Parda,46,24,71,46% - 24 estudantes,71
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Raça/cor,Preta,15,8,62,15% - 8 estudantes,62
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Sexo,Feminino,63,33,72,63% - 33 estudantes,72
+2026,5,Língua Portuguesa,ESC_033,,EMEF NOSSA SENHORA DO CARMO,EMEF NOSSA SENHORA DO CARMO,Sexo,Masculino,37,19,62,37% - 19 estudantes,62
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_034,,EMEF PEPITA DE LEAO,EMEF PEPITA DE LEAO,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,NSE,Alto,30,9,73,30% - 9 estudantes,73
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,NSE,Baixo,40,12,62,40% - 12 estudantes,62
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,NSE,Médio alto,10,3,55,10% - 3 estudantes,55
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,NSE,Médio baixo,20,6,43,20% - 6 estudantes,43
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Raça/cor,Amarela,7,2,51,7% - 2 estudantes,51
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Raça/cor,Branca,27,8,71,27% - 8 estudantes,71
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Raça/cor,Indígena,7,2,40,7% - 2 estudantes,40
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Raça/cor,Parda,40,12,58,40% - 12 estudantes,58
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Raça/cor,Preta,20,6,64,20% - 6 estudantes,64
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Sexo,Feminino,50,15,71,50% - 15 estudantes,71
+2026,5,Língua Portuguesa,ESC_035,,EMEF PORTO NOVO,EMEF PORTO NOVO,Sexo,Masculino,50,15,50,50% - 15 estudantes,50
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,NSE,Alto,19,8,84,19% - 8 estudantes,84
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,NSE,Baixo,23,10,60,23% - 10 estudantes,60
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,NSE,Médio alto,33,14,72,33% - 14 estudantes,72
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,NSE,Médio baixo,26,11,62,26% - 11 estudantes,62
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Raça/cor,Branca,37,16,76,37% - 16 estudantes,76
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Raça/cor,Indígena,2,1,42,2% - 1 estudantes,42
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Raça/cor,Parda,44,19,67,44% - 19 estudantes,67
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Raça/cor,Preta,16,7,61,16% - 7 estudantes,61
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Sexo,Feminino,53,23,69,53% - 23 estudantes,69
+2026,5,Língua Portuguesa,ESC_036,,EMEF PRES JOAO BELCHIOR MARQUES GOULART,EMEF PRES JOAO BELCHIOR MARQUES GOULART,Sexo,Masculino,47,20,68,47% - 20 estudantes,68
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,NSE,Alto,8,1,100,8% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,NSE,Baixo,23,3,77,23% - 3 estudantes,77
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,NSE,Médio alto,38,5,65,38% - 5 estudantes,65
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,NSE,Médio baixo,31,4,88,31% - 4 estudantes,88
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Raça/cor,Branca,38,5,82,38% - 5 estudantes,82
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Raça/cor,Parda,54,7,82,54% - 7 estudantes,82
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Raça/cor,Preta,8,1,24,8% - 1 estudantes,24
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Sexo,Feminino,77,10,81,77% - 10 estudantes,81
+2026,5,Língua Portuguesa,ESC_037,,EMEF PRESIDENTE VARGAS,EMEF PRESIDENTE VARGAS,Sexo,Masculino,23,3,65,23% - 3 estudantes,65
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,NSE,Alto,20,6,74,20% - 6 estudantes,74
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,NSE,Baixo,17,5,66,17% - 5 estudantes,66
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,NSE,Médio alto,27,8,96,27% - 8 estudantes,96
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,NSE,Médio baixo,37,11,82,37% - 11 estudantes,82
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Raça/cor,Branca,33,10,83,33% - 10 estudantes,83
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Raça/cor,Parda,47,14,81,47% - 14 estudantes,81
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Raça/cor,Preta,20,6,80,20% - 6 estudantes,80
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Sexo,Feminino,70,21,81,70% - 21 estudantes,81
+2026,5,Língua Portuguesa,ESC_038,,EMEF PROF ANA IRIS DO AMARAL,EMEF PROF ANA IRIS DO AMARAL,Sexo,Masculino,30,9,82,30% - 9 estudantes,82
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,NSE,Alto,44,25,85,44% - 25 estudantes,85
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,NSE,Baixo,7,4,93,7% - 4 estudantes,93
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,NSE,Médio alto,30,17,77,30% - 17 estudantes,77
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,NSE,Médio baixo,19,11,84,19% - 11 estudantes,84
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Raça/cor,Amarela,4,2,100,4% - 2 estudantes,100
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Raça/cor,Branca,63,36,86,63% - 36 estudantes,86
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Raça/cor,Parda,23,13,74,23% - 13 estudantes,74
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Raça/cor,Preta,11,6,79,11% - 6 estudantes,79
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Sexo,Feminino,40,23,81,40% - 23 estudantes,81
+2026,5,Língua Portuguesa,ESC_039,,EMEF PROF ANISIO TEIXEIRA,EMEF PROF ANISIO TEIXEIRA,Sexo,Masculino,60,34,84,60% - 34 estudantes,84
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,NSE,Alto,50,5,74,50% - 5 estudantes,74
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,NSE,Baixo,20,2,100,20% - 2 estudantes,100
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,NSE,Médio alto,20,2,90,20% - 2 estudantes,90
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,NSE,Médio baixo,10,1,100,10% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Raça/cor,Branca,50,5,80,50% - 5 estudantes,80
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Raça/cor,Indígena,10,1,100,10% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Raça/cor,Parda,30,3,90,30% - 3 estudantes,90
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Raça/cor,Preta,10,1,80,10% - 1 estudantes,80
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Sexo,Feminino,80,8,93,80% - 8 estudantes,93
+2026,5,Língua Portuguesa,ESC_040,,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,Sexo,Masculino,20,2,56,20% - 2 estudantes,56
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,NSE,Alto,24,13,75,24% - 13 estudantes,75
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,NSE,Baixo,20,11,53,20% - 11 estudantes,53
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,NSE,Médio alto,27,15,62,27% - 15 estudantes,62
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,NSE,Médio baixo,29,16,69,29% - 16 estudantes,69
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Raça/cor,Amarela,2,1,100,2% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Raça/cor,Branca,36,20,69,36% - 20 estudantes,69
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Raça/cor,Indígena,7,4,43,7% - 4 estudantes,43
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Raça/cor,Parda,31,17,74,31% - 17 estudantes,74
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Raça/cor,Preta,24,13,53,24% - 13 estudantes,53
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Sexo,Feminino,47,26,69,47% - 26 estudantes,69
+2026,5,Língua Portuguesa,ESC_041,,EMEF PROF JUDITH MACEDO DE ARAUJO,EMEF PROF JUDITH MACEDO DE ARAUJO,Sexo,Masculino,53,29,62,53% - 29 estudantes,62
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,NSE,Alto,19,3,74,19% - 3 estudantes,74
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,NSE,Baixo,38,6,58,38% - 6 estudantes,58
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,NSE,Médio alto,19,3,35,19% - 3 estudantes,35
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,NSE,Médio baixo,25,4,86,25% - 4 estudantes,86
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Raça/cor,Branca,25,4,70,25% - 4 estudantes,70
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Raça/cor,Parda,63,10,55,63% - 10 estudantes,55
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Raça/cor,Preta,13,2,95,13% - 2 estudantes,95
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Sexo,Feminino,50,8,75,50% - 8 estudantes,75
+2026,5,Língua Portuguesa,ESC_042,,EMEF PROF LARRY JOSE RIBEIRO ALVES,EMEF PROF LARRY JOSE RIBEIRO ALVES,Sexo,Masculino,50,8,52,50% - 8 estudantes,52
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_043,,EMEF RINCAO,EMEF RINCAO,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,NSE,Alto,19,11,73,19% - 11 estudantes,73
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,NSE,Baixo,25,14,54,25% - 14 estudantes,54
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,NSE,Médio alto,28,16,78,28% - 16 estudantes,78
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,NSE,Médio baixo,28,16,75,28% - 16 estudantes,75
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Raça/cor,Amarela,7,4,78,7% - 4 estudantes,78
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Raça/cor,Branca,35,20,74,35% - 20 estudantes,74
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Raça/cor,Indígena,2,1,100,2% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Raça/cor,Parda,35,20,70,35% - 20 estudantes,70
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Raça/cor,Preta,21,12,60,21% - 12 estudantes,60
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Sexo,Feminino,40,23,84,40% - 23 estudantes,84
+2026,5,Língua Portuguesa,ESC_044,,EMEF SAINT HILAIRE,EMEF SAINT HILAIRE,Sexo,Masculino,60,34,61,60% - 34 estudantes,61
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,NSE,Alto,100,1,100,100% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,NSE,Baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,NSE,Médio alto,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,NSE,Médio baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Raça/cor,Branca,100,1,100,100% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Raça/cor,Parda,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Raça/cor,Preta,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Sexo,Feminino,100,1,100,100% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_045,,EMEF SAO PEDRO,EMEF SAO PEDRO,Sexo,Masculino,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,NSE,Alto,32,16,70,32% - 16 estudantes,70
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,NSE,Baixo,24,12,51,24% - 12 estudantes,51
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,NSE,Médio alto,16,8,68,16% - 8 estudantes,68
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,NSE,Médio baixo,28,14,51,28% - 14 estudantes,51
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Raça/cor,Branca,30,15,49,30% - 15 estudantes,49
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Raça/cor,Indígena,4,2,24,4% - 2 estudantes,24
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Raça/cor,Parda,32,16,83,32% - 16 estudantes,83
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Raça/cor,Preta,34,17,52,34% - 17 estudantes,52
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Sexo,Feminino,42,21,62,42% - 21 estudantes,62
+2026,5,Língua Portuguesa,ESC_046,,EMEF SEN ALBERTO PASQUALINI,EMEF SEN ALBERTO PASQUALINI,Sexo,Masculino,58,29,59,58% - 29 estudantes,59
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,NSE,Alto,15,5,53,15% - 5 estudantes,53
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,NSE,Baixo,36,12,43,36% - 12 estudantes,43
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,NSE,Médio alto,15,5,42,15% - 5 estudantes,42
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,NSE,Médio baixo,33,11,64,33% - 11 estudantes,64
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Raça/cor,Amarela,3,1,42,3% - 1 estudantes,42
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Raça/cor,Branca,24,8,53,24% - 8 estudantes,53
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Raça/cor,Indígena,3,1,33,3% - 1 estudantes,33
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Raça/cor,Parda,45,15,54,45% - 15 estudantes,54
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Raça/cor,Preta,24,8,47,24% - 8 estudantes,47
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Sexo,Feminino,42,14,52,42% - 14 estudantes,52
+2026,5,Língua Portuguesa,ESC_047,,EMEF TIMBAUVA,EMEF TIMBAUVA,Sexo,Masculino,58,19,51,58% - 19 estudantes,51
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,NSE,Alto,32,18,86,32% - 18 estudantes,86
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,NSE,Baixo,14,8,49,14% - 8 estudantes,49
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,NSE,Médio alto,30,17,81,30% - 17 estudantes,81
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,NSE,Médio baixo,23,13,70,23% - 13 estudantes,70
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Raça/cor,Amarela,4,2,95,4% - 2 estudantes,95
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Raça/cor,Branca,46,26,77,46% - 26 estudantes,77
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Raça/cor,Parda,27,15,80,27% - 15 estudantes,80
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Raça/cor,Preta,23,13,64,23% - 13 estudantes,64
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Sexo,Feminino,55,31,76,55% - 31 estudantes,76
+2026,5,Língua Portuguesa,ESC_048,,EMEF VER ANTONIO GIUDICE,EMEF VER ANTONIO GIUDICE,Sexo,Masculino,45,25,74,45% - 25 estudantes,74
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,NSE,Alto,8,4,73,8% - 4 estudantes,73
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,NSE,Baixo,32,17,52,32% - 17 estudantes,52
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,NSE,Médio alto,28,15,82,28% - 15 estudantes,82
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,NSE,Médio baixo,32,17,60,32% - 17 estudantes,60
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Raça/cor,Amarela,2,1,70,2% - 1 estudantes,70
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Raça/cor,Branca,26,14,68,26% - 14 estudantes,68
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Raça/cor,Indígena,2,1,100,2% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Raça/cor,Parda,38,20,76,38% - 20 estudantes,76
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Raça/cor,Preta,32,17,46,32% - 17 estudantes,46
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Sexo,Feminino,43,23,66,43% - 23 estudantes,66
+2026,5,Língua Portuguesa,ESC_049,,EMEF VER CARLOS PESSOA DE BRUM,EMEF VER CARLOS PESSOA DE BRUM,Sexo,Masculino,57,30,63,57% - 30 estudantes,63
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,NSE,Alto,10,3,60,10% - 3 estudantes,60
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,NSE,Baixo,34,10,42,34% - 10 estudantes,42
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,NSE,Médio alto,31,9,58,31% - 9 estudantes,58
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,NSE,Médio baixo,24,7,59,24% - 7 estudantes,59
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Raça/cor,Branca,24,7,64,24% - 7 estudantes,64
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Raça/cor,Parda,48,14,49,48% - 14 estudantes,49
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Raça/cor,Preta,28,8,51,28% - 8 estudantes,51
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Sexo,Feminino,28,8,39,28% - 8 estudantes,39
+2026,5,Língua Portuguesa,ESC_050,,EMEF VER MARTIM ARANHA,EMEF VER MARTIM ARANHA,Sexo,Masculino,72,21,58,72% - 21 estudantes,58
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,NSE,Alto,17,9,73,17% - 9 estudantes,73
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,NSE,Baixo,25,13,58,25% - 13 estudantes,58
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,NSE,Médio alto,28,15,75,28% - 15 estudantes,75
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,NSE,Médio baixo,30,16,72,30% - 16 estudantes,72
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Raça/cor,Amarela,2,1,100,2% - 1 estudantes,100
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Raça/cor,Branca,47,25,67,47% - 25 estudantes,67
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Raça/cor,Parda,30,16,70,30% - 16 estudantes,70
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Raça/cor,Preta,21,11,72,21% - 11 estudantes,72
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Sexo,Feminino,49,26,72,49% - 26 estudantes,72
+2026,5,Língua Portuguesa,ESC_051,,EMEF VILA MONTE CRISTO,EMEF VILA MONTE CRISTO,Sexo,Masculino,51,27,68,51% - 27 estudantes,68
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_052,,EMEF WENCESLAU FONTOURA,EMEF WENCESLAU FONTOURA,Sexo,Masculino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,NSE,Alto,22,8,85,22% - 8 estudantes,85
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,NSE,Baixo,14,5,62,14% - 5 estudantes,62
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,NSE,Médio alto,30,11,76,30% - 11 estudantes,76
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,NSE,Médio baixo,35,13,43,35% - 13 estudantes,43
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Raça/cor,Branca,46,17,79,46% - 17 estudantes,79
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Raça/cor,Indígena,3,1,6,3% - 1 estudantes,6
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Raça/cor,Parda,35,13,66,35% - 13 estudantes,66
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Raça/cor,Preta,16,6,29,16% - 6 estudantes,29
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Sexo,Feminino,41,15,61,41% - 15 estudantes,61
+2026,5,Língua Portuguesa,ESC_053,,EMEM EMILIO MEYER,EMEM EMILIO MEYER,Sexo,Masculino,59,22,67,59% - 22 estudantes,67
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,NSE,Alto,43,6,75,43% - 6 estudantes,75
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,NSE,Baixo,14,2,50,14% - 2 estudantes,50
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,NSE,Médio alto,43,6,93,43% - 6 estudantes,93
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,NSE,Médio baixo,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Raça/cor,Amarela,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Raça/cor,Branca,57,8,86,57% - 8 estudantes,86
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Raça/cor,Indígena,0,0,,0% - 0 estudantes,-
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Raça/cor,Parda,36,5,75,36% - 5 estudantes,75
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Raça/cor,Preta,7,1,42,7% - 1 estudantes,42
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Sexo,Feminino,57,8,79,57% - 8 estudantes,79
+2026,5,Língua Portuguesa,ESC_054,,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,Sexo,Masculino,43,6,79,43% - 6 estudantes,79
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,NSE,Alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,NSE,Baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,NSE,Médio alto,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,NSE,Médio baixo,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Raça/cor,Amarela,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Raça/cor,Branca,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Raça/cor,Indígena,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Raça/cor,Parda,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Raça/cor,Preta,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Sexo,Feminino,,,,-% - - estudantes,-
+2026,5,Língua Portuguesa,ESC_055,,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,7028 ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,Sexo,Masculino,,,,-% - - estudantes,-

@@ -1,0 +1,8 @@
+produto,caminho,existe,tamanho_bytes,data_modificacao,md5
+indice_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_carga_potencial_escola.csv,TRUE,56377,2026-07-18 15:14:21,7aaedf764531b65db40af20a5c70473c
+indice_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_carga_potencial_escola.rds,TRUE,11334,2026-07-18 15:14:21,26071e7d689b336cd0037df58fe42ac8
+componentes_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_indice_carga_potencial.csv,TRUE,154626,2026-07-18 15:14:21,f8e0212b1d447e235457bd68a1031b1c
+componentes_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_indice_carga_potencial.rds,TRUE,9111,2026-07-18 15:14:21,93febf95f6098635e662e67e8948c13b
+componentes_educacionais_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_educacionais_escola_serie.csv,TRUE,188524,2026-07-18 15:14:21,83103a015faaa64ad8c8c9d560e5a3fd
+componentes_educacionais_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_educacionais_escola_serie.rds,TRUE,34163,2026-07-18 15:14:21,034311b852efb667b77040ae9d8e3f45
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/indice_complexidade/dicionario_indice_carga_potencial.csv,TRUE,12411,2026-07-18 15:14:21,114d0fa231f3e3dbb8139f01a9082987

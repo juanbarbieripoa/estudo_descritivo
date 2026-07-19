@@ -1,0 +1,10 @@
+produto,caminho,existe,tamanho_bytes,md5
+analise_carteiras_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_assessoras.csv,TRUE,14002,384ef7b3b5a8a7bbeba853a20e204a88
+analise_carteiras_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_assessoras.rds,TRUE,5338,355ef5c40de254bab38034e83cb0a014
+detalhe_escolas_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.csv,TRUE,38616,d9a8cb9a38fc98a035ce33ff06098691
+detalhe_escolas_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.rds,TRUE,7918,4e4728dcd2011339bc6fb1b26533eadb
+cenarios_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_cenarios.csv,TRUE,18832,3be932c0a10d331e84b6dd1ee2fbc655
+cenarios_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_cenarios.rds,TRUE,3170,8961037d8c972fdfed4126b7c59d87bf
+composicao_faixas_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/composicao_faixas_carteiras.csv,TRUE,4322,98187f92c92daea159159754f76fde72
+composicao_faixas_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/composicao_faixas_carteiras.rds,TRUE,662,cc76658e646ec7d15f48573115f2ca3b
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/analise_carteiras/dicionario_analise_carteiras.csv,TRUE,17338,f504b5f120f9e1a2560901c9d745cd32

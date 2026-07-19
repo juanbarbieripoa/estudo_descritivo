@@ -1,0 +1,15 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Unicidade do perfil de entrada,estrutura,erro,0,zero linhas excedentes,APROVADO,O perfil deve possuir uma linha por escola.
+Unicidade da base escola × série,estrutura,erro,0,zero chaves duplicadas,APROVADO,Cada escola × série × componente deve ser única.
+Correspondência das escolas entre entrada e saída,estrutura,erro,0,zero diferenças,APROVADO,Nenhuma escola pode ser incluída ou excluída silenciosamente.
+Soma dos pesos dos componentes,metodologia,erro,0,diferença máxima inferior a 1e-10,APROVADO,Os pesos internos de cada dimensão devem somar 1.
+Soma dos pesos dos cenários,metodologia,erro,0,diferença máxima inferior a 1e-10,APROVADO,Os pesos das quatro dimensões devem somar 1 em todos os cenários.
+Escores dimensionais dentro de 0 a 100,consistencia,erro,0,zero valores fora do intervalo,APROVADO,Todos os escores dimensionais devem permanecer no intervalo de 0 a 100.
+Índices dos cenários dentro de 0 a 100,consistencia,erro,0,zero valores fora do intervalo,APROVADO,Todos os índices devem permanecer no intervalo de 0 a 100.
+Disponibilidade do índice principal,cobertura,erro,0,zero escolas sem índice principal,APROVADO,"Todas as escolas devem receber índice, acompanhado de flags de cobertura quando necessário."
+Normalização educacional dentro da série,metodologia,erro,0,diferença máxima inferior a 1e-8,APROVADO,A posição percentílica deve ser calculada separadamente dentro de cada série.
+Ausência de variáveis proibidas no índice,metodologia,erro,0,zero ocorrências,APROVADO,Composição racial e variações de proficiência não devem compor o índice.
+Cobertura mínima da dimensão de volume,cobertura,erro,0.75,"mínimo de 0,75",APROVADO,A dimensão de volume deve usar ao menos 75% dos pesos declarados.
+Cobertura mínima da dimensão estrutural,cobertura,erro,0.65,"mínimo de 0,60",APROVADO,A dimensão estrutural deve usar ao menos 60% dos pesos declarados.
+Cobertura mínima da dimensão educacional,cobertura,erro,0.85,"mínimo de 0,50",APROVADO,A dimensão educacional deve usar ao menos metade dos pesos declarados e manter indicador de qualidade da evidência.
+Identidade da assessora não usada como componente,metodologia,erro,0,zero nomes de assessoras nos parâmetros,APROVADO,"O índice pode registrar ausência de vínculo, mas não pode pontuar nomes específicos de assessoras."

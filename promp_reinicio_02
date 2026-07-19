@@ -1,0 +1,117 @@
+Estamos dando continuidade ao projeto “estudo_descritivo”, desenvolvido para a Unidade de Ensino Fundamental da Secretaria Municipal de Educação de Porto Alegre — UEF-SMED-PMPA.
+
+O trabalho já concluiu a preparação, validação e integração das bases. Nesta nova etapa, o objetivo é construir um diagnóstico amplo da rede atendida pelo programa de assessoramento escolar, produzir instrumentos gerenciais para análise das carteiras das assessoras e elaborar o relatório técnico final.
+
+OBJETIVO GERAL
+
+Produzir um diagnóstico descritivo da rede de escolas acompanhadas pelo programa de assessoramento da UEF-SMED-PMPA, considerando características estruturais, administrativas, educacionais e de participação nas avaliações, de modo a:
+
+1. ampliar a compreensão da rede como um todo;
+2. identificar especificidades e necessidades das escolas;
+3. analisar a distribuição da carga de trabalho entre as assessoras;
+4. verificar possíveis desequilíbrios entre as carteiras;
+5. descrever os resultados observados no primeiro ano de implantação do programa, sem pretensão causal.
+
+PRINCÍPIOS METODOLÓGICOS
+
+- O estudo é observacional e descritivo.
+- Não há grupo de controle, dose de tratamento ou identificação causal.
+- Os resultados escolares não devem ser atribuídos diretamente às assessoras.
+- A complexidade de uma carteira não deve ser medida apenas pelo número de escolas.
+- Mudanças de participação podem alterar a composição dos estudantes avaliados.
+- As características estruturais de 2024 representam contexto pré-programa.
+- O vínculo entre escola e assessora é administrativo.
+- O relatório deve separar claramente:
+  a) características da rede;
+  b) características das escolas;
+  c) carga e complexidade das carteiras;
+  d) resultados educacionais observados.
+
+ESTADO ATUAL DO PROJETO
+
+Foram concluídos os módulos 01 a 14A.
+
+As principais bases finais ou intermediárias são:
+
+- dados_intermediarios/dim_escola.csv
+- dados_processados/dim_contexto_escola_2024_final.csv
+- dados_processados/base_analitica_escola_serie_contexto_2024.csv
+- dados_processados/base_contexto_desempenho_estratos_corrigidos.csv
+- dados_processados/variacao_escola_serie_com_qualidade.csv
+
+A base comparável contém aproximadamente:
+
+- 54 escolas;
+- 265 observações escola × série;
+- 1º ao 5º ano;
+- Língua Portuguesa;
+- primeira avaliação formativa de 2025 e 2026.
+
+Foram corrigidos e validados:
+
+- códigos INEP;
+- vínculos administrativos;
+- escolas municipalizadas, novas e conveniadas;
+- extração do Censo Escolar de 2024;
+- estratos de porte e infraestrutura;
+- erros-padrão agrupados por escola;
+- médias ponderadas da rede e das séries.
+
+As versões corretas das sínteses são:
+
+- resultados/sintese/01_sintese_geral_painel_corrigida.csv
+- resultados/sintese/02_sintese_por_serie_corrigida.csv
+- resultados/sintese/02A_validacao_sintese_ponderada.csv
+- resultados/graficos/sintese/variacao_proficiencia_por_serie_corrigida.png
+- resultados/graficos/sintese/participacao_por_serie_2025_2026_corrigida.png
+
+OBJETIVOS DA NOVA ETAPA
+
+1. Congelar e documentar uma base analítica final.
+2. Construir um perfil consolidado por escola.
+3. Desenvolver um índice descritivo de carga potencial de assessoramento.
+4. Separar no índice:
+   - volume;
+   - complexidade estrutural;
+   - desafio educacional;
+   - complexidade administrativa.
+5. Analisar as carteiras das assessoras.
+6. Identificar possíveis concentrações de escolas mais desafiadoras.
+7. Produzir fichas de escolas e fichas de carteiras.
+8. Gerar tabelas e gráficos para o relatório.
+9. Elaborar o relatório técnico final.
+
+CUIDADOS
+
+- Não criar ranking de qualidade das assessoras.
+- Não interpretar resultados das escolas como efeito das assessoras.
+- Não usar significância estatística como evidência causal.
+- Tratar o índice de carga como ferramenta de diagnóstico, não como regra automática de redistribuição.
+- Manter rastreabilidade dos dados e scripts.
+- Não sobrescrever arquivos antigos sem criar versão histórica.
+- Apresentar sempre as limitações de interpretação.
+
+SEQUÊNCIA PROPOSTA
+
+- 15_consolidar_base_final.R
+- 16_criar_perfil_escola.R
+- 17_construir_indice_complexidade.R
+- 18_analisar_carteiras_assessoras.R
+- 19_gerar_fichas_escolas.R
+- 20_gerar_fichas_carteiras.R
+- 21_tabelas_graficos_relatorio.R
+- 22_relatorio_tecnico.qmd
+
+INSTRUÇÃO DE TRABALHO
+
+Antes de criar cada módulo:
+
+1. verificar a estrutura real das bases necessárias;
+2. validar nomes e tipos das colunas;
+3. explicar brevemente o objetivo analítico;
+4. produzir um único script R executável;
+5. incluir validações e arquivos de diagnóstico;
+6. indicar quais arquivos devem ser devolvidos para análise;
+7. aguardar a execução antes de prosseguir ao módulo seguinte.
+
+Comece elaborando o módulo 15_consolidar_base_final.R.

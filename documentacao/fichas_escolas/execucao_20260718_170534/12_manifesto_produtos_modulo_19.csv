@@ -1,0 +1,6 @@
+produto,caminho,existe,tamanho_bytes,modificado_em,md5
+base_fichas_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_escolas.csv,TRUE,75308,2026-07-18 17:06:13.325792,fee9bbaee6f1e2105c52f9fd06d3aae2
+base_fichas_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_escolas.rds,TRUE,10712,2026-07-18 17:06:13.327959,068b369ee6d912d56a0b2f8eceb46f51
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/fichas_escolas/dicionario_base_fichas_escolas.csv,TRUE,5846,2026-07-18 17:06:13.33819,e91e22fefdb77e5a375499253643597f
+html_compilado,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/fichas_escolas/execucao_20260718_170534/fichas_escolas_compiladas.html,TRUE,351650,2026-07-18 17:06:06.02035,a93baea620b7f83300f6b0c49115e5ee
+pdf_compilado,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/fichas_escolas/execucao_20260718_170534/fichas_escolas_compiladas.pdf,TRUE,9168781,2026-07-18 17:06:12.643122,9bf6bc5d94cd8d3337551cb8f0d11f01

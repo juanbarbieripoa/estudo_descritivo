@@ -1,0 +1,18 @@
+Execução: 20260718_151421
+Escolas no índice: 56
+Componentes declarados: 17
+Cenários de pesos: 4
+Escolas com interpretação cautelosa: 3
+Índice principal — mínimo: 22.66
+Índice principal — mediana: 39.37
+Índice principal — máximo: 58.42
+Erros críticos: 0
+
+Observações metodológicas:
+- O índice é descritivo e relativo ao universo analisado.
+- Pesos iguais entre dimensões constituem cenário provisório, não regra definitiva.
+- Dimensões e componentes devem ser examinados separadamente.
+- Resultados não representam efeito causal do programa ou qualidade das assessoras.
+- Variações de proficiência e composição racial não entram no índice.
+- Escolas com evidência educacional limitada permanecem identificadas por flags de cautela.
+- A redistribuição de carteiras exige validação qualitativa da gestão e das assessoras.

@@ -1,0 +1,18 @@
+Execução: 20260718_155323
+Escolas analisadas: 56
+Categorias administrativas: 13
+Carteiras nominais: 11
+Agrupamentos residuais: 1
+Categorias sem vinculação informada: 1
+Menor número de escolas em carteira nominal: 4
+Maior número de escolas em carteira nominal: 6
+Carga potencial total da rede: 2228.43
+Erros críticos: 0
+
+Observações metodológicas:
+- A análise descreve carteiras administrativas, não desempenho das assessoras.
+- A carga potencial acumulada combina quantidade e composição das escolas.
+- Médias e medianas devem ser lidas em conjunto com a carga acumulada.
+- Faixas e posições são relativas e não constituem ranking de qualidade.
+- Resultados educacionais não devem ser atribuídos às assessoras.
+- Redistribuições exigem validação qualitativa, territorial e operacional.

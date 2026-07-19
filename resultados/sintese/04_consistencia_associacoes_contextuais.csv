@@ -1,0 +1,6 @@
+termo,numero_especificacoes,estimativa_minima,estimativa_maxima,sinais_positivos,sinais_negativos,especificacoes_p_menor_005,especificacoes_p_menor_010,sinal_consistente,evidencia_consistente
+delta_participacao,3,-0.07445146274524211,-0.06476531488729519,0,3,0,0,Negativo em todas,Sem evidência estatística consistente
+indice_infraestrutura_basica,3,-0.12162245625686736,-0.09483387629524184,0,3,0,0,Negativo em todas,Sem evidência estatística consistente
+log_matriculas_anos_iniciais,3,-5.394258688219129,-5.0688304888902955,0,3,1,3,Negativo em todas,Ao menos sugestiva em todas
+pct_matriculas_anos_iniciais_integral,3,-0.01004949531024321,-8.031034836184668e-4,0,3,0,0,Negativo em todas,Sem evidência estatística consistente
+proficiencia_media_2025,3,-0.6867115953467652,-0.6818038458590714,0,3,3,3,Negativo em todas,Clara em todas as especificações

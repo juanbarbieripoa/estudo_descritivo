@@ -1,0 +1,5 @@
+fonte,arquivo,formato,existe,tamanho_bytes,modificado_em,md5,linhas,colunas
+analise_carteiras,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_assessoras.rds,RDS,TRUE,5338,2026-07-18 15:53:24.095873,355ef5c40de254bab38034e83cb0a014,13,73
+detalhe_escolas,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.rds,RDS,TRUE,7918,2026-07-18 15:53:24.108179,4e4728dcd2011339bc6fb1b26533eadb,56,48
+cenarios_carteiras,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_cenarios.rds,RDS,TRUE,3170,2026-07-18 15:53:24.119751,8961037d8c972fdfed4126b7c59d87bf,52,21
+fichas_escolas,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_escolas.rds,RDS,TRUE,10712,2026-07-18 17:06:13.327959,068b369ee6d912d56a0b2f8eceb46f51,56,44

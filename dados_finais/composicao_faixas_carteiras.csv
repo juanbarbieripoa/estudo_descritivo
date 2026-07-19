@@ -1,0 +1,53 @@
+assessora_gerencial,tipo_carteira,carteira_nominal,faixa_indice_carga_potencial,numero_escolas,total_escolas_carteira,percentual_escolas_carteira
+outras,Agrupamento residual,FALSE,Faixa 1 — menor carga potencial relativa,0,2,0
+outras,Agrupamento residual,FALSE,Faixa 2 — intermediária inferior,1,2,50
+outras,Agrupamento residual,FALSE,Faixa 3 — intermediária superior,1,2,50
+outras,Agrupamento residual,FALSE,Faixa 4 — maior carga potencial relativa,0,2,0
+amanda,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,1,5,20
+amanda,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,2,5,40
+amanda,Carteira nominal,TRUE,Faixa 3 — intermediária superior,2,5,40
+amanda,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,0,5,0
+andreia,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,1,5,20
+andreia,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,1,5,20
+andreia,Carteira nominal,TRUE,Faixa 3 — intermediária superior,0,5,0
+andreia,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,3,5,60
+clarissa,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,2,6,33.333333333333336
+clarissa,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,1,6,16.666666666666668
+clarissa,Carteira nominal,TRUE,Faixa 3 — intermediária superior,2,6,33.333333333333336
+clarissa,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,1,6,16.666666666666668
+eliane,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,2,5,40
+eliane,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,1,5,20
+eliane,Carteira nominal,TRUE,Faixa 3 — intermediária superior,1,5,20
+eliane,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,1,5,20
+graziela,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,0,4,0
+graziela,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,2,4,50
+graziela,Carteira nominal,TRUE,Faixa 3 — intermediária superior,1,4,25
+graziela,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,1,4,25
+jalize,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,0,5,0
+jalize,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,1,5,20
+jalize,Carteira nominal,TRUE,Faixa 3 — intermediária superior,1,5,20
+jalize,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,3,5,60
+julia,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,2,5,40
+julia,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,0,5,0
+julia,Carteira nominal,TRUE,Faixa 3 — intermediária superior,1,5,20
+julia,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,2,5,40
+marian,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,2,4,50
+marian,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,0,4,0
+marian,Carteira nominal,TRUE,Faixa 3 — intermediária superior,2,4,50
+marian,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,0,4,0
+nathalia,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,3,6,50
+nathalia,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,2,6,33.333333333333336
+nathalia,Carteira nominal,TRUE,Faixa 3 — intermediária superior,1,6,16.666666666666668
+nathalia,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,0,6,0
+priscila,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,0,4,0
+priscila,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,1,4,25
+priscila,Carteira nominal,TRUE,Faixa 3 — intermediária superior,2,4,50
+priscila,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,1,4,25
+ruti,Carteira nominal,TRUE,Faixa 1 — menor carga potencial relativa,1,4,25
+ruti,Carteira nominal,TRUE,Faixa 2 — intermediária inferior,2,4,50
+ruti,Carteira nominal,TRUE,Faixa 3 — intermediária superior,0,4,0
+ruti,Carteira nominal,TRUE,Faixa 4 — maior carga potencial relativa,1,4,25
+Sem vinculação informada,Sem vinculação informada,FALSE,Faixa 1 — menor carga potencial relativa,0,1,0
+Sem vinculação informada,Sem vinculação informada,FALSE,Faixa 2 — intermediária inferior,0,1,0
+Sem vinculação informada,Sem vinculação informada,FALSE,Faixa 3 — intermediária superior,0,1,0
+Sem vinculação informada,Sem vinculação informada,FALSE,Faixa 4 — maior carga potencial relativa,1,1,100

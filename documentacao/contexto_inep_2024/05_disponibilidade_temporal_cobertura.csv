@@ -1,0 +1,4 @@
+nome_completo,grupo,consulta_executada,ano,linhas,escolas_distintas,escolas_locais_encontradas,duplicidade_potencial,erro_consulta
+basedosdados.br_inep_censo_escolar.escola,Censo Escolar,TRUE,2022,224649,224649,55,FALSE,
+basedosdados.br_inep_censo_escolar.escola,Censo Escolar,TRUE,2023,217625,217625,55,FALSE,
+basedosdados.br_inep_censo_escolar.escola,Censo Escolar,TRUE,2024,215545,215545,56,FALSE,

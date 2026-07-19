@@ -1,0 +1,29 @@
+modelo,termo,estimativa,erro_padrao_cluster_escola,estatistica_t_cluster,graus_liberdade_cluster,valor_p_cluster
+Modelo A — proficiência inicial e contexto,(Intercept),138.2978687860326,19.20458945406483,7.201292645012027,53,2.138988293981881e-9
+Modelo A — proficiência inicial e contexto,log_matriculas_anos_iniciais,-11.253699961985697,3.0176540467608737,-3.7292876478220993,53,4.6866452667685223e-4
+Modelo A — proficiência inicial e contexto,indice_infraestrutura_basica,-0.1422471799055024,0.16350276511801465,-0.8699986193067121,53,0.38822446216427386
+Modelo A — proficiência inicial e contexto,pct_matriculas_anos_iniciais_integral,-0.08269252775033635,0.04512807365388441,-1.8323965783374085,53,0.07251303730662258
+Modelo A — proficiência inicial e contexto,ano_escolar_fator2,2.0288624689086014,2.460577774090534,0.8245471816709793,53,0.4133242937727871
+Modelo A — proficiência inicial e contexto,ano_escolar_fator3,-3.573674590674675,3.1659841308969616,-1.1287721109524986,53,0.26407746040440844
+Modelo A — proficiência inicial e contexto,ano_escolar_fator4,3.775010644298449,2.3788313223163833,1.5869181681291038,53,0.11847999229288077
+Modelo A — proficiência inicial e contexto,ano_escolar_fator5,6.265593764995738,2.4188923967416893,2.590273868087582,53,0.012357431074005724
+"Modelo B — mudança de proficiência, todas as escolas",(Intercept),57.89984241418682,19.903617537085335,2.909011002964922,53,0.005287933825994217
+"Modelo B — mudança de proficiência, todas as escolas",proficiencia_media_2025,-0.6818212583182747,0.07354997657449101,-9.270176417088724,53,1.1118146303995462e-12
+"Modelo B — mudança de proficiência, todas as escolas",delta_participacao,-0.0670680234008684,0.09204267216898095,-0.7286622804446438,53,0.46941586075795905
+"Modelo B — mudança de proficiência, todas as escolas",log_matriculas_anos_iniciais,-5.394258688219129,2.668912875568202,-2.021144540760144,53,0.0483284664362214
+"Modelo B — mudança de proficiência, todas as escolas",indice_infraestrutura_basica,-0.12153088068824958,0.13530770121688812,-0.8981815491303387,53,0.3731511105293981
+"Modelo B — mudança de proficiência, todas as escolas",pct_matriculas_anos_iniciais_integral,-8.031034836184668e-4,0.048690795160032926,-0.016493948825006696,53,0.9869022648566916
+"Modelo B — mudança de proficiência, todas as escolas",ano_escolar_fator2,20.33490982124483,2.452722906731345,8.290748932721645,53,3.851515118486319e-11
+"Modelo B — mudança de proficiência, todas as escolas",ano_escolar_fator3,18.450852071800828,2.1643211118650583,8.525006742599851,53,1.6377436646272253e-11
+"Modelo B — mudança de proficiência, todas as escolas",ano_escolar_fator4,21.165313881542545,2.5517256821406358,8.294509879991105,53,3.798880218056955e-11
+"Modelo B — mudança de proficiência, todas as escolas",ano_escolar_fator5,26.459390494509165,2.4948755779510092,10.605495010793174,53,1.0345222749330828e-14
+"Modelo C — mudança de proficiência, universo municipal ampliado",(Intercept),53.95680748586078,19.82282878841099,2.721952959478998,52,0.008809772683096562
+"Modelo C — mudança de proficiência, universo municipal ampliado",proficiencia_media_2025,-0.6867115953467652,0.0736818983623927,-9.319949819551113,52,1.1168543210354581e-12
+"Modelo C — mudança de proficiência, universo municipal ampliado",delta_participacao,-0.07445146274524211,0.0923468842752575,-0.8062152105026665,52,0.4237905856152364
+"Modelo C — mudança de proficiência, universo municipal ampliado",log_matriculas_anos_iniciais,-5.0688304888902955,2.6429877711000036,-1.917841067717337,52,0.06063072376550584
+"Modelo C — mudança de proficiência, universo municipal ampliado",indice_infraestrutura_basica,-0.09483387629524183,0.13986593501638517,-0.6780341209182359,52,0.5007561794959299
+"Modelo C — mudança de proficiência, universo municipal ampliado",pct_matriculas_anos_iniciais_integral,-0.010049495310243212,0.05008644139801132,-0.2006430289264317,52,0.8417604177988185
+"Modelo C — mudança de proficiência, universo municipal ampliado",ano_escolar_fator2,20.192594089603,2.4624326700886665,8.200262421337964,52,6.150790895040863e-11
+"Modelo C — mudança de proficiência, universo municipal ampliado",ano_escolar_fator3,18.274461143684977,2.1590815598951734,8.463997601170856,52,2.3698109231035927e-11
+"Modelo C — mudança de proficiência, universo municipal ampliado",ano_escolar_fator4,21.08603068924241,2.5614796361927548,8.231972798574947,52,5.4829185360469686e-11
+"Modelo C — mudança de proficiência, universo municipal ampliado",ano_escolar_fator5,26.469871288588656,2.5039967263472023,10.571048679924818,52,1.474775898014326e-14

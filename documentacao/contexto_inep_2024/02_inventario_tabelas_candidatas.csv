@@ -1,0 +1,9 @@
+projeto,dataset,tabela,nome_completo,grupo,tabela_encontrada,creation_time,last_modified_time,row_count,size_bytes,erro_inventario
+basedosdados,br_inep_censo_escolar,escola,basedosdados.br_inep_censo_escolar.escola,Censo Escolar,TRUE,2026-01-26T18:32:06Z,2026-01-26T18:32:09Z,4058464,6622774543,
+basedosdados,br_inep_indicadores_educacionais,complexidade_gestao_escola,basedosdados.br_inep_indicadores_educacionais.complexidade_gestao_escola,Gestão,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,regularidade_docente,basedosdados.br_inep_indicadores_educacionais.regularidade_docente,Docentes,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,adequacao_formacao_docente,basedosdados.br_inep_indicadores_educacionais.adequacao_formacao_docente,Docentes,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,esforco_docente,basedosdados.br_inep_indicadores_educacionais.esforco_docente,Docentes,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,distorcao_idade_serie,basedosdados.br_inep_indicadores_educacionais.distorcao_idade_serie,Fluxo,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,media_alunos_turma,basedosdados.br_inep_indicadores_educacionais.media_alunos_turma,Organização escolar,FALSE,,,,,
+basedosdados,br_inep_indicadores_educacionais,nivel_socioeconomico,basedosdados.br_inep_indicadores_educacionais.nivel_socioeconomico,Contexto socioeconômico,FALSE,,,,,

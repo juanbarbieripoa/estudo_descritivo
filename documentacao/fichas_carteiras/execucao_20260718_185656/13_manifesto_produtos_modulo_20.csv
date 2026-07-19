@@ -1,0 +1,6 @@
+produto,arquivo,existe,tamanho_bytes,modificado_em,md5
+base_fichas_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_carteiras.csv,TRUE,21650,2026-07-18 18:57:11.709831,fd127e7937483731df4b863a5efcc51a
+base_fichas_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_carteiras.rds,TRUE,4420,2026-07-18 18:57:11.712198,1a37a81f7762e52cf8e64fedb405eeb1
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/fichas_carteiras/dicionario_base_fichas_carteiras.csv,TRUE,7525,2026-07-18 18:57:11.723522,0640655326ec3c873570e8751504d3d3
+html_compilado,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/fichas_carteiras/execucao_20260718_185656/fichas_carteiras_compiladas.html,TRUE,90662,2026-07-18 18:57:06.826483,96ffaf59da1afac45c3004957c8bb5af
+pdf_compilado,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/fichas_carteiras/execucao_20260718_185656/fichas_carteiras_compiladas.pdf,TRUE,3009158,2026-07-18 18:57:11.253345,189c844fc503d4eb5c3314c19e210354

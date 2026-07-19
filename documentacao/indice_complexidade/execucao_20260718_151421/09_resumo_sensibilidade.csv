@@ -1,0 +1,4 @@
+cenario,descricao,correlacao_spearman_com_principal,diferenca_absoluta_media,diferenca_absoluta_maxima,escolas_com_mudanca_de_faixa,escolas_na_faixa_superior_principal,escolas_na_faixa_superior_cenario,escolas_em_comum_na_faixa_superior
+operacional,Maior ênfase no volume e na estrutura operacional.,0.8870813397129187,5.985271850743666,12.2263468013468,16,14,14,12
+desafio_educacional,Maior ênfase no desafio educacional observado.,0.9392344497607655,4.826193438233881,8.662710437710437,13,14,14,13
+transicao_administrativa,Maior ênfase nos arranjos e transições administrativas.,0.943814080656186,5.145072635697635,8.008164983164981,12,14,14,11

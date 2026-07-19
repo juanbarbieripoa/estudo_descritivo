@@ -1,0 +1,7 @@
+tema,conclusao_tecnica,grau_de_seguranca,limite_de_interpretacao
+Cobertura da análise,O painel comparável contém 54 escolas e 265 observações escola-série.,Alto,A cobertura se refere às observações comparáveis disponíveis em 2025 e 2026.
+Participação,A participação agregada passou de 77.5% para 85.6%.,Alto,Mudanças de participação podem alterar a composição dos estudantes avaliados e devem acompanhar qualquer leitura de desempenho.
+Proficiência,A proficiência média ponderada variou NA pontos entre 2025 e 2026.,Alto para descrição,A diferença temporal não identifica efeito causal do assessoramento.
+Contexto escolar,"Porte, infraestrutura e tempo integral foram analisados como características pré-programa e não como tratamentos.",Alto,As associações condicionais podem refletir composição e fatores não observados.
+Modelos,Os erros-padrão foram agrupados por escola para considerar a repetição das séries dentro das unidades.,Alto,Os modelos são exploratórios; os valores-p não transformam as associações em evidência causal.
+Proficiência inicial,A associação entre proficiência inicial e variação posterior deve ser lida com cautela por construção matemática e regressão à média.,Alto,Não interpretar o coeficiente como efeito de baixo desempenho inicial.

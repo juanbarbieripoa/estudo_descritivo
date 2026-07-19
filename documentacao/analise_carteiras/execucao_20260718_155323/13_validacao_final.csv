@@ -1,0 +1,16 @@
+teste,resultado,valor_observado,criterio,nivel
+Uma linha por escola no índice,TRUE,0,Nenhuma duplicidade,OK
+Uma linha por escola no perfil,TRUE,0,Nenhuma duplicidade,OK
+Conjunto de escolas idêntico entre entradas,TRUE,0,Zero diferenças,OK
+Vinculação administrativa consistente,TRUE,0,Zero conflitos,OK
+Todas as escolas aparecem no detalhe,TRUE,56,Esperado: 56,OK
+Soma das escolas das carteiras,TRUE,56,Esperado: 56,OK
+Soma das matrículas preservada,TRUE,20459,Esperado: 20459,OK
+Carga potencial acumulada preservada,TRUE,2228.4262347583426,Esperado: 2228.42623475834,OK
+Contribuições recompõem a carga total,TRUE,2.842170943040401e-14,Diferença máxima inferior a 1e-8,OK
+Faixas escolares recompõem o total das carteiras,TRUE,0,Zero diferença,OK
+Participações da carga da rede somam 100,TRUE,100,100,OK
+Quatro cenários por carteira,TRUE,4,Quatro,OK
+Totais dos cenários preservados,TRUE,0,Diferença máxima inferior a 1e-8,OK
+Há carteiras nominais para comparação,TRUE,11,Maior que zero,OK
+Índices médios dentro de 0 a 100,TRUE,0,Zero valores fora do intervalo,OK

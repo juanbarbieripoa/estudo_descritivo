@@ -1,0 +1,59 @@
+variavel,classe,descricao
+assessora_gerencial,character,Identificador administrativo da carteira ou categoria de vínculo.
+nome_exibicao,character,Nome formatado da carteira para apresentação.
+tipo_carteira,character,"Natureza da categoria: carteira nominal, agrupamento residual ou sem vinculação."
+carteira_nominal,logical,Indica se a categoria integra o conjunto comparável das 11 carteiras nominais.
+numero_escolas,integer,Número de escolas vinculadas à categoria.
+matriculas_anos_iniciais_total,numeric,Soma das matrículas dos anos iniciais nas escolas da carteira.
+turmas_anos_iniciais_total,numeric,Soma das turmas dos anos iniciais nas escolas da carteira.
+series_comparaveis_total,numeric,Variável series comparaveis total. Consulte o módulo 18 ou 20 para a definição operacional.
+escolas_painel_completo,integer,Variável escolas painel completo. Consulte o módulo 18 ou 20 para a definição operacional.
+escolas_painel_incompleto,integer,Variável escolas painel incompleto. Consulte o módulo 18 ou 20 para a definição operacional.
+taxa_participacao_agregada_2026,numeric,Variável taxa participacao agregada 2026. Consulte o módulo 18 ou 20 para a definição operacional.
+carga_potencial_total,numeric,Soma dos índices descritivos de carga potencial das escolas da carteira.
+indice_carga_potencial_medio,numeric,Média do índice de carga potencial das escolas da carteira.
+indice_carga_potencial_mediano,numeric,Variável indice carga potencial mediano. Consulte o módulo 18 ou 20 para a definição operacional.
+indice_carga_potencial_minimo,numeric,Variável indice carga potencial minimo. Consulte o módulo 18 ou 20 para a definição operacional.
+indice_carga_potencial_maximo,numeric,Variável indice carga potencial maximo. Consulte o módulo 18 ou 20 para a definição operacional.
+dimensao_volume_media,numeric,Variável dimensao volume media. Consulte o módulo 18 ou 20 para a definição operacional.
+dimensao_estrutural_media,numeric,Variável dimensao estrutural media. Consulte o módulo 18 ou 20 para a definição operacional.
+dimensao_educacional_media,numeric,Variável dimensao educacional media. Consulte o módulo 18 ou 20 para a definição operacional.
+dimensao_administrativa_media,numeric,Variável dimensao administrativa media. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_faixa_1,integer,Variável numero escolas faixa 1. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_faixa_2,integer,Variável numero escolas faixa 2. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_faixa_3,integer,Variável numero escolas faixa 3. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_faixa_4,integer,Variável numero escolas faixa 4. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_complexidade_administrativa,integer,Variável numero escolas complexidade administrativa. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_interpretacao_cautelosa,integer,Variável numero escolas interpretacao cautelosa. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_sensibilidade_elevada,integer,Variável numero escolas sensibilidade elevada. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_alerta_composicao,integer,Variável numero escolas alerta composicao. Consulte o módulo 18 ou 20 para a definição operacional.
+numero_escolas_participacao_2026_abaixo_80,integer,Variável numero escolas participacao 2026 abaixo 80. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_maior_escola_carga_total_pct,numeric,Variável participacao maior escola carga total pct. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_duas_maiores_escolas_carga_total_pct,numeric,Variável participacao duas maiores escolas carga total pct. Consulte o módulo 18 ou 20 para a definição operacional.
+nome_escola_maior_indice,character,Variável nome escola maior indice. Consulte o módulo 18 ou 20 para a definição operacional.
+maior_indice_escola,numeric,Variável maior indice escola. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_escolas_rede_pct,numeric,Variável participacao escolas rede pct. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_matriculas_rede_pct,numeric,Variável participacao matriculas rede pct. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_turmas_rede_pct,numeric,Variável participacao turmas rede pct. Consulte o módulo 18 ou 20 para a definição operacional.
+participacao_carga_potencial_rede_pct,numeric,Variável participacao carga potencial rede pct. Consulte o módulo 18 ou 20 para a definição operacional.
+razao_escolas_referencia_nominal,numeric,Variável razao escolas referencia nominal. Consulte o módulo 18 ou 20 para a definição operacional.
+razao_matriculas_referencia_nominal_ficha,numeric,Variável razao matriculas referencia nominal ficha. Consulte o módulo 18 ou 20 para a definição operacional.
+razao_turmas_referencia_nominal_ficha,numeric,Variável razao turmas referencia nominal ficha. Consulte o módulo 18 ou 20 para a definição operacional.
+razao_carga_referencia_nominal_ficha,numeric,Variável razao carga referencia nominal ficha. Consulte o módulo 18 ou 20 para a definição operacional.
+razao_indice_medio_referencia_nominal,numeric,Variável razao indice medio referencia nominal. Consulte o módulo 18 ou 20 para a definição operacional.
+faixa_carga_total_entre_carteiras_nominais,character,Variável faixa carga total entre carteiras nominais. Consulte o módulo 18 ou 20 para a definição operacional.
+faixa_indice_medio_entre_carteiras_nominais,character,Variável faixa indice medio entre carteiras nominais. Consulte o módulo 18 ou 20 para a definição operacional.
+perfil_carga_descritivo,character,Síntese automática do perfil de volume e intensidade da carteira.
+exige_validacao_qualitativa_prioritaria,logical,Flag para carteiras com situações que exigem leitura qualitativa prioritária.
+arquivo_html,character,Caminho da ficha HTML individual da carteira.
+arquivo_grafico_carga,character,Variável arquivo grafico carga. Consulte o módulo 18 ou 20 para a definição operacional.
+arquivo_grafico_dimensoes,character,Variável arquivo grafico dimensoes. Consulte o módulo 18 ou 20 para a definição operacional.
+arquivo_grafico_escolas,character,Variável arquivo grafico escolas. Consulte o módulo 18 ou 20 para a definição operacional.
+arquivo_grafico_cenarios,character,Variável arquivo grafico cenarios. Consulte o módulo 18 ou 20 para a definição operacional.
+status_geracao,character,Resultado da tentativa de geração da ficha individual.
+mensagem_erro,character,Variável mensagem erro. Consulte o módulo 18 ou 20 para a definição operacional.
+html_existe,logical,Variável html existe. Consulte o módulo 18 ou 20 para a definição operacional.
+grafico_carga_existe,logical,Variável grafico carga existe. Consulte o módulo 18 ou 20 para a definição operacional.
+grafico_dimensoes_existe,logical,Variável grafico dimensoes existe. Consulte o módulo 18 ou 20 para a definição operacional.
+grafico_escolas_existe,logical,Variável grafico escolas existe. Consulte o módulo 18 ou 20 para a definição operacional.
+grafico_cenarios_existe,logical,Variável grafico cenarios existe. Consulte o módulo 18 ou 20 para a definição operacional.

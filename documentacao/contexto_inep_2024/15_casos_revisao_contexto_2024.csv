@@ -1,0 +1,57 @@
+id_escola,codigo_inep,nome_canonico,assessora,ano,rede,tipo_situacao_funcionamento,matriculas_anos_iniciais,turmas_anos_iniciais,docentes_anos_iniciais,tipo_vinculo_rede,status_rede_2025
+ESC_056,43189768,EEF ALDEIA LUMIAR,,2024,4,1,109,0,0,filantropica_sob_supervisao_municipal,fora_da_rede_municipal_direta
+ESC_001,43105416,EEF PEQUENA CASA DA CRIANCA,outras,2024,4,1,245,14,11,privada_conveniada_sob_supervisao_municipal,fora_da_rede_municipal_direta
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,2024,3,1,465,21,33,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,2024,3,1,517,22,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_004,43105459,EMEF AMERICA,nathalia,2024,3,1,261,10,18,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,2024,3,1,422,20,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,2024,3,1,255,10,16,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,2024,3,1,542,22,26,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_008,43177581,EMEF CHICO MENDES,eliane,2024,3,1,541,22,29,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,2024,3,1,511,21,35,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,2024,3,1,495,19,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,2024,3,1,581,23,37,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,2024,3,1,677,27,31,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,2024,2,1,54,4,5,rede_municipal_direta_ou_nao_classificada,vinculo_estadual_em_2025_a_confirmar
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,2024,2,1,100,5,7,rede_municipal_direta_ou_nao_classificada,vinculo_estadual_em_2025_a_confirmar
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,2024,3,1,255,13,22,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,2024,3,1,585,24,28,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,2024,3,1,470,20,25,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,2024,3,1,501,19,24,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,2024,3,1,379,16,26,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,2024,3,1,417,20,31,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,2024,3,1,70,4,11,rede_municipal_direta_ou_nao_classificada,existencia_ou_funcionamento_em_2025_a_confirmar
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,2024,3,1,477,21,26,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,2024,3,1,329,15,24,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,2024,3,1,339,15,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,2024,3,1,247,11,21,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,2024,3,1,563,23,35,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,2024,3,1,233,10,20,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_028,43177018,EMEF MIGRANTES,nathalia,2024,3,1,80,5,10,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,2024,3,1,488,19,20,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,2024,3,1,538,21,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,2024,3,1,218,10,31,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,2024,3,1,377,16,24,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,2024,3,1,408,16,22,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,2024,3,1,255,12,19,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_035,43048200,EMEF PORTO NOVO,marian,2024,3,1,237,10,33,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,2024,3,1,358,18,23,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,2024,3,1,239,11,18,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,2024,3,1,224,10,21,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,2024,3,1,471,19,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,2024,3,1,109,5,19,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,2024,3,1,367,14,19,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,2024,3,1,420,16,22,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_043,43293050,EMEF RINCAO,jalize,2024,3,1,270,10,17,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,2024,3,1,494,22,30,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_045,43167535,EMEF SAO PEDRO,marian,2024,3,1,477,22,31,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,2024,3,1,535,21,32,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,2024,3,1,353,15,22,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,2024,3,1,404,18,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,2024,3,1,574,22,25,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,2024,3,1,333,15,20,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,2024,3,1,454,20,29,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,2024,3,1,446,17,25,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,2024,3,1,377,18,27,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,2024,2,1,154,8,17,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta
+ESC_055,43105300,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,outras,2024,4,1,159,8,13,rede_municipal_direta_ou_nao_classificada,rede_municipal_direta

@@ -1,0 +1,9 @@
+assessora_gerencial,nome_exibicao,tipo_carteira,numero_escolas,escolas_painel_incompleto,escolas_indice_cauteloso,escolas_complexidade_administrativa,escolas_sensibilidade_elevada,perfil_carga_descritivo,observacao
+amanda,Amanda,Carteira nominal,5,0,0,0,3,Carga e intensidade próximas das referências nominais,A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+clarissa,Clarissa,Carteira nominal,6,0,0,0,1,"Carga acumulada elevada, predominantemente associada ao volume",A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+jalize,Jalize,Carteira nominal,5,1,1,1,0,"Carga acumulada elevada, combinando volume e intensidade média",A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+julia,Julia,Carteira nominal,5,1,0,2,1,Carga e intensidade próximas das referências nominais,A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+nathalia,Nathalia,Carteira nominal,6,0,0,0,1,"Carga total próxima da referência, com menor intensidade média",A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+priscila,Priscila,Carteira nominal,4,1,1,1,1,"Carga total próxima da referência, com maior intensidade média",A interpretação deve combinar os indicadores quantitativos com informações territoriais e operacionais.
+outras,Outras,Agrupamento residual,2,0,0,2,2,Categoria administrativa não comparável diretamente às carteiras nominais,"Categoria preservada para rastreabilidade, mas não comparável diretamente às carteiras nominais."
+Sem vinculação informada,Sem vinculação informada,Sem vinculação informada,1,1,1,1,1,Categoria administrativa não comparável diretamente às carteiras nominais,"Categoria preservada para rastreabilidade, mas não comparável diretamente às carteiras nominais."

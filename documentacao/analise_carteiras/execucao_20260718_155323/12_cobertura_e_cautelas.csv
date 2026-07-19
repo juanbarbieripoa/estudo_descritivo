@@ -1,0 +1,14 @@
+assessora_gerencial,tipo_carteira,numero_escolas,escolas_com_matriculas_disponiveis,escolas_com_turmas_disponiveis,escolas_painel_completo,escolas_painel_incompleto,numero_escolas_interpretacao_cautelosa,numero_escolas_sensibilidade_elevada,numero_escolas_complexidade_administrativa,numero_escolas_alerta_composicao
+outras,Agrupamento residual,2,2,2,2,0,0,2,2,2
+jalize,Carteira nominal,5,5,5,4,1,1,0,1,3
+clarissa,Carteira nominal,6,6,6,6,0,0,1,0,5
+andreia,Carteira nominal,5,5,5,5,0,0,0,0,5
+julia,Carteira nominal,5,5,5,4,1,0,1,2,5
+amanda,Carteira nominal,5,5,5,5,0,0,3,0,5
+nathalia,Carteira nominal,6,6,6,6,0,0,1,0,6
+eliane,Carteira nominal,5,5,5,5,0,0,0,0,5
+priscila,Carteira nominal,4,4,4,3,1,1,1,1,3
+graziela,Carteira nominal,4,4,4,4,0,0,0,0,4
+ruti,Carteira nominal,4,4,4,4,0,0,0,0,4
+marian,Carteira nominal,4,4,4,4,0,0,0,0,4
+Sem vinculação informada,Sem vinculação informada,1,1,0,0,1,1,1,1,1

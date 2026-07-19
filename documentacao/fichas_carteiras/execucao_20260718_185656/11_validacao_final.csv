@@ -1,0 +1,12 @@
+teste,status,valor_observado,valor_esperado,criticidade
+Categorias únicas na base das fichas,TRUE,13,13,Erro crítico
+Número de categorias preservado,TRUE,13,13,Erro crítico
+Número de escolas preservado,TRUE,56,56,Erro crítico
+Carga potencial total recomposta,TRUE,2228.42623476,2228.42623476,Erro crítico
+Quatro cenários por categoria,TRUE,4,4,Erro crítico
+Uma ficha HTML por categoria,TRUE,13,13,Erro crítico
+Quatro gráficos por categoria,TRUE,13,13,Erro crítico
+HTML compilado criado,TRUE,90662,> 0 bytes,Erro crítico
+Índices das escolas entre 0 e 100,TRUE,22.66 a 58.42,0 a 100,Erro crítico
+Participações de carga das escolas entre 0 e 100,TRUE,11.76 a 100.00,0 a 100,Erro crítico
+Categorias não nominais identificadas explicitamente,TRUE,Agrupamento residual | Carteira nominal | Sem vinculação informada,Carteira nominal | Agrupamento residual | Sem vinculação informada,Erro crítico

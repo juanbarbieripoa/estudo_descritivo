@@ -1,0 +1,11 @@
+quartil_infraestrutura_escola,faixa_porte_contextual_escola,numero_escolas
+Q1 — menor infraestrutura,Até 149 matrículas,3
+Q1 — menor infraestrutura,150 a 299 matrículas,7
+Q1 — menor infraestrutura,300 a 499 matrículas,4
+Q1 — menor infraestrutura,500 matrículas ou mais,1
+Q2,Até 149 matrículas,1
+Q2,300 a 499 matrículas,7
+Q2,500 matrículas ou mais,5
+Q3,150 a 299 matrículas,7
+Q3,300 a 499 matrículas,13
+Q3,500 matrículas ou mais,6

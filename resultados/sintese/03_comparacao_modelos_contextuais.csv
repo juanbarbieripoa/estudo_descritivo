@@ -1,0 +1,19 @@
+especificacao,termo,estimativa,erro_padrao_cluster_escola,estatistica_t_cluster,valor_p_cluster,direcao,classificacao_evidencia
+Variação 2025–2026 — sem caso de revisão técnica,delta_participacao,-0.06476531488729519,0.09386435010459064,-0.6899884228157853,0.49326953134835183,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — todas as escolas,delta_participacao,-0.0670680234008684,0.09204267216898096,-0.7286622804446438,0.46941586075795905,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — universo municipal ampliado,delta_participacao,-0.07445146274524211,0.0923468842752575,-0.8062152105026665,0.4237905856152364,Negativa,Sem associação estatisticamente clara
+Resultado inicial em 2025,indice_infraestrutura_basica,-0.1422471799055024,0.16350276511801465,-0.8699986193067121,0.38822446216427386,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — sem caso de revisão técnica,indice_infraestrutura_basica,-0.12162245625686736,0.13534646226330022,-0.8986009255289256,0.37300747072968254,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — todas as escolas,indice_infraestrutura_basica,-0.12153088068824958,0.13530770121688812,-0.8981815491303387,0.3731511105293981,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — universo municipal ampliado,indice_infraestrutura_basica,-0.09483387629524184,0.13986593501638517,-0.6780341209182359,0.5007561794959299,Negativa,Sem associação estatisticamente clara
+Resultado inicial em 2025,log_matriculas_anos_iniciais,-11.253699961985696,3.0176540467608737,-3.7292876478220993,4.6866452667685223e-4,Negativa,Associação estatisticamente clara
+Variação 2025–2026 — sem caso de revisão técnica,log_matriculas_anos_iniciais,-5.356549907258377,2.6868213898634785,-1.993638255027645,0.05144903319807008,Negativa,Associação sugestiva
+Variação 2025–2026 — todas as escolas,log_matriculas_anos_iniciais,-5.394258688219129,2.668912875568202,-2.021144540760144,0.0483284664362214,Negativa,Associação estatisticamente clara
+Variação 2025–2026 — universo municipal ampliado,log_matriculas_anos_iniciais,-5.0688304888902955,2.6429877711000036,-1.917841067717337,0.06063072376550584,Negativa,Associação sugestiva
+Resultado inicial em 2025,pct_matriculas_anos_iniciais_integral,-0.08269252775033635,0.04512807365388441,-1.8323965783374083,0.07251303730662258,Negativa,Associação sugestiva
+Variação 2025–2026 — sem caso de revisão técnica,pct_matriculas_anos_iniciais_integral,-0.0012985430858921,0.04921908812940295,-0.02638291636931745,0.979052910512378,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — todas as escolas,pct_matriculas_anos_iniciais_integral,-8.031034836184668e-4,0.04869079516003292,-0.01649394882500669,0.9869022648566916,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — universo municipal ampliado,pct_matriculas_anos_iniciais_integral,-0.01004949531024321,0.05008644139801132,-0.2006430289264317,0.8417604177988185,Negativa,Sem associação estatisticamente clara
+Variação 2025–2026 — sem caso de revisão técnica,proficiencia_media_2025,-0.6818038458590714,0.07354605653940473,-9.270433765456511,1.3302067645204593e-12,Negativa,Associação estatisticamente clara
+Variação 2025–2026 — todas as escolas,proficiencia_media_2025,-0.6818212583182747,0.07354997657449101,-9.270176417088724,1.1118146303995462e-12,Negativa,Associação estatisticamente clara
+Variação 2025–2026 — universo municipal ampliado,proficiencia_media_2025,-0.6867115953467652,0.0736818983623927,-9.319949819551113,1.1168543210354581e-12,Negativa,Associação estatisticamente clara

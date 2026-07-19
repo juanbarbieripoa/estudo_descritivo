@@ -1,0 +1,14 @@
+assessora_gerencial,nome_exibicao,tipo_carteira,carteira_nominal,numero_escolas,matriculas_anos_iniciais_total,turmas_anos_iniciais_total,carga_potencial_total,indice_carga_potencial_medio,perfil_carga_descritivo,exige_validacao_qualitativa_prioritaria
+amanda,Amanda,Carteira nominal,TRUE,5,1948,80,192.94002525252526,38.58800505050505,Carga e intensidade próximas das referências nominais,TRUE
+andreia,Andreia,Carteira nominal,TRUE,5,2228,92,214.14856902356902,42.829713804713805,Carga e intensidade próximas das referências nominais,FALSE
+clarissa,Clarissa,Carteira nominal,TRUE,6,2753,117,230.7685185185185,38.46141975308642,"Carga acumulada elevada, predominantemente associada ao volume",TRUE
+eliane,Eliane,Carteira nominal,TRUE,5,1867,80,191.5909090909091,38.31818181818182,Carga e intensidade próximas das referências nominais,FALSE
+graziela,Graziela,Carteira nominal,TRUE,4,1585,67,165.674031986532,41.418507996633,Carga e intensidade próximas das referências nominais,FALSE
+jalize,Jalize,Carteira nominal,TRUE,5,2025,82,233.41650299289188,46.68330059857838,"Carga acumulada elevada, combinando volume e intensidade média",TRUE
+julia,Julia,Carteira nominal,TRUE,5,1540,66,199.34490740740742,39.868981481481484,Carga e intensidade próximas das referências nominais,TRUE
+marian,Marian,Carteira nominal,TRUE,4,1567,69,148.13152356902356,37.03288089225589,Carga acumulada abaixo da referência das carteiras nominais,FALSE
+nathalia,Nathalia,Carteira nominal,TRUE,6,1789,78,192.59806397306397,32.099677328843995,"Carga total próxima da referência, com menor intensidade média",TRUE
+priscila,Priscila,Carteira nominal,TRUE,4,1383,61,180.5602787130565,45.140069678264126,"Carga total próxima da referência, com maior intensidade média",TRUE
+ruti,Ruti,Carteira nominal,TRUE,4,1261,55,154.95854377104376,38.73963594276094,Carga acumulada abaixo da referência das carteiras nominais,FALSE
+outras,Outras,Agrupamento residual,FALSE,2,404,22,77.1925505050505,38.59627525252525,Categoria administrativa não comparável diretamente às carteiras nominais,TRUE
+Sem vinculação informada,Sem vinculação informada,Sem vinculação informada,FALSE,1,109,,47.10180995475113,47.10180995475113,Categoria administrativa não comparável diretamente às carteiras nominais,TRUE

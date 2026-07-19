@@ -1,0 +1,14 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Chave final única,estrutura,erro,0,zero duplicidades em id_escola + ano_escolar + componente,aprovado,A base final deve ter uma linha por escola × série × componente.
+IDs do núcleo presentes na dimensão,integração,erro,0,zero IDs sem dimensão,aprovado,Todo id_escola do núcleo longitudinal deve existir em dim_escola_final.
+Código INEP duplicado,identificação,erro,0,zero códigos válidos associados a mais de uma escola,aprovado,Códigos INEP válidos devem identificar uma única escola.
+Percentuais dentro de 0 a 100,domínio,erro,0,zero valores fora do intervalo,aprovado,"Abrange participação, padrões de desempenho e percentuais contextuais."
+Contagens não negativas,domínio,erro,0,zero contagens negativas,aprovado,"Abrange turmas, previstos, avaliados, matrículas e docentes."
+Soma dos padrões de desempenho,consistência,aviso,0,preferencialmente zero divergências superiores a 1 p.p.,aprovado,Divergências podem decorrer de arredondamento ou ausência parcial.
+Anos escolares esperados,escopo,aviso,0,zero observações fora do 1º ao 5º ano,aprovado,O escopo declarado do estudo compreende o 1º ao 5º ano.
+Componente curricular esperado,escopo,aviso,0,zero observações fora de Língua Portuguesa,aprovado,O painel comparável atual é de Língua Portuguesa.
+Faixa esperada de escolas,cobertura,aviso,56,entre 50 e 60 escolas,aprovado,A referência aproximada informada para esta etapa é de 54 escolas.
+Faixa esperada de linhas escola-série,cobertura,aviso,280,entre 250 e 280 linhas,aprovado,A referência aproximada informada para esta etapa é de 265 linhas.
+Conflitos de atributos entre fontes,rastreabilidade,aviso,0,"revisar conflitos, quando houver",aprovado,"A dimensão final é a fonte principal, mas divergências ficam documentadas."
+Chaves novas em relação à base integrada anterior,rastreabilidade,aviso,0,"revisar inclusões, quando houver",aprovado,O núcleo final parte da base de variação com qualidade.
+Chaves ausentes em relação à base integrada anterior,rastreabilidade,aviso,0,"revisar exclusões, quando houver",aprovado,Nenhuma exclusão silenciosa deve ocorrer.

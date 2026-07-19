@@ -1,0 +1,40 @@
+assessora_gerencial,tipo_carteira,carteira_nominal,cenario,carga_potencial_total_cenario,diferenca_carga_total_para_equilibrado,ordem_equilibrado_nominais,ordem_carga_total_carteiras_nominais,mudanca_ordem_nominais_para_equilibrado,faixa_equilibrado_nominais,faixa_carga_total_cenario_carteiras_nominais,mudou_faixa_carga_total_carteira
+outras,Agrupamento residual,FALSE,operacional,69.1723063973064,-8.020244107744105,,,,,,
+clarissa,Carteira nominal,TRUE,operacional,278.4324915824916,47.66397306397309,2,1,-1,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+jalize,Carteira nominal,TRUE,operacional,252.32495323606435,18.908450243172467,1,2,1,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+andreia,Carteira nominal,TRUE,operacional,249.9644781144781,35.81590909090909,3,3,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+amanda,Carteira nominal,TRUE,operacional,219.08594276094277,26.14591750841751,5,4,-1,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,FALSE
+eliane,Carteira nominal,TRUE,operacional,215.4521043771044,23.86119528619531,7,5,-2,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,TRUE
+nathalia,Carteira nominal,TRUE,operacional,211.7071548821549,19.109090909090924,6,6,0,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+julia,Carteira nominal,TRUE,operacional,205.27247474747475,5.927567340067327,4,7,3,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,TRUE
+priscila,Carteira nominal,TRUE,operacional,190.30563037785262,9.745351664796118,8,8,0,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+graziela,Carteira nominal,TRUE,operacional,188.86717171717174,23.193139730639757,9,9,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+marian,Carteira nominal,TRUE,operacional,169.80193602693603,21.670412457912477,11,10,-1,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+ruti,Carteira nominal,TRUE,operacional,169.036531986532,14.077988215488233,10,11,1,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+Sem vinculação informada,Sem vinculação informada,FALSE,operacional,38.92480460715755,-8.177005347593585,,,,,,
+outras,Agrupamento residual,FALSE,desafio_educacional,77.69772727272728,0.5051767676767724,,,,,,
+jalize,Carteira nominal,TRUE,desafio_educacional,258.53458660680883,25.11808361391695,1,1,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+clarissa,Carteira nominal,TRUE,desafio_educacional,248.78367003367003,18.01515151515153,2,2,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+andreia,Carteira nominal,TRUE,desafio_educacional,234.98400673400673,20.835437710437702,3,3,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+nathalia,Carteira nominal,TRUE,desafio_educacional,226.47281144781147,33.874747474747494,6,4,-2,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,TRUE
+amanda,Carteira nominal,TRUE,desafio_educacional,219.83897306397307,26.898947811447812,5,5,0,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,FALSE
+eliane,Carteira nominal,TRUE,desafio_educacional,215.34301346801348,23.752104377104388,7,6,-1,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+julia,Carteira nominal,TRUE,desafio_educacional,206.11271043771043,6.767803030303014,4,7,3,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,TRUE
+priscila,Carteira nominal,TRUE,desafio_educacional,202.10267489711936,21.542396184062852,8,8,0,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+graziela,Carteira nominal,TRUE,desafio_educacional,187.92828282828285,22.25425084175086,9,9,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+ruti,Carteira nominal,TRUE,desafio_educacional,180.04747474747475,25.088930976430987,10,10,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+marian,Carteira nominal,TRUE,desafio_educacional,169.5095117845118,21.377988215488244,11,11,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+Sem vinculação informada,Sem vinculação informada,FALSE,desafio_educacional,47.196462361168244,0.09465240641711148,,,,,,
+outras,Agrupamento residual,FALSE,transicao_administrativa,80.94095117845117,3.748400673400667,,,,,,
+jalize,Carteira nominal,TRUE,transicao_administrativa,212.51604002992894,-20.900462962962933,1,1,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+clarissa,Carteira nominal,TRUE,transicao_administrativa,197.32849326599327,-33.44002525252523,2,2,0,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,FALSE
+julia,Carteira nominal,TRUE,transicao_administrativa,190.75479797979798,-8.590109427609434,4,3,-1,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 4 — maior carga relativa entre carteiras nominais,TRUE
+andreia,Carteira nominal,TRUE,transicao_administrativa,183.609132996633,-30.539436026936016,3,4,1,Faixa 4 — maior carga relativa entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,TRUE
+nathalia,Carteira nominal,TRUE,transicao_administrativa,169.17011784511786,-23.427946127946115,6,5,-1,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 3 — intermediária superior entre carteiras nominais,TRUE
+priscila,Carteira nominal,TRUE,transicao_administrativa,167.7447904975683,-12.815488215488216,8,6,-2,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+amanda,Carteira nominal,TRUE,transicao_administrativa,167.70736531986532,-25.232659932659942,5,7,2,Faixa 3 — intermediária superior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,TRUE
+eliane,Carteira nominal,TRUE,transicao_administrativa,165.16241582491583,-26.428493265993268,7,8,1,Faixa 2 — intermediária inferior entre carteiras nominais,Faixa 2 — intermediária inferior entre carteiras nominais,FALSE
+graziela,Carteira nominal,TRUE,transicao_administrativa,143.78371212121212,-21.890319865319867,9,9,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+ruti,Carteira nominal,TRUE,transicao_administrativa,135.13493265993264,-19.82361111111112,10,10,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+marian,Carteira nominal,TRUE,transicao_administrativa,129.230765993266,-18.900757575757552,11,11,0,Faixa 1 — menor carga relativa entre carteiras nominais,Faixa 1 — menor carga relativa entre carteiras nominais,FALSE
+Sem vinculação informada,Sem vinculação informada,FALSE,transicao_administrativa,50.69481694775813,3.5930069930069948,,,,,,

@@ -1,0 +1,4 @@
+id_escola,codigo_inep,nome_canonico,assessora_gerencial,cobertura_componentes_volume,cobertura_componentes_estrutural,cobertura_componentes_educacional,cobertura_componentes_administrativa,numero_series_resultado_2026_calculado,numero_series_comparaveis_calculado,qualidade_evidencia_educacional,interpretacao_educacional_cautelosa,interpretacao_indice_cautelosa
+ESC_056,43189768,EEF ALDEIA LUMIAR,Sem vinculação informada,0.75,0.65,0.85,1,1,1,Limitada — uma ou duas séries,TRUE,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,1,1,0.9,1,5,0,Completa — cinco séries,FALSE,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,1,1,0.9,1,5,0,Completa — cinco séries,FALSE,TRUE

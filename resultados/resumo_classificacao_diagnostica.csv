@@ -1,0 +1,36 @@
+ano_escolar,perfil_diagnostico,numero_escolas,percentual_escolas
+1,Redução com ampliação da participação,35,64.81481481481481
+1,Redução com participação estável,10,18.51851851851852
+1,Avanço com ampliação da participação,4,7.407407407407407
+1,Desempenho relativamente estável,2,3.7037037037037037
+1,Avanço com participação estável,1,1.8518518518518519
+1,Avanço com perda de participação,1,1.8518518518518519
+1,Redução de desempenho e participação,1,1.8518518518518519
+2,Redução com ampliação da participação,16,30.18867924528302
+2,Avanço com ampliação da participação,9,16.9811320754717
+2,Redução com participação estável,9,16.9811320754717
+2,Desempenho relativamente estável,8,15.09433962264151
+2,Desempenho estável com maior participação,6,11.320754716981131
+2,Avanço com participação estável,4,7.547169811320755
+2,Redução de desempenho e participação,1,1.8867924528301887
+3,Redução com ampliação da participação,19,35.84905660377358
+3,Avanço com ampliação da participação,14,26.41509433962264
+3,Redução com participação estável,9,16.9811320754717
+3,Desempenho estável com maior participação,4,7.547169811320755
+3,Avanço com perda de participação,3,5.660377358490566
+3,Avanço com participação estável,2,3.7735849056603774
+3,Redução de desempenho e participação,2,3.7735849056603774
+4,Redução com ampliação da participação,21,39.62264150943396
+4,Avanço com ampliação da participação,13,24.528301886792452
+4,Redução com participação estável,10,18.867924528301888
+4,Avanço com participação estável,3,5.660377358490566
+4,Desempenho estável com maior participação,3,5.660377358490566
+4,Desempenho relativamente estável,2,3.7735849056603774
+4,Redução de desempenho e participação,1,1.8867924528301887
+5,Avanço com ampliação da participação,14,26.923076923076923
+5,Redução com ampliação da participação,10,19.23076923076923
+5,Redução com participação estável,8,15.384615384615385
+5,Desempenho estável com maior participação,7,13.461538461538462
+5,Avanço com participação estável,5,9.615384615384615
+5,Desempenho relativamente estável,5,9.615384615384615
+5,Redução de desempenho e participação,3,5.769230769230769

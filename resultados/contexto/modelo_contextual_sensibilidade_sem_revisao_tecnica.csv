@@ -1,0 +1,11 @@
+modelo,termo,estimativa,erro_padrao_cluster_escola,estatistica_t_cluster,graus_liberdade_cluster,valor_p_cluster
+"Modelo D — mudança de proficiência, sem revisão técnica",(Intercept),57.646413531063146,20.04974757952571,2.8751690415259983,52,0.005839160894167969
+"Modelo D — mudança de proficiência, sem revisão técnica",proficiencia_media_2025,-0.6818038458590714,0.07354605653940473,-9.270433765456513,52,1.3302067645204593e-12
+"Modelo D — mudança de proficiência, sem revisão técnica",delta_participacao,-0.06476531488729519,0.09386435010459064,-0.6899884228157853,52,0.49326953134835183
+"Modelo D — mudança de proficiência, sem revisão técnica",log_matriculas_anos_iniciais,-5.356549907258377,2.6868213898634785,-1.993638255027645,52,0.051449033198070086
+"Modelo D — mudança de proficiência, sem revisão técnica",indice_infraestrutura_basica,-0.12162245625686736,0.13534646226330022,-0.8986009255289256,52,0.37300747072968254
+"Modelo D — mudança de proficiência, sem revisão técnica",pct_matriculas_anos_iniciais_integral,-0.0012985430858921036,0.049219088129402955,-0.026382916369317454,52,0.9790529105123779
+"Modelo D — mudança de proficiência, sem revisão técnica",ano_escolar_fator2,20.35855045417515,2.4596315781997897,8.277073133479455,52,4.656572910840481e-11
+"Modelo D — mudança de proficiência, sem revisão técnica",ano_escolar_fator3,18.476873181198886,2.1733160908821865,8.501696213779379,52,2.068672507518594e-11
+"Modelo D — mudança de proficiência, sem revisão técnica",ano_escolar_fator4,21.188822829040742,2.5610826900285155,8.27338488973381,52,4.719172745694917e-11
+"Modelo D — mudança de proficiência, sem revisão técnica",ano_escolar_fator5,26.483917827489627,2.5042767998936646,10.575475454076871,52,1.4528405374981253e-14

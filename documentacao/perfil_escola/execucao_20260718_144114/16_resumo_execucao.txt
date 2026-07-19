@@ -1,0 +1,17 @@
+Execução: 20260718_144114
+Escolas na dimensão de entrada: 56
+Linhas na base escola × série: 280
+Escolas no perfil completo: 56
+Escolas no perfil gerencial: 56
+Colunas no perfil gerencial: 119
+Escolas com cinco séries comparáveis: 52
+Escolas sem cinco séries comparáveis: 4
+Escolas com alerta de composição: 52
+Erros críticos: 0
+
+Observações metodológicas:
+- O perfil é descritivo e observacional.
+- A assessora representa vínculo administrativo, não efeito sobre resultados.
+- Sínteses multissérie devem ser lidas em conjunto com resultados por série.
+- Mudanças de participação e composição condicionam comparações temporais.
+- O módulo não produz ranking nem índice de complexidade.

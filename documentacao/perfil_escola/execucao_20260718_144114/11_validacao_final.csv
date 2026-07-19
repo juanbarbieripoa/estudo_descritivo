@@ -1,0 +1,15 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Unicidade da dimensão de entrada,estrutura,erro,0,zero duplicidades de id_escola,aprovado,A dimensão final deve possuir uma linha por escola.
+Unicidade da base escola × série,estrutura,erro,0,zero duplicidades da chave escola × série × componente,aprovado,A base congelada deve manter chave única.
+Correspondência dos IDs entre entradas,integração,erro,0,zero IDs exclusivos,aprovado,As duas entradas devem representar o mesmo conjunto de escolas.
+Escopo de séries,escopo,erro,0,zero linhas fora do 1º ao 5º ano,aprovado,O módulo atual foi definido para os anos iniciais.
+Escopo de componente,escopo,erro,1,um único componente curricular,aprovado,Misturar componentes tornaria as sínteses multissérie ambíguas.
+Uma linha por escola no perfil completo,estrutura,erro,56,56 linhas,aprovado,O perfil completo deve preservar todas as escolas da dimensão.
+Uma linha por escola no perfil gerencial,estrutura,erro,56,56 IDs únicos,aprovado,O perfil gerencial deve ter exatamente uma linha por escola.
+Divergências nas agregações,consistência,erro,0,zero divergências superiores a 1e-8,aprovado,Totais e participações são recalculados independentemente.
+Percentuais fora de 0 a 100,domínio,erro,0,zero valores fora da faixa,aprovado,"Não inclui deltas, que podem ser negativos."
+Contagens de séries fora de 0 a 5,domínio,erro,0,zero contagens inválidas,aprovado,O painel contém cinco anos escolares.
+Soma dos padrões multissérie,consistência,aviso,0,preferencialmente zero divergências superiores a 1 p.p.,aprovado,Pequenas diferenças podem decorrer de arredondamento nas bases de origem.
+Vínculo gerencial preenchido,administrativo,erro,0,zero escolas sem categoria gerencial,aprovado,Ausências do vínculo original devem estar explicitadas na categoria gerencial.
+Escolas sem painel completo,cobertura,aviso,4,documentar escolas sem cinco séries comparáveis,aprovado,Ausência de painel completo não elimina a escola do perfil estrutural.
+Escolas com alerta de composição,interpretação,aviso,52,documentar mudanças relevantes,aprovado,"Alertas não invalidam resultados, mas condicionam a comparação temporal."

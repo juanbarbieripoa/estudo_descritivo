@@ -1,0 +1,8 @@
+produto,caminho,tamanho_bytes,data_modificacao,md5
+perfil_completo_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_completo.csv,121468,2026-07-18 14:41:15,b822cf3cdbaf661a6943deac44020a83
+perfil_completo_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_completo.rds,28894,2026-07-18 14:41:15,ef90dea2317c55aa497f3e894471550c
+perfil_gerencial_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_gerencial.csv,76164,2026-07-18 14:41:15,ededd2a96d64d4cc00cbab7e47a173ce
+perfil_gerencial_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_gerencial.rds,20362,2026-07-18 14:41:15,55eec136dbe6f9a74f58a85d38d8a9f7
+perfil_serie_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_serie_compacto.csv,167760,2026-07-18 14:41:15,fd034011d0cddd2967090097892b01f4
+perfil_serie_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_serie_compacto.rds,31316,2026-07-18 14:41:15,6faa59eab9e918e6ac57afb2da91d63d
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/perfil_escola/dicionario_perfil_escola_gerencial.csv,29281,2026-07-18 14:41:15,697c6710233000fcb41b4b33fc73e42c

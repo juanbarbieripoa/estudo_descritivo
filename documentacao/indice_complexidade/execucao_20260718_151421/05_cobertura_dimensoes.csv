@@ -1,0 +1,57 @@
+id_escola,codigo_inep,nome_canonico,assessora_gerencial,cobertura_componentes_volume,cobertura_componentes_estrutural,cobertura_componentes_educacional,cobertura_componentes_administrativa,numero_series_resultado_2026_calculado,numero_series_comparaveis_calculado,qualidade_evidencia_educacional,interpretacao_educacional_cautelosa,interpretacao_indice_cautelosa
+ESC_056,43189768,EEF ALDEIA LUMIAR,Sem vinculação informada,0.75,0.65,0.85,1,1,1,Limitada — uma ou duas séries,TRUE,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,1,1,0.9,1,5,0,Completa — cinco séries,FALSE,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_043,43293050,EMEF RINCAO,jalize,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,1,1,1,1,5,4,Completa — cinco séries,FALSE,FALSE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_035,43048200,EMEF PORTO NOVO,marian,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_045,43167535,EMEF SAO PEDRO,marian,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_004,43105459,EMEF AMERICA,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_001,43105416,EEF PEQUENA CASA DA CRIANCA,outras,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_055,43105300,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,outras,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,1,1,0.9,1,5,0,Completa — cinco séries,FALSE,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,1,1,1,1,5,5,Completa — cinco séries,FALSE,FALSE

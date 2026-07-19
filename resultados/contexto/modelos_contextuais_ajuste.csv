@@ -1,0 +1,4 @@
+modelo,numero_observacoes,r_quadrado,r_quadrado_ajustado
+Modelo A — proficiência inicial e contexto,265,0.14339975568938632,0.12006823152528412
+"Modelo B — mudança de proficiência, todas as escolas",265,0.529448972397491,0.5128412890703435
+"Modelo C — mudança de proficiência, universo municipal ampliado",260,0.5331840057898056,0.5163786299982387
