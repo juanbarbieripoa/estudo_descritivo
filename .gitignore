@@ -1,0 +1,7 @@
+# Configurações locais do RStudio
+.Rproj.user/
+
+# Histórico do R
+.Rhistory
+.RData
+.Ruserdata
