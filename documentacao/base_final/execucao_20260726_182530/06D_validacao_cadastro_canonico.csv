@@ -1,0 +1,22 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Tipos do cadastro são válidos,cadastro canônico,erro,TRUE,"identificadores textuais, ano/exposição inteiros, flags lógicas e data Date",aprovado,A leitura usa tipos controlados para impedir coerções silenciosas.
+Domínios do cadastro são válidos,cadastro canônico,erro,0,zero valores ausentes ou fora dos domínios,aprovado,Os domínios são parte do contrato formal do módulo 11C.
+Metadados de homologação de 2026 completos,governança,erro,0,zero registros incompletos,aprovado,"Fonte, data, responsável, regra e assessora da carga devem estar registrados."
+Cadastro possui 112 registros,cadastro canônico,erro,112,exatamente 112 registros escola × período,aprovado,O cadastro deve conter 56 escolas em cada um dos dois períodos.
+Cadastro possui 56 escolas,cadastro canônico,erro,56,exatamente 56 escolas,aprovado,O cadastro deve cobrir integralmente a dimensão escolar.
+Cadastro possui os dois períodos oficiais,cadastro canônico,erro,2025 | 2026,2025 | 2026,aprovado,Novas ondas exigem homologação institucional antes da integração.
+Avaliação canônica esperada,cadastro canônico,erro,1a_avaliacao_formativa,1a_avaliacao_formativa,aprovado,Esta versão integra somente a primeira avaliação formativa.
+Cadastro e dimensão cobrem os mesmos IDs,integração,erro,0,zero IDs divergentes,aprovado,A integração por id_escola não pode perder nem acrescentar escolas.
+Sinalizadores canônicos preenchidos,cadastro canônico,erro,0,zero valores ausentes,aprovado,Os quatro sinalizadores de inclusão não podem conter NA.
+Exposição binária coerente,cadastro canônico,erro,0,zero divergências,aprovado,Exposição binária vale 1 somente quando recebe_assessoramento = SIM.
+Universo avaliativo coerente,cadastro canônico,erro,0,zero divergências,aprovado,Presença avaliativa não implica assessoramento.
+Inclusão no índice de carga coerente,cadastro canônico,erro,0,zero divergências,aprovado,"A carga exige elegibilidade, exposição, carga ativa e homologação."
+Universo avaliativo de 2025,universos oficiais,erro,54,54 escolas,aprovado,A primeira avaliação formativa de 2025 é linha de base.
+Universo avaliativo de 2026,universos oficiais,erro,56,56 escolas,aprovado,Todas as 56 escolas pertencem ao universo avaliativo de 2026.
+Exposição de 2025 igual a zero,regra temporal,erro,0,zero exposições positivas,aprovado,É proibida a reclassificação retrospectiva da linha de base.
+Sem assessora gerencial em 2025,regra temporal,erro,0,zero vínculos gerenciais de exposição em 2025,aprovado,O vínculo administrativo genérico não pode inferir exposição.
+Índice de carga zerado em 2025,regra temporal,erro,0,zero escolas,aprovado,O índice de carga não se aplica à linha de base pré-programa.
+Universo de carga de 2026,universos oficiais,erro,53,53 escolas,aprovado,"Somente escolas elegíveis, assessoradas e homologadas entram na carga."
+Assessoras no universo de carga de 2026,universos oficiais,erro,11,11 assessoras,aprovado,Categorias residuais não integram o universo oficial de carga.
+Três conveniadas fora da carga,universos oficiais,erro,43105300 | 43105416 | 43189768,43105300 | 43105416 | 43189768,aprovado,"Pequena Casa da Criança, Madre Raffo e Aldeia Lumiar permanecem no perfil geral, mas fora da carga."
+Versão da regra de 2026,governança,erro,2026-07-24_v1,2026-07-24_v1,aprovado,A integração usa a homologação institucional 2026-07-24_v1.

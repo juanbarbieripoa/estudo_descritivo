@@ -1,0 +1,20 @@
+Execução: 20260726_182530
+Escolas na dimensão final: 56
+Escolas na base analítica: 56
+Linhas escola × série: 280
+Universo avaliativo 2025: 54
+Universo avaliativo 2026: 56
+Universo de carga 2026: 53
+Assessoras no universo de carga 2026: 11
+Exposições positivas em 2025: 0
+Colunas da base final: 267
+Linhas da amostra principal descritiva: 265
+Escolas com contexto de 2024: 56
+Conflitos de atributos documentados: 0
+Avisos de validação: 0
+Script: 15_consolidar_base_final.R
+MD5 do script: 79d71551981aeeefb91b1f8fbcdc72bc
+Commit Git de referência: 4db7826e49c377541b492789a1a09d81e2beb373
+
+Observação metodológica:
+A base é descritiva e observacional. Resultados não devem ser interpretados como efeito causal do programa ou como medida de qualidade das assessoras.

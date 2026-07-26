@@ -1,0 +1,6 @@
+produto,caminho,tamanho_bytes,data_modificacao,md5
+base_final_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_analitica_final_escola_serie.csv,629573,2026-07-26 18:25:39,8c284e904dcf61c705d17de57ee4c615
+base_final_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_analitica_final_escola_serie.rds,54652,2026-07-26 18:25:39,ae935fe3d6e769d592d88c4c23e84a30
+dim_final_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/dim_escola_final.csv,103886,2026-07-26 18:25:39,4a3874f0287ce16372de4413dfee080c
+dim_final_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/dim_escola_final.rds,15706,2026-07-26 18:25:39,39c8f106912fdbcef99caf0434ef11e2
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/base_final/dicionario_base_analitica_final.csv,66760,2026-07-26 18:25:39,f9f293ee0502146cb4126faf2be5a507
