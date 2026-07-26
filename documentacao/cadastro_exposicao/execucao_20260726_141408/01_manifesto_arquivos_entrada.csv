@@ -1,0 +1,4 @@
+fonte,caminho,encoding_detectado,existe,tamanho_bytes,modificado_em,md5
+cadastro_manual,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_manuais/cadastro_exposicao_assessoramento.csv,UTF-8,TRUE,10539,2026-07-26 12:38:57,603924e103b8dbb2e125ad77f3454e95
+dim_escola,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_intermediarios/dim_escola.csv,UTF-8,TRUE,21921,2026-07-18 11:13:46,607655beeb418da8f7ea82a695546fd8
+painel,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_processados/painel_escola_serie_ano.csv,UTF-8,TRUE,176269,2026-07-17 01:57:20,63de6acd85a590789683fa79e703f30a
