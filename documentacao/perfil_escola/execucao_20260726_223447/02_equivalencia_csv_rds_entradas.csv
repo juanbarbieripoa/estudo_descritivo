@@ -1,0 +1,3 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe_comparacao,aprovado
+dim_escola_final,56,56,218,218,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+base_analitica_final_escola_serie,280,280,267,267,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

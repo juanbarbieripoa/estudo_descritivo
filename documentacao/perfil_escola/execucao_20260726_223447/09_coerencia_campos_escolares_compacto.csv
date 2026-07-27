@@ -1,0 +1,2 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe_comparacao,aprovado
+campos_escolares_compacto_vs_dimensao,56,56,35,35,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
