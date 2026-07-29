@@ -1,0 +1,20 @@
+Execução: 20260728_220908
+Commit-base: 91b2c51fb296f1c00c494cb46288dd210ced62d0
+HEAD: 91b2c51fb296f1c00c494cb46288dd210ced62d0
+Branch: refatoracao_modulo_21
+MD5 do script: 426391be76331dc2884ad43c6bef479c
+Universo inicial: 56 escolas e 280 linhas escola × série.
+Universo do índice: 53 escolas, 265 linhas e 11 assessoras.
+Exclusões: ESC_001, ESC_055 e ESC_056.
+Índice: volume 40%, estrutura 35%, administração 25%.
+Resultados educacionais no índice: NÃO.
+Diagnóstico educacional paralelo: preservado com peso zero para camada gerencial posterior.
+
+Advertências:
+- ferramenta relativa, descritiva e não causal;
+- não é ranking de qualidade ou desempenho de assessoras;
+- não determina redistribuição automática;
+- decisões exigem leitura conjunta das dimensões operacionais;
+- a futura camada pedagógica deverá explicitar que menor
+  proficiência pode demandar esforço adicional de assessoramento;
+- participação, composição e cobertura devem acompanhar essa leitura.
