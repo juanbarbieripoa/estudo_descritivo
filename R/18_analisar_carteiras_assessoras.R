@@ -3,124 +3,123 @@
 # Projeto: estudo_descritivo — UEF-SMED-PMPA
 # ===================================================================
 #
-# OBJETIVO ANALÍTICO
+# OBJETIVO
 #
-# Descrever a distribuição da carga de assessoramento entre as carteiras,
-# combinando três perspectivas complementares:
+# Descrever as 11 carteiras gerenciais de assessoramento de 2026 no
+# universo operacional homologado de 53 escolas, mantendo rigorosamente
+# separadas:
 #
-#   1. carga extensiva: número de escolas, matrículas, turmas e cobertura;
-#   2. carga potencial acumulada: soma dos escores escolares do módulo 17;
-#   3. composição da carteira: complexidade média, dispersão, dimensões,
-#      concentração de casos desafiadores e sensibilidade aos pesos.
+#   1. carga extensiva: escolas, matrículas, turmas e etapas;
+#   2. índice operacional homologado do módulo 17:
+#      - volume: 40%;
+#      - estrutura: 35%;
+#      - complexidade administrativa: 25%;
+#   3. diagnóstico educacional contextual, com peso zero no índice;
+#   4. alertas de participação e composição.
 #
-# O módulo NÃO avalia a qualidade, produtividade ou efetividade das
-# assessoras. O vínculo entre escola e assessora é administrativo, e os
-# resultados escolares não são interpretados como efeito do assessoramento.
+# O módulo NÃO:
 #
-# PRINCÍPIOS METODOLÓGICOS
+# - avalia qualidade, produtividade ou efetividade das assessoras;
+# - atribui resultados educacionais às assessoras;
+# - recalcula o índice operacional;
+# - cria nova normalização, percentil, faixa ou cenário de pesos;
+# - produz ranking de escolas ou assessoras;
+# - trata a soma dos escores como medida total ou definitiva de carga;
+# - inclui ESC_001, ESC_055 ou ESC_056 nas carteiras operacionais.
 #
-# - A quantidade de escolas é apresentada separadamente da complexidade.
-# - A carga potencial acumulada é a soma do índice escolar e, portanto,
-#   combina extensão e composição da carteira.
-# - Médias e medianas descrevem a complexidade típica das escolas, mas não
-#   substituem a carga total acumulada.
-# - As quatro dimensões do índice permanecem visíveis separadamente.
-# - Casos administrativos especiais, evidência educacional limitada e
-#   sensibilidade aos pesos são sinalizados explicitamente.
-# - As faixas do índice são quartis relativos, não categorias absolutas.
-# - Referências comparativas são calculadas somente entre carteiras nominais.
-# - Os agrupamentos "outras" e "Sem vinculação informada" são preservados,
-#   mas não entram nas médias de referência entre carteiras nominais.
-# - Qualquer redistribuição exige validação qualitativa da gestão, das
-#   assessoras e das condições territoriais e operacionais.
+# CONTROLE DE VERSÕES
 #
-# ENTRADAS
+# Na pasta R existiam quatro variantes concorrentes do módulo 18:
 #
-# dados_finais/indice_carga_potencial_escola.rds ou .csv
-# dados_finais/perfil_escola_gerencial.rds ou .csv
+# - 18_analisar_carteiras_assessoras.R
+# - 18_analisar_carteiras_assessoras_corrigido.R
+# - 18_analisar_carteiras_assessoras_corrigido_v2.R
+# - 18_analisar_carteiras_assessoras_corrigido_v3.R
 #
-# PRODUTOS PRINCIPAIS
+# A variante v3 é a última versão histórica conhecida com registro de
+# execução. Este arquivo passa a ser o único caminho canônico executável.
+# As variantes anteriores devem ser preservadas como histórico, sem serem
+# executadas ou promovidas novamente.
 #
-# dados_finais/analise_carteiras_assessoras.csv e .rds
-# dados_finais/carteira_escola_detalhe.csv e .rds
-# dados_finais/analise_carteiras_cenarios.csv e .rds
-# dados_finais/composicao_faixas_carteiras.csv e .rds
-# documentacao/analise_carteiras/dicionario_analise_carteiras.csv
-# documentacao/analise_carteiras/execucao_<data_hora>/...
-# dados_finais/historico/analise_carteiras/execucao_<data_hora>/...
+# EXECUÇÃO CONTROLADA
+#
+# - caminho canônico obrigatório;
+# - branch e HEAD homologados;
+# - seis entradas obrigatórias (três pares CSV/RDS);
+# - conferência dos hashes pelos manifestos homologados dos módulos 16 e 17;
+# - equivalência semântica CSV/RDS;
+# - perfil institucional de 56 escolas;
+# - índice operacional de 53 escolas;
+# - diagnóstico educacional de 265 linhas;
+# - exatamente 11 assessoras gerenciais;
+# - exclusões exatas: ESC_001, ESC_055 e ESC_056;
+# - escrita, releitura, validação, preservação histórica, promoção e
+#   rollback transacionais.
 # ===================================================================
 
 library(here)
 library(tidyverse)
 
 # -------------------------------------------------------------------
-# 1. Identificação da execução e diretórios
+# 1. Contrato da execução e caminhos canônicos
 # -------------------------------------------------------------------
 
-id_execucao <- format(
-  Sys.time(),
-  "%Y%m%d_%H%M%S"
+instante_execucao <- Sys.time()
+id_execucao <- format(instante_execucao, "%Y%m%d_%H%M%S")
+
+branch_esperada <- "refatoracao_modulo_21"
+commit_base_integracao <- paste0(
+  "5b75ba8ff3288afb4b2e956e6f68be26517d5c6f"
 )
 
-pasta_dados_finais <- here(
-  "dados_finais"
+caminho_script <- here(
+  "R",
+  "18_analisar_carteiras_assessoras.R"
 )
 
-pasta_historico <- here(
-  "dados_finais",
-  "historico",
-  "analise_carteiras",
-  paste0("execucao_", id_execucao)
+caminho_relativo_script <- file.path(
+  "R",
+  "18_analisar_carteiras_assessoras.R"
 )
 
-pasta_documentacao <- here(
+caminho_manifesto_modulo_16 <- here(
   "documentacao",
-  "analise_carteiras"
+  "perfil_escola",
+  "execucao_20260726_223447",
+  "19_manifesto_produtos_modulo_16.csv"
 )
 
-pasta_execucao <- here(
+caminho_manifesto_modulo_17 <- here(
   "documentacao",
-  "analise_carteiras",
-  paste0("execucao_", id_execucao)
+  "indice_complexidade",
+  "execucao_20260728_220908",
+  "19_manifesto_produtos_modulo_17.csv"
 )
 
-walk(
-  c(
-    pasta_dados_finais,
-    pasta_historico,
-    pasta_documentacao,
-    pasta_execucao
-  ),
-  ~ dir.create(
-    .x,
-    recursive = TRUE,
-    showWarnings = FALSE
-  )
-)
-
-# -------------------------------------------------------------------
-# 2. Arquivos de entrada e saída
-# -------------------------------------------------------------------
-
-arquivos_entrada_rds <- c(
-  indice_escola = here(
+arquivos_entrada <- c(
+  perfil_gerencial_csv = here(
     "dados_finais",
-    "indice_carga_potencial_escola.rds"
+    "perfil_escola_gerencial.csv"
   ),
-  perfil_escola = here(
+  perfil_gerencial_rds = here(
     "dados_finais",
     "perfil_escola_gerencial.rds"
-  )
-)
-
-arquivos_entrada_csv <- c(
-  indice_escola = here(
+  ),
+  indice_operacional_csv = here(
     "dados_finais",
     "indice_carga_potencial_escola.csv"
   ),
-  perfil_escola = here(
+  indice_operacional_rds = here(
     "dados_finais",
-    "perfil_escola_gerencial.csv"
+    "indice_carga_potencial_escola.rds"
+  ),
+  diagnostico_educacional_csv = here(
+    "dados_finais",
+    "componentes_educacionais_escola_serie.csv"
+  ),
+  diagnostico_educacional_rds = here(
+    "dados_finais",
+    "componentes_educacionais_escola_serie.rds"
   )
 )
 
@@ -141,21 +140,29 @@ arquivos_saida <- c(
     "dados_finais",
     "carteira_escola_detalhe.rds"
   ),
-  cenarios_csv = here(
+  diagnostico_carteiras_csv = here(
     "dados_finais",
-    "analise_carteiras_cenarios.csv"
+    "diagnostico_educacional_carteiras.csv"
   ),
-  cenarios_rds = here(
+  diagnostico_carteiras_rds = here(
     "dados_finais",
-    "analise_carteiras_cenarios.rds"
+    "diagnostico_educacional_carteiras.rds"
   ),
-  composicao_faixas_csv = here(
+  composicao_operacional_csv = here(
     "dados_finais",
-    "composicao_faixas_carteiras.csv"
+    "composicao_operacional_carteiras.csv"
   ),
-  composicao_faixas_rds = here(
+  composicao_operacional_rds = here(
     "dados_finais",
-    "composicao_faixas_carteiras.rds"
+    "composicao_operacional_carteiras.rds"
+  ),
+  universo_institucional_csv = here(
+    "dados_finais",
+    "universo_institucional_carteiras.csv"
+  ),
+  universo_institucional_rds = here(
+    "dados_finais",
+    "universo_institucional_carteiras.rds"
   ),
   dicionario_csv = here(
     "documentacao",
@@ -164,64 +171,433 @@ arquivos_saida <- c(
   )
 )
 
+ids_excluidos_carga <- c(
+  "ESC_001",
+  "ESC_055",
+  "ESC_056"
+)
+
+pares_excluidos_carga <- tribble(
+  ~id_escola, ~codigo_inep,
+  "ESC_001", "43105416",
+  "ESC_055", "43105300",
+  "ESC_056", "43189768"
+)
+
+pasta_documentacao <- here(
+  "documentacao",
+  "analise_carteiras"
+)
+
+pasta_execucao <- file.path(
+  pasta_documentacao,
+  paste0("execucao_", id_execucao)
+)
+
+pasta_historico <- here(
+  "dados_finais",
+  "historico",
+  "analise_carteiras",
+  paste0("pre_refatoracao_execucao_", id_execucao)
+)
+
+pasta_transacao <- here(
+  "dados_finais",
+  "historico",
+  "analise_carteiras",
+  "transacoes",
+  paste0("execucao_", id_execucao)
+)
+
+pasta_candidatos <- file.path(
+  pasta_transacao,
+  "candidatos"
+)
+
+pasta_rollback <- file.path(
+  pasta_transacao,
+  "rollback"
+)
+
+walk(
+  c(
+    pasta_documentacao,
+    pasta_execucao,
+    pasta_historico,
+    pasta_transacao,
+    pasta_candidatos,
+    pasta_rollback
+  ),
+  ~ dir.create(
+    .x,
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
+)
+
 # -------------------------------------------------------------------
-# 3. Funções auxiliares
+# 2. Funções auxiliares gerais
 # -------------------------------------------------------------------
 
-ler_base_preferindo_rds <- function(nome_fonte) {
-  caminho_rds <- arquivos_entrada_rds[[nome_fonte]]
-  caminho_csv <- arquivos_entrada_csv[[nome_fonte]]
-
-  if (file.exists(caminho_rds)) {
-    dados <- readRDS(caminho_rds)
-    origem <- caminho_rds
-  } else if (file.exists(caminho_csv)) {
-    dados <- read_csv(
-      caminho_csv,
-      show_col_types = FALSE,
-      na = c("", "NA")
-    )
-    origem <- caminho_csv
-  } else {
-    stop(
-      "Não foi encontrado o arquivo RDS nem o CSV da fonte `",
-      nome_fonte,
-      "`.\nCaminhos verificados:\n",
-      caminho_rds,
-      "\n",
-      caminho_csv,
-      "\nExecute primeiro os módulos 16 e 17."
-    )
+hash_md5 <- function(caminho) {
+  if (
+    length(caminho) != 1L ||
+      is.na(caminho) ||
+      !file.exists(caminho)
+  ) {
+    return(NA_character_)
   }
 
-  if (!is.data.frame(dados)) {
-    stop(
-      "A fonte `",
-      nome_fonte,
-      "` não foi lida como data frame."
-    )
-  }
-
-  attr(dados, "caminho_origem") <- origem
-  dados
+  unname(
+    tools::md5sum(caminho)
+  )
 }
 
-as_logical_seguro <- function(x) {
-  if (is.logical(x)) {
-    return(x)
+normalizar_caminho <- function(
+    caminho,
+    deve_existir = TRUE
+) {
+  normalizePath(
+    caminho,
+    winslash = "/",
+    mustWork = deve_existir
+  )
+}
+
+executar_git <- function(argumentos) {
+  saida <- tryCatch(
+    suppressWarnings(
+      system2(
+        "git",
+        argumentos,
+        stdout = TRUE,
+        stderr = FALSE
+      )
+    ),
+    error = function(e) character()
+  )
+
+  status <- attr(
+    saida,
+    "status"
+  )
+
+  if (
+    !is.null(status) &&
+      status != 0
+  ) {
+    return(character())
   }
 
+  str_squish(
+    as.character(saida)
+  )
+}
+
+obter_commit_git <- function() {
+  saida <- executar_git(
+    c(
+      "-C",
+      shQuote(here()),
+      "rev-parse",
+      "HEAD"
+    )
+  )
+
+  saida <- saida[
+    str_detect(
+      saida,
+      "^[0-9a-fA-F]{40}$"
+    )
+  ]
+
+  if (length(saida) != 1L) {
+    return(NA_character_)
+  }
+
+  str_to_lower(
+    saida[[1]]
+  )
+}
+
+obter_branch_git <- function() {
+  saida <- executar_git(
+    c(
+      "-C",
+      shQuote(here()),
+      "branch",
+      "--show-current"
+    )
+  )
+
+  if (length(saida) != 1L) {
+    return(NA_character_)
+  }
+
+  saida[[1]]
+}
+
+tipo_canonico <- function(x) {
+  case_when(
+    inherits(x, "Date") ~ "date",
+    inherits(x, "POSIXct") ~ "datetime",
+    is.logical(x) ~ "logical",
+    is.integer(x) ~ "integer",
+    is.double(x) ~ "double",
+    is.character(x) ~ "character",
+    TRUE ~ paste(
+      class(x),
+      collapse = " | "
+    )
+  )
+}
+
+converter_logico_seguro <- function(
+    x,
+    variavel
+) {
   texto <- str_to_lower(
-    str_trim(
+    str_squish(
       as.character(x)
     )
   )
 
-  case_when(
-    is.na(x) ~ NA,
-    texto %in% c("true", "t", "1", "sim", "s", "verdadeiro") ~ TRUE,
-    texto %in% c("false", "f", "0", "não", "nao", "n", "falso") ~ FALSE,
+  resultado <- case_when(
+    is.na(texto) | texto == "" ~ NA,
+    texto %in% c(
+      "true", "t", "1", "sim", "s"
+    ) ~ TRUE,
+    texto %in% c(
+      "false", "f", "0", "nao", "não", "n"
+    ) ~ FALSE,
     TRUE ~ NA
+  )
+
+  invalidos <- !is.na(texto) &
+    texto != "" &
+    is.na(resultado)
+
+  if (any(invalidos)) {
+    stop(
+      "Valores lógicos inválidos em `",
+      variavel,
+      "`."
+    )
+  }
+
+  resultado
+}
+
+converter_por_modelo <- function(
+    x,
+    modelo,
+    variavel
+) {
+  tipo <- tipo_canonico(modelo)
+
+  resultado <- switch(
+    tipo,
+    character = as.character(x),
+    logical = converter_logico_seguro(
+      x,
+      variavel
+    ),
+    integer = suppressWarnings(
+      as.integer(x)
+    ),
+    double = suppressWarnings(
+      as.double(x)
+    ),
+    date = as.Date(x),
+    datetime = as.POSIXct(
+      x,
+      tz = "UTC"
+    ),
+    stop(
+      "Tipo não suportado em `",
+      variavel,
+      "`: ",
+      tipo
+    )
+  )
+
+  if (tipo %in% c("integer", "double")) {
+    preenchido <- !is.na(x) &
+      str_squish(
+        as.character(x)
+      ) != ""
+
+    if (
+      any(
+        preenchido &
+          is.na(resultado)
+      )
+    ) {
+      stop(
+        "Falha de conversão numérica em `",
+        variavel,
+        "`."
+      )
+    }
+  }
+
+  resultado
+}
+
+ler_csv_por_modelo <- function(
+    caminho,
+    modelo
+) {
+  bruto <- read_csv(
+    caminho,
+    col_types = cols(
+      .default = col_character()
+    ),
+    na = c("", "NA"),
+    trim_ws = FALSE,
+    name_repair = "minimal",
+    show_col_types = FALSE,
+    progress = FALSE
+  )
+
+  if (
+    !identical(
+      names(bruto),
+      names(modelo)
+    )
+  ) {
+    stop(
+      "Nomes ou ordem de colunas divergentes em: ",
+      caminho
+    )
+  }
+
+  saida <- bruto
+
+  for (variavel in names(modelo)) {
+    saida[[variavel]] <- converter_por_modelo(
+      bruto[[variavel]],
+      modelo[[variavel]],
+      variavel
+    )
+  }
+
+  as_tibble(saida)
+}
+
+comparar_bases_semanticamente <- function(
+    rds,
+    csv,
+    chaves,
+    fonte
+) {
+  ordenar <- function(x) {
+    as_tibble(x) |>
+      arrange(
+        across(
+          all_of(chaves)
+        )
+      ) |>
+      select(
+        all_of(
+          names(x)
+        )
+      )
+  }
+
+  a <- ordenar(rds)
+  b <- ordenar(csv)
+
+  mesmos_nomes <- identical(
+    names(a),
+    names(b)
+  )
+
+  mesmos_tipos <- mesmos_nomes &&
+    identical(
+      map_chr(
+        a,
+        tipo_canonico
+      ),
+      map_chr(
+        b,
+        tipo_canonico
+      )
+    )
+
+  mesmas_dimensoes <- identical(
+    dim(a),
+    dim(b)
+  )
+
+  comparacao <- if (
+    mesmos_nomes &&
+      mesmos_tipos &&
+      mesmas_dimensoes
+  ) {
+    all.equal(
+      a,
+      b,
+      check.attributes = FALSE,
+      tolerance = 1e-12
+    )
+  } else {
+    "estrutura divergente"
+  }
+
+  mesmos_valores <- isTRUE(
+    comparacao
+  )
+
+  list(
+    dados = a,
+    diagnostico = tibble(
+      fonte = fonte,
+      linhas_rds = nrow(a),
+      linhas_csv = nrow(b),
+      colunas_rds = ncol(a),
+      colunas_csv = ncol(b),
+      mesmos_nomes_e_ordem = mesmos_nomes,
+      mesmos_tipos_canonicos = mesmos_tipos,
+      mesmas_dimensoes = mesmas_dimensoes,
+      mesmos_valores_ordenados = mesmos_valores,
+      detalhe = if (mesmos_valores) {
+        "equivalentes"
+      } else {
+        paste(
+          comparacao,
+          collapse = " | "
+        )
+      },
+      aprovado = mesmos_nomes &&
+        mesmos_tipos &&
+        mesmas_dimensoes &&
+        mesmos_valores
+    )
+  )
+}
+
+normalizar_codigo_inep <- function(x) {
+  x |>
+    as.character() |>
+    str_replace_all(
+      "[^0-9]",
+      ""
+    ) |>
+    na_if("")
+}
+
+as_logical_seguro <- function(
+    x,
+    variavel
+) {
+  if (is.logical(x)) {
+    return(x)
+  }
+
+  converter_logico_seguro(
+    x,
+    variavel
   )
 }
 
@@ -234,16 +610,22 @@ soma_segura <- function(x) {
     return(NA_real_)
   }
 
-  sum(x, na.rm = TRUE)
+  sum(
+    x,
+    na.rm = TRUE
+  )
 }
 
 media_segura <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) == 0) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) == 0L) {
     return(NA_real_)
   }
 
@@ -254,9 +636,12 @@ mediana_segura <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) == 0) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) == 0L) {
     return(NA_real_)
   }
 
@@ -267,9 +652,12 @@ desvio_seguro <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) < 2) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) < 2L) {
     return(NA_real_)
   }
 
@@ -280,9 +668,12 @@ minimo_seguro <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) == 0) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) == 0L) {
     return(NA_real_)
   }
 
@@ -293,50 +684,49 @@ maximo_seguro <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) == 0) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) == 0L) {
     return(NA_real_)
   }
 
   max(x)
 }
 
-amplitude_segura <- function(x) {
-  x <- suppressWarnings(
-    as.numeric(x)
-  )
-  x <- x[!is.na(x)]
-
-  if (length(x) == 0) {
-    return(NA_real_)
-  }
-
-  max(x) - min(x)
-}
-
 intervalo_interquartil_seguro <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x)]
 
-  if (length(x) < 2) {
+  x <- x[
+    !is.na(x)
+  ]
+
+  if (length(x) < 2L) {
     return(NA_real_)
   }
 
   IQR(x)
 }
 
-media_ponderada_segura <- function(x, w) {
+media_ponderada_segura <- function(
+    x,
+    w
+) {
   x <- suppressWarnings(
     as.numeric(x)
   )
+
   w <- suppressWarnings(
     as.numeric(w)
   )
 
-  valido <- !is.na(x) & !is.na(w) & w > 0
+  valido <- !is.na(x) &
+    !is.na(w) &
+    w > 0
 
   if (!any(valido)) {
     return(NA_real_)
@@ -348,132 +738,99 @@ media_ponderada_segura <- function(x, w) {
   )
 }
 
-percentil_relativo <- function(x) {
+participacao_maiores <- function(
+    x,
+    n = 1L
+) {
   x <- suppressWarnings(
     as.numeric(x)
   )
 
-  valido <- !is.na(x)
-  resultado <- rep(
-    NA_real_,
-    length(x)
-  )
-  n_valido <- sum(valido)
+  x <- x[
+    !is.na(x) &
+      x >= 0
+  ]
 
-  if (n_valido == 0) {
-    return(resultado)
+  if (
+    length(x) == 0L ||
+      sum(x) <= 0
+  ) {
+    return(NA_real_)
   }
 
-  if (n_valido == 1) {
-    resultado[valido] <- 50
-    return(resultado)
-  }
-
-  posicao <- rank(
-    x[valido],
-    ties.method = "average"
-  )
-
-  resultado[valido] <- 100 * (
-    posicao - 1
-  ) / (
-    n_valido - 1
-  )
-
-  resultado
-}
-
-percentil_condicional <- function(x, elegivel) {
-  resultado <- rep(
-    NA_real_,
-    length(x)
-  )
-
-  elegivel <- !is.na(elegivel) & elegivel
-
-  if (any(elegivel)) {
-    resultado[elegivel] <- percentil_relativo(
-      x[elegivel]
-    )
-  }
-
-  resultado
-}
-
-atribuir_faixa_carteira <- function(percentil) {
-  case_when(
-    is.na(percentil) ~ NA_character_,
-    percentil <= 25 ~ "Faixa 1 — menor carga relativa entre carteiras nominais",
-    percentil <= 50 ~ "Faixa 2 — intermediária inferior entre carteiras nominais",
-    percentil <= 75 ~ "Faixa 3 — intermediária superior entre carteiras nominais",
-    TRUE ~ "Faixa 4 — maior carga relativa entre carteiras nominais"
-  )
+  100 *
+    sum(
+      head(
+        sort(
+          x,
+          decreasing = TRUE
+        ),
+        n
+      )
+    ) /
+    sum(x)
 }
 
 calcular_hhi <- function(x) {
   x <- suppressWarnings(
     as.numeric(x)
   )
-  x <- x[!is.na(x) & x >= 0]
 
-  if (length(x) == 0 || sum(x) <= 0) {
+  x <- x[
+    !is.na(x) &
+      x >= 0
+  ]
+
+  if (
+    length(x) == 0L ||
+      sum(x) <= 0
+  ) {
     return(NA_real_)
   }
 
-  participacoes <- x / sum(x)
-  sum(participacoes^2) * 10000
+  participacoes <- x /
+    sum(x)
+
+  sum(
+    participacoes^2
+  ) * 10000
 }
 
-participacao_maiores <- function(x, n = 1) {
-  x <- suppressWarnings(
-    as.numeric(x)
-  )
-  x <- x[!is.na(x) & x >= 0]
-
-  if (length(x) == 0 || sum(x) <= 0) {
-    return(NA_real_)
-  }
-
-  100 * sum(
-    head(
-      sort(
-        x,
-        decreasing = TRUE
-      ),
-      n
-    )
-  ) / sum(x)
-}
-
-arquivar_se_existir <- function(caminho) {
-  if (!file.exists(caminho)) {
-    return(invisible(FALSE))
-  }
-
-  destino <- file.path(
-    pasta_historico,
-    basename(caminho)
-  )
-
-  sucesso <- file.copy(
-    caminho,
-    destino,
-    overwrite = FALSE
-  )
-
-  if (!sucesso) {
-    stop(
-      "Não foi possível arquivar a versão anterior de: ",
-      caminho
-    )
-  }
-
-  invisible(TRUE)
-}
-
-estrutura_base <- function(dados, nome_base) {
+registrar_validacao <- function(
+    teste,
+    categoria,
+    severidade,
+    valor_observado,
+    criterio,
+    resultado,
+    observacao = ""
+) {
   tibble(
-    base = nome_base,
+    teste = teste,
+    categoria = categoria,
+    severidade = severidade,
+    valor_observado = as.character(
+      valor_observado
+    ),
+    criterio = criterio,
+    resultado = isTRUE(
+      resultado
+    ),
+    nivel = if_else(
+      isTRUE(resultado),
+      "OK",
+      str_to_upper(severidade)
+    ),
+    observacao = observacao
+  )
+}
+
+estrutura_base <- function(
+    dados,
+    produto
+) {
+  tibble(
+    produto = produto,
     ordem_coluna = seq_along(dados),
     variavel = names(dados),
     classe_r = map_chr(
@@ -485,7 +842,9 @@ estrutura_base <- function(dados, nome_base) {
     ),
     valores_ausentes = map_int(
       dados,
-      ~ sum(is.na(.x))
+      ~ sum(
+        is.na(.x)
+      )
     ),
     valores_distintos = map_int(
       dados,
@@ -497,149 +856,744 @@ estrutura_base <- function(dados, nome_base) {
   )
 }
 
+inventariar_arquivo <- function(
+    nome,
+    caminho
+) {
+  tibble(
+    arquivo = nome,
+    caminho = normalizar_caminho(
+      caminho,
+      deve_existir = FALSE
+    ),
+    existe = file.exists(caminho),
+    tamanho_bytes = if (
+      file.exists(caminho)
+    ) {
+      file.info(caminho)$size
+    } else {
+      NA_real_
+    },
+    md5 = hash_md5(caminho)
+  )
+}
+
+copiar_com_validacao <- function(
+    origem,
+    destino,
+    sobrescrever = FALSE
+) {
+  dir.create(
+    dirname(destino),
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
+
+  sucesso <- file.copy(
+    origem,
+    destino,
+    overwrite = sobrescrever,
+    copy.mode = TRUE,
+    copy.date = TRUE
+  )
+
+  if (!sucesso) {
+    stop(
+      "Falha ao copiar `",
+      origem,
+      "` para `",
+      destino,
+      "`."
+    )
+  }
+
+  if (
+    !identical(
+      hash_md5(origem),
+      hash_md5(destino)
+    )
+  ) {
+    stop(
+      "Hash divergente após copiar `",
+      origem,
+      "`."
+    )
+  }
+
+  invisible(TRUE)
+}
+
 # -------------------------------------------------------------------
-# 4. Leitura das bases
+# 3. Bloqueios de execução, arquivos e manifestos
 # -------------------------------------------------------------------
 
-indice_escola <- ler_base_preferindo_rds(
-  "indice_escola"
+caminho_script_normalizado <- normalizar_caminho(
+  caminho_script,
+  deve_existir = FALSE
 )
 
-perfil_escola <- ler_base_preferindo_rds(
-  "perfil_escola"
-)
-
-caminhos_entrada_usados <- c(
-  indice_escola = attr(
-    indice_escola,
-    "caminho_origem"
+caminho_canonico_esperado <- normalizar_caminho(
+  here(
+    "R",
+    "18_analisar_carteiras_assessoras.R"
   ),
-  perfil_escola = attr(
-    perfil_escola,
-    "caminho_origem"
+  deve_existir = FALSE
+)
+
+if (
+  !identical(
+    caminho_script_normalizado,
+    caminho_canonico_esperado
+  )
+) {
+  stop(
+    "O módulo 18 deve ser executado exclusivamente pelo caminho canônico: ",
+    caminho_canonico_esperado
+  )
+}
+
+if (!file.exists(caminho_script)) {
+  stop(
+    "Script canônico não encontrado: ",
+    caminho_script
+  )
+}
+
+branch_observada <- obter_branch_git()
+commit_observado <- obter_commit_git()
+
+if (
+  is.na(branch_observada) ||
+    branch_observada != branch_esperada
+) {
+  stop(
+    "Branch divergente. Esperada: `",
+    branch_esperada,
+    "`; observada: `",
+    branch_observada,
+    "`."
+  )
+}
+
+if (
+  is.na(commit_observado) ||
+    commit_observado != commit_base_integracao
+) {
+  stop(
+    "HEAD divergente. Esperado: `",
+    commit_base_integracao,
+    "`; observado: `",
+    commit_observado,
+    "`."
+  )
+}
+
+arquivos_obrigatorios <- c(
+  arquivos_entrada,
+  manifesto_modulo_16 = caminho_manifesto_modulo_16,
+  manifesto_modulo_17 = caminho_manifesto_modulo_17
+)
+
+ausentes <- arquivos_obrigatorios[
+  !file.exists(
+    arquivos_obrigatorios
+  )
+]
+
+if (length(ausentes) > 0L) {
+  stop(
+    "Arquivos obrigatórios ausentes:\n",
+    paste(
+      paste0(
+        "- ",
+        names(ausentes),
+        ": ",
+        ausentes
+      ),
+      collapse = "\n"
+    )
+  )
+}
+
+manifesto_16 <- read_csv(
+  caminho_manifesto_modulo_16,
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+manifesto_17 <- read_csv(
+  caminho_manifesto_modulo_17,
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+validar_manifesto <- function(
+    manifesto,
+    nome_manifesto
+) {
+  colunas_minimas <- c(
+    "produto",
+    "caminho",
+    "tamanho_bytes",
+    "md5"
+  )
+
+  ausentes <- setdiff(
+    colunas_minimas,
+    names(manifesto)
+  )
+
+  if (length(ausentes) > 0L) {
+    stop(
+      "Manifesto `",
+      nome_manifesto,
+      "` sem colunas: ",
+      paste(
+        ausentes,
+        collapse = ", "
+      )
+    )
+  }
+
+  manifesto
+}
+
+manifesto_16 <- validar_manifesto(
+  manifesto_16,
+  "módulo 16"
+)
+
+manifesto_17 <- validar_manifesto(
+  manifesto_17,
+  "módulo 17"
+)
+
+localizar_hash_manifesto <- function(
+    manifesto,
+    caminho,
+    nome_fonte
+) {
+  alvo <- basename(caminho)
+
+  candidatos <- manifesto |>
+    filter(
+      basename(caminho) == alvo
+    )
+
+  if (nrow(candidatos) != 1L) {
+    stop(
+      "Não foi possível localizar unicamente `",
+      alvo,
+      "` no manifesto de ",
+      nome_fonte,
+      "."
+    )
+  }
+
+  hash <- candidatos$md5[[1]]
+
+  if (
+    is.na(hash) ||
+      !str_detect(
+        hash,
+        "^[0-9a-fA-F]{32}$"
+      )
+  ) {
+    stop(
+      "Hash inválido para `",
+      alvo,
+      "` no manifesto de ",
+      nome_fonte,
+      "."
+    )
+  }
+
+  str_to_lower(hash)
+}
+
+hashes_esperados <- c(
+  perfil_gerencial_csv = localizar_hash_manifesto(
+    manifesto_16,
+    arquivos_entrada[["perfil_gerencial_csv"]],
+    "módulo 16"
+  ),
+  perfil_gerencial_rds = localizar_hash_manifesto(
+    manifesto_16,
+    arquivos_entrada[["perfil_gerencial_rds"]],
+    "módulo 16"
+  ),
+  indice_operacional_csv = localizar_hash_manifesto(
+    manifesto_17,
+    arquivos_entrada[["indice_operacional_csv"]],
+    "módulo 17"
+  ),
+  indice_operacional_rds = localizar_hash_manifesto(
+    manifesto_17,
+    arquivos_entrada[["indice_operacional_rds"]],
+    "módulo 17"
+  ),
+  diagnostico_educacional_csv = localizar_hash_manifesto(
+    manifesto_17,
+    arquivos_entrada[["diagnostico_educacional_csv"]],
+    "módulo 17"
+  ),
+  diagnostico_educacional_rds = localizar_hash_manifesto(
+    manifesto_17,
+    arquivos_entrada[["diagnostico_educacional_rds"]],
+    "módulo 17"
   )
 )
 
+hashes_observados <- map_chr(
+  arquivos_entrada,
+  hash_md5
+)
+
+if (
+  !identical(
+    names(hashes_esperados),
+    names(hashes_observados)
+  )
+) {
+  stop(
+    "Falha interna na correspondência dos hashes das entradas."
+  )
+}
+
+divergencias_hash <- names(
+  hashes_observados
+)[
+  str_to_lower(
+    hashes_observados
+  ) !=
+    str_to_lower(
+      hashes_esperados
+    )
+]
+
+if (length(divergencias_hash) > 0L) {
+  stop(
+    "Hashes divergentes nas entradas: ",
+    paste(
+      divergencias_hash,
+      collapse = ", "
+    )
+  )
+}
+
 # -------------------------------------------------------------------
-# 5. Validação das estruturas de entrada
+# 4. Leitura simultânea e equivalência CSV–RDS
 # -------------------------------------------------------------------
 
-colunas_obrigatorias_indice <- c(
-  "id_escola",
-  "codigo_inep",
-  "nome_canonico",
-  "assessora_gerencial",
-  "matriculas_anos_iniciais",
-  "turmas_anos_iniciais",
-  "numero_etapas_amplas_ofertadas",
-  "numero_series_resultado_2026",
-  "numero_series_comparaveis",
-  "painel_completo_cinco_series",
-  "qualidade_evidencia_educacional",
-  "interpretacao_educacional_cautelosa",
-  "score_dimensao_volume",
-  "score_dimensao_estrutural",
-  "score_dimensao_educacional",
-  "score_dimensao_administrativa",
-  "indice_carga_potencial_equilibrado",
-  "indice_carga_potencial_operacional",
-  "indice_carga_potencial_desafio_educacional",
-  "indice_carga_potencial_transicao_administrativa",
-  "faixa_indice_equilibrado",
-  "faixa_indice_operacional",
-  "faixa_indice_desafio_educacional",
-  "faixa_indice_transicao_administrativa",
-  "faixa_indice_carga_potencial",
-  "indice_carga_potencial",
-  "percentil_indice_carga_potencial",
-  "contribuicao_volume_indice_principal",
-  "contribuicao_estrutural_indice_principal",
-  "contribuicao_educacional_indice_principal",
-  "contribuicao_administrativa_indice_principal",
-  "interpretacao_indice_cautelosa"
+perfil_rds <- readRDS(
+  arquivos_entrada[["perfil_gerencial_rds"]]
 )
+
+indice_rds <- readRDS(
+  arquivos_entrada[["indice_operacional_rds"]]
+)
+
+diagnostico_rds <- readRDS(
+  arquivos_entrada[["diagnostico_educacional_rds"]]
+)
+
+if (!is.data.frame(perfil_rds)) {
+  stop(
+    "O perfil gerencial RDS não é data frame."
+  )
+}
+
+if (!is.data.frame(indice_rds)) {
+  stop(
+    "O índice operacional RDS não é data frame."
+  )
+}
+
+if (!is.data.frame(diagnostico_rds)) {
+  stop(
+    "O diagnóstico educacional RDS não é data frame."
+  )
+}
+
+perfil_csv <- ler_csv_por_modelo(
+  arquivos_entrada[["perfil_gerencial_csv"]],
+  perfil_rds
+)
+
+indice_csv <- ler_csv_por_modelo(
+  arquivos_entrada[["indice_operacional_csv"]],
+  indice_rds
+)
+
+diagnostico_csv <- ler_csv_por_modelo(
+  arquivos_entrada[["diagnostico_educacional_csv"]],
+  diagnostico_rds
+)
+
+comparacao_perfil <- comparar_bases_semanticamente(
+  perfil_rds,
+  perfil_csv,
+  chaves = c("id_escola"),
+  fonte = "perfil_escola_gerencial"
+)
+
+comparacao_indice <- comparar_bases_semanticamente(
+  indice_rds,
+  indice_csv,
+  chaves = c("id_escola"),
+  fonte = "indice_carga_potencial_escola"
+)
+
+comparacao_diagnostico <- comparar_bases_semanticamente(
+  diagnostico_rds,
+  diagnostico_csv,
+  chaves = c(
+    "id_escola",
+    "ano_escolar",
+    "componente"
+  ),
+  fonte = "componentes_educacionais_escola_serie"
+)
+
+diagnostico_equivalencia_entradas <- bind_rows(
+  comparacao_perfil$diagnostico,
+  comparacao_indice$diagnostico,
+  comparacao_diagnostico$diagnostico
+)
+
+if (
+  any(
+    !diagnostico_equivalencia_entradas$aprovado
+  )
+) {
+  stop(
+    "Há divergência semântica entre CSV e RDS das entradas."
+  )
+}
+
+perfil_escola <- comparacao_perfil$dados
+indice_escola <- comparacao_indice$dados
+diagnostico_educacional <- comparacao_diagnostico$dados
+
+# -------------------------------------------------------------------
+# 5. Contratos mínimos das entradas
+# -------------------------------------------------------------------
 
 colunas_obrigatorias_perfil <- c(
   "id_escola",
   "codigo_inep",
   "nome_canonico",
-  "assessora_gerencial",
-  "tipo_vinculo_rede_final",
-  "status_rede_2025_final",
-  "municipalizada_apos_2024",
-  "possivel_municipalizacao_recente",
-  "escola_nova_recente",
-  "privada_vinculada_final",
-  "requer_revisao_tecnica",
-  "divergencia_censo_cadastro",
-  "previstos_total_2026",
-  "avaliados_total_2026",
-  "taxa_participacao_escola_2026",
-  "proficiencia_multisserie_ponderada_2026",
-  "pct_defasagem_multisserie_ponderado_2026",
-  "pct_intermediario_multisserie_ponderado_2026",
-  "pct_adequado_multisserie_ponderado_2026",
-  "numero_series_alerta_composicao",
-  "possui_alerta_composicao"
+  "assessora_vinculo_administrativo",
+  "assessora_gerencial_2026",
+  "incluir_indice_carga_2026",
+  "elegivel_assessoramento_2026",
+  "recebe_assessoramento_2026",
+  "status_carga_operacional_2026",
+  "grupo_exposicao_2026"
 )
 
-colunas_ausentes_indice <- setdiff(
-  colunas_obrigatorias_indice,
-  names(indice_escola)
+colunas_obrigatorias_indice <- c(
+  "id_escola",
+  "codigo_inep",
+  "nome_canonico",
+  "assessora_vinculo_administrativo",
+  "assessora_gerencial_2026",
+  "incluir_indice_carga_2026",
+  "matriculas_anos_iniciais",
+  "turmas_anos_iniciais",
+  "turmas_anos_iniciais_validas",
+  "numero_etapas_amplas_ofertadas",
+  "score_dimensao_volume",
+  "cobertura_dimensao_volume",
+  "score_dimensao_estrutural",
+  "cobertura_dimensao_estrutural",
+  "score_dimensao_administrativa",
+  "cobertura_dimensao_administrativa",
+  "contribuicao_volume",
+  "contribuicao_estrutural",
+  "contribuicao_administrativa",
+  "indice_carga_potencial_operacional",
+  "cobertura_indice_operacional",
+  "interpretacao_cautelosa",
+  "resultados_educacionais_no_indice",
+  "nota_uso"
 )
 
-colunas_ausentes_perfil <- setdiff(
+colunas_obrigatorias_diagnostico <- c(
+  "id_escola",
+  "codigo_inep",
+  "nome_canonico",
+  "assessora_gerencial_2026",
+  "ano_escolar",
+  "componente",
+  "previstos_2026",
+  "avaliados_2026",
+  "taxa_participacao_2026",
+  "proficiencia_media_2026",
+  "pct_defasagem_2026",
+  "pct_intermediario_2026",
+  "pct_adequado_2026",
+  "painel_resultado_balanceado",
+  "delta_participacao",
+  "delta_proficiencia",
+  "variacao_relativa_previstos",
+  "aumento_participacao_10pp",
+  "queda_participacao_10pp",
+  "mudanca_previstos_20pct",
+  "alerta_composicao_serie",
+  "uso_no_indice_carga_operacional",
+  "peso_no_indice_carga_operacional",
+  "natureza"
+)
+
+verificar_colunas <- function(
+    dados,
+    obrigatorias,
+    fonte
+) {
+  ausentes <- setdiff(
+    obrigatorias,
+    names(dados)
+  )
+
+  if (length(ausentes) > 0L) {
+    stop(
+      "Colunas obrigatórias ausentes em `",
+      fonte,
+      "`: ",
+      paste(
+        ausentes,
+        collapse = ", "
+      )
+    )
+  }
+}
+
+verificar_colunas(
+  perfil_escola,
   colunas_obrigatorias_perfil,
-  names(perfil_escola)
+  "perfil_escola_gerencial"
 )
 
-if (length(colunas_ausentes_indice) > 0) {
+verificar_colunas(
+  indice_escola,
+  colunas_obrigatorias_indice,
+  "indice_carga_potencial_escola"
+)
+
+verificar_colunas(
+  diagnostico_educacional,
+  colunas_obrigatorias_diagnostico,
+  "componentes_educacionais_escola_serie"
+)
+
+perfil_escola <- perfil_escola |>
+  mutate(
+    codigo_inep = normalizar_codigo_inep(
+      codigo_inep
+    ),
+    incluir_indice_carga_2026 =
+      as_logical_seguro(
+        incluir_indice_carga_2026,
+        "incluir_indice_carga_2026"
+      ),
+    elegivel_assessoramento_2026 =
+      as_logical_seguro(
+        elegivel_assessoramento_2026,
+        "elegivel_assessoramento_2026"
+      ),
+    recebe_assessoramento_2026 =
+      as_logical_seguro(
+        recebe_assessoramento_2026,
+        "recebe_assessoramento_2026"
+      )
+  )
+
+indice_escola <- indice_escola |>
+  mutate(
+    codigo_inep = normalizar_codigo_inep(
+      codigo_inep
+    ),
+    incluir_indice_carga_2026 =
+      as_logical_seguro(
+        incluir_indice_carga_2026,
+        "incluir_indice_carga_2026"
+      ),
+    interpretacao_cautelosa =
+      as_logical_seguro(
+        interpretacao_cautelosa,
+        "interpretacao_cautelosa"
+      ),
+    resultados_educacionais_no_indice =
+      as_logical_seguro(
+        resultados_educacionais_no_indice,
+        "resultados_educacionais_no_indice"
+      )
+  )
+
+diagnostico_educacional <- diagnostico_educacional |>
+  mutate(
+    codigo_inep = normalizar_codigo_inep(
+      codigo_inep
+    ),
+    painel_resultado_balanceado =
+      as_logical_seguro(
+        painel_resultado_balanceado,
+        "painel_resultado_balanceado"
+      ),
+    aumento_participacao_10pp =
+      as_logical_seguro(
+        aumento_participacao_10pp,
+        "aumento_participacao_10pp"
+      ),
+    queda_participacao_10pp =
+      as_logical_seguro(
+        queda_participacao_10pp,
+        "queda_participacao_10pp"
+      ),
+    mudanca_previstos_20pct =
+      as_logical_seguro(
+        mudanca_previstos_20pct,
+        "mudanca_previstos_20pct"
+      ),
+    alerta_composicao_serie =
+      as_logical_seguro(
+        alerta_composicao_serie,
+        "alerta_composicao_serie"
+      ),
+    uso_no_indice_carga_operacional =
+      as_logical_seguro(
+        uso_no_indice_carga_operacional,
+        "uso_no_indice_carga_operacional"
+      )
+  )
+
+# -------------------------------------------------------------------
+# 6. Validações preliminares de universo e identificação
+# -------------------------------------------------------------------
+
+if (anyDuplicated(perfil_escola$id_escola) > 0L) {
   stop(
-    "Colunas obrigatórias ausentes no índice escolar: ",
-    paste(
-      colunas_ausentes_indice,
-      collapse = ", "
+    "O perfil gerencial possui duplicidade de escola."
+  )
+}
+
+if (anyDuplicated(indice_escola$id_escola) > 0L) {
+  stop(
+    "O índice operacional possui duplicidade de escola."
+  )
+}
+
+chave_diagnostico <- diagnostico_educacional |>
+  transmute(
+    chave = paste(
+      id_escola,
+      ano_escolar,
+      componente,
+      sep = " | "
+    )
+  ) |>
+  pull(chave)
+
+if (anyDuplicated(chave_diagnostico) > 0L) {
+  stop(
+    "O diagnóstico educacional possui duplicidade de escola × série × componente."
+  )
+}
+
+ids_perfil <- sort(
+  unique(
+    perfil_escola$id_escola
+  )
+)
+
+ids_indice <- sort(
+  unique(
+    indice_escola$id_escola
+  )
+)
+
+ids_diagnostico <- sort(
+  unique(
+    diagnostico_educacional$id_escola
+  )
+)
+
+ids_diferenca <- sort(
+  setdiff(
+    ids_perfil,
+    ids_indice
+  )
+)
+
+if (
+  !all(
+    ids_indice %in% ids_perfil
+  )
+) {
+  stop(
+    "O índice operacional contém escola ausente do perfil institucional."
+  )
+}
+
+if (
+  !setequal(
+    ids_diferenca,
+    ids_excluidos_carga
+  )
+) {
+  stop(
+    "A diferença entre perfil e índice não corresponde às três exclusões homologadas."
+  )
+}
+
+if (
+  !setequal(
+    ids_diagnostico,
+    ids_indice
+  )
+) {
+  stop(
+    "O conjunto de escolas do diagnóstico educacional difere do índice operacional."
+  )
+}
+
+pares_observados_excluidos <- perfil_escola |>
+  filter(
+    id_escola %in% ids_excluidos_carga
+  ) |>
+  transmute(
+    id_escola,
+    codigo_inep
+  ) |>
+  arrange(
+    id_escola
+  )
+
+if (
+  !isTRUE(
+    all.equal(
+      pares_observados_excluidos,
+      pares_excluidos_carga |>
+        arrange(id_escola),
+      check.attributes = FALSE
     )
   )
-}
-
-if (length(colunas_ausentes_perfil) > 0) {
+) {
   stop(
-    "Colunas obrigatórias ausentes no perfil escolar: ",
-    paste(
-      colunas_ausentes_perfil,
-      collapse = ", "
-    )
+    "Os pares ID × código INEP das exclusões não coincidem com o contrato."
   )
 }
 
-if (anyDuplicated(indice_escola$id_escola) > 0) {
-  stop(
-    "O índice escolar possui mais de uma linha por escola."
-  )
-}
-
-if (anyDuplicated(perfil_escola$id_escola) > 0) {
-  stop(
-    "O perfil escolar possui mais de uma linha por escola."
-  )
-}
-
-if (!setequal(
-  indice_escola$id_escola,
-  perfil_escola$id_escola
-)) {
-  stop(
-    "O conjunto de escolas difere entre o índice e o perfil escolar."
-  )
-}
-
-comparacao_atributos_chave <- indice_escola |>
+comparacao_atributos_indice_perfil <- indice_escola |>
   select(
     id_escola,
     codigo_inep_indice = codigo_inep,
     nome_indice = nome_canonico,
-    assessora_indice = assessora_gerencial
+    vinculo_indice =
+      assessora_vinculo_administrativo,
+    assessora_indice =
+      assessora_gerencial_2026
   ) |>
   inner_join(
     perfil_escola |>
@@ -647,1204 +1601,1199 @@ comparacao_atributos_chave <- indice_escola |>
         id_escola,
         codigo_inep_perfil = codigo_inep,
         nome_perfil = nome_canonico,
-        assessora_perfil = assessora_gerencial
+        vinculo_perfil =
+          assessora_vinculo_administrativo,
+        assessora_perfil =
+          assessora_gerencial_2026
       ),
     by = "id_escola"
   ) |>
   mutate(
-    conflito_codigo_inep =
-      as.character(codigo_inep_indice) != as.character(codigo_inep_perfil),
-    conflito_nome = nome_indice != nome_perfil,
-    conflito_assessora = assessora_indice != assessora_perfil
-  )
-
-if (any(
-  comparacao_atributos_chave$conflito_codigo_inep |
-    comparacao_atributos_chave$conflito_nome |
-    comparacao_atributos_chave$conflito_assessora,
-  na.rm = TRUE
-)) {
-  stop(
-    "Há divergências de identificação ou vinculação entre as entradas."
-  )
-}
-
-colunas_logicas_indice <- c(
-  "painel_completo_cinco_series",
-  "interpretacao_educacional_cautelosa",
-  "interpretacao_indice_cautelosa"
-)
-
-colunas_logicas_perfil <- c(
-  "municipalizada_apos_2024",
-  "possivel_municipalizacao_recente",
-  "escola_nova_recente",
-  "privada_vinculada_final",
-  "requer_revisao_tecnica",
-  "divergencia_censo_cadastro",
-  "possui_alerta_composicao"
-)
-
-indice_escola <- indice_escola |>
-  mutate(
-    across(
-      all_of(colunas_logicas_indice),
-      as_logical_seguro
+    conflito_codigo = codigo_inep_indice !=
+      codigo_inep_perfil,
+    conflito_nome = nome_indice !=
+      nome_perfil,
+    conflito_vinculo = coalesce(
+      vinculo_indice,
+      "<NA>"
+    ) != coalesce(
+      vinculo_perfil,
+      "<NA>"
+    ),
+    conflito_assessora = coalesce(
+      assessora_indice,
+      "<NA>"
+    ) != coalesce(
+      assessora_perfil,
+      "<NA>"
     )
   )
 
-perfil_escola <- perfil_escola |>
-  mutate(
-    across(
-      all_of(colunas_logicas_perfil),
-      as_logical_seguro
-    )
+if (
+  any(
+    comparacao_atributos_indice_perfil$
+      conflito_codigo |
+      comparacao_atributos_indice_perfil$
+        conflito_nome |
+      comparacao_atributos_indice_perfil$
+        conflito_vinculo |
+      comparacao_atributos_indice_perfil$
+        conflito_assessora
   )
-
-if (any(
-  is.na(indice_escola$assessora_gerencial) |
-    str_trim(indice_escola$assessora_gerencial) == ""
-)) {
+) {
   stop(
-    "Há escolas sem categoria preenchida em `assessora_gerencial`."
+    "Há divergências de identificação ou vínculo entre índice e perfil."
   )
 }
 
-# -------------------------------------------------------------------
-# 6. Parâmetros explícitos da análise
-# -------------------------------------------------------------------
+if (
+  any(
+    is.na(
+      indice_escola$
+        assessora_gerencial_2026
+    ) |
+      str_squish(
+        indice_escola$
+          assessora_gerencial_2026
+      ) == ""
+  )
+) {
+  stop(
+    "Há escola elegível sem `assessora_gerencial_2026`."
+  )
+}
 
-rotulo_faixa_1 <- "Faixa 1 — menor carga potencial relativa"
-rotulo_faixa_2 <- "Faixa 2 — intermediária inferior"
-rotulo_faixa_3 <- "Faixa 3 — intermediária superior"
-rotulo_faixa_4 <- "Faixa 4 — maior carga potencial relativa"
-
-parametros_analise <- tribble(
-  ~parametro, ~valor, ~justificativa,
-  "carteira_nominal", "assessora_gerencial diferente de 'outras' e 'Sem vinculação informada'", "Somente carteiras nominais entram nas médias e percentis de referência entre carteiras comparáveis.",
-  "carga_potencial_acumulada", "soma do índice escolar", "Combina quantidade de escolas e carga potencial relativa de cada unidade.",
-  "complexidade_tipica", "média e mediana do índice escolar", "Descreve a composição típica da carteira sem substituir a carga total.",
-  "caso_maior_carga_relativa", rotulo_faixa_4, "Faixa superior é quartil relativo, não categoria absoluta.",
-  "caso_administrativo_especial", "score_dimensao_administrativa > 0", "Identifica presença de componente administrativo especial no índice.",
-  "sensibilidade_elevada", "mudança de faixa em dois ou três cenários", "Sinaliza dependência relevante da especificação de pesos.",
-  "concentracao_interna", "participação das maiores escolas e HHI", "Mostra se a carga acumulada está concentrada em poucos casos dentro da carteira.",
-  "resultados_educacionais", "sínteses ponderadas de 2026", "São descritivos e não representam efeito ou qualidade da assessora."
+categorias_residuais_proibidas <- c(
+  "outras",
+  "sem vinculação informada",
+  "sem vinculacao informada"
 )
 
-# -------------------------------------------------------------------
-# 7. Base integrada escola × carteira
-# -------------------------------------------------------------------
-
-perfil_complementar <- perfil_escola |>
-  select(
-    id_escola,
-    tipo_vinculo_rede_final,
-    status_rede_2025_final,
-    municipalizada_apos_2024,
-    possivel_municipalizacao_recente,
-    escola_nova_recente,
-    privada_vinculada_final,
-    requer_revisao_tecnica,
-    divergencia_censo_cadastro,
-    previstos_total_2026,
-    avaliados_total_2026,
-    taxa_participacao_escola_2026,
-    proficiencia_multisserie_ponderada_2026,
-    pct_defasagem_multisserie_ponderado_2026,
-    pct_intermediario_multisserie_ponderado_2026,
-    pct_adequado_multisserie_ponderado_2026,
-    numero_series_alerta_composicao,
-    possui_alerta_composicao
-  )
-
-base_escola_carteira <- indice_escola |>
-  left_join(
-    perfil_complementar,
-    by = "id_escola"
-  ) |>
-  mutate(
-    tipo_carteira = case_when(
-      assessora_gerencial == "Sem vinculação informada" ~
-        "Sem vinculação informada",
-      assessora_gerencial == "outras" ~
-        "Agrupamento residual",
-      TRUE ~ "Carteira nominal"
-    ),
-    carteira_nominal = tipo_carteira == "Carteira nominal",
-    turmas_anos_iniciais_validas = if_else(
-      !is.na(matriculas_anos_iniciais) &
-        matriculas_anos_iniciais > 0 &
-        !is.na(turmas_anos_iniciais) &
-        turmas_anos_iniciais <= 0,
-      NA_real_,
-      as.numeric(turmas_anos_iniciais)
-    ),
-    numero_cenarios_com_mudanca_faixa =
-      as.integer(faixa_indice_operacional != faixa_indice_equilibrado) +
-      as.integer(
-        faixa_indice_desafio_educacional != faixa_indice_equilibrado
-      ) +
-      as.integer(
-        faixa_indice_transicao_administrativa != faixa_indice_equilibrado
-      ),
-    sensibilidade_faixa = case_when(
-      numero_cenarios_com_mudanca_faixa == 0 ~
-        "Estável nos cenários",
-      numero_cenarios_com_mudanca_faixa == 1 ~
-        "Sensibilidade moderada",
-      numero_cenarios_com_mudanca_faixa >= 2 ~
-        "Sensibilidade elevada",
-      TRUE ~ NA_character_
-    ),
-    possui_complexidade_administrativa =
-      !is.na(score_dimensao_administrativa) &
-      score_dimensao_administrativa > 0,
-    painel_incompleto = !coalesce(
-      painel_completo_cinco_series,
-      FALSE
-    ),
-    participacao_2026_abaixo_80 =
-      !is.na(taxa_participacao_escola_2026) &
-      taxa_participacao_escola_2026 < 80,
-    caso_para_leitura_detalhada =
-      faixa_indice_carga_potencial == rotulo_faixa_4 |
-      coalesce(interpretacao_indice_cautelosa, FALSE) |
-      possui_complexidade_administrativa |
-      sensibilidade_faixa == "Sensibilidade elevada"
-  )
-
-if (any(is.na(base_escola_carteira$tipo_vinculo_rede_final))) {
-  stop(
-    "O cruzamento com o perfil escolar gerou valores ausentes inesperados."
-  )
-}
-
-# -------------------------------------------------------------------
-# 8. Detalhamento das escolas dentro de cada carteira
-# -------------------------------------------------------------------
-
-carteira_escola_detalhe <- base_escola_carteira |>
-  group_by(
-    assessora_gerencial
-  ) |>
-  arrange(
-    desc(indice_carga_potencial),
-    nome_canonico,
-    .by_group = TRUE
-  ) |>
-  mutate(
-    ordem_interna_carga_potencial = row_number(),
-    participacao_indice_na_carteira_pct = if_else(
-      sum(indice_carga_potencial, na.rm = TRUE) > 0,
-      100 * indice_carga_potencial /
-        sum(indice_carga_potencial, na.rm = TRUE),
-      NA_real_
-    ),
-    participacao_acumulada_indice_carteira_pct = cumsum(
-      coalesce(
-        participacao_indice_na_carteira_pct,
-        0
+if (
+  any(
+    str_to_lower(
+      str_squish(
+        indice_escola$
+          assessora_gerencial_2026
       )
-    ),
-    entre_duas_maiores_cargas_da_carteira =
-      ordem_interna_carga_potencial <= 2
-  ) |>
-  ungroup() |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal,
-    ordem_interna_carga_potencial,
+    ) %in%
+      categorias_residuais_proibidas
+  )
+) {
+  stop(
+    "O universo operacional contém categoria gerencial residual proibida."
+  )
+}
+
+# -------------------------------------------------------------------
+# 7. Produto institucional de 56 escolas
+# -------------------------------------------------------------------
+
+universo_institucional_carteiras <- perfil_escola |>
+  transmute(
     id_escola,
     codigo_inep,
     nome_canonico,
-    matriculas_anos_iniciais,
-    turmas_anos_iniciais,
-    turmas_anos_iniciais_validas,
-    numero_etapas_amplas_ofertadas,
-    numero_series_resultado_2026,
-    numero_series_comparaveis,
-    painel_completo_cinco_series,
-    qualidade_evidencia_educacional,
-    interpretacao_educacional_cautelosa,
-    score_dimensao_volume,
-    score_dimensao_estrutural,
-    score_dimensao_educacional,
-    score_dimensao_administrativa,
-    indice_carga_potencial,
-    percentil_indice_carga_potencial,
-    faixa_indice_carga_potencial,
-    indice_carga_potencial_operacional,
-    faixa_indice_operacional,
-    indice_carga_potencial_desafio_educacional,
-    faixa_indice_desafio_educacional,
-    indice_carga_potencial_transicao_administrativa,
-    faixa_indice_transicao_administrativa,
-    contribuicao_volume_indice_principal,
-    contribuicao_estrutural_indice_principal,
-    contribuicao_educacional_indice_principal,
-    contribuicao_administrativa_indice_principal,
-    numero_cenarios_com_mudanca_faixa,
-    sensibilidade_faixa,
-    possui_complexidade_administrativa,
-    interpretacao_indice_cautelosa,
-    painel_incompleto,
-    possui_alerta_composicao,
-    participacao_2026_abaixo_80,
-    caso_para_leitura_detalhada,
-    entre_duas_maiores_cargas_da_carteira,
-    participacao_indice_na_carteira_pct,
-    participacao_acumulada_indice_carteira_pct,
-    tipo_vinculo_rede_final,
-    status_rede_2025_final,
-    municipalizada_apos_2024,
-    escola_nova_recente
-  ) |>
-  arrange(
-    tipo_carteira,
-    assessora_gerencial,
-    ordem_interna_carga_potencial
-  )
-
-# -------------------------------------------------------------------
-# 9. Composição das faixas do índice por carteira
-# -------------------------------------------------------------------
-
-niveis_faixa_escola <- c(
-  rotulo_faixa_1,
-  rotulo_faixa_2,
-  rotulo_faixa_3,
-  rotulo_faixa_4
-)
-
-composicao_faixas_carteiras <- base_escola_carteira |>
-  mutate(
-    faixa_indice_carga_potencial = factor(
-      faixa_indice_carga_potencial,
-      levels = niveis_faixa_escola
-    )
-  ) |>
-  count(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal,
-    faixa_indice_carga_potencial,
-    .drop = FALSE,
-    name = "numero_escolas"
-  ) |>
-  group_by(
-    assessora_gerencial
-  ) |>
-  mutate(
-    total_escolas_carteira = sum(numero_escolas),
-    percentual_escolas_carteira = if_else(
-      total_escolas_carteira > 0,
-      100 * numero_escolas / total_escolas_carteira,
-      NA_real_
-    )
-  ) |>
-  ungroup() |>
-  mutate(
-    faixa_indice_carga_potencial = as.character(
-      faixa_indice_carga_potencial
+    assessora_vinculo_administrativo,
+    assessora_gerencial_2026,
+    elegivel_assessoramento_2026,
+    recebe_assessoramento_2026,
+    incluir_indice_carga_2026,
+    status_carga_operacional_2026,
+    grupo_exposicao_2026,
+    incluida_analise_operacional =
+      id_escola %in% ids_indice,
+    motivo_nao_inclusao = case_when(
+      id_escola == "ESC_001" ~ paste(
+        "Não elegível ao universo operacional homologado;",
+        "fora da carga de assessoramento."
+      ),
+      id_escola == "ESC_055" ~ paste(
+        "Não elegível ao universo operacional homologado;",
+        "fora da carga de assessoramento."
+      ),
+      id_escola == "ESC_056" ~ paste(
+        "Não elegível ao universo operacional homologado;",
+        "fora da carga de assessoramento."
+      ),
+      TRUE ~ NA_character_
+    ),
+    nota_institucional = case_when(
+      incluida_analise_operacional ~ paste(
+        "Escola incluída no universo operacional de 2026."
+      ),
+      TRUE ~ paste(
+        "Escola preservada no universo institucional de 56 escolas,",
+        "mas excluída das carteiras operacionais."
+      )
     )
   ) |>
   arrange(
-    tipo_carteira,
-    assessora_gerencial,
-    match(
-      faixa_indice_carga_potencial,
-      niveis_faixa_escola
-    )
+    incluida_analise_operacional,
+    id_escola
   )
 
 # -------------------------------------------------------------------
-# 10. Síntese principal por carteira
+# 8. Base operacional escola × carteira
 # -------------------------------------------------------------------
 
-analise_carteiras <- base_escola_carteira |>
-  group_by(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal
-  ) |>
-  summarise(
-    numero_escolas = n(),
-    matriculas_anos_iniciais_total = soma_segura(
-      matriculas_anos_iniciais
+base_escola_carteira <- indice_escola |>
+  mutate(
+    soma_contribuicoes_operacionais =
+      contribuicao_volume +
+      contribuicao_estrutural +
+      contribuicao_administrativa,
+    diferenca_recomposicao_indice = abs(
+      indice_carga_potencial_operacional -
+        soma_contribuicoes_operacionais
     ),
-    escolas_com_matriculas_disponiveis = sum(
-      !is.na(matriculas_anos_iniciais)
-    ),
-    turmas_anos_iniciais_total = soma_segura(
-      turmas_anos_iniciais_validas
-    ),
-    escolas_com_turmas_disponiveis = sum(
-      !is.na(turmas_anos_iniciais_validas)
-    ),
-    etapas_amplas_total = soma_segura(
-      numero_etapas_amplas_ofertadas
-    ),
-    series_com_resultado_2026_total = soma_segura(
-      numero_series_resultado_2026
-    ),
-    series_comparaveis_total = soma_segura(
-      numero_series_comparaveis
-    ),
-    escolas_painel_completo = sum(
+    possui_complexidade_administrativa =
+      !is.na(
+        score_dimensao_administrativa
+      ) &
+      score_dimensao_administrativa > 0,
+    exige_leitura_operacional_cautelosa =
       coalesce(
-        painel_completo_cinco_series,
+        interpretacao_cautelosa,
         FALSE
-      )
-    ),
-    escolas_painel_incompleto = sum(
-      painel_incompleto
-    ),
-    previstos_total_2026_carteira = soma_segura(
-      previstos_total_2026
-    ),
-    avaliados_total_2026_carteira = soma_segura(
-      avaliados_total_2026
-    ),
-    taxa_participacao_agregada_2026 = if_else(
-      !is.na(previstos_total_2026_carteira) &
-        previstos_total_2026_carteira > 0,
-      100 * avaliados_total_2026_carteira /
-        previstos_total_2026_carteira,
-      NA_real_
-    ),
-    proficiencia_multisserie_2026_ponderada =
-      media_ponderada_segura(
-        proficiencia_multisserie_ponderada_2026,
-        avaliados_total_2026
-      ),
-    pct_defasagem_multisserie_2026_ponderado =
-      media_ponderada_segura(
-        pct_defasagem_multisserie_ponderado_2026,
-        avaliados_total_2026
-      ),
-    pct_intermediario_multisserie_2026_ponderado =
-      media_ponderada_segura(
-        pct_intermediario_multisserie_ponderado_2026,
-        avaliados_total_2026
-      ),
-    pct_adequado_multisserie_2026_ponderado =
-      media_ponderada_segura(
-        pct_adequado_multisserie_ponderado_2026,
-        avaliados_total_2026
-      ),
-    carga_potencial_total = soma_segura(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_medio = media_segura(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_mediano = mediana_segura(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_desvio = desvio_seguro(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_iqr =
-      intervalo_interquartil_seguro(
-        indice_carga_potencial
-      ),
-    indice_carga_potencial_minimo = minimo_seguro(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_maximo = maximo_seguro(
-      indice_carga_potencial
-    ),
-    indice_carga_potencial_amplitude = amplitude_segura(
-      indice_carga_potencial
-    ),
-    coeficiente_variacao_indice = if_else(
-      !is.na(indice_carga_potencial_medio) &
-        indice_carga_potencial_medio != 0 &
-        !is.na(indice_carga_potencial_desvio),
-      indice_carga_potencial_desvio /
-        indice_carga_potencial_medio,
-      NA_real_
-    ),
-    dimensao_volume_media = media_segura(
-      score_dimensao_volume
-    ),
-    dimensao_estrutural_media = media_segura(
-      score_dimensao_estrutural
-    ),
-    dimensao_educacional_media = media_segura(
-      score_dimensao_educacional
-    ),
-    dimensao_administrativa_media = media_segura(
-      score_dimensao_administrativa
-    ),
-    contribuicao_volume_total = soma_segura(
-      contribuicao_volume_indice_principal
-    ),
-    contribuicao_estrutural_total = soma_segura(
-      contribuicao_estrutural_indice_principal
-    ),
-    contribuicao_educacional_total = soma_segura(
-      contribuicao_educacional_indice_principal
-    ),
-    contribuicao_administrativa_total = soma_segura(
-      contribuicao_administrativa_indice_principal
-    ),
-    numero_escolas_faixa_1 = sum(
-      faixa_indice_carga_potencial == rotulo_faixa_1,
-      na.rm = TRUE
-    ),
-    numero_escolas_faixa_2 = sum(
-      faixa_indice_carga_potencial == rotulo_faixa_2,
-      na.rm = TRUE
-    ),
-    numero_escolas_faixa_3 = sum(
-      faixa_indice_carga_potencial == rotulo_faixa_3,
-      na.rm = TRUE
-    ),
-    numero_escolas_faixa_4 = sum(
-      faixa_indice_carga_potencial == rotulo_faixa_4,
-      na.rm = TRUE
-    ),
-    percentual_escolas_faixa_4 = 100 *
-      numero_escolas_faixa_4 / numero_escolas,
-    numero_escolas_faixas_3_4 =
-      numero_escolas_faixa_3 + numero_escolas_faixa_4,
-    percentual_escolas_faixas_3_4 = 100 *
-      numero_escolas_faixas_3_4 / numero_escolas,
-    numero_escolas_complexidade_administrativa = sum(
-      possui_complexidade_administrativa,
-      na.rm = TRUE
-    ),
-    numero_escolas_interpretacao_cautelosa = sum(
-      coalesce(
-        interpretacao_indice_cautelosa,
-        FALSE
-      )
-    ),
-    numero_escolas_sensibilidade_elevada = sum(
-      sensibilidade_faixa == "Sensibilidade elevada",
-      na.rm = TRUE
-    ),
-    numero_escolas_alerta_composicao = sum(
-      coalesce(
-        possui_alerta_composicao,
-        FALSE
-      )
-    ),
-    numero_escolas_participacao_2026_abaixo_80 = sum(
-      participacao_2026_abaixo_80,
-      na.rm = TRUE
-    ),
-    numero_escolas_leitura_detalhada = sum(
-      caso_para_leitura_detalhada,
-      na.rm = TRUE
-    ),
-    participacao_maior_escola_carga_total_pct =
-      participacao_maiores(
-        indice_carga_potencial,
-        1
-      ),
-    participacao_duas_maiores_escolas_carga_total_pct =
-      participacao_maiores(
-        indice_carga_potencial,
-        2
-      ),
-    hhi_concentracao_carga_interna = calcular_hhi(
-      indice_carga_potencial
-    ),
-    nome_escola_maior_indice = nome_canonico[
-      which.max(
-        replace_na(
-          indice_carga_potencial,
-          -Inf
-        )
-      )
-    ],
-    maior_indice_escola = maximo_seguro(
-      indice_carga_potencial
-    ),
-    .groups = "drop"
-  ) |>
-  mutate(
-    participacao_volume_contribuicoes_pct = if_else(
-      carga_potencial_total > 0,
-      100 * contribuicao_volume_total /
-        carga_potencial_total,
-      NA_real_
-    ),
-    participacao_estrutural_contribuicoes_pct = if_else(
-      carga_potencial_total > 0,
-      100 * contribuicao_estrutural_total /
-        carga_potencial_total,
-      NA_real_
-    ),
-    participacao_educacional_contribuicoes_pct = if_else(
-      carga_potencial_total > 0,
-      100 * contribuicao_educacional_total /
-        carga_potencial_total,
-      NA_real_
-    ),
-    participacao_administrativa_contribuicoes_pct = if_else(
-      carga_potencial_total > 0,
-      100 * contribuicao_administrativa_total /
-        carga_potencial_total,
-      NA_real_
-    )
-  )
-
-# -------------------------------------------------------------------
-# 11. Participações na rede e referências entre carteiras nominais
-# -------------------------------------------------------------------
-
-totais_rede <- tibble(
-  total_escolas_rede = nrow(base_escola_carteira),
-  total_matriculas_rede = soma_segura(
-    base_escola_carteira$matriculas_anos_iniciais
-  ),
-  total_turmas_rede = soma_segura(
-    base_escola_carteira$turmas_anos_iniciais_validas
-  ),
-  total_carga_potencial_rede = soma_segura(
-    base_escola_carteira$indice_carga_potencial
-  )
-)
-
-referencias_nominais <- analise_carteiras |>
-  filter(carteira_nominal) |>
-  summarise(
-    numero_carteiras_nominais = n(),
-    media_escolas_carteiras_nominais = mean(numero_escolas),
-    media_matriculas_carteiras_nominais = mean(
-      matriculas_anos_iniciais_total,
-      na.rm = TRUE
-    ),
-    media_turmas_carteiras_nominais = mean(
-      turmas_anos_iniciais_total,
-      na.rm = TRUE
-    ),
-    media_carga_potencial_total_carteiras_nominais = mean(
-      carga_potencial_total,
-      na.rm = TRUE
-    ),
-    mediana_carga_potencial_total_carteiras_nominais = median(
-      carga_potencial_total,
-      na.rm = TRUE
-    ),
-    media_indice_medio_carteiras_nominais = mean(
-      indice_carga_potencial_medio,
-      na.rm = TRUE
-    )
-  )
-
-analise_carteiras <- analise_carteiras |>
-  mutate(
-    participacao_escolas_rede_pct = 100 *
-      numero_escolas /
-      totais_rede$total_escolas_rede,
-    participacao_matriculas_rede_pct = if_else(
-      totais_rede$total_matriculas_rede > 0,
-      100 * matriculas_anos_iniciais_total /
-        totais_rede$total_matriculas_rede,
-      NA_real_
-    ),
-    participacao_turmas_rede_pct = if_else(
-      totais_rede$total_turmas_rede > 0,
-      100 * turmas_anos_iniciais_total /
-        totais_rede$total_turmas_rede,
-      NA_real_
-    ),
-    participacao_carga_potencial_rede_pct = if_else(
-      totais_rede$total_carga_potencial_rede > 0,
-      100 * carga_potencial_total /
-        totais_rede$total_carga_potencial_rede,
-      NA_real_
-    ),
-    razao_participacao_carga_sobre_escolas = if_else(
-      participacao_escolas_rede_pct > 0,
-      participacao_carga_potencial_rede_pct /
-        participacao_escolas_rede_pct,
-      NA_real_
-    ),
-    diferenca_escolas_referencia_nominal = if_else(
-      carteira_nominal,
-      numero_escolas -
-        referencias_nominais$media_escolas_carteiras_nominais,
-      NA_real_
-    ),
-    razao_matriculas_referencia_nominal = if_else(
-      carteira_nominal &
-        referencias_nominais$media_matriculas_carteiras_nominais > 0,
-      matriculas_anos_iniciais_total /
-        referencias_nominais$media_matriculas_carteiras_nominais,
-      NA_real_
-    ),
-    razao_turmas_referencia_nominal = if_else(
-      carteira_nominal &
-        referencias_nominais$media_turmas_carteiras_nominais > 0,
-      turmas_anos_iniciais_total /
-        referencias_nominais$media_turmas_carteiras_nominais,
-      NA_real_
-    ),
-    razao_carga_potencial_referencia_nominal = if_else(
-      carteira_nominal &
-        referencias_nominais$media_carga_potencial_total_carteiras_nominais > 0,
-      carga_potencial_total /
-        referencias_nominais$media_carga_potencial_total_carteiras_nominais,
-      NA_real_
-    ),
-    diferenca_carga_potencial_referencia_nominal = if_else(
-      carteira_nominal,
-      carga_potencial_total -
-        referencias_nominais$media_carga_potencial_total_carteiras_nominais,
-      NA_real_
-    ),
-    percentil_carga_total_entre_carteiras_nominais =
-      percentil_condicional(
-        carga_potencial_total,
-        carteira_nominal
-      ),
-    faixa_carga_total_entre_carteiras_nominais =
-      atribuir_faixa_carteira(
-        percentil_carga_total_entre_carteiras_nominais
-      ),
-    percentil_indice_medio_entre_carteiras_nominais =
-      percentil_condicional(
-        indice_carga_potencial_medio,
-        carteira_nominal
-      ),
-    faixa_indice_medio_entre_carteiras_nominais =
-      atribuir_faixa_carteira(
-        percentil_indice_medio_entre_carteiras_nominais
-      )
-  ) |>
-  arrange(
-    tipo_carteira,
-    desc(carga_potencial_total),
-    assessora_gerencial
-  )
-
-# -------------------------------------------------------------------
-# 12. Cenários de pesos agregados por carteira
-# -------------------------------------------------------------------
-
-mapa_cenarios <- tribble(
-  ~cenario, ~descricao_cenario, ~variavel_indice,
-  "equilibrado", "Pesos iguais entre as quatro dimensões; cenário principal provisório.", "indice_carga_potencial_equilibrado",
-  "operacional", "Maior ênfase no volume e na estrutura operacional.", "indice_carga_potencial_operacional",
-  "desafio_educacional", "Maior ênfase no desafio educacional observado.", "indice_carga_potencial_desafio_educacional",
-  "transicao_administrativa", "Maior ênfase nos arranjos e transições administrativas.", "indice_carga_potencial_transicao_administrativa"
-)
-
-analise_carteiras_cenarios <- base_escola_carteira |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal,
-    all_of(mapa_cenarios$variavel_indice)
-  ) |>
-  pivot_longer(
-    cols = all_of(mapa_cenarios$variavel_indice),
-    names_to = "variavel_indice",
-    values_to = "indice_escola_cenario"
-  ) |>
-  left_join(
-    mapa_cenarios,
-    by = "variavel_indice"
+      ) |
+      cobertura_indice_operacional < 1
   ) |>
   group_by(
-    cenario,
-    descricao_cenario,
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal
-  ) |>
-  summarise(
-    numero_escolas = n(),
-    carga_potencial_total_cenario = soma_segura(
-      indice_escola_cenario
-    ),
-    indice_medio_cenario = media_segura(
-      indice_escola_cenario
-    ),
-    indice_mediano_cenario = mediana_segura(
-      indice_escola_cenario
-    ),
-    .groups = "drop"
-  ) |>
-  group_by(
-    cenario
+    assessora_gerencial_2026
   ) |>
   mutate(
-    carga_total_rede_cenario = sum(
-      carga_potencial_total_cenario,
-      na.rm = TRUE
-    ),
-    participacao_carga_rede_cenario_pct = if_else(
-      carga_total_rede_cenario > 0,
-      100 * carga_potencial_total_cenario /
-        carga_total_rede_cenario,
-      NA_real_
-    ),
-    ordem_carga_total_todas_categorias = min_rank(
-      desc(carga_potencial_total_cenario)
-    )
-  ) |>
-  ungroup() |>
-  group_by(
-    cenario
-  ) |>
-  mutate(
-    ordem_carga_total_carteiras_nominais = if_else(
-      carteira_nominal,
-      min_rank(
-        if_else(
-          carteira_nominal,
-          desc(carga_potencial_total_cenario),
-          NA_real_
-        )
+    soma_indice_operacional_carteira =
+      sum(
+        indice_carga_potencial_operacional,
+        na.rm = TRUE
       ),
-      NA_integer_
-    ),
-    percentil_carga_total_cenario_carteiras_nominais =
-      percentil_condicional(
-        carga_potencial_total_cenario,
-        carteira_nominal
-      ),
-    faixa_carga_total_cenario_carteiras_nominais =
-      atribuir_faixa_carteira(
-        percentil_carga_total_cenario_carteiras_nominais
+    contribuicao_escola_soma_indice_carteira_pct =
+      if_else(
+        soma_indice_operacional_carteira > 0,
+        100 *
+          indice_carga_potencial_operacional /
+          soma_indice_operacional_carteira,
+        NA_real_
       )
   ) |>
   ungroup()
 
-referencia_cenario_principal <- analise_carteiras_cenarios |>
-  filter(cenario == "equilibrado") |>
-  select(
-    assessora_gerencial,
-    carga_total_equilibrado = carga_potencial_total_cenario,
-    ordem_equilibrado_nominais =
-      ordem_carga_total_carteiras_nominais,
-    faixa_equilibrado_nominais =
-      faixa_carga_total_cenario_carteiras_nominais
-  )
-
-analise_carteiras_cenarios <- analise_carteiras_cenarios |>
-  left_join(
-    referencia_cenario_principal,
-    by = "assessora_gerencial"
-  ) |>
-  mutate(
-    diferenca_carga_total_para_equilibrado =
-      carga_potencial_total_cenario - carga_total_equilibrado,
-    mudanca_ordem_nominais_para_equilibrado = if_else(
-      carteira_nominal,
-      ordem_carga_total_carteiras_nominais -
-        ordem_equilibrado_nominais,
-      NA_integer_
-    ),
-    mudou_faixa_carga_total_carteira = if_else(
-      carteira_nominal,
-      faixa_carga_total_cenario_carteiras_nominais !=
-        faixa_equilibrado_nominais,
-      NA
-    )
-  ) |>
-  arrange(
-    factor(
-      cenario,
-      levels = mapa_cenarios$cenario
-    ),
-    tipo_carteira,
-    ordem_carga_total_todas_categorias,
-    assessora_gerencial
-  )
-
 # -------------------------------------------------------------------
-# 13. Diagnósticos analíticos
+# 9. Detalhe das escolas nas carteiras — sem ranking
 # -------------------------------------------------------------------
 
-contagem_escolas_por_carteira <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal,
-    numero_escolas,
-    participacao_escolas_rede_pct,
-    matriculas_anos_iniciais_total,
-    turmas_anos_iniciais_total
-  ) |>
-  arrange(
-    tipo_carteira,
-    desc(numero_escolas),
-    assessora_gerencial
-  )
-
-resumo_carga_extensiva <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    numero_escolas,
-    matriculas_anos_iniciais_total,
-    turmas_anos_iniciais_total,
-    etapas_amplas_total,
-    series_com_resultado_2026_total,
-    series_comparaveis_total,
-    previstos_total_2026_carteira,
-    avaliados_total_2026_carteira,
-    taxa_participacao_agregada_2026,
-    participacao_escolas_rede_pct,
-    participacao_matriculas_rede_pct,
-    participacao_turmas_rede_pct,
-    diferenca_escolas_referencia_nominal,
-    razao_matriculas_referencia_nominal,
-    razao_turmas_referencia_nominal
-  )
-
-resumo_carga_potencial <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    numero_escolas,
-    carga_potencial_total,
-    indice_carga_potencial_medio,
-    indice_carga_potencial_mediano,
-    indice_carga_potencial_desvio,
-    indice_carga_potencial_iqr,
-    indice_carga_potencial_minimo,
-    indice_carga_potencial_maximo,
-    indice_carga_potencial_amplitude,
-    coeficiente_variacao_indice,
-    participacao_carga_potencial_rede_pct,
-    razao_participacao_carga_sobre_escolas,
-    razao_carga_potencial_referencia_nominal,
-    diferenca_carga_potencial_referencia_nominal,
-    percentil_carga_total_entre_carteiras_nominais,
-    faixa_carga_total_entre_carteiras_nominais,
-    percentil_indice_medio_entre_carteiras_nominais,
-    faixa_indice_medio_entre_carteiras_nominais
-  )
-
-concentracao_casos_desafiadores <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    numero_escolas,
-    numero_escolas_faixa_4,
-    percentual_escolas_faixa_4,
-    numero_escolas_faixas_3_4,
-    percentual_escolas_faixas_3_4,
-    numero_escolas_complexidade_administrativa,
-    numero_escolas_interpretacao_cautelosa,
-    numero_escolas_sensibilidade_elevada,
-    numero_escolas_alerta_composicao,
-    numero_escolas_participacao_2026_abaixo_80,
-    numero_escolas_leitura_detalhada,
-    nome_escola_maior_indice,
-    maior_indice_escola,
-    participacao_maior_escola_carga_total_pct,
-    participacao_duas_maiores_escolas_carga_total_pct,
-    hhi_concentracao_carga_interna
-  )
-
-dimensoes_por_carteira <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    numero_escolas,
-    dimensao_volume_media,
-    dimensao_estrutural_media,
-    dimensao_educacional_media,
-    dimensao_administrativa_media,
-    contribuicao_volume_total,
-    contribuicao_estrutural_total,
-    contribuicao_educacional_total,
-    contribuicao_administrativa_total,
-    participacao_volume_contribuicoes_pct,
-    participacao_estrutural_contribuicoes_pct,
-    participacao_educacional_contribuicoes_pct,
-    participacao_administrativa_contribuicoes_pct
-  )
-
-sensibilidade_posicao_carteiras <- analise_carteiras_cenarios |>
-  filter(cenario != "equilibrado") |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    carteira_nominal,
-    cenario,
-    carga_potencial_total_cenario,
-    diferenca_carga_total_para_equilibrado,
-    ordem_equilibrado_nominais,
-    ordem_carga_total_carteiras_nominais,
-    mudanca_ordem_nominais_para_equilibrado,
-    faixa_equilibrado_nominais,
-    faixa_carga_total_cenario_carteiras_nominais,
-    mudou_faixa_carga_total_carteira
-  )
-
-escolas_maior_carga_por_carteira <- carteira_escola_detalhe |>
-  filter(
-    ordem_interna_carga_potencial <= 2 |
-      caso_para_leitura_detalhada
-  ) |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    ordem_interna_carga_potencial,
+carteira_escola_detalhe <- base_escola_carteira |>
+  transmute(
+    assessora_gerencial_2026,
+    assessora_vinculo_administrativo,
+    divergencia_vinculo_gerencial =
+      coalesce(
+        assessora_vinculo_administrativo,
+        "<NA>"
+      ) != coalesce(
+        assessora_gerencial_2026,
+        "<NA>"
+      ),
     id_escola,
     codigo_inep,
     nome_canonico,
-    indice_carga_potencial,
-    faixa_indice_carga_potencial,
+    incluir_indice_carga_2026,
+    matriculas_anos_iniciais,
+    turmas_anos_iniciais,
+    turmas_anos_iniciais_validas,
+    numero_etapas_amplas_ofertadas,
     score_dimensao_volume,
+    cobertura_dimensao_volume,
     score_dimensao_estrutural,
-    score_dimensao_educacional,
+    cobertura_dimensao_estrutural,
     score_dimensao_administrativa,
-    sensibilidade_faixa,
-    interpretacao_indice_cautelosa,
-    caso_para_leitura_detalhada,
-    participacao_indice_na_carteira_pct,
-    participacao_acumulada_indice_carteira_pct
-  )
-
-cobertura_e_cautelas <- analise_carteiras |>
-  select(
-    assessora_gerencial,
-    tipo_carteira,
-    numero_escolas,
-    escolas_com_matriculas_disponiveis,
-    escolas_com_turmas_disponiveis,
-    escolas_painel_completo,
-    escolas_painel_incompleto,
-    numero_escolas_interpretacao_cautelosa,
-    numero_escolas_sensibilidade_elevada,
-    numero_escolas_complexidade_administrativa,
-    numero_escolas_alerta_composicao
-  )
-
-# -------------------------------------------------------------------
-# 14. Validações finais
-# -------------------------------------------------------------------
-
-soma_contribuicoes_carteiras <- analise_carteiras |>
-  transmute(
-    assessora_gerencial,
-    carga_potencial_total,
-    soma_contribuicoes =
-      contribuicao_volume_total +
-      contribuicao_estrutural_total +
-      contribuicao_educacional_total +
-      contribuicao_administrativa_total,
-    diferenca = abs(
-      carga_potencial_total - soma_contribuicoes
+    cobertura_dimensao_administrativa,
+    contribuicao_volume,
+    contribuicao_estrutural,
+    contribuicao_administrativa,
+    indice_carga_potencial_operacional,
+    cobertura_indice_operacional,
+    soma_indice_operacional_carteira,
+    contribuicao_escola_soma_indice_carteira_pct,
+    possui_complexidade_administrativa,
+    exige_leitura_operacional_cautelosa,
+    resultados_educacionais_no_indice,
+    nota_uso,
+    nota_carteira = paste(
+      "Contribuição ao escore relativo da carteira;",
+      "não representa horas, qualidade ou carga total real."
     )
+  ) |>
+  arrange(
+    assessora_gerencial_2026,
+    id_escola
   )
 
-soma_faixas_carteiras <- analise_carteiras |>
-  transmute(
-    assessora_gerencial,
-    numero_escolas,
-    soma_faixas =
-      numero_escolas_faixa_1 +
-      numero_escolas_faixa_2 +
-      numero_escolas_faixa_3 +
-      numero_escolas_faixa_4,
-    diferenca = numero_escolas - soma_faixas
-  )
+# -------------------------------------------------------------------
+# 10. Síntese operacional por carteira
+# -------------------------------------------------------------------
 
-validacoes_finais <- tribble(
-  ~teste, ~resultado, ~valor_observado, ~criterio,
-  "Uma linha por escola no índice", anyDuplicated(indice_escola$id_escola) == 0, anyDuplicated(indice_escola$id_escola), "Nenhuma duplicidade",
-  "Uma linha por escola no perfil", anyDuplicated(perfil_escola$id_escola) == 0, anyDuplicated(perfil_escola$id_escola), "Nenhuma duplicidade",
-  "Conjunto de escolas idêntico entre entradas", setequal(indice_escola$id_escola, perfil_escola$id_escola), length(setdiff(indice_escola$id_escola, perfil_escola$id_escola)) + length(setdiff(perfil_escola$id_escola, indice_escola$id_escola)), "Zero diferenças",
-  "Vinculação administrativa consistente", !any(comparacao_atributos_chave$conflito_assessora, na.rm = TRUE), sum(comparacao_atributos_chave$conflito_assessora, na.rm = TRUE), "Zero conflitos",
-  "Todas as escolas aparecem no detalhe", nrow(carteira_escola_detalhe) == nrow(indice_escola), nrow(carteira_escola_detalhe), paste0("Esperado: ", nrow(indice_escola)),
-  "Soma das escolas das carteiras", sum(analise_carteiras$numero_escolas) == nrow(indice_escola), sum(analise_carteiras$numero_escolas), paste0("Esperado: ", nrow(indice_escola)),
-  "Soma das matrículas preservada", isTRUE(all.equal(sum(analise_carteiras$matriculas_anos_iniciais_total, na.rm = TRUE), sum(base_escola_carteira$matriculas_anos_iniciais, na.rm = TRUE), tolerance = 1e-8)), sum(analise_carteiras$matriculas_anos_iniciais_total, na.rm = TRUE), paste0("Esperado: ", sum(base_escola_carteira$matriculas_anos_iniciais, na.rm = TRUE)),
-  "Carga potencial acumulada preservada", isTRUE(all.equal(sum(analise_carteiras$carga_potencial_total, na.rm = TRUE), sum(base_escola_carteira$indice_carga_potencial, na.rm = TRUE), tolerance = 1e-8)), sum(analise_carteiras$carga_potencial_total, na.rm = TRUE), paste0("Esperado: ", sum(base_escola_carteira$indice_carga_potencial, na.rm = TRUE)),
-  "Contribuições recompõem a carga total", all(soma_contribuicoes_carteiras$diferenca < 1e-8, na.rm = TRUE), max(soma_contribuicoes_carteiras$diferenca, na.rm = TRUE), "Diferença máxima inferior a 1e-8",
-  "Faixas escolares recompõem o total das carteiras", all(soma_faixas_carteiras$diferenca == 0), max(abs(soma_faixas_carteiras$diferenca)), "Zero diferença",
-  "Participações da carga da rede somam 100", abs(sum(analise_carteiras$participacao_carga_potencial_rede_pct, na.rm = TRUE) - 100) < 1e-8, sum(analise_carteiras$participacao_carga_potencial_rede_pct, na.rm = TRUE), "100",
-  "Quatro cenários por carteira", all(count(analise_carteiras_cenarios, assessora_gerencial)$n == 4), min(count(analise_carteiras_cenarios, assessora_gerencial)$n), "Quatro",
-  "Totais dos cenários preservados", all(analise_carteiras_cenarios |> group_by(cenario) |> summarise(total = sum(carga_potencial_total_cenario), .groups = "drop") |> left_join(mapa_cenarios, by = "cenario") |> mutate(total_entrada = map_dbl(variavel_indice, ~ sum(base_escola_carteira[[.x]], na.rm = TRUE)), diferenca = abs(total - total_entrada)) |> pull(diferenca) < 1e-8), max(analise_carteiras_cenarios |> group_by(cenario) |> summarise(total = sum(carga_potencial_total_cenario), .groups = "drop") |> left_join(mapa_cenarios, by = "cenario") |> mutate(total_entrada = map_dbl(variavel_indice, ~ sum(base_escola_carteira[[.x]], na.rm = TRUE)), diferenca = abs(total - total_entrada)) |> pull(diferenca)), "Diferença máxima inferior a 1e-8",
-  "Há carteiras nominais para comparação", sum(analise_carteiras$carteira_nominal) > 0, sum(analise_carteiras$carteira_nominal), "Maior que zero",
-  "Índices médios dentro de 0 a 100", all(analise_carteiras$indice_carga_potencial_medio >= 0 & analise_carteiras$indice_carga_potencial_medio <= 100, na.rm = TRUE), sum(analise_carteiras$indice_carga_potencial_medio < 0 | analise_carteiras$indice_carga_potencial_medio > 100, na.rm = TRUE), "Zero valores fora do intervalo"
-) |>
+analise_carteiras <- base_escola_carteira |>
+  group_by(
+    assessora_gerencial_2026
+  ) |>
+  summarise(
+    numero_escolas = n(),
+    matriculas_anos_iniciais_total =
+      soma_segura(
+        matriculas_anos_iniciais
+      ),
+    escolas_com_matriculas_disponiveis =
+      sum(
+        !is.na(
+          matriculas_anos_iniciais
+        )
+      ),
+    turmas_anos_iniciais_total =
+      soma_segura(
+        turmas_anos_iniciais_validas
+      ),
+    escolas_com_turmas_disponiveis =
+      sum(
+        !is.na(
+          turmas_anos_iniciais_validas
+        )
+      ),
+    etapas_amplas_total =
+      soma_segura(
+        numero_etapas_amplas_ofertadas
+      ),
+    soma_indice_operacional_carteira =
+      soma_segura(
+        indice_carga_potencial_operacional
+      ),
+    media_indice_operacional_escolas =
+      media_segura(
+        indice_carga_potencial_operacional
+      ),
+    mediana_indice_operacional_escolas =
+      mediana_segura(
+        indice_carga_potencial_operacional
+      ),
+    desvio_indice_operacional_escolas =
+      desvio_seguro(
+        indice_carga_potencial_operacional
+      ),
+    iqr_indice_operacional_escolas =
+      intervalo_interquartil_seguro(
+        indice_carga_potencial_operacional
+      ),
+    minimo_indice_operacional_escolas =
+      minimo_seguro(
+        indice_carga_potencial_operacional
+      ),
+    maximo_indice_operacional_escolas =
+      maximo_seguro(
+        indice_carga_potencial_operacional
+      ),
+    soma_contribuicao_volume =
+      soma_segura(
+        contribuicao_volume
+      ),
+    soma_contribuicao_estrutural =
+      soma_segura(
+        contribuicao_estrutural
+      ),
+    soma_contribuicao_administrativa =
+      soma_segura(
+        contribuicao_administrativa
+      ),
+    media_score_dimensao_volume =
+      media_segura(
+        score_dimensao_volume
+      ),
+    media_score_dimensao_estrutural =
+      media_segura(
+        score_dimensao_estrutural
+      ),
+    media_score_dimensao_administrativa =
+      media_segura(
+        score_dimensao_administrativa
+      ),
+    escolas_complexidade_administrativa =
+      sum(
+        possui_complexidade_administrativa,
+        na.rm = TRUE
+      ),
+    escolas_leitura_operacional_cautelosa =
+      sum(
+        exige_leitura_operacional_cautelosa,
+        na.rm = TRUE
+      ),
+    escolas_divergencia_vinculo_gerencial =
+      sum(
+        coalesce(
+          assessora_vinculo_administrativo,
+          "<NA>"
+        ) !=
+          coalesce(
+            assessora_gerencial_2026,
+            "<NA>"
+          )
+      ),
+    participacao_maior_contribuicao_escola_pct =
+      participacao_maiores(
+        indice_carga_potencial_operacional,
+        1L
+      ),
+    participacao_duas_maiores_contribuicoes_pct =
+      participacao_maiores(
+        indice_carga_potencial_operacional,
+        2L
+      ),
+    hhi_concentracao_escore_operacional =
+      calcular_hhi(
+        indice_carga_potencial_operacional
+      ),
+    .groups = "drop"
+  ) |>
   mutate(
-    nivel = if_else(
-      resultado,
-      "OK",
-      "ERRO"
+    participacao_volume_soma_escore_pct =
+      if_else(
+        soma_indice_operacional_carteira > 0,
+        100 *
+          soma_contribuicao_volume /
+          soma_indice_operacional_carteira,
+        NA_real_
+      ),
+    participacao_estrutural_soma_escore_pct =
+      if_else(
+        soma_indice_operacional_carteira > 0,
+        100 *
+          soma_contribuicao_estrutural /
+          soma_indice_operacional_carteira,
+        NA_real_
+      ),
+    participacao_administrativa_soma_escore_pct =
+      if_else(
+        soma_indice_operacional_carteira > 0,
+        100 *
+          soma_contribuicao_administrativa /
+          soma_indice_operacional_carteira,
+        NA_real_
+      ),
+    nota_interpretacao = paste(
+      "A soma do índice operacional é um agregado relativo dos escores",
+      "escolares; não mede integralmente horas, deslocamentos, eventos",
+      "emergenciais, vínculo qualitativo ou toda a carga real."
     )
+  ) |>
+  arrange(
+    assessora_gerencial_2026
   )
 
-erros_criticos <- validacoes_finais |>
-  filter(!resultado)
+# -------------------------------------------------------------------
+# 11. Composição operacional em formato longo
+# -------------------------------------------------------------------
+
+composicao_operacional_carteiras <- analise_carteiras |>
+  select(
+    assessora_gerencial_2026,
+    numero_escolas,
+    starts_with(
+      "soma_contribuicao_"
+    ),
+    starts_with(
+      "media_score_dimensao_"
+    ),
+    starts_with(
+      "participacao_"
+    )
+  ) |>
+  select(
+    assessora_gerencial_2026,
+    numero_escolas,
+    soma_contribuicao_volume,
+    soma_contribuicao_estrutural,
+    soma_contribuicao_administrativa,
+    media_score_dimensao_volume,
+    media_score_dimensao_estrutural,
+    media_score_dimensao_administrativa,
+    participacao_volume_soma_escore_pct,
+    participacao_estrutural_soma_escore_pct,
+    participacao_administrativa_soma_escore_pct
+  ) |>
+  pivot_longer(
+    cols = -c(
+      assessora_gerencial_2026,
+      numero_escolas
+    ),
+    names_to = "metrica",
+    values_to = "valor"
+  ) |>
+  mutate(
+    dimensao = case_when(
+      str_detect(
+        metrica,
+        "volume"
+      ) ~ "volume",
+      str_detect(
+        metrica,
+        "estrutural"
+      ) ~ "estrutura",
+      str_detect(
+        metrica,
+        "administrativa"
+      ) ~ "complexidade administrativa",
+      TRUE ~ NA_character_
+    ),
+    tipo_metrica = case_when(
+      str_starts(
+        metrica,
+        "soma_contribuicao"
+      ) ~ "soma da contribuição no índice",
+      str_starts(
+        metrica,
+        "media_score"
+      ) ~ "média do escore dimensional",
+      str_starts(
+        metrica,
+        "participacao"
+      ) ~ "participação na soma do escore",
+      TRUE ~ "outra"
+    ),
+    peso_dimensao_indice = case_when(
+      dimensao == "volume" ~ .40,
+      dimensao == "estrutura" ~ .35,
+      dimensao ==
+        "complexidade administrativa" ~ .25,
+      TRUE ~ NA_real_
+    ),
+    uso_no_indice_operacional = TRUE,
+    nota_metodologica = paste(
+      "Decomposição do índice operacional homologado;",
+      "não inclui resultados educacionais."
+    )
+  ) |>
+  arrange(
+    assessora_gerencial_2026,
+    factor(
+      dimensao,
+      levels = c(
+        "volume",
+        "estrutura",
+        "complexidade administrativa"
+      )
+    ),
+    tipo_metrica
+  )
 
 # -------------------------------------------------------------------
-# 15. Dicionário da análise principal
+# 12. Diagnóstico educacional contextual por carteira
 # -------------------------------------------------------------------
+
+diagnostico_educacional_carteiras <- diagnostico_educacional |>
+  group_by(
+    assessora_gerencial_2026
+  ) |>
+  summarise(
+    numero_escolas_diagnostico =
+      n_distinct(
+        id_escola
+      ),
+    numero_linhas_escola_serie =
+      n(),
+    series_com_previstos =
+      sum(
+        !is.na(
+          previstos_2026
+        )
+      ),
+    series_com_avaliados =
+      sum(
+        !is.na(
+          avaliados_2026
+        )
+      ),
+    previstos_total_2026 =
+      soma_segura(
+        previstos_2026
+      ),
+    avaliados_total_2026 =
+      soma_segura(
+        avaliados_2026
+      ),
+    taxa_participacao_agregada_2026 =
+      if_else(
+        !is.na(
+          previstos_total_2026
+        ) &
+          previstos_total_2026 > 0,
+        100 *
+          avaliados_total_2026 /
+          previstos_total_2026,
+        NA_real_
+      ),
+    proficiencia_2026_ponderada_avaliados =
+      media_ponderada_segura(
+        proficiencia_media_2026,
+        avaliados_2026
+      ),
+    pct_defasagem_2026_ponderado_avaliados =
+      media_ponderada_segura(
+        pct_defasagem_2026,
+        avaliados_2026
+      ),
+    pct_intermediario_2026_ponderado_avaliados =
+      media_ponderada_segura(
+        pct_intermediario_2026,
+        avaliados_2026
+      ),
+    pct_adequado_2026_ponderado_avaliados =
+      media_ponderada_segura(
+        pct_adequado_2026,
+        avaliados_2026
+      ),
+    series_painel_balanceado =
+      sum(
+        coalesce(
+          painel_resultado_balanceado,
+          FALSE
+        )
+      ),
+    series_alerta_composicao =
+      sum(
+        coalesce(
+          alerta_composicao_serie,
+          FALSE
+        )
+      ),
+    series_aumento_participacao_10pp =
+      sum(
+        coalesce(
+          aumento_participacao_10pp,
+          FALSE
+        )
+      ),
+    series_queda_participacao_10pp =
+      sum(
+        coalesce(
+          queda_participacao_10pp,
+          FALSE
+        )
+      ),
+    series_mudanca_previstos_20pct =
+      sum(
+        coalesce(
+          mudanca_previstos_20pct,
+          FALSE
+        )
+      ),
+    menor_proficiencia_observada_2026 =
+      minimo_seguro(
+        proficiencia_media_2026
+      ),
+    maior_pct_defasagem_observado_2026 =
+      maximo_seguro(
+        pct_defasagem_2026
+      ),
+    peso_maximo_no_indice_operacional =
+      maximo_seguro(
+        peso_no_indice_carga_operacional
+      ),
+    linhas_marcadas_uso_no_indice =
+      sum(
+        coalesce(
+          uso_no_indice_carga_operacional,
+          FALSE
+        )
+      ),
+    .groups = "drop"
+  ) |>
+  mutate(
+    alerta_participacao_composicao =
+      series_alerta_composicao > 0 |
+      series_queda_participacao_10pp > 0 |
+      series_mudanca_previstos_20pct > 0,
+    leitura_menor_proficiencia = paste(
+      "A menor proficiência observada pode sinalizar demanda pedagógica",
+      "adicional, mas não representa efeito, qualidade ou responsabilidade",
+      "da assessora."
+    ),
+    natureza = paste(
+      "Diagnóstico educacional contextual, descritivo e não causal;",
+      "peso zero no índice operacional."
+    ),
+    advertencia = paste(
+      "Comparações devem considerar participação, composição, cobertura",
+      "e heterogeneidade entre escolas e séries."
+    )
+  ) |>
+  arrange(
+    assessora_gerencial_2026
+  )
+
+# -------------------------------------------------------------------
+# 13. Parâmetros e dicionário
+# -------------------------------------------------------------------
+
+parametros_analise <- tribble(
+  ~parametro, ~valor, ~justificativa,
+  "universo_institucional", "56 escolas", "Preserva todas as escolas do cadastro e do perfil homologado.",
+  "universo_operacional", "53 escolas", "Somente escolas com inclusão homologada no índice de carga de 2026.",
+  "carteiras_gerenciais", "11 assessoras", "Uso exclusivo de assessora_gerencial_2026.",
+  "exclusoes_operacionais", "ESC_001; ESC_055; ESC_056", "Escolas preservadas institucionalmente, mas fora da carga operacional.",
+  "indice_operacional", "produto homologado do módulo 17", "O módulo 18 não recalcula o índice.",
+  "peso_volume", "0,40", "Peso fixado e homologado no módulo 17.",
+  "peso_estrutura", "0,35", "Peso fixado e homologado no módulo 17.",
+  "peso_administracao", "0,25", "Peso fixado e homologado no módulo 17.",
+  "peso_resultados_educacionais", "0", "Resultados educacionais permanecem em diagnóstico paralelo.",
+  "ranking", "não produzido", "O módulo não cria ordem, faixa ou percentil de carteiras ou escolas.",
+  "soma_escore_carteira", "agregado relativo", "Não representa medida total ou definitiva da carga real."
+)
 
 descricoes_dicionario <- c(
-  assessora_gerencial = "Categoria administrativa responsável pela carteira.",
-  tipo_carteira = "Classificação da categoria como carteira nominal, agrupamento residual ou sem vinculação informada.",
-  carteira_nominal = "Indica se a categoria entra nas referências comparativas entre carteiras nominais.",
-  numero_escolas = "Quantidade de escolas vinculadas à categoria administrativa.",
-  matriculas_anos_iniciais_total = "Soma das matrículas dos anos iniciais nas escolas da carteira.",
-  turmas_anos_iniciais_total = "Soma das turmas válidas dos anos iniciais nas escolas da carteira.",
-  carga_potencial_total = "Soma do índice de carga potencial das escolas; representa carga acumulada relativa.",
-  indice_carga_potencial_medio = "Média simples do índice escolar na carteira.",
-  indice_carga_potencial_mediano = "Mediana do índice escolar na carteira.",
-  indice_carga_potencial_desvio = "Desvio-padrão do índice escolar dentro da carteira.",
-  dimensao_volume_media = "Média do escore de volume das escolas da carteira.",
-  dimensao_estrutural_media = "Média do escore de complexidade estrutural das escolas da carteira.",
-  dimensao_educacional_media = "Média do escore de desafio educacional observado das escolas da carteira.",
-  dimensao_administrativa_media = "Média do escore de complexidade administrativa das escolas da carteira.",
-  numero_escolas_faixa_4 = "Quantidade de escolas no quartil superior do índice relativo da rede.",
-  percentual_escolas_faixa_4 = "Percentual da carteira composto por escolas no quartil superior do índice.",
-  numero_escolas_interpretacao_cautelosa = "Quantidade de escolas com evidência que exige interpretação cautelosa.",
-  numero_escolas_sensibilidade_elevada = "Quantidade de escolas que mudam de faixa em dois ou três cenários.",
-  participacao_maior_escola_carga_total_pct = "Parcela da carga acumulada da carteira concentrada na escola com maior índice.",
-  participacao_duas_maiores_escolas_carga_total_pct = "Parcela da carga acumulada concentrada nas duas escolas com maiores índices.",
-  hhi_concentracao_carga_interna = "Índice Herfindahl-Hirschman das parcelas do índice escolar dentro da carteira; maior valor indica maior concentração.",
-  participacao_carga_potencial_rede_pct = "Parcela da carga potencial acumulada da rede atribuída à carteira.",
-  razao_participacao_carga_sobre_escolas = "Razão entre a participação da carteira na carga potencial da rede e sua participação no número de escolas.",
-  razao_carga_potencial_referencia_nominal = "Carga total da carteira dividida pela média das carteiras nominais.",
-  faixa_carga_total_entre_carteiras_nominais = "Faixa quartílica relativa da carga total entre carteiras nominais; não representa desempenho.",
-  faixa_indice_medio_entre_carteiras_nominais = "Faixa quartílica relativa do índice médio entre carteiras nominais; não representa desempenho."
+  assessora_gerencial_2026 =
+    "Assessora utilizada para a carteira gerencial de 2026.",
+  assessora_vinculo_administrativo =
+    "Vínculo administrativo preservado separadamente; não comprova exposição nem substitui a assessora gerencial.",
+  numero_escolas =
+    "Quantidade de escolas elegíveis incluídas na carteira operacional.",
+  soma_indice_operacional_carteira =
+    "Soma dos índices operacionais das escolas da carteira; agregado relativo, não carga real total.",
+  media_indice_operacional_escolas =
+    "Média simples do índice operacional das escolas da carteira.",
+  mediana_indice_operacional_escolas =
+    "Mediana do índice operacional das escolas da carteira.",
+  contribuicao_escola_soma_indice_carteira_pct =
+    "Participação da escola na soma dos escores operacionais da carteira.",
+  hhi_concentracao_escore_operacional =
+    "HHI das participações dos escores escolares; descreve concentração do escore relativo.",
+  diagnostico_educacional_carteiras =
+    "Síntese contextual com peso zero no índice operacional.",
+  incluida_analise_operacional =
+    "Indica inclusão da escola no universo operacional de 53 escolas."
 )
 
-dicionario_analise <- tibble(
-  ordem_coluna = seq_along(analise_carteiras),
-  variavel = names(analise_carteiras),
-  classe_r = map_chr(
+bases_para_dicionario <- list(
+  analise_carteiras_assessoras =
     analise_carteiras,
-    ~ paste(
-      class(.x),
-      collapse = " | "
-    )
-  ),
-  descricao = map_chr(
-    names(analise_carteiras),
-    function(variavel) {
-      descricao <- unname(
-        descricoes_dicionario[variavel]
-      )
-
-      if (
-        length(descricao) == 0 ||
-          is.na(descricao[[1]]) ||
-          !nzchar(descricao[[1]])
-      ) {
-        paste0(
-          "Variável ",
-          str_replace_all(
-            variavel,
-            "_",
-            " "
-          ),
-          ". Consulte o script do módulo 18 para definição operacional."
-        )
-      } else {
-        descricao[[1]]
-      }
-    }
-  ),
-  unidade_analise = "carteira administrativa",
-  observacao_metodologica = case_when(
-    str_detect(variavel, "proficiencia|defasagem|adequado|intermediario") ~
-      "Resultado descritivo; não representa efeito ou qualidade da assessora.",
-    str_detect(variavel, "faixa|percentil|ordem") ~
-      "Medida relativa usada para diagnóstico de carga, não para avaliação de desempenho.",
-    str_detect(variavel, "carga_potencial|indice") ~
-      "Escore relativo e descritivo; não é percentual de carga absoluta.",
-    TRUE ~
-      "Usar em conjunto com as demais dimensões e com validação qualitativa."
-  )
-)
-
-# -------------------------------------------------------------------
-# 16. Estruturas, manifestos e resumo
-# -------------------------------------------------------------------
-
-estrutura_saidas <- bind_rows(
-  estrutura_base(
-    analise_carteiras,
-    "analise_carteiras_assessoras"
-  ),
-  estrutura_base(
+  carteira_escola_detalhe =
     carteira_escola_detalhe,
-    "carteira_escola_detalhe"
-  ),
-  estrutura_base(
-    analise_carteiras_cenarios,
-    "analise_carteiras_cenarios"
-  ),
-  estrutura_base(
-    composicao_faixas_carteiras,
-    "composicao_faixas_carteiras"
-  )
+  diagnostico_educacional_carteiras =
+    diagnostico_educacional_carteiras,
+  composicao_operacional_carteiras =
+    composicao_operacional_carteiras,
+  universo_institucional_carteiras =
+    universo_institucional_carteiras
 )
 
-manifesto_entradas <- tibble(
-  fonte = names(caminhos_entrada_usados),
-  caminho = unname(caminhos_entrada_usados),
-  existe = file.exists(caminhos_entrada_usados),
-  tamanho_bytes = map_dbl(
-    caminhos_entrada_usados,
-    ~ if (file.exists(.x)) file.info(.x)$size else NA_real_
-  ),
-  md5 = map_chr(
-    caminhos_entrada_usados,
-    ~ if (file.exists(.x)) unname(tools::md5sum(.x)) else NA_character_
-  )
-)
+dicionario_analise <- imap_dfr(
+  bases_para_dicionario,
+  function(dados, produto) {
+    tibble(
+      produto = produto,
+      ordem_coluna = seq_along(dados),
+      variavel = names(dados),
+      classe_r = map_chr(
+        dados,
+        ~ paste(
+          class(.x),
+          collapse = " | "
+        )
+      )
+    ) |>
+      mutate(
+        descricao = map_chr(
+          variavel,
+          function(nome_variavel) {
+            descricao <- unname(
+              descricoes_dicionario[
+                nome_variavel
+              ]
+            )
 
-arquivo_resumo <- file.path(
-  pasta_execucao,
-  "16_resumo_execucao.txt"
-)
-
-linhas_resumo <- c(
-  paste0("Execução: ", id_execucao),
-  paste0("Escolas analisadas: ", nrow(base_escola_carteira)),
-  paste0("Categorias administrativas: ", nrow(analise_carteiras)),
-  paste0("Carteiras nominais: ", sum(analise_carteiras$carteira_nominal)),
-  paste0("Agrupamentos residuais: ", sum(analise_carteiras$tipo_carteira == "Agrupamento residual")),
-  paste0("Categorias sem vinculação informada: ", sum(analise_carteiras$tipo_carteira == "Sem vinculação informada")),
-  paste0("Menor número de escolas em carteira nominal: ", min(analise_carteiras$numero_escolas[analise_carteiras$carteira_nominal])),
-  paste0("Maior número de escolas em carteira nominal: ", max(analise_carteiras$numero_escolas[analise_carteiras$carteira_nominal])),
-  paste0("Carga potencial total da rede: ", round(totais_rede$total_carga_potencial_rede, 2)),
-  paste0("Erros críticos: ", nrow(erros_criticos)),
-  "",
-  "Observações metodológicas:",
-  "- A análise descreve carteiras administrativas, não desempenho das assessoras.",
-  "- A carga potencial acumulada combina quantidade e composição das escolas.",
-  "- Médias e medianas devem ser lidas em conjunto com a carga acumulada.",
-  "- Faixas e posições são relativas e não constituem ranking de qualidade.",
-  "- Resultados educacionais não devem ser atribuídos às assessoras.",
-  "- Redistribuições exigem validação qualitativa, territorial e operacional."
-)
-
-write_lines(
-  linhas_resumo,
-  arquivo_resumo
-)
-
-write_lines(
-  capture.output(
-    sessionInfo()
-  ),
-  file.path(
-    pasta_execucao,
-    "15_session_info.txt"
-  )
+            if (
+              length(descricao) == 0L ||
+                is.na(descricao[[1]]) ||
+                !nzchar(
+                  descricao[[1]]
+                )
+            ) {
+              paste0(
+                "Variável ",
+                str_replace_all(
+                  nome_variavel,
+                  "_",
+                  " "
+                ),
+                ". Consultar o script canônico do módulo 18."
+              )
+            } else {
+              descricao[[1]]
+            }
+          }
+        ),
+        unidade_analise = case_when(
+          produto ==
+            "analise_carteiras_assessoras" ~
+            "assessora gerencial de 2026",
+          produto ==
+            "carteira_escola_detalhe" ~
+            "escola elegível",
+          produto ==
+            "diagnostico_educacional_carteiras" ~
+            "assessora gerencial de 2026",
+          produto ==
+            "composicao_operacional_carteiras" ~
+            "assessora × dimensão × métrica",
+          produto ==
+            "universo_institucional_carteiras" ~
+            "escola institucional",
+          TRUE ~ "não informado"
+        ),
+        observacao_metodologica = case_when(
+          str_detect(
+            variavel,
+            "proficiencia|defasagem|adequado|intermediario"
+          ) ~ paste(
+            "Resultado educacional descritivo;",
+            "não representa efeito ou qualidade da assessora."
+          ),
+          str_detect(
+            variavel,
+            "indice|escore|contribuicao|hhi"
+          ) ~ paste(
+            "Medida relativa do índice operacional;",
+            "não equivale à carga real total."
+          ),
+          str_detect(
+            variavel,
+            "assessora_vinculo_administrativo"
+          ) ~ paste(
+            "Vínculo administrativo separado da",
+            "assessora gerencial de 2026."
+          ),
+          TRUE ~ paste(
+            "Usar em conjunto com as demais dimensões",
+            "e com validação qualitativa."
+          )
+        )
+      )
+  }
 )
 
 # -------------------------------------------------------------------
-# 17. Exportação dos diagnósticos antes dos produtos canônicos
+# 14. Validações finais bloqueantes
 # -------------------------------------------------------------------
+
+soma_por_carteira <- analise_carteiras |>
+  summarise(
+    escolas = sum(
+      numero_escolas
+    ),
+    indice = sum(
+      soma_indice_operacional_carteira
+    ),
+    volume = sum(
+      soma_contribuicao_volume
+    ),
+    estrutura = sum(
+      soma_contribuicao_estrutural
+    ),
+    administrativa = sum(
+      soma_contribuicao_administrativa
+    )
+  )
+
+soma_indice_entrada <- sum(
+  indice_escola$
+    indice_carga_potencial_operacional
+)
+
+soma_componentes_entrada <- sum(
+  indice_escola$
+    contribuicao_volume +
+    indice_escola$
+      contribuicao_estrutural +
+    indice_escola$
+      contribuicao_administrativa
+)
+
+numero_assessoras <- n_distinct(
+  indice_escola$
+    assessora_gerencial_2026
+)
+
+termos_proibidos_novos <- c(
+  "percentil_carga",
+  "faixa_carga",
+  "ordem_carga",
+  "ranking",
+  "cenario",
+  "indice_carga_potencial_equilibrado",
+  "indice_carga_potencial_desafio_educacional",
+  "indice_carga_potencial_transicao_administrativa",
+  "score_dimensao_educacional"
+)
+
+texto_produtos_operacionais <- paste(
+  names(analise_carteiras),
+  names(carteira_escola_detalhe),
+  names(composicao_operacional_carteiras),
+  collapse = " | "
+)
+
+ocorrencias_termos_proibidos <- sum(
+  map_lgl(
+    termos_proibidos_novos,
+    ~ str_detect(
+      texto_produtos_operacionais,
+      fixed(
+        .x,
+        ignore_case = TRUE
+      )
+    )
+  )
+)
+
+validacoes <- bind_rows(
+  registrar_validacao(
+    "Branch correta",
+    "execucao",
+    "erro",
+    branch_observada,
+    branch_esperada,
+    branch_observada == branch_esperada,
+    "Bloqueio do ambiente Git."
+  ),
+  registrar_validacao(
+    "HEAD homologado",
+    "execucao",
+    "erro",
+    commit_observado,
+    commit_base_integracao,
+    commit_observado == commit_base_integracao,
+    "Execução antes de qualquer alteração do módulo 18."
+  ),
+  registrar_validacao(
+    "Caminho canônico do script",
+    "execucao",
+    "erro",
+    caminho_script_normalizado,
+    caminho_canonico_esperado,
+    identical(
+      caminho_script_normalizado,
+      caminho_canonico_esperado
+    ),
+    "Variantes corrigidas não devem ser executadas."
+  ),
+  registrar_validacao(
+    "Equivalência CSV–RDS das entradas",
+    "integridade",
+    "erro",
+    sum(
+      diagnostico_equivalencia_entradas$aprovado
+    ),
+    "3 de 3 fontes equivalentes",
+    all(
+      diagnostico_equivalencia_entradas$aprovado
+    ),
+    "Perfil, índice e diagnóstico educacional."
+  ),
+  registrar_validacao(
+    "Perfil institucional com 56 escolas",
+    "universo",
+    "erro",
+    nrow(perfil_escola),
+    "56",
+    nrow(perfil_escola) == 56L,
+    "Universo institucional oficial."
+  ),
+  registrar_validacao(
+    "Índice operacional com 53 escolas",
+    "universo",
+    "erro",
+    nrow(indice_escola),
+    "53",
+    nrow(indice_escola) == 53L,
+    "Universo operacional oficial."
+  ),
+  registrar_validacao(
+    "Diagnóstico educacional com 265 linhas",
+    "universo",
+    "erro",
+    nrow(diagnostico_educacional),
+    "265",
+    nrow(diagnostico_educacional) == 265L,
+    "53 escolas × cinco séries."
+  ),
+  registrar_validacao(
+    "Exclusões operacionais exatas",
+    "universo",
+    "erro",
+    paste(
+      ids_diferenca,
+      collapse = "; "
+    ),
+    paste(
+      ids_excluidos_carga,
+      collapse = "; "
+    ),
+    setequal(
+      ids_diferenca,
+      ids_excluidos_carga
+    ),
+    "Nenhuma outra escola pode ser excluída."
+  ),
+  registrar_validacao(
+    "Onze assessoras gerenciais",
+    "universo",
+    "erro",
+    numero_assessoras,
+    "11",
+    numero_assessoras == 11L,
+    "Carteiras formadas por assessora_gerencial_2026."
+  ),
+  registrar_validacao(
+    "Síntese com 11 linhas",
+    "produto",
+    "erro",
+    nrow(analise_carteiras),
+    "11",
+    nrow(analise_carteiras) == 11L,
+    "Uma linha por assessora."
+  ),
+  registrar_validacao(
+    "Detalhe com 53 linhas",
+    "produto",
+    "erro",
+    nrow(carteira_escola_detalhe),
+    "53",
+    nrow(carteira_escola_detalhe) == 53L,
+    "Uma linha por escola elegível."
+  ),
+  registrar_validacao(
+    "Universo institucional com 56 linhas",
+    "produto",
+    "erro",
+    nrow(universo_institucional_carteiras),
+    "56",
+    nrow(universo_institucional_carteiras) == 56L,
+    "Inclui as três escolas não elegíveis."
+  ),
+  registrar_validacao(
+    "Composição operacional com 99 linhas",
+    "produto",
+    "erro",
+    nrow(composicao_operacional_carteiras),
+    "99",
+    nrow(composicao_operacional_carteiras) == 99L,
+    "11 assessoras × três dimensões × três métricas."
+  ),
+  registrar_validacao(
+    "Diagnóstico educacional com 11 linhas",
+    "produto",
+    "erro",
+    nrow(diagnostico_educacional_carteiras),
+    "11",
+    nrow(diagnostico_educacional_carteiras) == 11L,
+    "Uma linha contextual por assessora."
+  ),
+  registrar_validacao(
+    "Soma das escolas das carteiras",
+    "consistencia",
+    "erro",
+    soma_por_carteira$escolas,
+    "53",
+    soma_por_carteira$escolas == 53L,
+    "Recomposição do universo operacional."
+  ),
+  registrar_validacao(
+    "Índice recomposto por contribuições",
+    "metodologia",
+    "erro",
+    max(
+      base_escola_carteira$
+        diferenca_recomposicao_indice
+    ),
+    "diferença máxima < 1e-10",
+    all(
+      base_escola_carteira$
+        diferenca_recomposicao_indice <
+        1e-10
+    ),
+    "Pesos 40%, 35% e 25% já homologados."
+  ),
+  registrar_validacao(
+    "Soma do índice preservada",
+    "consistencia",
+    "erro",
+    soma_por_carteira$indice,
+    as.character(
+      soma_indice_entrada
+    ),
+    isTRUE(
+      all.equal(
+        soma_por_carteira$indice,
+        soma_indice_entrada,
+        tolerance = 1e-10
+      )
+    ),
+    "Agregação não altera os escores escolares."
+  ),
+  registrar_validacao(
+    "Soma dos componentes preservada",
+    "consistencia",
+    "erro",
+    soma_componentes_entrada,
+    as.character(
+      soma_indice_entrada
+    ),
+    isTRUE(
+      all.equal(
+        soma_componentes_entrada,
+        soma_indice_entrada,
+        tolerance = 1e-10
+      )
+    ),
+    "Contribuições recompõem o índice operacional."
+  ),
+  registrar_validacao(
+    "Resultados educacionais fora do índice",
+    "metodologia",
+    "erro",
+    sum(
+      indice_escola$
+        resultados_educacionais_no_indice
+    ),
+    "zero TRUE",
+    !any(
+      indice_escola$
+        resultados_educacionais_no_indice
+    ),
+    "Trava herdada do módulo 17."
+  ),
+  registrar_validacao(
+    "Diagnóstico educacional com peso zero",
+    "metodologia",
+    "erro",
+    max(
+      diagnostico_educacional$
+        peso_no_indice_carga_operacional
+    ),
+    "zero",
+    all(
+      diagnostico_educacional$
+        peso_no_indice_carga_operacional ==
+        0
+    ),
+    "Produto paralelo."
+  ),
+  registrar_validacao(
+    "Diagnóstico educacional não usado no índice",
+    "metodologia",
+    "erro",
+    sum(
+      diagnostico_educacional$
+        uso_no_indice_carga_operacional
+    ),
+    "zero TRUE",
+    !any(
+      diagnostico_educacional$
+        uso_no_indice_carga_operacional
+    ),
+    "Produto paralelo."
+  ),
+  registrar_validacao(
+    "Ausência de novos rankings, faixas e cenários",
+    "metodologia",
+    "erro",
+    ocorrencias_termos_proibidos,
+    "zero ocorrências",
+    ocorrencias_termos_proibidos == 0L,
+    "Nenhuma ordenação gerencial nova."
+  ),
+  registrar_validacao(
+    "Vínculos preservados separadamente",
+    "metodologia",
+    "erro",
+    all(
+      c(
+        "assessora_vinculo_administrativo",
+        "assessora_gerencial_2026"
+      ) %in%
+        names(
+          carteira_escola_detalhe
+        )
+    ),
+    "duas variáveis presentes",
+    all(
+      c(
+        "assessora_vinculo_administrativo",
+        "assessora_gerencial_2026"
+      ) %in%
+        names(
+          carteira_escola_detalhe
+        )
+    ),
+    "Nenhuma variável é inferida da outra."
+  ),
+  registrar_validacao(
+    "Nenhuma categoria residual operacional",
+    "universo",
+    "erro",
+    sum(
+      str_to_lower(
+        str_squish(
+          indice_escola$
+            assessora_gerencial_2026
+        )
+      ) %in%
+        categorias_residuais_proibidas
+    ),
+    "zero",
+    !any(
+      str_to_lower(
+        str_squish(
+          indice_escola$
+            assessora_gerencial_2026
+        )
+      ) %in%
+        categorias_residuais_proibidas
+    ),
+    "Somente 11 carteiras nominais."
+  )
+)
+
+erros_criticos <- validacoes |>
+  filter(
+    !resultado &
+      severidade == "erro"
+  )
+
+# -------------------------------------------------------------------
+# 15. Diagnósticos da execução
+# -------------------------------------------------------------------
+
+manifesto_entradas <- imap_dfr(
+  arquivos_entrada,
+  ~ inventariar_arquivo(
+    .y,
+    .x
+  )
+) |>
+  mutate(
+    md5_esperado = hashes_esperados[
+      arquivo
+    ],
+    hash_aprovado = str_to_lower(md5) ==
+      str_to_lower(md5_esperado)
+  )
+
+estrutura_saidas <- imap_dfr(
+  bases_para_dicionario,
+  ~ estrutura_base(
+    .x,
+    .y
+  )
+)
 
 write_csv(
   parametros_analise,
@@ -1865,100 +2814,64 @@ write_csv(
 )
 
 write_csv(
-  contagem_escolas_por_carteira,
+  diagnostico_equivalencia_entradas,
   file.path(
     pasta_execucao,
-    "03_contagem_escolas_por_carteira.csv"
+    "03_equivalencia_csv_rds_entradas.csv"
   ),
   na = ""
 )
 
 write_csv(
-  resumo_carga_extensiva,
+  universo_institucional_carteiras,
   file.path(
     pasta_execucao,
-    "04_resumo_carga_extensiva.csv"
+    "04_universo_institucional_56_escolas.csv"
   ),
   na = ""
 )
 
 write_csv(
-  resumo_carga_potencial,
+  analise_carteiras,
   file.path(
     pasta_execucao,
-    "05_resumo_carga_potencial.csv"
+    "05_sintese_operacional_carteiras.csv"
   ),
   na = ""
 )
 
 write_csv(
-  composicao_faixas_carteiras,
+  carteira_escola_detalhe,
   file.path(
     pasta_execucao,
-    "06_composicao_faixas_por_carteira.csv"
+    "06_detalhe_escola_carteira.csv"
   ),
   na = ""
 )
 
 write_csv(
-  concentracao_casos_desafiadores,
+  composicao_operacional_carteiras,
   file.path(
     pasta_execucao,
-    "07_concentracao_casos_desafiadores.csv"
+    "07_composicao_operacional_carteiras.csv"
   ),
   na = ""
 )
 
 write_csv(
-  dimensoes_por_carteira,
+  diagnostico_educacional_carteiras,
   file.path(
     pasta_execucao,
-    "08_dimensoes_por_carteira.csv"
+    "08_diagnostico_educacional_contextual.csv"
   ),
   na = ""
 )
 
 write_csv(
-  analise_carteiras_cenarios,
+  validacoes,
   file.path(
     pasta_execucao,
-    "09_cenarios_por_carteira.csv"
-  ),
-  na = ""
-)
-
-write_csv(
-  sensibilidade_posicao_carteiras,
-  file.path(
-    pasta_execucao,
-    "10_sensibilidade_posicao_carteiras.csv"
-  ),
-  na = ""
-)
-
-write_csv(
-  escolas_maior_carga_por_carteira,
-  file.path(
-    pasta_execucao,
-    "11_escolas_maior_carga_por_carteira.csv"
-  ),
-  na = ""
-)
-
-write_csv(
-  cobertura_e_cautelas,
-  file.path(
-    pasta_execucao,
-    "12_cobertura_e_cautelas.csv"
-  ),
-  na = ""
-)
-
-write_csv(
-  validacoes_finais,
-  file.path(
-    pasta_execucao,
-    "13_validacao_final.csv"
+    "09_validacao_final.csv"
   ),
   na = ""
 )
@@ -1967,108 +2880,630 @@ write_csv(
   estrutura_saidas,
   file.path(
     pasta_execucao,
-    "14_estrutura_bases_saida.csv"
+    "10_estrutura_bases_saida.csv"
   ),
   na = ""
 )
 
-# Interrompe antes de atualizar os produtos canônicos quando houver erro.
-if (nrow(erros_criticos) > 0) {
+write_csv(
+  dicionario_analise,
+  file.path(
+    pasta_execucao,
+    "11_dicionario_candidato.csv"
+  ),
+  na = ""
+)
+
+write_lines(
+  capture.output(
+    sessionInfo()
+  ),
+  file.path(
+    pasta_execucao,
+    "12_session_info.txt"
+  )
+)
+
+informacoes_execucao <- tibble(
+  campo = c(
+    "id_execucao",
+    "instante_execucao",
+    "branch",
+    "commit_base",
+    "caminho_script",
+    "md5_script",
+    "perfil_institucional",
+    "escolas_operacionais",
+    "assessoras_gerenciais",
+    "exclusoes_operacionais"
+  ),
+  valor = c(
+    id_execucao,
+    format(
+      instante_execucao,
+      "%Y-%m-%d %H:%M:%S %z"
+    ),
+    branch_observada,
+    commit_observado,
+    normalizar_caminho(
+      caminho_script
+    ),
+    hash_md5(
+      caminho_script
+    ),
+    as.character(
+      nrow(perfil_escola)
+    ),
+    as.character(
+      nrow(indice_escola)
+    ),
+    as.character(
+      numero_assessoras
+    ),
+    paste(
+      ids_excluidos_carga,
+      collapse = "; "
+    )
+  )
+)
+
+write_csv(
+  informacoes_execucao,
+  file.path(
+    pasta_execucao,
+    "13_identificacao_execucao.csv"
+  ),
+  na = ""
+)
+
+linhas_resumo <- c(
+  paste0(
+    "Execução: ",
+    id_execucao
+  ),
+  paste0(
+    "Branch: ",
+    branch_observada
+  ),
+  paste0(
+    "Commit-base: ",
+    commit_observado
+  ),
+  paste0(
+    "MD5 do script: ",
+    hash_md5(
+      caminho_script
+    )
+  ),
+  paste0(
+    "Universo institucional: ",
+    nrow(perfil_escola),
+    " escolas"
+  ),
+  paste0(
+    "Universo operacional: ",
+    nrow(indice_escola),
+    " escolas"
+  ),
+  paste0(
+    "Assessoras gerenciais: ",
+    numero_assessoras
+  ),
+  paste0(
+    "Exclusões: ",
+    paste(
+      ids_excluidos_carga,
+      collapse = ", "
+    )
+  ),
+  paste0(
+    "Erros críticos: ",
+    nrow(erros_criticos)
+  ),
+  "",
+  "Observações metodológicas:",
+  "- O módulo descreve carteiras gerenciais; não avalia assessoras.",
+  "- O índice operacional foi recebido do módulo 17 e não foi recalculado.",
+  "- Volume, estrutura e complexidade administrativa permanecem separados.",
+  "- Resultados educacionais têm peso zero e ficam em produto paralelo.",
+  "- Não foram criados ranking, percentil, faixa ou cenário de carteira.",
+  "- A soma do índice é um agregado relativo, não medida completa da carga real.",
+  "- ESC_001, ESC_055 e ESC_056 permanecem apenas no universo institucional."
+)
+
+write_lines(
+  linhas_resumo,
+  file.path(
+    pasta_execucao,
+    "14_resumo_execucao.txt"
+  )
+)
+
+if (nrow(erros_criticos) > 0L) {
   stop(
     "O módulo 18 encontrou ",
     nrow(erros_criticos),
-    " erro(s) crítico(s). Consulte `13_validacao_final.csv` em: ",
+    " erro(s) crítico(s). Consulte `09_validacao_final.csv` em: ",
     pasta_execucao
   )
 }
 
 # -------------------------------------------------------------------
-# 18. Arquivamento e exportação dos produtos finais
+# 16. Escrita dos candidatos
 # -------------------------------------------------------------------
 
-walk(
-  arquivos_saida,
-  arquivar_se_existir
+caminhos_candidatos <- file.path(
+  pasta_candidatos,
+  basename(
+    arquivos_saida
+  )
+)
+
+names(caminhos_candidatos) <- names(
+  arquivos_saida
 )
 
 write_csv(
   analise_carteiras,
-  arquivos_saida[["analise_carteiras_csv"]],
+  caminhos_candidatos[[
+    "analise_carteiras_csv"
+  ]],
   na = ""
 )
 
 saveRDS(
   analise_carteiras,
-  arquivos_saida[["analise_carteiras_rds"]]
+  caminhos_candidatos[[
+    "analise_carteiras_rds"
+  ]]
 )
 
 write_csv(
   carteira_escola_detalhe,
-  arquivos_saida[["detalhe_escolas_csv"]],
+  caminhos_candidatos[[
+    "detalhe_escolas_csv"
+  ]],
   na = ""
 )
 
 saveRDS(
   carteira_escola_detalhe,
-  arquivos_saida[["detalhe_escolas_rds"]]
+  caminhos_candidatos[[
+    "detalhe_escolas_rds"
+  ]]
 )
 
 write_csv(
-  analise_carteiras_cenarios,
-  arquivos_saida[["cenarios_csv"]],
+  diagnostico_educacional_carteiras,
+  caminhos_candidatos[[
+    "diagnostico_carteiras_csv"
+  ]],
   na = ""
 )
 
 saveRDS(
-  analise_carteiras_cenarios,
-  arquivos_saida[["cenarios_rds"]]
+  diagnostico_educacional_carteiras,
+  caminhos_candidatos[[
+    "diagnostico_carteiras_rds"
+  ]]
 )
 
 write_csv(
-  composicao_faixas_carteiras,
-  arquivos_saida[["composicao_faixas_csv"]],
+  composicao_operacional_carteiras,
+  caminhos_candidatos[[
+    "composicao_operacional_csv"
+  ]],
   na = ""
 )
 
 saveRDS(
-  composicao_faixas_carteiras,
-  arquivos_saida[["composicao_faixas_rds"]]
+  composicao_operacional_carteiras,
+  caminhos_candidatos[[
+    "composicao_operacional_rds"
+  ]]
+)
+
+write_csv(
+  universo_institucional_carteiras,
+  caminhos_candidatos[[
+    "universo_institucional_csv"
+  ]],
+  na = ""
+)
+
+saveRDS(
+  universo_institucional_carteiras,
+  caminhos_candidatos[[
+    "universo_institucional_rds"
+  ]]
 )
 
 write_csv(
   dicionario_analise,
-  arquivos_saida[["dicionario_csv"]],
+  caminhos_candidatos[[
+    "dicionario_csv"
+  ]],
   na = ""
 )
 
-manifesto_produtos <- tibble(
-  produto = names(arquivos_saida),
-  caminho = unname(arquivos_saida),
-  existe = file.exists(arquivos_saida),
-  tamanho_bytes = map_dbl(
-    arquivos_saida,
-    ~ if (file.exists(.x)) file.info(.x)$size else NA_real_
+# -------------------------------------------------------------------
+# 17. Releitura e equivalência dos candidatos
+# -------------------------------------------------------------------
+
+validar_par_candidato <- function(
+    nome_csv,
+    nome_rds,
+    chaves,
+    fonte
+) {
+  caminho_csv <- caminhos_candidatos[[
+    nome_csv
+  ]]
+
+  caminho_rds <- caminhos_candidatos[[
+    nome_rds
+  ]]
+
+  modelo <- readRDS(
+    caminho_rds
+  )
+
+  csv <- ler_csv_por_modelo(
+    caminho_csv,
+    modelo
+  )
+
+  comparar_bases_semanticamente(
+    modelo,
+    csv,
+    chaves,
+    fonte
+  )
+}
+
+par_analise <- validar_par_candidato(
+  "analise_carteiras_csv",
+  "analise_carteiras_rds",
+  c(
+    "assessora_gerencial_2026"
   ),
-  md5 = map_chr(
-    arquivos_saida,
-    ~ if (file.exists(.x)) unname(tools::md5sum(.x)) else NA_character_
+  "analise_carteiras_assessoras"
+)
+
+par_detalhe <- validar_par_candidato(
+  "detalhe_escolas_csv",
+  "detalhe_escolas_rds",
+  c(
+    "assessora_gerencial_2026",
+    "id_escola"
+  ),
+  "carteira_escola_detalhe"
+)
+
+par_diagnostico <- validar_par_candidato(
+  "diagnostico_carteiras_csv",
+  "diagnostico_carteiras_rds",
+  c(
+    "assessora_gerencial_2026"
+  ),
+  "diagnostico_educacional_carteiras"
+)
+
+par_composicao <- validar_par_candidato(
+  "composicao_operacional_csv",
+  "composicao_operacional_rds",
+  c(
+    "assessora_gerencial_2026",
+    "dimensao",
+    "tipo_metrica"
+  ),
+  "composicao_operacional_carteiras"
+)
+
+par_universo <- validar_par_candidato(
+  "universo_institucional_csv",
+  "universo_institucional_rds",
+  c(
+    "id_escola"
+  ),
+  "universo_institucional_carteiras"
+)
+
+equivalencia_candidatos <- bind_rows(
+  par_analise$diagnostico,
+  par_detalhe$diagnostico,
+  par_diagnostico$diagnostico,
+  par_composicao$diagnostico,
+  par_universo$diagnostico
+)
+
+write_csv(
+  equivalencia_candidatos,
+  file.path(
+    pasta_execucao,
+    "15_equivalencia_csv_rds_candidatos.csv"
+  ),
+  na = ""
+)
+
+if (
+  any(
+    !equivalencia_candidatos$aprovado
+  )
+) {
+  stop(
+    "Há divergência entre CSV e RDS dos produtos candidatos."
+  )
+}
+
+manifesto_candidatos <- imap_dfr(
+  caminhos_candidatos,
+  ~ inventariar_arquivo(
+    .y,
+    .x
   )
 )
+
+write_csv(
+  manifesto_candidatos,
+  file.path(
+    pasta_execucao,
+    "16_manifesto_produtos_candidatos.csv"
+  ),
+  na = ""
+)
+
+# -------------------------------------------------------------------
+# 18. Preservação histórica dos produtos anteriores
+# -------------------------------------------------------------------
+
+produtos_anteriores_existentes <- arquivos_saida[
+  file.exists(
+    arquivos_saida
+  )
+]
+
+if (
+  length(
+    produtos_anteriores_existentes
+  ) > 0L
+) {
+  walk2(
+    produtos_anteriores_existentes,
+    names(
+      produtos_anteriores_existentes
+    ),
+    function(origem, nome) {
+      destino <- file.path(
+        pasta_historico,
+        basename(origem)
+      )
+
+      copiar_com_validacao(
+        origem,
+        destino,
+        sobrescrever = FALSE
+      )
+    }
+  )
+}
+
+manifesto_historico <- if (
+  length(
+    produtos_anteriores_existentes
+  ) > 0L
+) {
+  imap_dfr(
+    produtos_anteriores_existentes,
+    function(caminho, nome) {
+      inventariar_arquivo(
+        nome,
+        file.path(
+          pasta_historico,
+          basename(caminho)
+        )
+      )
+    }
+  )
+} else {
+  tibble(
+    arquivo = character(),
+    caminho = character(),
+    existe = logical(),
+    tamanho_bytes = double(),
+    md5 = character()
+  )
+}
+
+write_csv(
+  manifesto_historico,
+  file.path(
+    pasta_execucao,
+    "17_manifesto_preservacao_historica.csv"
+  ),
+  na = ""
+)
+
+# -------------------------------------------------------------------
+# 19. Promoção transacional com rollback
+# -------------------------------------------------------------------
+
+promovidos <- character()
+rollback_preparado <- character()
+
+tryCatch(
+  {
+    for (
+      nome in names(
+        arquivos_saida
+      )
+    ) {
+      destino <- arquivos_saida[[nome]]
+      candidato <- caminhos_candidatos[[nome]]
+
+      if (file.exists(destino)) {
+        rollback <- file.path(
+          pasta_rollback,
+          basename(destino)
+        )
+
+        copiar_com_validacao(
+          destino,
+          rollback,
+          sobrescrever = FALSE
+        )
+
+        rollback_preparado <- c(
+          rollback_preparado,
+          nome
+        )
+      }
+
+      dir.create(
+        dirname(destino),
+        recursive = TRUE,
+        showWarnings = FALSE
+      )
+
+      sucesso <- file.copy(
+        candidato,
+        destino,
+        overwrite = TRUE,
+        copy.mode = TRUE,
+        copy.date = TRUE
+      )
+
+      if (!sucesso) {
+        stop(
+          "Falha na promoção do produto `",
+          nome,
+          "`."
+        )
+      }
+
+      if (
+        !identical(
+          hash_md5(candidato),
+          hash_md5(destino)
+        )
+      ) {
+        stop(
+          "Hash divergente após promoção de `",
+          nome,
+          "`."
+        )
+      }
+
+      promovidos <- c(
+        promovidos,
+        nome
+      )
+    }
+  },
+  error = function(e) {
+    for (
+      nome in rev(
+        promovidos
+      )
+    ) {
+      destino <- arquivos_saida[[nome]]
+      rollback <- file.path(
+        pasta_rollback,
+        basename(destino)
+      )
+
+      if (file.exists(rollback)) {
+        file.copy(
+          rollback,
+          destino,
+          overwrite = TRUE,
+          copy.mode = TRUE,
+          copy.date = TRUE
+        )
+      } else if (file.exists(destino)) {
+        file.remove(destino)
+      }
+    }
+
+    stop(
+      "Promoção transacional falhou; rollback executado. Motivo: ",
+      conditionMessage(e)
+    )
+  }
+)
+
+# -------------------------------------------------------------------
+# 20. Verificação final e manifesto dos produtos promovidos
+# -------------------------------------------------------------------
+
+manifesto_produtos <- imap_dfr(
+  arquivos_saida,
+  ~ inventariar_arquivo(
+    .y,
+    .x
+  )
+)
+
+hashes_candidatos <- manifesto_candidatos |>
+  select(
+    arquivo,
+    md5_candidato = md5
+  )
+
+verificacao_promocao <- manifesto_produtos |>
+  left_join(
+    hashes_candidatos,
+    by = "arquivo"
+  ) |>
+  mutate(
+    hash_promovido_igual_candidato =
+      str_to_lower(md5) ==
+      str_to_lower(md5_candidato)
+  )
+
+if (
+  any(
+    !verificacao_promocao$
+      hash_promovido_igual_candidato
+  )
+) {
+  stop(
+    "A verificação final encontrou hash promovido divergente."
+  )
+}
 
 write_csv(
   manifesto_produtos,
   file.path(
     pasta_execucao,
-    "15_manifesto_produtos_modulo_18.csv"
+    "18_manifesto_produtos_modulo_18.csv"
+  ),
+  na = ""
+)
+
+write_csv(
+  verificacao_promocao,
+  file.path(
+    pasta_execucao,
+    "19_verificacao_promocao.csv"
   ),
   na = ""
 )
 
 message(
   "Módulo 18 concluído com sucesso.\n",
-  "Execução: ", id_execucao, "\n",
-  "Escolas: ", nrow(base_escola_carteira), "\n",
-  "Categorias administrativas: ", nrow(analise_carteiras), "\n",
-  "Carteiras nominais: ", sum(analise_carteiras$carteira_nominal), "\n",
-  "Diagnósticos: ", pasta_execucao
+  "Execução: ",
+  id_execucao,
+  "\n",
+  "Universo institucional: 56 escolas\n",
+  "Universo operacional: 53 escolas\n",
+  "Assessoras gerenciais: 11\n",
+  "Exclusões: ESC_001, ESC_055, ESC_056\n",
+  "Diagnósticos: ",
+  pasta_execucao,
+  "\n",
+  "MD5 do script: ",
+  hash_md5(
+    caminho_script
+  )
 )

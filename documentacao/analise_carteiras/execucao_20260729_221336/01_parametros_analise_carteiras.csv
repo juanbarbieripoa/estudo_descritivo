@@ -1,0 +1,12 @@
+parametro,valor,justificativa
+universo_institucional,56 escolas,Preserva todas as escolas do cadastro e do perfil homologado.
+universo_operacional,53 escolas,Somente escolas com inclusão homologada no índice de carga de 2026.
+carteiras_gerenciais,11 assessoras,Uso exclusivo de assessora_gerencial_2026.
+exclusoes_operacionais,ESC_001; ESC_055; ESC_056,"Escolas preservadas institucionalmente, mas fora da carga operacional."
+indice_operacional,produto homologado do módulo 17,O módulo 18 não recalcula o índice.
+peso_volume,"0,40",Peso fixado e homologado no módulo 17.
+peso_estrutura,"0,35",Peso fixado e homologado no módulo 17.
+peso_administracao,"0,25",Peso fixado e homologado no módulo 17.
+peso_resultados_educacionais,0,Resultados educacionais permanecem em diagnóstico paralelo.
+ranking,não produzido,"O módulo não cria ordem, faixa ou percentil de carteiras ou escolas."
+soma_escore_carteira,agregado relativo,Não representa medida total ou definitiva da carga real.

@@ -1,0 +1,6 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe,aprovado
+analise_carteiras_assessoras,11,11,30,30,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+carteira_escola_detalhe,53,53,29,29,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+diagnostico_educacional_carteiras,11,11,25,25,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+composicao_operacional_carteiras,99,99,9,9,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+universo_institucional_carteiras,56,56,13,13,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

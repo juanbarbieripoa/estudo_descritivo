@@ -1,0 +1,11 @@
+campo,valor
+id_execucao,20260729_221336
+instante_execucao,2026-07-29 22:13:36 -0300
+branch,refatoracao_modulo_21
+commit_base,5b75ba8ff3288afb4b2e956e6f68be26517d5c6f
+caminho_script,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/18_analisar_carteiras_assessoras.R
+md5_script,55da057746dc44dedaa881bf046fe393
+perfil_institucional,56
+escolas_operacionais,53
+assessoras_gerenciais,11
+exclusoes_operacionais,ESC_001; ESC_055; ESC_056
