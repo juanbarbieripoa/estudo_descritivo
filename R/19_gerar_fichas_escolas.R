@@ -3,1803 +3,1534 @@
 # Projeto: estudo_descritivo — UEF-SMED-PMPA
 # ===================================================================
 #
-# OBJETIVO ANALÍTICO
+# Produz 56 fichas institucionais:
+# - 53 operacionais, com índice homologado do módulo 17;
+# - 3 não operacionais: ESC_001, ESC_055 e ESC_056.
 #
-# Produzir fichas descritivas individuais das escolas acompanhadas pelo
-# programa de assessoramento da UEF-SMED-PMPA. Cada ficha reúne, em uma
-# apresentação gerencial padronizada:
+# Resultados educacionais permanecem fora do índice. O módulo não cria
+# ranking, faixa, percentil, cenário ou nova normalização.
 #
-#   1. identificação e vínculo administrativo;
-#   2. contexto estrutural de 2024;
-#   3. volume da escola e características da oferta;
-#   4. cobertura, participação e resultados observados em 2025 e 2026;
-#   5. quatro dimensões do índice descritivo de carga potencial;
-#   6. alertas de composição, cobertura e interpretação;
-#   7. resultados detalhados por ano escolar.
+# Versões históricas conhecidas:
+# - 19_gerar_fichas_escolas.R
+# - 19_gerar_fichas_escolas_corrigido.R
+# - 19_gerar_fichas_escolas_corrigido_v2.R
 #
-# As fichas NÃO avaliam a qualidade da escola ou da assessora. Resultados
-# educacionais são observacionais e não devem ser interpretados como efeito
-# causal do assessoramento. O índice representa carga potencial relativa e
-# não constitui ranking de qualidade nem regra automática de redistribuição.
-#
-# ENTRADAS
-#
-# dados_finais/perfil_escola_gerencial.rds ou .csv
-# dados_finais/perfil_escola_serie_compacto.rds ou .csv
-# dados_finais/indice_carga_potencial_escola.rds ou .csv
-# dados_finais/carteira_escola_detalhe.rds ou .csv
-#
-# PRODUTOS PRINCIPAIS
-#
-# dados_finais/base_fichas_escolas.csv e .rds
-# resultados/fichas_escolas/execucao_<data_hora>/html/*.html
-# resultados/fichas_escolas/execucao_<data_hora>/graficos/*.png
-# resultados/fichas_escolas/execucao_<data_hora>/fichas_escolas_compiladas.html
-# resultados/fichas_escolas/execucao_<data_hora>/fichas_escolas_compiladas.pdf
-#   (opcional, quando pagedown e navegador compatível estiverem disponíveis)
-# documentacao/fichas_escolas/dicionario_base_fichas_escolas.csv
-# documentacao/fichas_escolas/execucao_<data_hora>/...
+# Este arquivo é o único caminho canônico executável.
 # ===================================================================
 
 library(here)
 library(tidyverse)
 
 # -------------------------------------------------------------------
-# 1. Parâmetros gerais e identificação da execução
+# 1. Contrato e caminhos
 # -------------------------------------------------------------------
 
-id_execucao <- format(Sys.time(), "%Y%m%d_%H%M%S")
+instante_execucao <- Sys.time()
+id_execucao <- format(instante_execucao, "%Y%m%d_%H%M%S")
 
-# A conversão para PDF é opcional. A ausência de pagedown ou de navegador
-# compatível não interrompe a geração dos HTMLs.
+branch_esperada <- "refatoracao_modulo_21"
+commit_base_integracao <- "d098ad77be7233829bc235112aaa1fe86f9b86a5"
+
 TENTAR_GERAR_PDF_COMPILADO <- TRUE
 
-pasta_dados_finais <- here("dados_finais")
-pasta_resultados <- here("resultados", "fichas_escolas")
-pasta_resultados_execucao <- here(
-  "resultados", "fichas_escolas", paste0("execucao_", id_execucao)
+caminho_script <- here("R", "19_gerar_fichas_escolas.R")
+
+manifestos <- c(
+  modulo_16 = here(
+    "documentacao", "perfil_escola",
+    "execucao_20260726_223447",
+    "19_manifesto_produtos_modulo_16.csv"
+  ),
+  modulo_17 = here(
+    "documentacao", "indice_complexidade",
+    "execucao_20260728_220908",
+    "19_manifesto_produtos_modulo_17.csv"
+  ),
+  modulo_18 = here(
+    "documentacao", "analise_carteiras",
+    "execucao_20260729_221336",
+    "18_manifesto_produtos_modulo_18.csv"
+  )
 )
-pasta_html <- file.path(pasta_resultados_execucao, "html")
-pasta_graficos <- file.path(pasta_resultados_execucao, "graficos")
+
+entradas <- c(
+  perfil_gerencial_csv = here("dados_finais", "perfil_escola_gerencial.csv"),
+  perfil_gerencial_rds = here("dados_finais", "perfil_escola_gerencial.rds"),
+  perfil_serie_csv = here("dados_finais", "perfil_escola_serie_compacto.csv"),
+  perfil_serie_rds = here("dados_finais", "perfil_escola_serie_compacto.rds"),
+  indice_csv = here("dados_finais", "indice_carga_potencial_escola.csv"),
+  indice_rds = here("dados_finais", "indice_carga_potencial_escola.rds"),
+  diagnostico_csv = here(
+    "dados_finais", "componentes_educacionais_escola_serie.csv"
+  ),
+  diagnostico_rds = here(
+    "dados_finais", "componentes_educacionais_escola_serie.rds"
+  ),
+  detalhe_csv = here("dados_finais", "carteira_escola_detalhe.csv"),
+  detalhe_rds = here("dados_finais", "carteira_escola_detalhe.rds"),
+  universo_csv = here("dados_finais", "universo_institucional_carteiras.csv"),
+  universo_rds = here("dados_finais", "universo_institucional_carteiras.rds")
+)
+
+saidas <- c(
+  base_csv = here("dados_finais", "base_fichas_escolas.csv"),
+  base_rds = here("dados_finais", "base_fichas_escolas.rds"),
+  indice_csv = here("dados_finais", "indice_fichas_escolas.csv"),
+  indice_rds = here("dados_finais", "indice_fichas_escolas.rds"),
+  dicionario_csv = here(
+    "documentacao", "fichas_escolas",
+    "dicionario_base_fichas_escolas.csv"
+  )
+)
+
+ids_excluidos <- c("ESC_001", "ESC_055", "ESC_056")
 
 pasta_documentacao <- here("documentacao", "fichas_escolas")
-pasta_execucao <- here(
-  "documentacao", "fichas_escolas", paste0("execucao_", id_execucao)
+pasta_execucao <- file.path(
+  pasta_documentacao, paste0("execucao_", id_execucao)
 )
-pasta_historico <- here(
+
+pasta_resultados <- here("resultados", "fichas_escolas")
+pasta_resultados_final <- file.path(
+  pasta_resultados, paste0("execucao_", id_execucao)
+)
+
+pasta_transacao <- file.path(
+  pasta_resultados, "transacoes", paste0("execucao_", id_execucao)
+)
+pasta_candidatos <- file.path(pasta_transacao, "candidatos")
+pasta_html <- file.path(pasta_candidatos, "html")
+pasta_graficos <- file.path(pasta_candidatos, "graficos")
+pasta_rollback <- file.path(pasta_transacao, "rollback")
+
+pasta_historico_dados <- here(
   "dados_finais", "historico", "fichas_escolas",
-  paste0("execucao_", id_execucao)
+  paste0("pre_refatoracao_execucao_", id_execucao)
 )
 
 walk(
   c(
-    pasta_dados_finais,
-    pasta_resultados,
-    pasta_resultados_execucao,
-    pasta_html,
-    pasta_graficos,
-    pasta_documentacao,
-    pasta_execucao,
-    pasta_historico
+    pasta_documentacao, pasta_execucao, pasta_resultados,
+    pasta_transacao, pasta_candidatos, pasta_html,
+    pasta_graficos, pasta_rollback, pasta_historico_dados
   ),
   ~ dir.create(.x, recursive = TRUE, showWarnings = FALSE)
 )
 
 # -------------------------------------------------------------------
-# 2. Arquivos de entrada e saída
+# 2. Funções auxiliares
 # -------------------------------------------------------------------
 
-arquivos_entrada_rds <- c(
-  perfil_escola = here("dados_finais", "perfil_escola_gerencial.rds"),
-  perfil_serie = here("dados_finais", "perfil_escola_serie_compacto.rds"),
-  indice_escola = here("dados_finais", "indice_carga_potencial_escola.rds"),
-  detalhe_carteira = here("dados_finais", "carteira_escola_detalhe.rds")
-)
+md5 <- function(x) {
+  if (!file.exists(x)) return(NA_character_)
+  unname(tools::md5sum(x))
+}
 
-arquivos_entrada_csv <- c(
-  perfil_escola = here("dados_finais", "perfil_escola_gerencial.csv"),
-  perfil_serie = here("dados_finais", "perfil_escola_serie_compacto.csv"),
-  indice_escola = here("dados_finais", "indice_carga_potencial_escola.csv"),
-  detalhe_carteira = here("dados_finais", "carteira_escola_detalhe.csv")
-)
+norm <- function(x, must = TRUE) {
+  normalizePath(x, winslash = "/", mustWork = must)
+}
 
-arquivos_saida <- c(
-  base_fichas_csv = here("dados_finais", "base_fichas_escolas.csv"),
-  base_fichas_rds = here("dados_finais", "base_fichas_escolas.rds"),
-  dicionario_csv = here(
-    "documentacao", "fichas_escolas", "dicionario_base_fichas_escolas.csv"
+git_cmd <- function(args) {
+  out <- tryCatch(
+    suppressWarnings(system2("git", args, stdout = TRUE, stderr = FALSE)),
+    error = function(e) character()
   )
-)
+  status <- attr(out, "status")
+  if (!is.null(status) && status != 0) return(character())
+  str_squish(as.character(out))
+}
 
-arquivo_html_compilado <- file.path(
-  pasta_resultados_execucao,
-  "fichas_escolas_compiladas.html"
-)
+git_head <- function() {
+  x <- git_cmd(c("-C", shQuote(here()), "rev-parse", "HEAD"))
+  x <- x[str_detect(x, "^[0-9a-fA-F]{40}$")]
+  if (length(x) != 1L) return(NA_character_)
+  str_to_lower(x[[1]])
+}
 
-arquivo_pdf_compilado <- file.path(
-  pasta_resultados_execucao,
-  "fichas_escolas_compiladas.pdf"
-)
+git_branch <- function() {
+  x <- git_cmd(c("-C", shQuote(here()), "branch", "--show-current"))
+  if (length(x) != 1L) return(NA_character_)
+  x[[1]]
+}
 
-# -------------------------------------------------------------------
-# 3. Funções auxiliares gerais
-# -------------------------------------------------------------------
+tipo <- function(x) {
+  case_when(
+    inherits(x, "Date") ~ "date",
+    inherits(x, "POSIXct") ~ "datetime",
+    is.logical(x) ~ "logical",
+    is.integer(x) ~ "integer",
+    is.double(x) ~ "double",
+    is.character(x) ~ "character",
+    TRUE ~ paste(class(x), collapse = " | ")
+  )
+}
 
-ler_base_preferindo_rds <- function(nome_fonte) {
-  caminho_rds <- arquivos_entrada_rds[[nome_fonte]]
-  caminho_csv <- arquivos_entrada_csv[[nome_fonte]]
+logico_seguro <- function(x, nome) {
+  if (is.logical(x)) return(x)
+  z <- str_to_lower(str_squish(as.character(x)))
+  out <- case_when(
+    is.na(z) | z == "" ~ NA,
+    z %in% c("true", "t", "1", "sim", "s") ~ TRUE,
+    z %in% c("false", "f", "0", "nao", "não", "n") ~ FALSE,
+    TRUE ~ NA
+  )
+  if (any(!is.na(z) & z != "" & is.na(out))) {
+    stop("Valor lógico inválido em `", nome, "`.")
+  }
+  out
+}
 
-  if (file.exists(caminho_rds)) {
-    dados <- readRDS(caminho_rds)
-    origem <- caminho_rds
-    formato <- "RDS"
-  } else if (file.exists(caminho_csv)) {
-    dados <- read_csv(
-      caminho_csv,
-      show_col_types = FALSE,
-      progress = FALSE,
-      na = c("", "NA", "NaN")
-    )
-    origem <- caminho_csv
-    formato <- "CSV"
+converter <- function(x, modelo, nome) {
+  switch(
+    tipo(modelo),
+    character = as.character(x),
+    logical = logico_seguro(x, nome),
+    integer = suppressWarnings(as.integer(x)),
+    double = suppressWarnings(as.double(x)),
+    date = as.Date(x),
+    datetime = as.POSIXct(x, tz = "UTC"),
+    stop("Tipo não suportado em `", nome, "`.")
+  )
+}
+
+ler_csv_modelo <- function(caminho, modelo) {
+  bruto <- read_csv(
+    caminho,
+    col_types = cols(.default = col_character()),
+    na = c("", "NA"),
+    trim_ws = FALSE,
+    name_repair = "minimal",
+    show_col_types = FALSE,
+    progress = FALSE
+  )
+  if (!identical(names(bruto), names(modelo))) {
+    stop("Estrutura CSV divergente em: ", caminho)
+  }
+  out <- bruto
+  for (nm in names(modelo)) {
+    out[[nm]] <- converter(bruto[[nm]], modelo[[nm]], nm)
+  }
+  as_tibble(out)
+}
+
+comparar_par <- function(rds, csv, chaves, fonte) {
+  ord <- function(x) {
+    as_tibble(x) |>
+      arrange(across(all_of(chaves))) |>
+      select(all_of(names(x)))
+  }
+  a <- ord(rds)
+  b <- ord(csv)
+  nomes <- identical(names(a), names(b))
+  tipos <- nomes && identical(map_chr(a, tipo), map_chr(b, tipo))
+  dimensoes <- identical(dim(a), dim(b))
+  cmp <- if (nomes && tipos && dimensoes) {
+    all.equal(a, b, check.attributes = FALSE, tolerance = 1e-12)
   } else {
-    stop(
-      "Nenhum arquivo de entrada foi encontrado para a fonte `",
-      nome_fonte,
-      "`. Caminhos verificados: ",
-      caminho_rds,
-      " e ",
-      caminho_csv
-    )
+    "estrutura divergente"
   }
-
+  iguais <- isTRUE(cmp)
   list(
-    dados = as_tibble(dados),
-    origem = origem,
-    formato = formato
+    dados = a,
+    diagnostico = tibble(
+      fonte = fonte,
+      linhas_rds = nrow(a),
+      linhas_csv = nrow(b),
+      colunas_rds = ncol(a),
+      colunas_csv = ncol(b),
+      mesmos_nomes_e_ordem = nomes,
+      mesmos_tipos = tipos,
+      mesmas_dimensoes = dimensoes,
+      mesmos_valores = iguais,
+      detalhe = if (iguais) "equivalentes" else paste(cmp, collapse = " | "),
+      aprovado = nomes && tipos && dimensoes && iguais
+    )
   )
 }
 
-arquivar_arquivo_existente <- function(caminho) {
-  if (file.exists(caminho)) {
-    destino <- file.path(pasta_historico, basename(caminho))
-    ok <- file.copy(caminho, destino, overwrite = TRUE)
-
-    if (!isTRUE(ok)) {
-      stop("Não foi possível arquivar o arquivo existente: ", caminho)
-    }
-  }
+ler_par <- function(nome_rds, nome_csv, chaves, fonte) {
+  rds <- readRDS(entradas[[nome_rds]])
+  if (!is.data.frame(rds)) stop("RDS inválido: ", fonte)
+  csv <- ler_csv_modelo(entradas[[nome_csv]], rds)
+  comparar_par(rds, csv, chaves, fonte)
 }
 
-calcular_md5 <- function(caminho) {
-  if (!file.exists(caminho)) {
-    return(NA_character_)
-  }
-
-  unname(tools::md5sum(caminho)[[1]])
+fmt_num <- function(x, d = 0) {
+  if (length(x) == 0L || is.na(x[[1]])) return("Não disponível")
+  formatC(
+    as.numeric(x[[1]]), format = "f", digits = d,
+    big.mark = ".", decimal.mark = ","
+  )
 }
 
-html_escape <- function(x) {
+fmt_pct <- function(x, d = 1) {
+  if (length(x) == 0L || is.na(x[[1]])) return("Não disponível")
+  paste0(fmt_num(x, d), "%")
+}
+
+fmt_texto <- function(x, padrao = "Não informado") {
+  if (
+    length(x) == 0L || is.na(x[[1]]) ||
+      !nzchar(str_trim(as.character(x[[1]])))
+  ) return(padrao)
+  as.character(x[[1]])
+}
+
+sim_nao <- function(x) {
+  if (length(x) == 0L || is.na(x[[1]])) return("Não informado")
+  ifelse(isTRUE(x[[1]]), "Sim", "Não")
+}
+
+escape_html <- function(x) {
   x <- ifelse(is.na(x), "", as.character(x))
-  x <- str_replace_all(x, "&", "&amp;")
-  x <- str_replace_all(x, "<", "&lt;")
-  x <- str_replace_all(x, ">", "&gt;")
-  x <- str_replace_all(x, '"', "&quot;")
-  x <- str_replace_all(x, "'", "&#39;")
-  x
+  x |>
+    str_replace_all("&", "&amp;") |>
+    str_replace_all("<", "&lt;") |>
+    str_replace_all(">", "&gt;") |>
+    str_replace_all('"', "&quot;") |>
+    str_replace_all("'", "&#39;")
 }
 
-slugificar <- function(x) {
-  x_original <- as.character(x)
-
-  x_ascii <- suppressWarnings(
-    iconv(x_original, from = "UTF-8", to = "ASCII//TRANSLIT")
-  )
-
-  x_ascii[is.na(x_ascii)] <- x_original[is.na(x_ascii)]
-
-  x_ascii |>
+slug <- function(x) {
+  z <- suppressWarnings(iconv(x, from = "UTF-8", to = "ASCII//TRANSLIT"))
+  z[is.na(z)] <- x[is.na(z)]
+  z <- z |>
     str_to_lower() |>
     str_replace_all("[^a-z0-9]+", "-") |>
     str_replace_all("(^-+|-+$)", "") |>
     str_sub(1, 80)
+  if_else(is.na(z) | z == "", "escola", z)
 }
 
-fmt_num <- function(x, digits = 0) {
-  if (length(x) == 0 || is.na(x[[1]])) {
-    return("Não disponível")
-  }
+soma_segura <- function(x) {
+  x <- suppressWarnings(as.numeric(x))
+  if (all(is.na(x))) return(NA_real_)
+  sum(x, na.rm = TRUE)
+}
 
-  formatC(
-    as.numeric(x[[1]]),
-    format = "f",
-    digits = digits,
-    big.mark = ".",
-    decimal.mark = ","
+media_ponderada <- function(x, w) {
+  x <- suppressWarnings(as.numeric(x))
+  w <- suppressWarnings(as.numeric(w))
+  ok <- !is.na(x) & !is.na(w) & w > 0
+  if (!any(ok)) return(NA_real_)
+  weighted.mean(x[ok], w[ok])
+}
+
+validacao <- function(
+    teste, categoria, severidade, observado,
+    criterio, resultado, observacao = ""
+) {
+  tibble(
+    teste = teste,
+    categoria = categoria,
+    severidade = severidade,
+    valor_observado = as.character(observado),
+    criterio = criterio,
+    resultado = isTRUE(resultado),
+    nivel = if_else(isTRUE(resultado), "OK", str_to_upper(severidade)),
+    observacao = observacao
   )
 }
 
-fmt_pct <- function(x, digits = 1) {
-  if (length(x) == 0 || is.na(x[[1]])) {
-    return("Não disponível")
-  }
-
-  paste0(fmt_num(x, digits), "%")
+inventariar <- function(nome, caminho) {
+  tibble(
+    arquivo = nome,
+    caminho = norm(caminho, FALSE),
+    existe = file.exists(caminho),
+    tamanho_bytes = if (file.exists(caminho)) file.info(caminho)$size else NA_real_,
+    md5 = md5(caminho)
+  )
 }
 
-fmt_delta <- function(x, digits = 1, sufixo = "") {
-  if (length(x) == 0 || is.na(x[[1]])) {
-    return("Não comparável")
-  }
-
-  valor <- as.numeric(x[[1]])
-  sinal <- ifelse(valor > 0, "+", "")
-  paste0(sinal, fmt_num(valor, digits), sufixo)
+nao_vazio <- function(caminho, minimo = 100L) {
+  file.exists(caminho) &&
+    is.finite(file.info(caminho)$size) &&
+    file.info(caminho)$size >= minimo
 }
 
-sim_nao <- function(x) {
-  if (length(x) == 0 || is.na(x[[1]])) {
-    return("Não informado")
+copiar_validado <- function(origem, destino, overwrite = FALSE) {
+  dir.create(dirname(destino), recursive = TRUE, showWarnings = FALSE)
+  ok <- file.copy(
+    origem, destino, overwrite = overwrite,
+    copy.mode = TRUE, copy.date = TRUE
+  )
+  if (!ok || !identical(md5(origem), md5(destino))) {
+    stop("Falha ao copiar com integridade: ", origem)
   }
-
-  ifelse(isTRUE(x[[1]]), "Sim", "Não")
-}
-
-limpar_observacoes_composicao <- function(x) {
-  if (is.na(x) || !nzchar(str_trim(x))) {
-    return(NA_character_)
-  }
-
-  partes <- str_split(x, "\\s*\\|\\s*")[[1]] |>
-    str_trim() |>
-    discard(~ !nzchar(.x)) |>
-    unique()
-
-  substantivas <- partes[
-    partes != "Sem alerta principal de composição"
-  ]
-
-  if (length(substantivas) > 0) {
-    paste(substantivas, collapse = " | ")
-  } else {
-    "Sem alerta principal de composição"
-  }
-}
-
-texto_ou_na <- function(x, padrao = "Não informado") {
-  if (length(x) == 0 || is.na(x[[1]]) || !nzchar(str_trim(as.character(x[[1]])))) {
-    return(padrao)
-  }
-
-  as.character(x[[1]])
 }
 
 # -------------------------------------------------------------------
-# 4. Leitura das bases e manifesto dos insumos
+# 3. Bloqueios Git e integridade dos insumos
 # -------------------------------------------------------------------
 
-fontes_lidas <- map(
-  names(arquivos_entrada_rds),
-  ler_base_preferindo_rds
-)
+if (!file.exists(caminho_script)) {
+  stop("Script canônico ausente: ", caminho_script)
+}
 
-names(fontes_lidas) <- names(arquivos_entrada_rds)
+if (!identical(
+  norm(caminho_script, FALSE),
+  norm(here("R", "19_gerar_fichas_escolas.R"), FALSE)
+)) {
+  stop("Execução fora do caminho canônico.")
+}
 
-perfil_escola <- fontes_lidas$perfil_escola$dados
-perfil_serie <- fontes_lidas$perfil_serie$dados
-indice_escola <- fontes_lidas$indice_escola$dados
-detalhe_carteira <- fontes_lidas$detalhe_carteira$dados
+branch <- git_branch()
+head <- git_head()
 
-manifesto_entrada <- imap_dfr(
-  fontes_lidas,
-  function(objeto, fonte) {
-    caminho <- objeto$origem
+if (is.na(branch) || branch != branch_esperada) {
+  stop("Branch divergente: ", branch)
+}
+if (is.na(head) || head != commit_base_integracao) {
+  stop("HEAD divergente: ", head)
+}
 
-    tibble(
-      fonte = fonte,
-      formato_utilizado = objeto$formato,
-      caminho = caminho,
-      tamanho_bytes = file.info(caminho)$size,
-      modificado_em = as.character(file.info(caminho)$mtime),
-      md5 = calcular_md5(caminho),
-      numero_linhas = nrow(objeto$dados),
-      numero_colunas = ncol(objeto$dados)
+obrigatorios <- c(entradas, manifestos)
+faltantes <- obrigatorios[!file.exists(obrigatorios)]
+if (length(faltantes) > 0L) {
+  stop(
+    "Arquivos obrigatórios ausentes:\n",
+    paste(names(faltantes), faltantes, sep = ": ", collapse = "\n")
+  )
+}
+
+ler_manifesto <- function(caminho, nome) {
+  x <- read_csv(
+    caminho,
+    show_col_types = FALSE,
+    na = c("", "NA")
+  )
+  
+  colunas_minimas <- c(
+    "caminho",
+    "tamanho_bytes",
+    "md5"
+  )
+  
+  ausentes <- setdiff(
+    colunas_minimas,
+    names(x)
+  )
+  
+  if (length(ausentes) > 0L) {
+    stop(
+      "Manifesto ",
+      nome,
+      " sem colunas: ",
+      paste(
+        ausentes,
+        collapse = ", "
+      )
     )
   }
-)
-
-write_csv(
-  manifesto_entrada,
-  file.path(pasta_execucao, "01_manifesto_arquivos_entrada.csv"),
-  na = ""
-)
-
-estrutura_bases_entrada <- imap_dfr(
-  fontes_lidas,
-  function(objeto, fonte) {
-    tibble(
-      fonte = fonte,
-      ordem = seq_along(objeto$dados),
-      variavel = names(objeto$dados),
-      classe = map_chr(objeto$dados, ~ paste(class(.x), collapse = "; ")),
-      numero_na = map_int(objeto$dados, ~ sum(is.na(.x))),
-      percentual_na = 100 * numero_na / nrow(objeto$dados)
+  
+  if (
+    !"produto" %in% names(x) &&
+    !"arquivo" %in% names(x)
+  ) {
+    stop(
+      "Manifesto ",
+      nome,
+      " não possui coluna identificadora `produto` ou `arquivo`."
     )
   }
+  
+  x
+}
+
+m16 <- ler_manifesto(manifestos[["modulo_16"]], "módulo 16")
+m17 <- ler_manifesto(manifestos[["modulo_17"]], "módulo 17")
+m18 <- ler_manifesto(manifestos[["modulo_18"]], "módulo 18")
+
+hash_manifesto <- function(manifesto, caminho, origem) {
+  alvo <- basename(caminho)
+  cand <- manifesto |> filter(basename(caminho) == alvo)
+  if (nrow(cand) != 1L) {
+    stop("Arquivo não localizado unicamente no manifesto ", origem, ": ", alvo)
+  }
+  str_to_lower(cand$md5[[1]])
+}
+
+hashes_esperados <- c(
+  perfil_gerencial_csv = hash_manifesto(m16, entradas[["perfil_gerencial_csv"]], "16"),
+  perfil_gerencial_rds = hash_manifesto(m16, entradas[["perfil_gerencial_rds"]], "16"),
+  perfil_serie_csv = hash_manifesto(m16, entradas[["perfil_serie_csv"]], "16"),
+  perfil_serie_rds = hash_manifesto(m16, entradas[["perfil_serie_rds"]], "16"),
+  indice_csv = hash_manifesto(m17, entradas[["indice_csv"]], "17"),
+  indice_rds = hash_manifesto(m17, entradas[["indice_rds"]], "17"),
+  diagnostico_csv = hash_manifesto(m17, entradas[["diagnostico_csv"]], "17"),
+  diagnostico_rds = hash_manifesto(m17, entradas[["diagnostico_rds"]], "17"),
+  detalhe_csv = hash_manifesto(m18, entradas[["detalhe_csv"]], "18"),
+  detalhe_rds = hash_manifesto(m18, entradas[["detalhe_rds"]], "18"),
+  universo_csv = hash_manifesto(m18, entradas[["universo_csv"]], "18"),
+  universo_rds = hash_manifesto(m18, entradas[["universo_rds"]], "18")
 )
 
-write_csv(
-  estrutura_bases_entrada,
-  file.path(pasta_execucao, "02_estrutura_bases_entrada.csv"),
-  na = ""
+hashes_observados <- map_chr(entradas, md5)
+div <- names(hashes_observados)[
+  str_to_lower(hashes_observados) != str_to_lower(hashes_esperados)
+]
+if (length(div) > 0L) {
+  stop("Hashes divergentes: ", paste(div, collapse = ", "))
+}
+
+# -------------------------------------------------------------------
+# 4. Leitura dos seis pares
+# -------------------------------------------------------------------
+
+p_perfil <- ler_par(
+  "perfil_gerencial_rds", "perfil_gerencial_csv",
+  "id_escola", "perfil_escola_gerencial"
 )
 
+p_serie <- ler_par(
+  "perfil_serie_rds", "perfil_serie_csv",
+  c("id_escola", "ano_escolar", "componente"),
+  "perfil_escola_serie_compacto"
+)
+
+p_indice <- ler_par(
+  "indice_rds", "indice_csv",
+  "id_escola", "indice_carga_potencial_escola"
+)
+
+p_diag <- ler_par(
+  "diagnostico_rds", "diagnostico_csv",
+  c("id_escola", "ano_escolar", "componente"),
+  "componentes_educacionais_escola_serie"
+)
+
+p_detalhe <- ler_par(
+  "detalhe_rds", "detalhe_csv",
+  c("assessora_gerencial_2026", "id_escola"),
+  "carteira_escola_detalhe"
+)
+
+p_universo <- ler_par(
+  "universo_rds", "universo_csv",
+  "id_escola", "universo_institucional_carteiras"
+)
+
+equiv_entradas <- bind_rows(
+  p_perfil$diagnostico, p_serie$diagnostico,
+  p_indice$diagnostico, p_diag$diagnostico,
+  p_detalhe$diagnostico, p_universo$diagnostico
+)
+
+if (!all(equiv_entradas$aprovado)) {
+  stop("Há divergência CSV–RDS nas entradas.")
+}
+
+perfil <- p_perfil$dados
+serie <- p_serie$dados
+indice <- p_indice$dados
+diagnostico <- p_diag$dados
+detalhe <- p_detalhe$dados
+universo <- p_universo$dados
+
 # -------------------------------------------------------------------
-# 5. Validação de colunas e chaves
+# 5. Contratos de colunas e universos
 # -------------------------------------------------------------------
 
-colunas_obrigatorias <- list(
-  perfil_escola = c(
-    "id_escola", "codigo_inep", "nome_canonico", "assessora_gerencial",
+exigir <- function(dados, cols, fonte) {
+  aus <- setdiff(cols, names(dados))
+  if (length(aus) > 0L) {
+    stop("Colunas ausentes em ", fonte, ": ", paste(aus, collapse = ", "))
+  }
+}
+
+exigir(
+  perfil,
+  c(
+    "id_escola", "codigo_inep", "nome_canonico",
+    "assessora_vinculo_administrativo", "assessora_gerencial_2026",
+    "elegivel_assessoramento_2026", "recebe_assessoramento_2026",
+    "incluir_indice_carga_2026", "status_carga_operacional_2026",
+    "grupo_exposicao_2026"
+  ),
+  "perfil"
+)
+
+exigir(
+  serie,
+  c(
+    "id_escola", "codigo_inep", "nome_canonico",
+    "assessora_gerencial_2026", "ano_escolar", "componente",
+    "previstos_2025", "avaliados_2025", "taxa_participacao_2025",
+    "proficiencia_media_2025", "pct_defasagem_2025",
+    "pct_intermediario_2025", "pct_adequado_2025",
+    "previstos_2026", "avaliados_2026", "taxa_participacao_2026",
+    "proficiencia_media_2026", "pct_defasagem_2026",
+    "pct_intermediario_2026", "pct_adequado_2026",
+    "painel_resultado_balanceado", "delta_participacao",
+    "delta_proficiencia", "alerta_composicao_serie"
+  ),
+  "perfil_serie"
+)
+
+exigir(
+  indice,
+  c(
+    "id_escola", "codigo_inep", "nome_canonico",
+    "assessora_vinculo_administrativo", "assessora_gerencial_2026",
+    "score_dimensao_volume", "score_dimensao_estrutural",
+    "score_dimensao_administrativa", "contribuicao_volume",
+    "contribuicao_estrutural", "contribuicao_administrativa",
+    "indice_carga_potencial_operacional", "cobertura_indice_operacional",
+    "interpretacao_cautelosa", "resultados_educacionais_no_indice"
+  ),
+  "indice"
+)
+
+exigir(
+  diagnostico,
+  c(
+    "id_escola", "ano_escolar", "componente",
+    "peso_no_indice_carga_operacional",
+    "uso_no_indice_carga_operacional"
+  ),
+  "diagnostico"
+)
+
+exigir(
+  detalhe,
+  c(
+    "id_escola", "assessora_gerencial_2026",
+    "assessora_vinculo_administrativo",
+    "indice_carga_potencial_operacional"
+  ),
+  "detalhe"
+)
+
+exigir(
+  universo,
+  c(
+    "id_escola", "codigo_inep", "nome_canonico",
+    "assessora_vinculo_administrativo", "assessora_gerencial_2026",
+    "elegivel_assessoramento_2026", "recebe_assessoramento_2026",
+    "incluir_indice_carga_2026", "status_carga_operacional_2026",
+    "grupo_exposicao_2026", "incluida_analise_operacional",
+    "motivo_nao_inclusao", "nota_institucional"
+  ),
+  "universo"
+)
+
+universo <- universo |>
+  mutate(
+    incluida_analise_operacional = logico_seguro(
+      incluida_analise_operacional, "incluida_analise_operacional"
+    )
+  )
+
+indice <- indice |>
+  mutate(
+    interpretacao_cautelosa = logico_seguro(
+      interpretacao_cautelosa, "interpretacao_cautelosa"
+    ),
+    resultados_educacionais_no_indice = logico_seguro(
+      resultados_educacionais_no_indice,
+      "resultados_educacionais_no_indice"
+    )
+  )
+
+diagnostico <- diagnostico |>
+  mutate(
+    uso_no_indice_carga_operacional = logico_seguro(
+      uso_no_indice_carga_operacional,
+      "uso_no_indice_carga_operacional"
+    )
+  )
+
+ids_universo <- sort(unique(universo$id_escola))
+ids_indice <- sort(unique(indice$id_escola))
+ids_excluidos_observados <- sort(setdiff(ids_universo, ids_indice))
+
+if (nrow(perfil) != 56L || nrow(serie) != 280L) {
+  stop("Universo institucional divergente.")
+}
+if (nrow(indice) != 53L || nrow(detalhe) != 53L) {
+  stop("Universo operacional divergente.")
+}
+if (nrow(diagnostico) != 265L) {
+  stop("Diagnóstico operacional divergente.")
+}
+if (!setequal(ids_excluidos_observados, ids_excluidos)) {
+  stop("Exclusões operacionais divergentes.")
+}
+if (!setequal(unique(perfil$id_escola), ids_universo)) {
+  stop("Perfil e universo institucional divergem.")
+}
+if (!setequal(unique(serie$id_escola), ids_universo)) {
+  stop("Perfil por série não cobre as 56 escolas.")
+}
+if (!setequal(unique(detalhe$id_escola), ids_indice)) {
+  stop("Detalhe e índice divergem.")
+}
+if (!setequal(unique(diagnostico$id_escola), ids_indice)) {
+  stop("Diagnóstico e índice divergem.")
+}
+
+numero_assessoras <- n_distinct(detalhe$assessora_gerencial_2026)
+if (numero_assessoras != 11L) stop("Número de assessoras divergente.")
+
+# -------------------------------------------------------------------
+# 6. Base institucional de 56 fichas
+# -------------------------------------------------------------------
+
+contextuais <- intersect(
+  c(
     "grupo_administrativo_2024_final", "tipo_vinculo_rede_final",
     "status_rede_2025_final", "observacao_administrativa_final",
     "municipalizada_apos_2024", "escola_nova_recente",
     "matriculas_anos_iniciais", "turmas_anos_iniciais",
     "docentes_anos_iniciais", "alunos_por_turma_anos_iniciais",
-    "alunos_por_docente_anos_iniciais", "porte_anos_iniciais",
-    "numero_etapas_amplas_ofertadas", "oferta_educacao_infantil",
-    "oferta_anos_finais", "oferta_eja", "oferta_educacao_especial",
-    "pct_matriculas_anos_iniciais_integral",
+    "alunos_por_docente_anos_iniciais",
     "pct_matriculas_educacao_especial",
-    "pct_matriculas_transporte_publico", "indice_infraestrutura_basica",
-    "numero_itens_infraestrutura_presentes", "quantidade_sala_utilizada",
-    "possui_espaco_leitura", "possui_recurso_acessibilidade",
-    "laboratorio_ciencias", "laboratorio_informatica", "quadra_esportes",
-    "internet_aprendizagem", "internet_alunos",
-    "sala_atendimento_especial", "numero_series_resultado_2025",
-    "numero_series_resultado_2026", "numero_series_comparaveis",
-    "painel_completo_cinco_series", "previstos_total_2025",
-    "avaliados_total_2025", "taxa_participacao_escola_2025",
-    "proficiencia_multisserie_ponderada_2025", "previstos_total_2026",
-    "avaliados_total_2026", "taxa_participacao_escola_2026",
-    "proficiencia_multisserie_ponderada_2026",
-    "pct_defasagem_multisserie_ponderado_2026",
-    "pct_intermediario_multisserie_ponderado_2026",
-    "pct_adequado_multisserie_ponderado_2026",
-    "delta_participacao_escola",
-    "delta_proficiencia_multisserie_ponderada",
-    "possui_alerta_composicao", "observacoes_composicao"
+    "pct_matriculas_anos_iniciais_integral",
+    "pct_matriculas_transporte_publico",
+    "indice_infraestrutura_basica",
+    "numero_etapas_amplas_ofertadas"
   ),
-  perfil_serie = c(
-    "id_escola", "codigo_inep", "nome_canonico", "assessora_gerencial",
-    "ano_escolar", "componente", "painel_resultado_balanceado",
-    "previstos_2025", "avaliados_2025", "taxa_participacao_2025",
-    "proficiencia_media_2025", "pct_defasagem_2025",
-    "pct_intermediario_2025", "pct_adequado_2025", "previstos_2026",
-    "avaliados_2026", "taxa_participacao_2026",
-    "proficiencia_media_2026", "pct_defasagem_2026",
-    "pct_intermediario_2026", "pct_adequado_2026",
-    "delta_participacao", "delta_proficiencia", "alerta_composicao_serie",
-    "observacao_composicao"
-  ),
-  indice_escola = c(
-    "id_escola", "score_dimensao_volume", "score_dimensao_estrutural",
-    "score_dimensao_educacional", "score_dimensao_administrativa",
-    "indice_carga_potencial", "faixa_indice_carga_potencial",
-    "qualidade_evidencia_educacional",
-    "interpretacao_educacional_cautelosa",
-    "interpretacao_indice_cautelosa"
-  ),
-  detalhe_carteira = c(
-    "id_escola", "tipo_carteira", "carteira_nominal",
-    "participacao_indice_na_carteira_pct", "sensibilidade_faixa",
-    "possui_complexidade_administrativa", "painel_incompleto",
-    "caso_para_leitura_detalhada"
+  names(perfil)
+)
+
+resumo_edu <- serie |>
+  group_by(id_escola) |>
+  summarise(
+    previstos_total_2025 = soma_segura(previstos_2025),
+    avaliados_total_2025 = soma_segura(avaliados_2025),
+    participacao_2025 = if_else(
+      previstos_total_2025 > 0,
+      100 * avaliados_total_2025 / previstos_total_2025,
+      NA_real_
+    ),
+    proficiencia_2025 = media_ponderada(
+      proficiencia_media_2025, avaliados_2025
+    ),
+    previstos_total_2026 = soma_segura(previstos_2026),
+    avaliados_total_2026 = soma_segura(avaliados_2026),
+    participacao_2026 = if_else(
+      previstos_total_2026 > 0,
+      100 * avaliados_total_2026 / previstos_total_2026,
+      NA_real_
+    ),
+    proficiencia_2026 = media_ponderada(
+      proficiencia_media_2026, avaliados_2026
+    ),
+    series_alerta_composicao = sum(
+      coalesce(
+        logico_seguro(alerta_composicao_serie, "alerta_composicao_serie"),
+        FALSE
+      )
+    ),
+    .groups = "drop"
   )
-)
 
-bases_para_validacao <- list(
-  perfil_escola = perfil_escola,
-  perfil_serie = perfil_serie,
-  indice_escola = indice_escola,
-  detalhe_carteira = detalhe_carteira
-)
-
-validacao_colunas <- map_dfr(
-  seq_along(colunas_obrigatorias),
-  function(i) {
-    fonte <- names(colunas_obrigatorias)[[i]]
-    colunas <- colunas_obrigatorias[[i]]
-    dados <- bases_para_validacao[[fonte]]
-
-    tibble(
-      fonte = fonte,
-      coluna_obrigatoria = colunas,
-      presente = colunas %in% names(dados)
-    )
-  }
-)
-
-write_csv(
-  validacao_colunas,
-  file.path(pasta_execucao, "03_validacao_colunas_obrigatorias.csv"),
-  na = ""
-)
-
-if (any(!validacao_colunas$presente)) {
-  ausentes <- validacao_colunas |>
-    filter(!presente) |>
-    transmute(texto = paste0(fonte, ": ", coluna_obrigatoria)) |>
-    pull(texto)
-
-  stop(
-    "Foram encontradas colunas obrigatórias ausentes: ",
-    paste(ausentes, collapse = "; ")
-  )
-}
-
-duplicidades_chaves <- bind_rows(
-  perfil_escola |>
-    count(id_escola, name = "numero_registros") |>
-    filter(numero_registros > 1) |>
-    mutate(fonte = "perfil_escola", chave = as.character(id_escola)),
-  indice_escola |>
-    count(id_escola, name = "numero_registros") |>
-    filter(numero_registros > 1) |>
-    mutate(fonte = "indice_escola", chave = as.character(id_escola)),
-  detalhe_carteira |>
-    count(id_escola, name = "numero_registros") |>
-    filter(numero_registros > 1) |>
-    mutate(fonte = "detalhe_carteira", chave = as.character(id_escola)),
-  perfil_serie |>
-    count(id_escola, ano_escolar, componente, name = "numero_registros") |>
-    filter(numero_registros > 1) |>
-    mutate(
-      fonte = "perfil_serie",
-      chave = paste(id_escola, ano_escolar, componente, sep = " | ")
-    )
-) |>
-  select(fonte, chave, numero_registros)
-
-write_csv(
-  duplicidades_chaves,
-  file.path(pasta_execucao, "04_duplicidades_chaves.csv"),
-  na = ""
-)
-
-if (nrow(duplicidades_chaves) > 0) {
-  stop("Há duplicidades nas chaves das bases de entrada. Consulte 04_duplicidades_chaves.csv.")
-}
-
-conjuntos_escolas <- list(
-  perfil_escola = sort(unique(perfil_escola$id_escola)),
-  indice_escola = sort(unique(indice_escola$id_escola)),
-  detalhe_carteira = sort(unique(detalhe_carteira$id_escola)),
-  perfil_serie = sort(unique(perfil_serie$id_escola))
-)
-
-ids_referencia <- conjuntos_escolas$perfil_escola
-
-cobertura_insumos <- tibble(id_escola = ids_referencia) |>
+base <- universo |>
   left_join(
-    perfil_escola |>
-      select(id_escola, codigo_inep, nome_canonico, assessora_gerencial),
+    perfil |> select(id_escola, all_of(contextuais)),
     by = "id_escola"
   ) |>
+  left_join(
+    indice |>
+      select(
+        id_escola, score_dimensao_volume,
+        score_dimensao_estrutural,
+        score_dimensao_administrativa,
+        contribuicao_volume, contribuicao_estrutural,
+        contribuicao_administrativa,
+        indice_carga_potencial_operacional,
+        cobertura_indice_operacional,
+        interpretacao_cautelosa,
+        resultados_educacionais_no_indice
+      ),
+    by = "id_escola"
+  ) |>
+  left_join(resumo_edu, by = "id_escola") |>
   mutate(
-    presente_perfil_escola = id_escola %in% conjuntos_escolas$perfil_escola,
-    presente_perfil_serie = id_escola %in% conjuntos_escolas$perfil_serie,
-    presente_indice_escola = id_escola %in% conjuntos_escolas$indice_escola,
-    presente_detalhe_carteira = id_escola %in% conjuntos_escolas$detalhe_carteira,
-    cobertura_completa_insumos = presente_perfil_escola &
-      presente_perfil_serie & presente_indice_escola &
-      presente_detalhe_carteira
-  )
-
-write_csv(
-  cobertura_insumos,
-  file.path(pasta_execucao, "05_cobertura_insumos_por_escola.csv"),
-  na = ""
-)
-
-if (any(!cobertura_insumos$cobertura_completa_insumos)) {
-  stop(
-    "Nem todas as escolas estão presentes nos quatro insumos. Consulte ",
-    "05_cobertura_insumos_por_escola.csv."
-  )
-}
-
-if (!all(map_lgl(conjuntos_escolas, ~ identical(.x, ids_referencia)))) {
-  stop("Os conjuntos de escolas diferem entre as bases de entrada.")
-}
-
-if (any(!perfil_serie$ano_escolar %in% 1:5, na.rm = TRUE)) {
-  stop("Foram encontrados anos escolares fora do intervalo de 1 a 5.")
-}
-
-if (n_distinct(perfil_serie$componente, na.rm = TRUE) != 1) {
-  stop("A base por série contém mais de um componente curricular.")
-}
+    tipo_ficha = if_else(
+      incluida_analise_operacional,
+      "OPERACIONAL",
+      "INSTITUCIONAL_NAO_OPERACIONAL"
+    ),
+    divergencia_vinculo_gerencial = coalesce(
+      assessora_vinculo_administrativo, "<NA>"
+    ) != coalesce(assessora_gerencial_2026, "<NA>"),
+    slug_escola = paste0(id_escola, "_", slug(nome_canonico)),
+    html_nome = paste0(slug_escola, ".html"),
+    grafico_operacional_nome = if_else(
+      incluida_analise_operacional,
+      paste0(slug_escola, "_dimensoes_operacionais.png"),
+      NA_character_
+    ),
+    grafico_participacao_nome = paste0(slug_escola, "_participacao.png"),
+    grafico_proficiencia_nome = paste0(slug_escola, "_proficiencia.png")
+  ) |>
+  arrange(id_escola)
 
 # -------------------------------------------------------------------
-# 6. Consolidação da base das fichas
+# 7. Gráficos
 # -------------------------------------------------------------------
 
-indice_selecionado <- indice_escola |>
-  select(
-    id_escola,
-    score_dimensao_volume,
-    score_dimensao_estrutural,
-    score_dimensao_educacional,
-    score_dimensao_administrativa,
-    indice_carga_potencial,
-    faixa_indice_carga_potencial,
-    qualidade_evidencia_educacional,
-    interpretacao_educacional_cautelosa,
-    interpretacao_indice_cautelosa
-  )
-
-detalhe_selecionado <- detalhe_carteira |>
-  select(
-    id_escola,
-    tipo_carteira,
-    carteira_nominal,
-    participacao_indice_na_carteira_pct,
-    sensibilidade_faixa,
-    possui_complexidade_administrativa,
-    painel_incompleto,
-    caso_para_leitura_detalhada
-  )
-
-base_fichas <- perfil_escola |>
-  left_join(indice_selecionado, by = "id_escola") |>
-  left_join(detalhe_selecionado, by = "id_escola") |>
-  mutate(
-    observacoes_composicao_limpa = map_chr(
-      observacoes_composicao,
-      limpar_observacoes_composicao
-    ),
-    slug_escola = slugificar(nome_canonico),
-    arquivo_html = file.path(
-      pasta_html,
-      paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, ".html")
-    ),
-    arquivo_grafico_dimensoes = file.path(
-      pasta_graficos,
-      paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_dimensoes.png")
-    ),
-    arquivo_grafico_participacao = file.path(
-      pasta_graficos,
-      paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_participacao.png")
-    ),
-    arquivo_grafico_proficiencia = file.path(
-      pasta_graficos,
-      paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_proficiencia.png")
-    )
-  )
-
-if (anyDuplicated(base_fichas$slug_escola) > 0) {
-  base_fichas <- base_fichas |>
-    mutate(slug_escola = paste0(slug_escola, "-", str_pad(id_escola, 3, pad = "0"))) |>
-    mutate(
-      arquivo_html = file.path(
-        pasta_html,
-        paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, ".html")
-      ),
-      arquivo_grafico_dimensoes = file.path(
-        pasta_graficos,
-        paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_dimensoes.png")
-      ),
-      arquivo_grafico_participacao = file.path(
-        pasta_graficos,
-        paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_participacao.png")
-      ),
-      arquivo_grafico_proficiencia = file.path(
-        pasta_graficos,
-        paste0(str_pad(id_escola, 3, pad = "0"), "_", slug_escola, "_proficiencia.png")
-      )
-    )
-}
-
-# -------------------------------------------------------------------
-# 7. Funções para gráficos
-# -------------------------------------------------------------------
-
-tema_ficha <- function() {
+tema <- function() {
   theme_minimal(base_size = 11) +
     theme(
-      plot.title = element_text(face = "bold", size = 12),
-      plot.subtitle = element_text(size = 9, color = "#4b5563"),
+      plot.title = element_text(face = "bold"),
       panel.grid.minor = element_blank(),
-      panel.grid.major.y = element_blank(),
-      axis.title = element_text(size = 9),
-      axis.text = element_text(size = 9),
-      legend.position = "bottom",
-      legend.title = element_blank(),
-      plot.margin = margin(8, 12, 8, 8)
+      legend.position = "bottom"
     )
 }
 
-gerar_grafico_dimensoes <- function(linha_escola, caminho) {
-  dados <- tibble(
+grafico_operacional <- function(escola, caminho) {
+  d <- tibble(
     dimensao = factor(
-      c("Volume", "Estrutural", "Educacional", "Administrativa"),
-      levels = rev(c("Volume", "Estrutural", "Educacional", "Administrativa"))
+      c("Volume", "Estrutura", "Complexidade administrativa"),
+      levels = c(
+        "Complexidade administrativa", "Estrutura", "Volume"
+      )
     ),
     escore = c(
-      linha_escola$score_dimensao_volume,
-      linha_escola$score_dimensao_estrutural,
-      linha_escola$score_dimensao_educacional,
-      linha_escola$score_dimensao_administrativa
+      escola$score_dimensao_volume,
+      escola$score_dimensao_estrutural,
+      escola$score_dimensao_administrativa
     )
   )
-
-  grafico <- ggplot(dados, aes(x = escore, y = dimensao, fill = dimensao)) +
-    geom_col(width = 0.62, show.legend = FALSE) +
-    geom_text(
-      aes(label = if_else(is.na(escore), "NA", sprintf("%.1f", escore))),
-      hjust = -0.12,
-      size = 3.5,
-      na.rm = TRUE
-    ) +
-    scale_x_continuous(
-      limits = c(0, 108),
-      breaks = seq(0, 100, 20),
-      expand = expansion(mult = c(0, 0))
-    ) +
-    scale_fill_manual(
-      values = c(
-        "Volume" = "#35648f",
-        "Estrutural" = "#6b7f3e",
-        "Educacional" = "#b16b28",
-        "Administrativa" = "#7d5684"
-      )
-    ) +
+  p <- ggplot(d, aes(escore, dimensao)) +
+    geom_col() +
+    scale_x_continuous(limits = c(0, 105)) +
     labs(
-      title = "Dimensões da carga potencial",
-      subtitle = "Escores relativos de 0 a 100; não representam qualidade",
-      x = "Escore relativo",
-      y = NULL
+      title = "Dimensões do índice operacional",
+      subtitle = "Volume 40%; estrutura 35%; administração 25%.",
+      x = "Escore relativo", y = NULL
     ) +
-    tema_ficha()
-
-  ggsave(
-    caminho,
-    grafico,
-    width = 7.1,
-    height = 3.25,
-    dpi = 160,
-    bg = "white"
-  )
+    tema()
+  ggsave(caminho, p, width = 8, height = 4.5, dpi = 150)
 }
 
-gerar_grafico_participacao <- function(dados_serie, caminho) {
-  dados <- dados_serie |>
-    select(ano_escolar, taxa_participacao_2025, taxa_participacao_2026) |>
+grafico_serie <- function(dados, variavel_2025, variavel_2026, titulo, y, caminho) {
+  d <- dados |>
+    select(
+      ano_escolar,
+      valor_2025 = all_of(variavel_2025),
+      valor_2026 = all_of(variavel_2026)
+    ) |>
     pivot_longer(
-      cols = starts_with("taxa_participacao_"),
-      names_to = "ano_avaliacao",
-      values_to = "participacao"
+      starts_with("valor_"),
+      names_to = "ano",
+      values_to = "valor"
     ) |>
     mutate(
-      ano_avaliacao = recode(
-        ano_avaliacao,
-        taxa_participacao_2025 = "2025",
-        taxa_participacao_2026 = "2026"
-      ),
-      ano_escolar = factor(
-        ano_escolar,
-        levels = 1:5,
-        labels = paste0(1:5, "º")
-      )
+      ano = if_else(ano == "valor_2025", "2025", "2026"),
+      serie = paste0(ano_escolar, "º ano")
     )
-
-  if (all(is.na(dados$participacao))) {
-    grafico <- ggplot() +
-      annotate("text", x = 1, y = 1, label = "Participação não disponível") +
-      xlim(0, 2) + ylim(0, 2) + theme_void()
-  } else {
-    grafico <- ggplot(
-      dados,
-      aes(
-        x = ano_escolar,
-        y = participacao,
-        group = ano_avaliacao,
-        color = ano_avaliacao
-      )
+  p <- ggplot(d, aes(serie, valor, group = ano, linetype = ano)) +
+    geom_line(na.rm = TRUE) +
+    geom_point(na.rm = TRUE) +
+    labs(
+      title = titulo,
+      subtitle = "Resultado descritivo, observacional e não causal.",
+      x = NULL, y = y, linetype = "Ano"
     ) +
-      geom_hline(yintercept = c(70, 80, 90), linetype = "dotted", color = "#c7cbd1") +
-      geom_line(linewidth = 0.8, na.rm = TRUE) +
-      geom_point(size = 2.5, na.rm = TRUE) +
-      scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 20)) +
-      scale_color_manual(values = c("2025" = "#7f8c99", "2026" = "#245b85")) +
-      labs(
-        title = "Participação por ano escolar",
-        subtitle = "Percentual de estudantes avaliados entre os previstos",
-        x = "Ano escolar",
-        y = "Participação (%)"
-      ) +
-      tema_ficha()
-  }
+    tema()
+  ggsave(caminho, p, width = 8, height = 4.5, dpi = 150)
+}
 
-  ggsave(
-    caminho,
-    grafico,
-    width = 7.1,
-    height = 3.25,
-    dpi = 160,
-    bg = "white"
+# -------------------------------------------------------------------
+# 8. HTML
+# -------------------------------------------------------------------
+
+css <- paste0(
+  "<style>",
+  "body{font-family:Arial,sans-serif;background:#f4f6f8;color:#263238;margin:0}",
+  ".pagina{max-width:1080px;margin:auto;background:white;padding:28px 36px}",
+  "h1{font-size:25px;margin:0 0 8px}h2{font-size:18px;border-bottom:2px solid #cfd8dc;padding-bottom:6px;margin-top:26px}",
+  ".grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}",
+  ".card{border:1px solid #cfd8dc;border-radius:6px;padding:10px;background:#fafafa}",
+  ".rot{font-size:11px;text-transform:uppercase;color:#607d8b;font-weight:bold}",
+  ".val{font-size:16px;margin-top:4px}.selo{display:inline-block;padding:6px 10px;border-radius:14px;background:#eceff1;margin:4px;font-size:12px}",
+  ".nota{border-left:4px solid #78909c;background:#f5f7f8;padding:12px;margin:14px 0;font-size:12px}",
+  ".alerta{border-left:4px solid #ef6c00;background:#fff8e1;padding:12px;margin:14px 0;font-size:12px}",
+  "table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #cfd8dc;padding:6px}th{background:#eceff1}",
+  "img{width:100%;max-width:900px;border:1px solid #cfd8dc;margin:12px 0}",
+  ".rodape{margin-top:28px;border-top:1px solid #cfd8dc;padding-top:10px;font-size:10px;color:#607d8b}",
+  "@media print{body{background:white}.pagina{max-width:none}.quebra{page-break-before:always}}",
+  "</style>"
+)
+
+card <- function(rotulo, valor) {
+  paste0(
+    "<div class='card'><div class='rot'>", escape_html(rotulo),
+    "</div><div class='val'>", escape_html(valor), "</div></div>"
   )
 }
 
-gerar_grafico_proficiencia <- function(dados_serie, caminho) {
-  dados <- dados_serie |>
-    select(ano_escolar, proficiencia_media_2025, proficiencia_media_2026) |>
-    pivot_longer(
-      cols = starts_with("proficiencia_media_"),
-      names_to = "ano_avaliacao",
-      values_to = "proficiencia"
-    ) |>
-    mutate(
-      ano_avaliacao = recode(
-        ano_avaliacao,
-        proficiencia_media_2025 = "2025",
-        proficiencia_media_2026 = "2026"
-      ),
-      ano_escolar = factor(
-        ano_escolar,
-        levels = 1:5,
-        labels = paste0(1:5, "º")
-      )
+tabela_series <- function(d) {
+  linhas <- map_chr(seq_len(nrow(d)), function(i) {
+    x <- d[i, ]
+    paste0(
+      "<tr><td>", x$ano_escolar, "º</td>",
+      "<td>", fmt_num(x$previstos_2025), "</td>",
+      "<td>", fmt_num(x$avaliados_2025), "</td>",
+      "<td>", fmt_pct(x$taxa_participacao_2025), "</td>",
+      "<td>", fmt_num(x$proficiencia_media_2025, 1), "</td>",
+      "<td>", fmt_num(x$previstos_2026), "</td>",
+      "<td>", fmt_num(x$avaliados_2026), "</td>",
+      "<td>", fmt_pct(x$taxa_participacao_2026), "</td>",
+      "<td>", fmt_num(x$proficiencia_media_2026, 1), "</td></tr>"
     )
+  })
+  paste0(
+    "<table><thead><tr><th>Série</th><th>Prev. 2025</th>",
+    "<th>Aval. 2025</th><th>Part. 2025</th><th>Prof. 2025</th>",
+    "<th>Prev. 2026</th><th>Aval. 2026</th><th>Part. 2026</th>",
+    "<th>Prof. 2026</th></tr></thead><tbody>",
+    paste(linhas, collapse = ""), "</tbody></table>"
+  )
+}
 
-  if (all(is.na(dados$proficiencia))) {
-    grafico <- ggplot() +
-      annotate("text", x = 1, y = 1, label = "Proficiência não disponível") +
-      xlim(0, 2) + ylim(0, 2) + theme_void()
+render_html <- function(escola, dserie) {
+  operacional <- isTRUE(escola$incluida_analise_operacional[[1]])
+  bloco_indice <- if (operacional) {
+    paste0(
+      "<h2>Índice operacional</h2><div class='grid'>",
+      card("Índice operacional", fmt_num(escola$indice_carga_potencial_operacional, 1)),
+      card("Volume", fmt_num(escola$score_dimensao_volume, 1)),
+      card("Estrutura", fmt_num(escola$score_dimensao_estrutural, 1)),
+      card("Complexidade administrativa", fmt_num(escola$score_dimensao_administrativa, 1)),
+      card("Cobertura", fmt_pct(100 * escola$cobertura_indice_operacional, 1)),
+      card("Leitura cautelosa", sim_nao(escola$interpretacao_cautelosa)),
+      "</div><img src='../graficos/", escape_html(escola$grafico_operacional_nome),
+      "'><div class='nota'>Índice relativo e descritivo; não mede integralmente ",
+      "horas, deslocamentos, eventos emergenciais ou toda a carga real.</div>"
+    )
   } else {
-    limites <- range(dados$proficiencia, na.rm = TRUE)
-    margem <- max(5, diff(limites) * 0.12)
-
-    grafico <- ggplot(
-      dados,
-      aes(
-        x = ano_escolar,
-        y = proficiencia,
-        group = ano_avaliacao,
-        color = ano_avaliacao
-      )
-    ) +
-      geom_line(linewidth = 0.8, na.rm = TRUE) +
-      geom_point(size = 2.5, na.rm = TRUE) +
-      scale_y_continuous(
-        limits = c(max(0, limites[[1]] - margem), limites[[2]] + margem)
-      ) +
-      scale_color_manual(values = c("2025" = "#7f8c99", "2026" = "#b45f32")) +
-      labs(
-        title = "Proficiência média por ano escolar",
-        subtitle = "Comparações devem considerar participação e composição dos avaliados",
-        x = "Ano escolar",
-        y = "Proficiência média"
-      ) +
-      tema_ficha()
+    paste0(
+      "<h2>Situação operacional</h2><div class='alerta'>",
+      escape_html(fmt_texto(escola$motivo_nao_inclusao)),
+      " Esta escola permanece no universo institucional, sem índice e sem ",
+      "carteira operacional.</div>"
+    )
   }
 
-  ggsave(
-    caminho,
-    grafico,
-    width = 7.1,
-    height = 3.25,
-    dpi = 160,
-    bg = "white"
+  paste0(
+    "<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'>",
+    "<meta name='viewport' content='width=device-width,initial-scale=1'>",
+    "<title>", escape_html(escola$nome_canonico), "</title>", css,
+    "</head><body><div class='pagina'>",
+    "<h1>", escape_html(escola$nome_canonico), "</h1>",
+    "<span class='selo'>", escape_html(escola$tipo_ficha), "</span>",
+    "<span class='selo'>ID: ", escape_html(escola$id_escola), "</span>",
+    "<span class='selo'>INEP: ", escape_html(escola$codigo_inep), "</span>",
+    "<h2>Identificação e vínculos</h2><div class='grid'>",
+    card("Assessora gerencial 2026", fmt_texto(escola$assessora_gerencial_2026)),
+    card("Vínculo administrativo", fmt_texto(escola$assessora_vinculo_administrativo)),
+    card("Elegível 2026", sim_nao(escola$elegivel_assessoramento_2026)),
+    card("Recebe assessoramento 2026", sim_nao(escola$recebe_assessoramento_2026)),
+    card("Status operacional", fmt_texto(escola$status_carga_operacional_2026)),
+    card("Grupo de exposição", fmt_texto(escola$grupo_exposicao_2026)),
+    "</div>",
+    bloco_indice,
+    "<h2>Diagnóstico educacional contextual</h2><div class='grid'>",
+    card("Previstos 2025", fmt_num(escola$previstos_total_2025)),
+    card("Avaliados 2025", fmt_num(escola$avaliados_total_2025)),
+    card("Participação 2025", fmt_pct(escola$participacao_2025)),
+    card("Previstos 2026", fmt_num(escola$previstos_total_2026)),
+    card("Avaliados 2026", fmt_num(escola$avaliados_total_2026)),
+    card("Participação 2026", fmt_pct(escola$participacao_2026)),
+    card("Proficiência 2025", fmt_num(escola$proficiencia_2025, 1)),
+    card("Proficiência 2026", fmt_num(escola$proficiencia_2026, 1)),
+    card("Séries com alerta", fmt_num(escola$series_alerta_composicao)),
+    "</div>",
+    "<img src='../graficos/", escape_html(escola$grafico_participacao_nome), "'>",
+    "<img src='../graficos/", escape_html(escola$grafico_proficiencia_nome), "'>",
+    "<div class='nota'>Resultados educacionais são observacionais, descritivos ",
+    "e sujeitos a diferenças de participação, composição e cobertura. Não ",
+    "representam efeito do assessoramento nem desempenho da assessora.</div>",
+    "<h2>Resultados por ano escolar</h2>",
+    tabela_series(dserie),
+    "<div class='rodape'>Execução ", id_execucao,
+    " — módulo 19 — estudo observacional e descritivo.</div>",
+    "</div></body></html>"
   )
 }
 
 # -------------------------------------------------------------------
-# 8. Funções para composição das fichas em HTML
+# 9. Geração dos candidatos
 # -------------------------------------------------------------------
 
-css_fichas <- "
-@page { size: A4; margin: 11mm 10mm 12mm 10mm; }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #eef1f4;
-  color: #1f2933;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10.5pt;
-  line-height: 1.35;
-}
-.ficha {
-  width: 190mm;
-  min-height: 270mm;
-  margin: 8mm auto;
-  padding: 10mm;
-  background: white;
-  box-shadow: 0 2px 12px rgba(0,0,0,.10);
-  page-break-after: always;
-  break-after: page;
-}
-.ficha:last-child { page-break-after: auto; break-after: auto; }
-.cabecalho {
-  border-bottom: 4px solid #244d70;
-  padding-bottom: 5mm;
-  margin-bottom: 5mm;
-}
-.instituicao {
-  color: #52616f;
-  font-size: 8.5pt;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-h1 { margin: 2mm 0 1mm 0; color: #173953; font-size: 20pt; line-height: 1.12; }
-.subtitulo { color: #52616f; font-size: 10pt; }
-.grade-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3mm;
-  margin: 4mm 0;
-}
-.card {
-  border: 1px solid #d9e0e6;
-  border-radius: 5px;
-  padding: 3.5mm;
-  min-height: 23mm;
-  background: #fafbfc;
-}
-.card .rotulo { color: #687786; font-size: 8pt; text-transform: uppercase; letter-spacing: .03em; }
-.card .valor { color: #173953; font-size: 16pt; font-weight: bold; margin-top: 1.5mm; }
-.card .nota { color: #687786; font-size: 7.7pt; margin-top: 1mm; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
-.bloco {
-  border: 1px solid #d9e0e6;
-  border-radius: 5px;
-  padding: 4mm;
-  margin: 4mm 0;
-  break-inside: avoid;
-}
-.bloco h2 {
-  margin: 0 0 3mm 0;
-  color: #244d70;
-  font-size: 12.5pt;
-  border-bottom: 1px solid #d9e0e6;
-  padding-bottom: 1.5mm;
-}
-.tabela { width: 100%; border-collapse: collapse; font-size: 8.7pt; }
-.tabela th { background: #e8eef3; color: #28485f; text-align: left; }
-.tabela th, .tabela td { border: 1px solid #d8dee4; padding: 1.8mm 2mm; vertical-align: top; }
-.tabela td.num, .tabela th.num { text-align: right; }
-.alertas { margin: 0; padding-left: 5mm; }
-.alertas li { margin-bottom: 1.5mm; }
-.selo {
-  display: inline-block;
-  padding: 1.2mm 2.5mm;
-  border-radius: 10px;
-  font-size: 8pt;
-  font-weight: bold;
-  margin: .5mm 1mm .5mm 0;
-}
-.selo-neutro { background: #e8eef3; color: #28485f; }
-.selo-atencao { background: #fff0d5; color: #845313; }
-.selo-cautela { background: #f8dddd; color: #8a2f2f; }
-.selo-ok { background: #e1f1e7; color: #326345; }
-.grafico { width: 100%; max-height: 82mm; object-fit: contain; }
-.nota-metodologica {
-  background: #f3f5f7;
-  border-left: 4px solid #7b8995;
-  padding: 3mm 4mm;
-  color: #53616d;
-  font-size: 8.5pt;
-  margin-top: 5mm;
-}
-.rodape { color: #73808c; font-size: 7.5pt; margin-top: 4mm; text-align: right; }
-@media print {
-  body { background: white; }
-  .ficha { margin: 0; box-shadow: none; width: auto; min-height: auto; }
-}
-"
+resultado <- vector("list", nrow(base))
 
-render_selo <- function(texto, classe = "selo-neutro") {
-  paste0(
-    '<span class="selo ', classe, '">',
-    html_escape(texto),
-    "</span>"
-  )
-}
-
-render_alertas <- function(escola) {
-  alertas <- character()
-
-  if (isTRUE(escola$interpretacao_indice_cautelosa)) {
-    alertas <- c(
-      alertas,
-      "O índice geral requer interpretação cautelosa devido à cobertura parcial de componentes."
-    )
-  }
-
-  if (isTRUE(escola$interpretacao_educacional_cautelosa)) {
-    alertas <- c(
-      alertas,
-      paste0(
-        "A evidência educacional é limitada: ",
-        texto_ou_na(escola$qualidade_evidencia_educacional),
-        "."
-      )
-    )
-  }
-
-  if (isTRUE(escola$painel_incompleto)) {
-    alertas <- c(
-      alertas,
-      paste0(
-        "Painel temporal incompleto: ",
-        fmt_num(escola$numero_series_comparaveis),
-        " de 5 séries comparáveis entre 2025 e 2026."
-      )
-    )
-  }
-
-  if (isTRUE(escola$possui_complexidade_administrativa)) {
-    alertas <- c(
-      alertas,
-      "A escola possui situação administrativa especial considerada no índice de carga potencial."
-    )
-  }
-
-  if (isTRUE(escola$possui_alerta_composicao)) {
-    alerta_textual <- texto_ou_na(
-      escola$observacoes_composicao_limpa,
-      "Foram identificadas mudanças relevantes de participação ou composição."
-    )
-    alertas <- c(alertas, alerta_textual)
-  }
-
-  if (is.na(escola$assessora_gerencial) ||
-      escola$assessora_gerencial == "Sem vinculação informada") {
-    alertas <- c(
-      alertas,
-      "O vínculo administrativo de assessoramento não está informado na base."
-    )
-  }
-
-  if (length(alertas) == 0) {
-    return(
-      '<p><span class="selo selo-ok">Sem alerta crítico de cobertura</span></p>'
-    )
-  }
-
-  itens <- paste0("<li>", html_escape(unique(alertas)), "</li>", collapse = "")
-  paste0('<ul class="alertas">', itens, "</ul>")
-}
-
-render_tabela_contexto <- function(escola) {
-  linhas <- tribble(
-    ~rotulo, ~valor,
-    "Grupo administrativo em 2024", texto_ou_na(escola$grupo_administrativo_2024_final),
-    "Tipo de vínculo com a rede", texto_ou_na(escola$tipo_vinculo_rede_final),
-    "Situação operacional em 2025", texto_ou_na(escola$status_rede_2025_final),
-    "Porte dos anos iniciais", texto_ou_na(escola$porte_anos_iniciais),
-    "Etapas amplas ofertadas", fmt_num(escola$numero_etapas_amplas_ofertadas),
-    "Oferta de educação infantil", sim_nao(escola$oferta_educacao_infantil),
-    "Oferta de anos finais", sim_nao(escola$oferta_anos_finais),
-    "Oferta de EJA", sim_nao(escola$oferta_eja),
-    "Oferta de educação especial", sim_nao(escola$oferta_educacao_especial),
-    "Tempo integral nos anos iniciais", fmt_pct(escola$pct_matriculas_anos_iniciais_integral),
-    "Matrículas de educação especial", fmt_pct(escola$pct_matriculas_educacao_especial),
-    "Uso de transporte público", fmt_pct(escola$pct_matriculas_transporte_publico)
-  )
-
-  corpo <- linhas |>
-    mutate(
-      linha = paste0(
-        "<tr><td>", html_escape(rotulo), "</td><td>",
-        html_escape(valor), "</td></tr>"
-      )
-    ) |>
-    pull(linha) |>
-    paste(collapse = "")
-
-  paste0(
-    '<table class="tabela"><tbody>',
-    corpo,
-    "</tbody></table>"
-  )
-}
-
-render_tabela_infraestrutura <- function(escola) {
-  linhas <- tribble(
-    ~rotulo, ~valor,
-    "Índice de infraestrutura básica", fmt_num(escola$indice_infraestrutura_basica, 1),
-    "Itens de infraestrutura presentes", fmt_num(escola$numero_itens_infraestrutura_presentes),
-    "Salas utilizadas", fmt_num(escola$quantidade_sala_utilizada),
-    "Espaço de leitura", sim_nao(escola$possui_espaco_leitura),
-    "Recursos de acessibilidade", sim_nao(escola$possui_recurso_acessibilidade),
-    "Laboratório de ciências", sim_nao(escola$laboratorio_ciencias),
-    "Laboratório de informática", sim_nao(escola$laboratorio_informatica),
-    "Quadra de esportes", sim_nao(escola$quadra_esportes),
-    "Internet para aprendizagem", sim_nao(escola$internet_aprendizagem),
-    "Internet para estudantes", sim_nao(escola$internet_alunos),
-    "Sala de atendimento especial", sim_nao(escola$sala_atendimento_especial)
-  )
-
-  corpo <- linhas |>
-    mutate(
-      linha = paste0(
-        "<tr><td>", html_escape(rotulo), "</td><td>",
-        html_escape(valor), "</td></tr>"
-      )
-    ) |>
-    pull(linha) |>
-    paste(collapse = "")
-
-  paste0('<table class="tabela"><tbody>', corpo, "</tbody></table>")
-}
-
-render_tabela_series <- function(dados_serie) {
-  dados <- dados_serie |>
-    arrange(ano_escolar) |>
-    mutate(
-      ano_escolar_txt = paste0(ano_escolar, "º"),
-      participacao_2025_txt = map_chr(taxa_participacao_2025, ~ fmt_pct(.x)),
-      participacao_2026_txt = map_chr(taxa_participacao_2026, ~ fmt_pct(.x)),
-      delta_participacao_txt = map_chr(
-        delta_participacao,
-        ~ fmt_delta(.x, 1, " p.p.")
-      ),
-      proficiencia_2025_txt = map_chr(proficiencia_media_2025, ~ fmt_num(.x, 1)),
-      proficiencia_2026_txt = map_chr(proficiencia_media_2026, ~ fmt_num(.x, 1)),
-      delta_proficiencia_txt = map_chr(delta_proficiencia, ~ fmt_delta(.x, 1)),
-      padroes_2026_txt = pmap_chr(
-        list(pct_defasagem_2026, pct_intermediario_2026, pct_adequado_2026),
-        function(defasagem, intermediario, adequado) {
-          if (all(is.na(c(defasagem, intermediario, adequado)))) {
-            return("Não disponível")
-          }
-
-          paste0(
-            "D: ", fmt_pct(defasagem),
-            " · I: ", fmt_pct(intermediario),
-            " · A: ", fmt_pct(adequado)
-          )
-        }
-      ),
-      alerta_txt = if_else(
-        alerta_composicao_serie %in% TRUE,
-        "Sim",
-        "Não",
-        missing = "Não informado"
-      )
-    )
-
-  corpo <- dados |>
-    transmute(
-      linha = paste0(
-        "<tr>",
-        '<td class="num">', html_escape(ano_escolar_txt), "</td>",
-        '<td class="num">', html_escape(participacao_2025_txt), "</td>",
-        '<td class="num">', html_escape(participacao_2026_txt), "</td>",
-        '<td class="num">', html_escape(delta_participacao_txt), "</td>",
-        '<td class="num">', html_escape(proficiencia_2025_txt), "</td>",
-        '<td class="num">', html_escape(proficiencia_2026_txt), "</td>",
-        '<td class="num">', html_escape(delta_proficiencia_txt), "</td>",
-        "<td>", html_escape(padroes_2026_txt), "</td>",
-        "<td>", html_escape(alerta_txt), "</td>",
-        "</tr>"
-      )
-    ) |>
-    pull(linha) |>
-    paste(collapse = "")
-
-  paste0(
-    '<table class="tabela">',
-    "<thead><tr>",
-    '<th class="num">Ano</th>',
-    '<th class="num">Part. 2025</th>',
-    '<th class="num">Part. 2026</th>',
-    '<th class="num">Δ part.</th>',
-    '<th class="num">Prof. 2025</th>',
-    '<th class="num">Prof. 2026</th>',
-    '<th class="num">Δ prof.</th>',
-    "<th>Padrões 2026</th>",
-    "<th>Alerta</th>",
-    "</tr></thead><tbody>",
-    corpo,
-    "</tbody></table>"
-  )
-}
-
-render_secao_ficha <- function(escola, dados_serie, caminho_dim, caminho_part, caminho_prof) {
-  selos <- c(
-    render_selo(
-      paste0("Carteira: ", texto_ou_na(escola$assessora_gerencial)),
-      "selo-neutro"
-    ),
-    render_selo(
-      texto_ou_na(escola$faixa_indice_carga_potencial),
-      "selo-atencao"
-    )
-  )
-
-  if (isTRUE(escola$interpretacao_indice_cautelosa) ||
-      isTRUE(escola$interpretacao_educacional_cautelosa)) {
-    selos <- c(selos, render_selo("Interpretação cautelosa", "selo-cautela"))
-  }
-
-  if (isTRUE(escola$painel_completo_cinco_series)) {
-    selos <- c(selos, render_selo("Painel completo", "selo-ok"))
-  } else {
-    selos <- c(selos, render_selo("Painel incompleto", "selo-cautela"))
-  }
-
-  observacao_administrativa <- texto_ou_na(
-    escola$observacao_administrativa_final,
-    "Sem observação administrativa específica registrada."
-  )
-
-  glue::glue(
-    '<section class="ficha">',
-    '<div class="cabecalho">',
-    '<div class="instituicao">UEF-SMED-PMPA · Estudo descritivo do assessoramento escolar</div>',
-    '<h1>{html_escape(escola$nome_canonico)}</h1>',
-    '<div class="subtitulo">Código INEP: {html_escape(texto_ou_na(escola$codigo_inep))} · ',
-    'Ficha descritiva individual</div>',
-    '<div style="margin-top:3mm;">{paste(selos, collapse = "")}</div>',
-    '</div>',
-
-    '<div class="grade-cards">',
-    '<div class="card"><div class="rotulo">Matrículas — anos iniciais</div>',
-    '<div class="valor">{fmt_num(escola$matriculas_anos_iniciais)}</div>',
-    '<div class="nota">Contexto de 2024</div></div>',
-    '<div class="card"><div class="rotulo">Turmas — anos iniciais</div>',
-    '<div class="valor">{fmt_num(escola$turmas_anos_iniciais)}</div>',
-    '<div class="nota">Contexto de 2024</div></div>',
-    '<div class="card"><div class="rotulo">Participação em 2026</div>',
-    '<div class="valor">{fmt_pct(escola$taxa_participacao_escola_2026)}</div>',
-    '<div class="nota">Δ 2025–2026: {fmt_delta(escola$delta_participacao_escola, 1, " p.p.")}</div></div>',
-    '<div class="card"><div class="rotulo">Carga potencial relativa</div>',
-    '<div class="valor">{fmt_num(escola$indice_carga_potencial, 1)}</div>',
-    '<div class="nota">Escore descritivo de 0 a 100</div></div>',
-    '</div>',
-
-    '<div class="grid-2">',
-    '<div class="bloco"><h2>Contexto e oferta</h2>{render_tabela_contexto(escola)}</div>',
-    '<div class="bloco"><h2>Infraestrutura e recursos</h2>{render_tabela_infraestrutura(escola)}</div>',
-    '</div>',
-
-    '<div class="bloco"><h2>Síntese da carga potencial</h2>',
-    '<img class="grafico" src="{html_escape(caminho_dim)}" alt="Dimensões da carga potencial">',
-    '<div class="grid-3" style="margin-top:2mm;">',
-    '<div><strong>Alunos por turma:</strong><br>{fmt_num(escola$alunos_por_turma_anos_iniciais, 1)}</div>',
-    '<div><strong>Alunos por docente:</strong><br>{fmt_num(escola$alunos_por_docente_anos_iniciais, 1)}</div>',
-    '<div><strong>Participação na carga da carteira:</strong><br>{fmt_pct(escola$participacao_indice_na_carteira_pct)}</div>',
-    '</div></div>',
-
-    '<div class="bloco"><h2>Alertas e cautelas de interpretação</h2>{render_alertas(escola)}</div>',
-
-    '<div class="bloco"><h2>Contexto administrativo registrado</h2>',
-    '<p>{html_escape(observacao_administrativa)}</p>',
-    '<p><strong>Sensibilidade aos pesos do índice:</strong> ',
-    '{html_escape(texto_ou_na(escola$sensibilidade_faixa))}.</p>',
-    '</div>',
-
-    '<div class="grid-2">',
-    '<div class="bloco"><img class="grafico" src="{html_escape(caminho_part)}" ',
-    'alt="Participação por ano escolar"></div>',
-    '<div class="bloco"><img class="grafico" src="{html_escape(caminho_prof)}" ',
-    'alt="Proficiência por ano escolar"></div>',
-    '</div>',
-
-    '<div class="bloco"><h2>Resultados observados por ano escolar</h2>',
-    '{render_tabela_series(dados_serie)}',
-    '<p style="font-size:8pt;color:#687786;margin-top:2mm;">',
-    'D = defasagem; I = intermediário; A = adequado. As diferenças entre 2025 e 2026 ',
-    'não constituem estimativas de efeito do assessoramento.</p>',
-    '</div>',
-
-    '<div class="nota-metodologica"><strong>Nota metodológica.</strong> ',
-    'Esta ficha é descritiva e observacional. As características estruturais são ',
-    'referentes ao contexto de 2024. O vínculo com a assessora é administrativo. ',
-    'Resultados escolares não devem ser atribuídos à assessora, e o índice de carga ',
-    'potencial deve ser utilizado como ferramenta de diagnóstico, em conjunto com ',
-    'informações qualitativas, territoriais e operacionais.</div>',
-    '<div class="rodape">Execução {id_execucao}</div>',
-    '</section>'
-  )
-}
-
-render_documento_html <- function(titulo, secoes, css) {
-  paste0(
-    '<!DOCTYPE html><html lang="pt-BR"><head>',
-    '<meta charset="UTF-8">',
-    '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-    "<title>", html_escape(titulo), "</title>",
-    "<style>", css, "</style>",
-    "</head><body>",
-    paste(secoes, collapse = "\n"),
-    "</body></html>"
-  )
-}
-
-# -------------------------------------------------------------------
-# 9. Geração de gráficos e fichas individuais
-# -------------------------------------------------------------------
-
-resultados_geracao <- vector("list", nrow(base_fichas))
-secoes_compiladas <- character(nrow(base_fichas))
-
-for (i in seq_len(nrow(base_fichas))) {
-  escola <- base_fichas[i, , drop = FALSE]
-  dados_serie_escola <- perfil_serie |>
+for (i in seq_len(nrow(base))) {
+  escola <- base[i, , drop = FALSE]
+  dserie <- serie |>
     filter(id_escola == escola$id_escola[[1]]) |>
     arrange(ano_escolar)
 
-  status <- "gerada"
-  mensagem_erro <- NA_character_
+  html_path <- file.path(pasta_html, escola$html_nome[[1]])
+  part_path <- file.path(pasta_graficos, escola$grafico_participacao_nome[[1]])
+  prof_path <- file.path(pasta_graficos, escola$grafico_proficiencia_nome[[1]])
+  op_path <- if (isTRUE(escola$incluida_analise_operacional[[1]])) {
+    file.path(pasta_graficos, escola$grafico_operacional_nome[[1]])
+  } else {
+    NA_character_
+  }
+
+  status <- "SUCESSO"
+  erro <- NA_character_
 
   tryCatch(
     {
-      gerar_grafico_dimensoes(
-        escola,
-        escola$arquivo_grafico_dimensoes[[1]]
+      if (!is.na(op_path)) grafico_operacional(escola, op_path)
+      grafico_serie(
+        dserie, "taxa_participacao_2025", "taxa_participacao_2026",
+        "Participação nas avaliações", "Participação (%)", part_path
       )
-      gerar_grafico_participacao(
-        dados_serie_escola,
-        escola$arquivo_grafico_participacao[[1]]
+      grafico_serie(
+        dserie, "proficiencia_media_2025", "proficiencia_media_2026",
+        "Proficiência observada", "Proficiência média", prof_path
       )
-      gerar_grafico_proficiencia(
-        dados_serie_escola,
-        escola$arquivo_grafico_proficiencia[[1]]
-      )
-
-      caminhos_individual <- c(
-        dimensoes = paste0(
-          "../graficos/",
-          basename(escola$arquivo_grafico_dimensoes[[1]])
-        ),
-        participacao = paste0(
-          "../graficos/",
-          basename(escola$arquivo_grafico_participacao[[1]])
-        ),
-        proficiencia = paste0(
-          "../graficos/",
-          basename(escola$arquivo_grafico_proficiencia[[1]])
-        )
-      )
-
-      secao_individual <- render_secao_ficha(
-        escola,
-        dados_serie_escola,
-        caminhos_individual[["dimensoes"]],
-        caminhos_individual[["participacao"]],
-        caminhos_individual[["proficiencia"]]
-      )
-
-      html_individual <- render_documento_html(
-        paste0("Ficha escolar — ", escola$nome_canonico[[1]]),
-        secao_individual,
-        css_fichas
-      )
-
-      writeLines(
-        enc2utf8(html_individual),
-        escola$arquivo_html[[1]],
-        useBytes = TRUE
-      )
-
-      caminhos_compilado <- c(
-        dimensoes = paste0(
-          "graficos/",
-          basename(escola$arquivo_grafico_dimensoes[[1]])
-        ),
-        participacao = paste0(
-          "graficos/",
-          basename(escola$arquivo_grafico_participacao[[1]])
-        ),
-        proficiencia = paste0(
-          "graficos/",
-          basename(escola$arquivo_grafico_proficiencia[[1]])
-        )
-      )
-
-      secoes_compiladas[[i]] <- render_secao_ficha(
-        escola,
-        dados_serie_escola,
-        caminhos_compilado[["dimensoes"]],
-        caminhos_compilado[["participacao"]],
-        caminhos_compilado[["proficiencia"]]
-      )
+      writeLines(render_html(escola, dserie), html_path, useBytes = TRUE)
     },
     error = function(e) {
-      status <<- "erro"
-      mensagem_erro <<- conditionMessage(e)
-      secoes_compiladas[[i]] <<- ""
+      status <<- "ERRO"
+      erro <<- conditionMessage(e)
     }
   )
 
-  resultados_geracao[[i]] <- tibble(
+  resultado[[i]] <- tibble(
     id_escola = escola$id_escola[[1]],
     codigo_inep = escola$codigo_inep[[1]],
     nome_canonico = escola$nome_canonico[[1]],
-    assessora_gerencial = escola$assessora_gerencial[[1]],
+    tipo_ficha = escola$tipo_ficha[[1]],
+    assessora_gerencial_2026 = escola$assessora_gerencial_2026[[1]],
     status_geracao = status,
-    mensagem_erro = mensagem_erro,
-    arquivo_html = escola$arquivo_html[[1]],
-    html_existe = file.exists(escola$arquivo_html[[1]]),
-    grafico_dimensoes_existe = file.exists(escola$arquivo_grafico_dimensoes[[1]]),
-    grafico_participacao_existe = file.exists(escola$arquivo_grafico_participacao[[1]]),
-    grafico_proficiencia_existe = file.exists(escola$arquivo_grafico_proficiencia[[1]])
+    mensagem_erro = erro,
+    arquivo_html = html_path,
+    html_existe = nao_vazio(html_path, 1000),
+    arquivo_grafico_operacional = op_path,
+    grafico_operacional_existe = if (is.na(op_path)) NA else nao_vazio(op_path, 1000),
+    arquivo_grafico_participacao = part_path,
+    grafico_participacao_existe = nao_vazio(part_path, 1000),
+    arquivo_grafico_proficiencia = prof_path,
+    grafico_proficiencia_existe = nao_vazio(prof_path, 1000)
   )
 }
 
-manifesto_fichas <- bind_rows(resultados_geracao)
+resultado <- bind_rows(resultado)
 
-write_csv(
-  manifesto_fichas,
-  file.path(pasta_execucao, "07_manifesto_fichas_individuais.csv"),
-  na = ""
-)
-
-fichas_nao_geradas <- manifesto_fichas |>
-  filter(
-    status_geracao != "gerada" |
-      !html_existe |
-      !grafico_dimensoes_existe |
-      !grafico_participacao_existe |
-      !grafico_proficiencia_existe
+if (any(resultado$status_geracao != "SUCESSO")) {
+  write_csv(
+    resultado,
+    file.path(pasta_execucao, "07_resultado_geracao_fichas.csv"),
+    na = ""
   )
+  stop("Falha na geração individual das fichas.")
+}
 
-write_csv(
-  fichas_nao_geradas,
-  file.path(pasta_execucao, "06_fichas_nao_geradas.csv"),
-  na = ""
-)
+# HTML compilado
+secoes <- map_chr(seq_len(nrow(base)), function(i) {
+  escola <- base[i, , drop = FALSE]
+  dserie <- serie |> filter(id_escola == escola$id_escola[[1]]) |> arrange(ano_escolar)
+  x <- render_html(escola, dserie)
+  corpo <- str_match(x, "(?s)<body><div class='pagina'>(.*)</div></body>")[, 2]
+  paste0("<section class='pagina quebra'>", corpo, "</section>")
+})
 
-# Compilado somente com as fichas geradas corretamente.
-html_compilado <- render_documento_html(
-  "Fichas escolares — UEF-SMED-PMPA",
-  secoes_compiladas[nzchar(secoes_compiladas)],
-  css_fichas
-)
-
+html_compilado <- file.path(pasta_candidatos, "fichas_escolas_compiladas.html")
 writeLines(
-  enc2utf8(html_compilado),
-  arquivo_html_compilado,
+  paste0(
+    "<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'>",
+    css, "</head><body>", paste(secoes, collapse = "\n"), "</body></html>"
+  ),
+  html_compilado,
   useBytes = TRUE
 )
 
-# -------------------------------------------------------------------
-# 10. Conversão opcional do compilado para PDF
-# -------------------------------------------------------------------
+# PDF opcional
+pdf_compilado <- file.path(pasta_candidatos, "fichas_escolas_compiladas.pdf")
+status_pdf <- "NAO_GERADO"
+mensagem_pdf <- NA_character_
 
-status_pdf <- tibble(
-  tentativa_realizada = FALSE,
-  pdf_gerado = FALSE,
-  arquivo_pdf = arquivo_pdf_compilado,
-  navegador = NA_character_,
-  mensagem = "Conversão para PDF não solicitada."
-)
-
-localizar_navegador <- function() {
-  candidatos_sys <- c(
-    Sys.which("google-chrome"),
-    Sys.which("chrome"),
-    Sys.which("chromium"),
-    Sys.which("chromium-browser"),
-    Sys.which("msedge")
-  )
-
-  candidatos_windows <- c(
-    file.path(Sys.getenv("PROGRAMFILES"), "Google", "Chrome", "Application", "chrome.exe"),
-    file.path(Sys.getenv("PROGRAMFILES(X86)"), "Google", "Chrome", "Application", "chrome.exe"),
-    file.path(Sys.getenv("LOCALAPPDATA"), "Google", "Chrome", "Application", "chrome.exe"),
-    file.path(Sys.getenv("PROGRAMFILES"), "Microsoft", "Edge", "Application", "msedge.exe"),
-    file.path(Sys.getenv("PROGRAMFILES(X86)"), "Microsoft", "Edge", "Application", "msedge.exe")
-  )
-
-  candidatos <- unique(c(candidatos_sys, candidatos_windows))
-  candidatos <- candidatos[nzchar(candidatos) & file.exists(candidatos)]
-
-  if (length(candidatos) == 0) NA_character_ else candidatos[[1]]
-}
-
-if (isTRUE(TENTAR_GERAR_PDF_COMPILADO)) {
-  status_pdf$tentativa_realizada <- TRUE
-
-  if (!requireNamespace("pagedown", quietly = TRUE)) {
-    status_pdf$mensagem <- paste0(
-      "O pacote `pagedown` não está instalado. O HTML compilado foi gerado e pode ",
-      "ser aberto no navegador e impresso manualmente em PDF."
-    )
-  } else {
-    navegador <- localizar_navegador()
-    status_pdf$navegador <- navegador
-
-    if (is.na(navegador)) {
-      status_pdf$mensagem <- paste0(
-        "Nenhum Chrome, Chromium ou Edge compatível foi localizado. O HTML ",
-        "compilado pode ser aberto no navegador e impresso manualmente em PDF."
+if (TENTAR_GERAR_PDF_COMPILADO && requireNamespace("pagedown", quietly = TRUE)) {
+  tryCatch(
+    {
+      pagedown::chrome_print(
+        input = html_compilado,
+        output = pdf_compilado,
+        wait = 2
       )
-    } else {
-      tryCatch(
-        {
-          pagedown::chrome_print(
-            input = arquivo_html_compilado,
-            output = arquivo_pdf_compilado,
-            browser = navegador,
-            wait = 2
-          )
-
-          status_pdf$pdf_gerado <- file.exists(arquivo_pdf_compilado) &&
-            file.info(arquivo_pdf_compilado)$size > 0
-
-          status_pdf$mensagem <- ifelse(
-            status_pdf$pdf_gerado,
-            "PDF compilado gerado com sucesso.",
-            "A conversão terminou sem criar um PDF válido."
-          )
-        },
-        error = function(e) {
-          status_pdf$mensagem <<- paste0(
-            "Falha não crítica na conversão para PDF: ",
-            conditionMessage(e),
-            ". O HTML compilado permanece disponível."
-          )
-        }
-      )
+      if (nao_vazio(pdf_compilado, 10000)) status_pdf <- "GERADO"
+    },
+    error = function(e) {
+      mensagem_pdf <<- conditionMessage(e)
     }
-  }
+  )
+} else {
+  mensagem_pdf <- "pagedown indisponível ou geração não solicitada."
 }
 
-write_csv(
-  status_pdf,
-  file.path(pasta_execucao, "08_status_conversao_pdf.csv"),
-  na = ""
-)
-
 # -------------------------------------------------------------------
-# 11. Base final das fichas e alertas consolidados
+# 10. Bases canônicas candidatas
 # -------------------------------------------------------------------
 
-base_fichas_saida <- base_fichas |>
+base_saida <- base |>
   select(
-    id_escola,
-    codigo_inep,
-    nome_canonico,
-    assessora_gerencial,
-    tipo_carteira,
-    grupo_administrativo_2024_final,
-    tipo_vinculo_rede_final,
-    status_rede_2025_final,
-    matriculas_anos_iniciais,
-    turmas_anos_iniciais,
-    numero_series_resultado_2025,
-    numero_series_resultado_2026,
-    numero_series_comparaveis,
-    taxa_participacao_escola_2025,
-    taxa_participacao_escola_2026,
-    delta_participacao_escola,
-    proficiencia_multisserie_ponderada_2025,
-    proficiencia_multisserie_ponderada_2026,
-    delta_proficiencia_multisserie_ponderada,
-    score_dimensao_volume,
-    score_dimensao_estrutural,
-    score_dimensao_educacional,
-    score_dimensao_administrativa,
-    indice_carga_potencial,
-    faixa_indice_carga_potencial,
-    qualidade_evidencia_educacional,
-    interpretacao_educacional_cautelosa,
-    interpretacao_indice_cautelosa,
-    possui_complexidade_administrativa,
-    possui_alerta_composicao,
-    painel_incompleto,
-    sensibilidade_faixa,
-    participacao_indice_na_carteira_pct,
-    observacoes_composicao_limpa,
-    arquivo_html,
-    arquivo_grafico_dimensoes,
-    arquivo_grafico_participacao,
-    arquivo_grafico_proficiencia
-  ) |>
-  left_join(
-    manifesto_fichas |>
-      select(
-        id_escola,
-        status_geracao,
-        mensagem_erro,
-        html_existe,
-        grafico_dimensoes_existe,
-        grafico_participacao_existe,
-        grafico_proficiencia_existe
-      ),
-    by = "id_escola"
+    id_escola, codigo_inep, nome_canonico, tipo_ficha,
+    incluida_analise_operacional, motivo_nao_inclusao,
+    nota_institucional, assessora_gerencial_2026,
+    assessora_vinculo_administrativo, divergencia_vinculo_gerencial,
+    elegivel_assessoramento_2026, recebe_assessoramento_2026,
+    incluir_indice_carga_2026, status_carga_operacional_2026,
+    grupo_exposicao_2026, all_of(contextuais),
+    score_dimensao_volume, score_dimensao_estrutural,
+    score_dimensao_administrativa, contribuicao_volume,
+    contribuicao_estrutural, contribuicao_administrativa,
+    indice_carga_potencial_operacional, cobertura_indice_operacional,
+    interpretacao_cautelosa, resultados_educacionais_no_indice,
+    previstos_total_2025, avaliados_total_2025, participacao_2025,
+    proficiencia_2025, previstos_total_2026, avaliados_total_2026,
+    participacao_2026, proficiencia_2026, series_alerta_composicao,
+    html_nome, grafico_operacional_nome,
+    grafico_participacao_nome, grafico_proficiencia_nome
   )
 
-alertas_fichas <- base_fichas_saida |>
+indice_saida <- resultado |>
   transmute(
-    id_escola,
-    codigo_inep,
-    nome_canonico,
-    assessora_gerencial,
-    painel_incompleto,
-    interpretacao_educacional_cautelosa,
-    interpretacao_indice_cautelosa,
-    possui_complexidade_administrativa,
-    possui_alerta_composicao,
-    sem_vinculacao_informada = assessora_gerencial == "Sem vinculação informada",
-    sensibilidade_faixa,
-    observacoes_composicao_limpa
-  ) |>
-  filter(
-    painel_incompleto |
-      interpretacao_educacional_cautelosa |
-      interpretacao_indice_cautelosa |
-      possui_complexidade_administrativa |
-      possui_alerta_composicao |
-      sem_vinculacao_informada |
-      sensibilidade_faixa == "Elevada"
-  )
-
-write_csv(
-  alertas_fichas,
-  file.path(pasta_execucao, "09_alertas_e_cautelas_por_escola.csv"),
-  na = ""
-)
-
-# -------------------------------------------------------------------
-# 12. Validações finais
-# -------------------------------------------------------------------
-
-validacao_final <- tribble(
-  ~teste, ~resultado, ~valor_observado, ~valor_esperado, ~criticidade,
-  "Escolas únicas na base de fichas",
-  n_distinct(base_fichas_saida$id_escola) == nrow(base_fichas_saida),
-  n_distinct(base_fichas_saida$id_escola), nrow(base_fichas_saida), "Erro",
-
-  "Número de escolas preservado",
-  nrow(base_fichas_saida) == nrow(perfil_escola),
-  nrow(base_fichas_saida), nrow(perfil_escola), "Erro",
-
-  "Uma ficha HTML por escola",
-  sum(manifesto_fichas$html_existe) == nrow(perfil_escola),
-  sum(manifesto_fichas$html_existe), nrow(perfil_escola), "Erro",
-
-  "Três gráficos por escola",
-  sum(
-    manifesto_fichas$grafico_dimensoes_existe &
-      manifesto_fichas$grafico_participacao_existe &
-      manifesto_fichas$grafico_proficiencia_existe
-  ) == nrow(perfil_escola),
-  sum(
-    manifesto_fichas$grafico_dimensoes_existe &
-      manifesto_fichas$grafico_participacao_existe &
-      manifesto_fichas$grafico_proficiencia_existe
-  ),
-  nrow(perfil_escola), "Erro",
-
-  "HTML compilado criado",
-  file.exists(arquivo_html_compilado) && file.info(arquivo_html_compilado)$size > 0,
-  ifelse(file.exists(arquivo_html_compilado), file.info(arquivo_html_compilado)$size, 0),
-  "> 0 bytes", "Erro",
-
-  "Nenhuma ficha com erro de geração",
-  nrow(fichas_nao_geradas) == 0,
-  nrow(fichas_nao_geradas), 0, "Erro",
-
-  "Cinco linhas por escola na base por série",
-  all((perfil_serie |> count(id_escola))$n == 5),
-  paste(sort(unique((perfil_serie |> count(id_escola))$n)), collapse = "; "),
-  5, "Erro",
-
-  "Índice de carga entre 0 e 100",
-  all(base_fichas_saida$indice_carga_potencial >= 0 &
-        base_fichas_saida$indice_carga_potencial <= 100,
-      na.rm = TRUE),
-  paste0(
-    fmt_num(min(base_fichas_saida$indice_carga_potencial, na.rm = TRUE), 2),
-    " a ",
-    fmt_num(max(base_fichas_saida$indice_carga_potencial, na.rm = TRUE), 2)
-  ),
-  "0 a 100", "Erro",
-
-  "Participações escolares entre 0 e 100",
-  all(
-    c(
-      base_fichas_saida$taxa_participacao_escola_2025,
-      base_fichas_saida$taxa_participacao_escola_2026
-    ) >= 0 &
-      c(
-        base_fichas_saida$taxa_participacao_escola_2025,
-        base_fichas_saida$taxa_participacao_escola_2026
-      ) <= 100,
-    na.rm = TRUE
-  ),
-  "Verificado", "0 a 100", "Erro",
-
-  "PDF tratado como produto opcional",
-  TRUE,
-  ifelse(status_pdf$pdf_gerado, "Gerado", "Não gerado"),
-  "Não bloqueante", "Informativo"
-) |>
-  mutate(
-    status = if_else(resultado, "Aprovado", "Reprovado")
-  )
-
-write_csv(
-  validacao_final,
-  file.path(pasta_execucao, "10_validacao_final.csv"),
-  na = ""
-)
-
-erros_criticos <- validacao_final |>
-  filter(criticidade == "Erro", !resultado)
-
-# -------------------------------------------------------------------
-# 13. Dicionário e estrutura da base de saída
-# -------------------------------------------------------------------
-
-descricoes_base_fichas <- c(
-  id_escola = "Identificador interno estável da escola.",
-  codigo_inep = "Código INEP da escola.",
-  nome_canonico = "Nome canônico da escola.",
-  assessora_gerencial = "Categoria administrativa utilizada para organizar a carteira.",
-  tipo_carteira = "Classificação da carteira como nominal, residual ou sem vinculação.",
-  indice_carga_potencial = "Escore relativo e descritivo de carga potencial, de 0 a 100.",
-  faixa_indice_carga_potencial = "Quartil relativo do índice de carga potencial.",
-  arquivo_html = "Caminho do arquivo HTML individual da ficha escolar.",
-  status_geracao = "Situação da geração da ficha individual.",
-  observacoes_composicao_limpa = "Síntese textual de alertas de composição, sem mensagens contraditórias."
-)
-
-dicionario_saida <- tibble(
-  ordem = seq_along(base_fichas_saida),
-  variavel = names(base_fichas_saida),
-  classe = map_chr(base_fichas_saida, ~ paste(class(.x), collapse = "; ")),
-  descricao = map_chr(
-    names(base_fichas_saida),
-    function(variavel) {
-      descricao <- unname(descricoes_base_fichas[variavel])
-
-      if (length(descricao) == 0 || is.na(descricao[[1]]) || !nzchar(descricao[[1]])) {
-        paste0(
-          "Variável ",
-          str_replace_all(variavel, "_", " "),
-          ". Consulte os módulos 16 a 19 para a definição operacional."
-        )
-      } else {
-        descricao[[1]]
-      }
-    }
-  ),
-  numero_na = map_int(base_fichas_saida, ~ sum(is.na(.x))),
-  percentual_na = 100 * numero_na / nrow(base_fichas_saida)
-)
-
-estrutura_saida <- tibble(
-  produto = "base_fichas_escolas",
-  numero_linhas = nrow(base_fichas_saida),
-  numero_colunas = ncol(base_fichas_saida),
-  variavel = names(base_fichas_saida),
-  classe = map_chr(base_fichas_saida, ~ paste(class(.x), collapse = "; ")),
-  numero_na = map_int(base_fichas_saida, ~ sum(is.na(.x))),
-  percentual_na = 100 * numero_na / nrow(base_fichas_saida)
-)
-
-write_csv(
-  estrutura_saida,
-  file.path(pasta_execucao, "11_estrutura_base_fichas.csv"),
-  na = ""
-)
-
-# -------------------------------------------------------------------
-# 14. Exportação dos produtos canônicos
-# -------------------------------------------------------------------
-
-if (nrow(erros_criticos) > 0) {
-  stop(
-    "A exportação canônica foi interrompida porque há erros críticos. Consulte ",
-    file.path(pasta_execucao, "10_validacao_final.csv")
-  )
-}
-
-walk(arquivos_saida, arquivar_arquivo_existente)
-
-write_csv(base_fichas_saida, arquivos_saida[["base_fichas_csv"]], na = "")
-saveRDS(base_fichas_saida, arquivos_saida[["base_fichas_rds"]])
-write_csv(dicionario_saida, arquivos_saida[["dicionario_csv"]], na = "")
-
-# -------------------------------------------------------------------
-# 15. Manifesto final, session info e resumo
-# -------------------------------------------------------------------
-
-produtos_principais <- c(
-  arquivos_saida,
-  html_compilado = arquivo_html_compilado
-)
-
-if (isTRUE(status_pdf$pdf_gerado)) {
-  produtos_principais <- c(
-    produtos_principais,
-    pdf_compilado = arquivo_pdf_compilado
-  )
-}
-
-manifesto_produtos <- enframe(
-  produtos_principais,
-  name = "produto",
-  value = "caminho"
-) |>
-  mutate(
-    existe = file.exists(caminho),
-    tamanho_bytes = if_else(
-      existe,
-      as.numeric(file.info(caminho)$size),
-      NA_real_
+    id_escola, codigo_inep, nome_canonico, tipo_ficha,
+    assessora_gerencial_2026, status_geracao, mensagem_erro,
+    arquivo_html = file.path(
+      "resultados", "fichas_escolas",
+      paste0("execucao_", id_execucao), "html", basename(arquivo_html)
     ),
-    modificado_em = if_else(
-      existe,
-      as.character(file.info(caminho)$mtime),
+    arquivo_grafico_operacional = if_else(
+      tipo_ficha == "OPERACIONAL",
+      file.path(
+        "resultados", "fichas_escolas",
+        paste0("execucao_", id_execucao), "graficos",
+        basename(arquivo_grafico_operacional)
+      ),
       NA_character_
     ),
-    md5 = map_chr(caminho, calcular_md5)
+    arquivo_grafico_participacao = file.path(
+      "resultados", "fichas_escolas",
+      paste0("execucao_", id_execucao), "graficos",
+      basename(arquivo_grafico_participacao)
+    ),
+    arquivo_grafico_proficiencia = file.path(
+      "resultados", "fichas_escolas",
+      paste0("execucao_", id_execucao), "graficos",
+      basename(arquivo_grafico_proficiencia)
+    ),
+    html_existe, grafico_operacional_existe,
+    grafico_participacao_existe, grafico_proficiencia_existe
   )
+
+dicionario <- imap_dfr(
+  list(base_fichas_escolas = base_saida, indice_fichas_escolas = indice_saida),
+  function(dados, produto) {
+    tibble(
+      produto = produto,
+      ordem_coluna = seq_along(dados),
+      variavel = names(dados),
+      classe_r = map_chr(dados, ~ paste(class(.x), collapse = " | ")),
+      observacao_metodologica = case_when(
+        str_detect(
+          names(dados),
+          "proficiencia|participacao|defasagem|adequado|intermediario"
+        ) ~ "Resultado educacional descritivo; não representa efeito ou desempenho da assessora.",
+        str_detect(
+          names(dados),
+          "indice|score|contribuicao"
+        ) ~ "Medida relativa operacional; não equivale à carga real total.",
+        TRUE ~ "Usar com leitura contextual e qualitativa."
+      )
+    )
+  }
+)
+
+candidatos_saida <- file.path(pasta_candidatos, basename(saidas))
+names(candidatos_saida) <- names(saidas)
+
+write_csv(base_saida, candidatos_saida[["base_csv"]], na = "")
+saveRDS(base_saida, candidatos_saida[["base_rds"]])
+write_csv(indice_saida, candidatos_saida[["indice_csv"]], na = "")
+saveRDS(indice_saida, candidatos_saida[["indice_rds"]])
+write_csv(dicionario, candidatos_saida[["dicionario_csv"]], na = "")
+
+eq_base <- comparar_par(
+  readRDS(candidatos_saida[["base_rds"]]),
+  ler_csv_modelo(
+    candidatos_saida[["base_csv"]],
+    readRDS(candidatos_saida[["base_rds"]])
+  ),
+  "id_escola", "base_fichas_escolas"
+)
+
+eq_indice <- comparar_par(
+  readRDS(candidatos_saida[["indice_rds"]]),
+  ler_csv_modelo(
+    candidatos_saida[["indice_csv"]],
+    readRDS(candidatos_saida[["indice_rds"]])
+  ),
+  "id_escola", "indice_fichas_escolas"
+)
+
+equiv_candidatos <- bind_rows(
+  eq_base$diagnostico,
+  eq_indice$diagnostico
+)
+
+# -------------------------------------------------------------------
+# 11. Validações finais
+# -------------------------------------------------------------------
+
+arquivos_candidatos <- list.files(
+  pasta_candidatos, recursive = TRUE, full.names = TRUE
+)
+arquivos_candidatos <- arquivos_candidatos[
+  !file.info(arquivos_candidatos)$isdir
+]
+
+manifesto_resultados <- map_dfr(
+  arquivos_candidatos,
+  ~ inventariar(
+    str_remove(norm(.x, FALSE), paste0("^", fixed(norm(pasta_candidatos, FALSE)), "/?")),
+    .x
+  )
+)
+
+n_html <- sum(str_detect(manifesto_resultados$arquivo, "^html/.+\\.html$"))
+n_op <- sum(str_detect(
+  manifesto_resultados$arquivo,
+  "^graficos/.+_dimensoes_operacionais\\.png$"
+))
+n_part <- sum(str_detect(
+  manifesto_resultados$arquivo,
+  "^graficos/.+_participacao\\.png$"
+))
+n_prof <- sum(str_detect(
+  manifesto_resultados$arquivo,
+  "^graficos/.+_proficiencia\\.png$"
+))
+
+validacoes <- bind_rows(
+  validacao("Branch", "execucao", "erro", branch, branch_esperada, branch == branch_esperada),
+  validacao("HEAD", "execucao", "erro", head, commit_base_integracao, head == commit_base_integracao),
+  validacao("Entradas equivalentes", "integridade", "erro", sum(equiv_entradas$aprovado), "6", all(equiv_entradas$aprovado)),
+  validacao("Perfil 56", "universo", "erro", nrow(perfil), "56", nrow(perfil) == 56L),
+  validacao("Perfil série 280", "universo", "erro", nrow(serie), "280", nrow(serie) == 280L),
+  validacao("Índice 53", "universo", "erro", nrow(indice), "53", nrow(indice) == 53L),
+  validacao("Diagnóstico 265", "universo", "erro", nrow(diagnostico), "265", nrow(diagnostico) == 265L),
+  validacao("Detalhe 53", "universo", "erro", nrow(detalhe), "53", nrow(detalhe) == 53L),
+  validacao("Universo 56", "universo", "erro", nrow(universo), "56", nrow(universo) == 56L),
+  validacao("Exclusões exatas", "universo", "erro", paste(ids_excluidos_observados, collapse = "; "), paste(ids_excluidos, collapse = "; "), setequal(ids_excluidos_observados, ids_excluidos)),
+  validacao("Assessoras", "universo", "erro", numero_assessoras, "11", numero_assessoras == 11L),
+  validacao("Base 56", "produto", "erro", nrow(base_saida), "56", nrow(base_saida) == 56L),
+  validacao("Operacionais 53", "produto", "erro", sum(base_saida$tipo_ficha == "OPERACIONAL"), "53", sum(base_saida$tipo_ficha == "OPERACIONAL") == 53L),
+  validacao("Não operacionais 3", "produto", "erro", sum(base_saida$tipo_ficha == "INSTITUCIONAL_NAO_OPERACIONAL"), "3", sum(base_saida$tipo_ficha == "INSTITUCIONAL_NAO_OPERACIONAL") == 3L),
+  validacao("Não operacionais sem índice", "metodologia", "erro", sum(!base_saida$incluida_analise_operacional & !is.na(base_saida$indice_carga_potencial_operacional)), "0", !any(!base_saida$incluida_analise_operacional & !is.na(base_saida$indice_carga_potencial_operacional))),
+  validacao("Educacional fora do índice", "metodologia", "erro", sum(coalesce(indice$resultados_educacionais_no_indice, FALSE)), "0", !any(coalesce(indice$resultados_educacionais_no_indice, FALSE))),
+  validacao("Peso educacional zero", "metodologia", "erro", max(diagnostico$peso_no_indice_carga_operacional), "0", all(diagnostico$peso_no_indice_carga_operacional == 0)),
+  validacao("HTMLs", "produto", "erro", n_html, "56", n_html == 56L),
+  validacao("Gráficos operacionais", "produto", "erro", n_op, "53", n_op == 53L),
+  validacao("Gráficos participação", "produto", "erro", n_part, "56", n_part == 56L),
+  validacao("Gráficos proficiência", "produto", "erro", n_prof, "56", n_prof == 56L),
+  validacao("HTML compilado", "produto", "erro", nao_vazio(html_compilado, 10000), "TRUE", nao_vazio(html_compilado, 10000)),
+  validacao("Candidatos equivalentes", "integridade", "erro", sum(equiv_candidatos$aprovado), "2", all(equiv_candidatos$aprovado))
+)
+
+erros <- validacoes |> filter(!resultado & severidade == "erro")
+
+# -------------------------------------------------------------------
+# 12. Documentação
+# -------------------------------------------------------------------
+
+manifesto_entradas <- imap_dfr(
+  entradas,
+  ~ inventariar(.y, .x)
+) |>
+  mutate(
+    md5_esperado = hashes_esperados[arquivo],
+    hash_aprovado = str_to_lower(md5) == str_to_lower(md5_esperado)
+  )
+
+write_csv(
+  tribble(
+    ~parametro, ~valor,
+    "universo_institucional", "56",
+    "universo_operacional", "53",
+    "fichas_nao_operacionais", "3",
+    "assessoras", "11",
+    "peso_volume", "0,40",
+    "peso_estrutura", "0,35",
+    "peso_administracao", "0,25",
+    "peso_educacional", "0",
+    "pdf_compilado", status_pdf
+  ),
+  file.path(pasta_execucao, "01_parametros_execucao.csv"),
+  na = ""
+)
+
+write_csv(manifesto_entradas, file.path(pasta_execucao, "02_manifesto_arquivos_entrada.csv"), na = "")
+write_csv(equiv_entradas, file.path(pasta_execucao, "03_equivalencia_csv_rds_entradas.csv"), na = "")
+write_csv(universo, file.path(pasta_execucao, "04_universo_institucional_56_escolas.csv"), na = "")
+write_csv(base_saida, file.path(pasta_execucao, "05_base_fichas_candidata.csv"), na = "")
+write_csv(indice_saida, file.path(pasta_execucao, "06_indice_fichas_candidato.csv"), na = "")
+write_csv(resultado, file.path(pasta_execucao, "07_resultado_geracao_fichas.csv"), na = "")
+write_csv(manifesto_resultados, file.path(pasta_execucao, "08_manifesto_resultados_candidatos.csv"), na = "")
+write_csv(validacoes, file.path(pasta_execucao, "09_validacao_final.csv"), na = "")
+write_csv(equiv_candidatos, file.path(pasta_execucao, "10_equivalencia_csv_rds_candidatos.csv"), na = "")
+write_csv(dicionario, file.path(pasta_execucao, "11_dicionario_candidato.csv"), na = "")
+write_lines(capture.output(sessionInfo()), file.path(pasta_execucao, "12_session_info.txt"))
+
+write_csv(
+  tibble(
+    campo = c(
+      "id_execucao", "instante", "branch", "commit_base",
+      "caminho_script", "md5_script", "status_pdf", "mensagem_pdf"
+    ),
+    valor = c(
+      id_execucao,
+      format(instante_execucao, "%Y-%m-%d %H:%M:%S %z"),
+      branch, head, norm(caminho_script), md5(caminho_script),
+      status_pdf, coalesce(mensagem_pdf, "")
+    )
+  ),
+  file.path(pasta_execucao, "13_identificacao_execucao.csv"),
+  na = ""
+)
+
+write_lines(
+  c(
+    paste0("Execução: ", id_execucao),
+    paste0("Branch: ", branch),
+    paste0("Commit-base: ", head),
+    paste0("MD5 do script: ", md5(caminho_script)),
+    "Fichas institucionais: 56",
+    "Fichas operacionais: 53",
+    "Fichas não operacionais: 3",
+    paste0("PDF compilado: ", status_pdf),
+    paste0("Erros críticos: ", nrow(erros)),
+    "",
+    "Resultados educacionais permanecem fora do índice.",
+    "Não foram criados ranking, faixa, percentil ou cenário.",
+    "Vínculo administrativo e assessora gerencial permanecem separados."
+  ),
+  file.path(pasta_execucao, "14_resumo_execucao.txt")
+)
+
+if (nrow(erros) > 0L) {
+  stop(
+    "O módulo 19 encontrou ", nrow(erros),
+    " erro(s) crítico(s). Consulte 09_validacao_final.csv."
+  )
+}
+
+# -------------------------------------------------------------------
+# 13. Preservação e promoção
+# -------------------------------------------------------------------
+
+anteriores <- saidas[file.exists(saidas)]
+if (length(anteriores) > 0L) {
+  walk2(
+    anteriores, names(anteriores),
+    ~ copiar_validado(
+      .x,
+      file.path(pasta_historico_dados, basename(.x)),
+      FALSE
+    )
+  )
+}
+
+manifesto_historico <- if (length(anteriores) > 0L) {
+  imap_dfr(
+    anteriores,
+    ~ inventariar(.y, file.path(pasta_historico_dados, basename(.x)))
+  )
+} else {
+  tibble(
+    arquivo = character(), caminho = character(),
+    existe = logical(), tamanho_bytes = double(), md5 = character()
+  )
+}
+
+write_csv(
+  manifesto_historico,
+  file.path(pasta_execucao, "15_manifesto_preservacao_historica.csv"),
+  na = ""
+)
+
+promovidos <- character()
+
+tryCatch(
+  {
+    for (nm in names(saidas)) {
+      destino <- saidas[[nm]]
+      candidato <- candidatos_saida[[nm]]
+      if (file.exists(destino)) {
+        copiar_validado(
+          destino,
+          file.path(pasta_rollback, basename(destino)),
+          FALSE
+        )
+      }
+      dir.create(dirname(destino), recursive = TRUE, showWarnings = FALSE)
+      ok <- file.copy(candidato, destino, overwrite = TRUE)
+      if (!ok || !identical(md5(candidato), md5(destino))) {
+        stop("Falha na promoção de ", nm)
+      }
+      promovidos <- c(promovidos, nm)
+    }
+  },
+  error = function(e) {
+    for (nm in rev(promovidos)) {
+      destino <- saidas[[nm]]
+      rollback <- file.path(pasta_rollback, basename(destino))
+      if (file.exists(rollback)) {
+        file.copy(rollback, destino, overwrite = TRUE)
+      } else if (file.exists(destino)) {
+        file.remove(destino)
+      }
+    }
+    stop("Promoção dos dados falhou; rollback executado: ", conditionMessage(e))
+  }
+)
+
+if (dir.exists(pasta_resultados_final)) {
+  stop(
+    "Pasta final já existe: ",
+    pasta_resultados_final
+  )
+}
+
+dir.create(
+  pasta_resultados_final,
+  recursive = TRUE,
+  showWarnings = FALSE
+)
+
+itens_resultados_candidatos <- list.files(
+  pasta_candidatos,
+  all.files = TRUE,
+  full.names = TRUE,
+  no.. = TRUE
+)
+
+if (length(itens_resultados_candidatos) == 0L) {
+  unlink(
+    pasta_resultados_final,
+    recursive = TRUE,
+    force = TRUE
+  )
+  
+  stop(
+    "A pasta candidata de resultados está vazia."
+  )
+}
+
+resultado_copia <- file.copy(
+  from = itens_resultados_candidatos,
+  to = pasta_resultados_final,
+  recursive = TRUE,
+  overwrite = FALSE,
+  copy.mode = TRUE,
+  copy.date = TRUE
+)
+
+if (
+  length(resultado_copia) !=
+  length(itens_resultados_candidatos) ||
+  !all(resultado_copia)
+) {
+  unlink(
+    pasta_resultados_final,
+    recursive = TRUE,
+    force = TRUE
+  )
+  
+  stop(
+    "Falha na promoção da pasta de resultados; ",
+    "o destino incompleto foi removido."
+  )
+}
+
+arquivos_promovidos <- list.files(
+  pasta_resultados_final, recursive = TRUE, full.names = TRUE
+)
+arquivos_promovidos <- arquivos_promovidos[
+  !file.info(arquivos_promovidos)$isdir
+]
+
+manifesto_promovidos <- map_dfr(
+  arquivos_promovidos,
+  ~ inventariar(
+    str_remove(
+      norm(.x, FALSE),
+      paste0("^", fixed(norm(pasta_resultados_final, FALSE)), "/?")
+    ),
+    .x
+  )
+)
+
+manifesto_produtos <- imap_dfr(
+  saidas,
+  ~ inventariar(.y, .x)
+)
 
 write_csv(
   manifesto_produtos,
-  file.path(pasta_execucao, "12_manifesto_produtos_modulo_19.csv"),
+  file.path(pasta_execucao, "16_manifesto_produtos_modulo_19.csv"),
   na = ""
 )
 
-capture.output(
-  sessionInfo(),
-  file = file.path(pasta_execucao, "13_session_info.txt")
+write_csv(
+  manifesto_promovidos,
+  file.path(pasta_execucao, "17_manifesto_resultados_promovidos.csv"),
+  na = ""
 )
 
-resumo_execucao <- c(
-  paste0("Execução: ", id_execucao),
-  paste0("Escolas nas bases de entrada: ", nrow(perfil_escola)),
-  paste0("Fichas HTML individuais geradas: ", sum(manifesto_fichas$html_existe)),
-  paste0("Gráficos gerados: ", sum(
-    manifesto_fichas$grafico_dimensoes_existe,
-    manifesto_fichas$grafico_participacao_existe,
-    manifesto_fichas$grafico_proficiencia_existe
-  )),
-  paste0("HTML compilado: ", arquivo_html_compilado),
-  paste0("PDF compilado gerado: ", ifelse(status_pdf$pdf_gerado, "Sim", "Não")),
-  paste0("Escolas com painel incompleto: ", sum(base_fichas_saida$painel_incompleto, na.rm = TRUE)),
-  paste0("Escolas com interpretação cautelosa do índice: ", sum(
-    base_fichas_saida$interpretacao_indice_cautelosa,
-    na.rm = TRUE
-  )),
-  paste0("Escolas com complexidade administrativa: ", sum(
-    base_fichas_saida$possui_complexidade_administrativa,
-    na.rm = TRUE
-  )),
-  paste0("Fichas com erro: ", nrow(fichas_nao_geradas)),
-  paste0("Erros críticos: ", nrow(erros_criticos)),
-  "",
-  "Observações metodológicas:",
-  "- As fichas são descritivas e observacionais.",
-  "- Resultados educacionais não representam efeito causal do assessoramento.",
-  "- O índice de carga potencial não representa qualidade da escola ou da assessora.",
-  "- As faixas do índice são quartis relativos ao universo analisado.",
-  "- Mudanças de participação e composição condicionam comparações temporais.",
-  "- A conversão para PDF é opcional; o HTML compilado é sempre o produto principal imprimível."
+write_csv(
+  manifesto_resultados |>
+    select(arquivo, md5_candidato = md5) |>
+    left_join(
+      manifesto_promovidos |>
+        select(arquivo, md5_promovido = md5),
+      by = "arquivo"
+    ) |>
+    mutate(
+      hash_igual = str_to_lower(md5_candidato) ==
+        str_to_lower(md5_promovido)
+    ),
+  file.path(pasta_execucao, "18_verificacao_promocao_resultados.csv"),
+  na = ""
 )
 
-writeLines(
-  enc2utf8(resumo_execucao),
-  file.path(pasta_execucao, "14_resumo_execucao.txt"),
-  useBytes = TRUE
+write_csv(
+  imap_dfr(
+    candidatos_saida,
+    ~ inventariar(.y, .x)
+  ) |>
+    select(arquivo, md5_candidato = md5) |>
+    left_join(
+      manifesto_produtos |>
+        select(arquivo, md5_promovido = md5),
+      by = "arquivo"
+    ) |>
+    mutate(
+      hash_igual = str_to_lower(md5_candidato) ==
+        str_to_lower(md5_promovido)
+    ),
+  file.path(pasta_execucao, "19_verificacao_promocao_produtos.csv"),
+  na = ""
 )
 
-message("Módulo 19 concluído com sucesso.")
-message("Fichas individuais: ", pasta_html)
-message("HTML compilado: ", arquivo_html_compilado)
-
-if (isTRUE(status_pdf$pdf_gerado)) {
-  message("PDF compilado: ", arquivo_pdf_compilado)
-} else {
-  message("PDF não gerado automaticamente. Consulte 08_status_conversao_pdf.csv.")
-}
+message(
+  "Módulo 19 concluído com sucesso.\n",
+  "Execução: ", id_execucao, "\n",
+  "Fichas institucionais: 56\n",
+  "Fichas operacionais: 53\n",
+  "Fichas não operacionais: 3\n",
+  "PDF compilado: ", status_pdf, "\n",
+  "Resultados: ", pasta_resultados_final, "\n",
+  "Diagnósticos: ", pasta_execucao, "\n",
+  "MD5 do script: ", md5(caminho_script)
+)

@@ -1,0 +1,6 @@
+arquivo,caminho,existe,tamanho_bytes,md5
+base_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_escolas.csv,TRUE,46457,3c4dfc1808301f00d4fc8d3ffddc90bf
+base_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_escolas.rds,TRUE,11357,8e088b4d02ef27b585c767f9f035f5fc
+indice_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_escolas.csv,TRUE,29423,4123a146f31a23d6a6077806d8aa04d2
+indice_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_escolas.rds,TRUE,4103,5a14e9f191d7c1505e3389931052607d
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/fichas_escolas/dicionario_base_fichas_escolas.csv,TRUE,7517,05a5a8e16300cf0b81d23dde5f4cb2fc
