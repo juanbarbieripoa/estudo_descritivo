@@ -1,0 +1,637 @@
+id_escola,codigo_inep,nome_canonico,assessora_gerencial_2026,dimensao,componente,variavel_origem,valor_origem,score_relativo,peso_na_dimensao,peso_no_indice,uso_no_indice
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.790262172284645,44.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.090909090909092,32.69230769230769,0.15,0.0525,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.142857142857142,30.76923076923077,0.2,0.06999999999999999,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0.21505376344086025,25,0.1,0.034999999999999996,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.198501872659176,50,0.05,0.017499999999999998,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,465,63.46153846153846,0.6,0.24,TRUE
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,21,76.92307692307692,0.25,0.1,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.41901776384535,38.46153846153846,0.2,0.06999999999999999,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,19.14814814814815,84.61538461538461,0.15,0.0525,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.5,50.96153846153846,0.2,0.06999999999999999,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,15.667311411992262,59.61538461538461,0.1,0.034999999999999996,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,estrutural,transporte_publico,pct_matriculas_transporte_publico,5.851619644723093,88.46153846153847,0.05,0.017499999999999998,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,517,82.6923076923077,0.6,0.24,TRUE
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.205240174672489,30.76923076923077,0.2,0.06999999999999999,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.5,36.53846153846154,0.15,0.0525,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.1,90.38461538461539,0.2,0.06999999999999999,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0.3831417624521073,26.923076923076923,0.1,0.034999999999999996,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,261,28.846153846153847,0.6,0.24,TRUE
+ESC_004,43105459,EMEF AMERICA,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,educacao_especial,pct_matriculas_educacao_especial,11.951219512195122,88.46153846153847,0.2,0.06999999999999999,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.62962962962963,48.07692307692308,0.15,0.0525,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.1,17.307692307692307,0.2,0.06999999999999999,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.0975609756097562,42.30769230769231,0.05,0.017499999999999998,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,422,57.69230769230769,0.6,0.24,TRUE
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,20,68.26923076923077,0.25,0.1,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,educacao_especial,pct_matriculas_educacao_especial,12.266112266112266,92.3076923076923,0.2,0.06999999999999999,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.9375,57.69230769230769,0.15,0.0525,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.5,79.8076923076923,0.2,0.06999999999999999,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,34.90196078431372,82.6923076923077,0.1,0.034999999999999996,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.0395010395010396,38.46153846153846,0.05,0.017499999999999998,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,255,25,0.6,0.24,TRUE
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,educacao_especial,pct_matriculas_educacao_especial,8.558558558558559,57.69230769230769,0.2,0.06999999999999999,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,20.846153846153847,90.38461538461539,0.15,0.0525,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.636363636363637,69.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,28.59778597785978,75,0.1,0.034999999999999996,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.4234234234234235,63.46153846153846,0.05,0.017499999999999998,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,542,90.38461538461539,0.6,0.24,TRUE
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.099181073703368,61.53846153846154,0.2,0.06999999999999999,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,18.655172413793103,78.84615384615384,0.15,0.0525,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.59090909090909,67.3076923076923,0.2,0.06999999999999999,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,13.67837338262477,53.84615384615385,0.1,0.034999999999999996,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.1828935395814375,46.15384615384615,0.05,0.017499999999999998,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,541,88.46153846153847,0.6,0.24,TRUE
+ESC_008,43177581,EMEF CHICO MENDES,eliane,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.335797254487856,17.307692307692307,0.2,0.06999999999999999,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.6,40.38461538461539,0.15,0.0525,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.333333333333332,61.53846153846154,0.2,0.06999999999999999,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,9.001956947162427,44.23076923076923,0.1,0.034999999999999996,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.0559662090813091,40.38461538461539,0.05,0.017499999999999998,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,511,80.76923076923077,0.6,0.24,TRUE
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,21,76.92307692307692,0.25,0.1,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.142857142857143,26.923076923076923,0.2,0.06999999999999999,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,18.333333333333332,73.07692307692308,0.15,0.0525,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.05263157894737,86.53846153846153,0.2,0.06999999999999999,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0.202020202020202,23.076923076923077,0.1,0.034999999999999996,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.5175983436853002,28.846153846153847,0.05,0.017499999999999998,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,495,76.92307692307692,0.6,0.24,TRUE
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,19,60.57692307692308,0.25,0.1,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.331136738056013,34.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.702702702702704,51.92307692307692,0.15,0.0525,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.26086956521739,75,0.2,0.06999999999999999,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,1.8932874354561104,30.76923076923077,0.1,0.034999999999999996,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.4942339373970346,26.923076923076923,0.05,0.017499999999999998,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,581,96.15384615384616,0.6,0.24,TRUE
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,23,95.1923076923077,0.25,0.1,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.896551724137931,25,0.2,0.06999999999999999,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,21.838709677419356,96.15384615384616,0.15,0.0525,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.074074074074073,73.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,20.236336779911372,65.38461538461539,0.1,0.034999999999999996,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.8314176245210727,75,0.05,0.017499999999999998,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,677,100,0.6,0.24,TRUE
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,27,100,0.25,0.1,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,100,100,0.45,0.1125,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,administrativa,transicao_recente,score_administrativo_transicao_recente,100,100,0.35,0.0875,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,educacao_especial,pct_matriculas_educacao_especial,0,0,0.2,0.06999999999999999,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,60,99.03846153846153,0.3,0.105,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,10.8,13.461538461538462,0.15,0.0525,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,13.5,0,0.2,0.06999999999999999,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,1,1.9230769230769231,0.15,0.06,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,54,0,0.6,0.24,TRUE
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,4,0.9615384615384616,0.25,0.1,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,100,100,0.45,0.1125,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,administrativa,transicao_recente,score_administrativo_transicao_recente,100,100,0.35,0.0875,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,educacao_especial,pct_matriculas_educacao_especial,1,1.9230769230769231,0.2,0.06999999999999999,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,70,93.26923076923077,0.3,0.105,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.285714285714286,34.61538461538461,0.15,0.0525,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,20,11.538461538461538,0.2,0.06999999999999999,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,1,1.9230769230769231,0.15,0.06,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,100,5.769230769230769,0.6,0.24,TRUE
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,5,5.769230769230769,0.25,0.1,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,educacao_especial,pct_matriculas_educacao_especial,5.743243243243243,5.769230769230769,0.2,0.06999999999999999,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,11.590909090909092,15.384615384615385,0.15,0.0525,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,19.615384615384617,7.6923076923076925,0.2,0.06999999999999999,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.2094594594594597,59.61538461538461,0.05,0.017499999999999998,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,255,25,0.6,0.24,TRUE
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,13,30.76923076923077,0.25,0.1,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,8.389830508474576,55.76923076923077,0.2,0.06999999999999999,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,20.892857142857142,94.23076923076923,0.15,0.0525,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.375,63.46153846153846,0.2,0.06999999999999999,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,8.376068376068377,42.30769230769231,0.1,0.034999999999999996,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.2542372881355932,23.076923076923077,0.05,0.017499999999999998,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,585,98.07692307692308,0.6,0.24,TRUE
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,24,98.07692307692308,0.25,0.1,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.762096774193548,42.30769230769231,0.2,0.06999999999999999,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,18.8,80.76923076923077,0.15,0.0525,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.5,50.96153846153846,0.2,0.06999999999999999,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,24.46808510638298,73.07692307692308,0.1,0.034999999999999996,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.907258064516129,36.53846153846154,0.05,0.017499999999999998,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,470,65.38461538461539,0.6,0.24,TRUE
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,20,68.26923076923077,0.25,0.1,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.265388496468214,32.69230769230769,0.2,0.06999999999999999,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,20.875,92.3076923076923,0.15,0.0525,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.36842105263158,98.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,5.788423153692615,38.46153846153846,0.1,0.034999999999999996,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,estrutural,transporte_publico,pct_matriculas_transporte_publico,11.301715438950556,96.15384615384616,0.05,0.017499999999999998,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,501,78.84615384615384,0.6,0.24,TRUE
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,19,60.57692307692308,0.25,0.1,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,8.375634517766498,53.84615384615385,0.2,0.06999999999999999,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.576923076923077,38.46153846153846,0.15,0.0525,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.6875,57.69230769230769,0.2,0.06999999999999999,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.1421319796954317,44.23076923076923,0.05,0.017499999999999998,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,379,48.07692307692308,0.6,0.24,TRUE
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,16,45.19230769230769,0.25,0.1,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.159353348729792,28.846153846153847,0.2,0.06999999999999999,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,13.451612903225806,26.923076923076923,0.15,0.0525,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,20.85,13.461538461538462,0.2,0.06999999999999999,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,estrutural,transporte_publico,pct_matriculas_transporte_publico,4.041570438799076,76.92307692307692,0.05,0.017499999999999998,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,417,53.84615384615385,0.6,0.24,TRUE
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,20,68.26923076923077,0.25,0.1,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,100,100,0.2,0.05,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,administrativa,transicao_recente,score_administrativo_transicao_recente,100,100,0.35,0.0875,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.090909090909092,59.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,6.363636363636363,1.9230769230769231,0.15,0.0525,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,17.5,3.8461538461538463,0.2,0.06999999999999999,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,70,1.9230769230769231,0.6,0.24,TRUE
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,4,0.9615384615384616,0.25,0.1,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.821428571428571,73.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,18.346153846153847,75,0.15,0.0525,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.714285714285715,46.15384615384615,0.2,0.06999999999999999,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,30.39832285115304,76.92307692307692,0.1,0.034999999999999996,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,estrutural,transporte_publico,pct_matriculas_transporte_publico,2.380952380952381,53.84615384615385,0.05,0.017499999999999998,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,477,70.1923076923077,0.6,0.24,TRUE
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,21,76.92307692307692,0.25,0.1,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.185567010309279,11.538461538461538,0.2,0.06999999999999999,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,13.708333333333334,28.846153846153847,0.15,0.0525,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.933333333333337,28.846153846153847,0.2,0.06999999999999999,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,329,32.69230769230769,0.6,0.24,TRUE
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,15,37.5,0.25,0.1,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.451564828614009,40.38461538461539,0.2,0.06999999999999999,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,12.555555555555555,21.153846153846153,0.15,0.0525,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.6,42.30769230769231,0.2,0.06999999999999999,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,20.64896755162242,67.3076923076923,0.1,0.034999999999999996,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.5767511177347244,73.07692307692308,0.05,0.017499999999999998,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,339,36.53846153846154,0.6,0.24,TRUE
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,15,37.5,0.25,0.1,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.889908256880734,48.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,11.761904761904765,19.23076923076923,0.15,0.0525,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.454545454545453,39.42307692307692,0.2,0.06999999999999999,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,10.121457489878544,50,0.1,0.034999999999999996,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,247,21.153846153846153,0.6,0.24,TRUE
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,11,25.96153846153846,0.25,0.1,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.009852216748769,9.615384615384615,0.2,0.06999999999999999,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,16.085714285714285,61.53846153846154,0.15,0.0525,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.47826086956522,65.38461538461539,0.2,0.06999999999999999,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,14.209591474245116,57.69230769230769,0.1,0.034999999999999996,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.7881773399014779,34.61538461538461,0.05,0.017499999999999998,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,563,92.3076923076923,0.6,0.24,TRUE
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,23,95.1923076923077,0.25,0.1,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.960199004975125,50,0.2,0.06999999999999999,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,70,93.26923076923077,0.3,0.105,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,11.65,17.307692307692307,0.15,0.0525,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.3,48.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,estrutural,transporte_publico,pct_matriculas_transporte_publico,6.218905472636816,91.34615384615384,0.05,0.017499999999999998,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,233,15.384615384615385,0.6,0.24,TRUE
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.975460122699387,51.92307692307692,0.2,0.06999999999999999,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,8,7.6923076923076925,0.15,0.0525,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,16,1.9230769230769231,0.2,0.06999999999999999,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,80,3.8461538461538463,0.6,0.24,TRUE
+ESC_028,43177018,EMEF MIGRANTES,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,5,5.769230769230769,0.25,0.1,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.818930041152264,46.15384615384615,0.2,0.06999999999999999,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,24.4,100,0.15,0.0525,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.68421052631579,84.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,9.221311475409836,46.15384615384615,0.1,0.034999999999999996,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.4979423868312756,69.23076923076923,0.05,0.017499999999999998,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,488,73.07692307692308,0.6,0.24,TRUE
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,19,60.57692307692308,0.25,0.1,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.2438057482656095,15.384615384615385,0.2,0.06999999999999999,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,19.925925925925927,88.46153846153847,0.15,0.0525,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.61904761904762,82.6923076923077,0.2,0.06999999999999999,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,10.037174721189592,48.07692307692308,0.1,0.034999999999999996,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.189296333002973,48.07692307692308,0.05,0.017499999999999998,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,538,86.53846153846153,0.6,0.24,TRUE
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,21,76.92307692307692,0.25,0.1,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,educacao_especial,pct_matriculas_educacao_especial,14.698162729658792,98.07692307692308,0.2,0.06999999999999999,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,7.032258064516129,3.8461538461538463,0.15,0.0525,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.8,25.96153846153846,0.2,0.06999999999999999,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.1496062992125986,57.69230769230769,0.05,0.017499999999999998,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,218,11.538461538461538,0.6,0.24,TRUE
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.575342465753424,19.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.708333333333334,53.84615384615385,0.15,0.0525,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.5625,55.76923076923077,0.2,0.06999999999999999,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,377,45.19230769230769,0.6,0.24,TRUE
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,16,45.19230769230769,0.25,0.1,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,educacao_especial,pct_matriculas_educacao_especial,7.363420427553444,36.53846153846154,0.2,0.06999999999999999,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,18.545454545454547,76.92307692307692,0.15,0.0525,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.5,79.8076923076923,0.2,0.06999999999999999,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,38.23529411764706,86.53846153846153,0.1,0.034999999999999996,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,estrutural,transporte_publico,pct_matriculas_transporte_publico,7.957244655581948,94.23076923076923,0.05,0.017499999999999998,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,408,51.92307692307692,0.6,0.24,TRUE
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,16,45.19230769230769,0.25,0.1,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,13.174946004319654,96.15384615384616,0.2,0.06999999999999999,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,13.421052631578949,25,0.15,0.0525,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.25,19.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,18.823529411764707,63.46153846153846,0.1,0.034999999999999996,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.4557235421166306,65.38461538461539,0.05,0.017499999999999998,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,255,25,0.6,0.24,TRUE
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,12,28.846153846153847,0.25,0.1,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,educacao_especial,pct_matriculas_educacao_especial,12.368972746331236,94.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,7.181818181818182,5.769230769230769,0.15,0.0525,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.7,59.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.4192872117400419,25,0.05,0.017499999999999998,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,237,17.307692307692307,0.6,0.24,TRUE
+ESC_035,43048200,EMEF PORTO NOVO,marian,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.74124809741248,69.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.565217391304348,46.15384615384615,0.15,0.0525,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,19.88888888888889,9.615384615384615,0.2,0.06999999999999999,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,4.4692737430167595,32.69230769230769,0.1,0.034999999999999996,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.60882800608828,32.69230769230769,0.05,0.017499999999999998,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,358,40.38461538461539,0.6,0.24,TRUE
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,18,53.84615384615385,0.25,0.1,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,educacao_especial,pct_matriculas_educacao_especial,11.009174311926603,82.6923076923077,0.2,0.06999999999999999,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,13.27777777777778,23.076923076923077,0.15,0.0525,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.727272727272727,23.076923076923077,0.2,0.06999999999999999,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,43.93305439330544,88.46153846153847,0.1,0.034999999999999996,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.2110091743119265,61.53846153846154,0.05,0.017499999999999998,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,239,19.23076923076923,0.6,0.24,TRUE
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,11,25.96153846153846,0.25,0.1,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,educacao_especial,pct_matriculas_educacao_especial,11.442786069651742,84.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,70,93.26923076923077,0.3,0.105,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,10.666666666666666,11.538461538461538,0.15,0.0525,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.4,34.61538461538461,0.2,0.06999999999999999,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,estrutural,transporte_publico,pct_matriculas_transporte_publico,6.218905472636816,91.34615384615384,0.05,0.017499999999999998,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,224,13.461538461538462,0.6,0.24,TRUE
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,educacao_especial,pct_matriculas_educacao_especial,10.571428571428571,78.84615384615384,0.2,0.06999999999999999,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,17.444444444444443,69.23076923076923,0.15,0.0525,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,24.789473684210527,71.15384615384616,0.2,0.06999999999999999,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,11.46496815286624,51.92307692307692,0.1,0.034999999999999996,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,estrutural,transporte_publico,pct_matriculas_transporte_publico,5.714285714285714,86.53846153846153,0.05,0.017499999999999998,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,471,67.3076923076923,0.6,0.24,TRUE
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,19,60.57692307692308,0.25,0.1,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,educacao_especial,pct_matriculas_educacao_especial,18.867924528301888,100,0.2,0.06999999999999999,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,5.7368421052631575,0,0.15,0.0525,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.8,25.96153846153846,0.2,0.06999999999999999,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,109,7.6923076923076925,0.6,0.24,TRUE
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,5,5.769230769230769,0.25,0.1,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.004901960784314,7.6923076923076925,0.2,0.06999999999999999,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,19.31578947368421,86.53846153846153,0.15,0.0525,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.214285714285715,92.3076923076923,0.2,0.06999999999999999,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,14.168937329700272,55.76923076923077,0.1,0.034999999999999996,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,367,42.30769230769231,0.6,0.24,TRUE
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,14,32.69230769230769,0.25,0.1,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.1946902654867255,13.461538461538462,0.2,0.06999999999999999,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,19.09090909090909,82.6923076923077,0.15,0.0525,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.25,96.15384615384616,0.2,0.06999999999999999,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,21.19047619047619,69.23076923076923,0.1,0.034999999999999996,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,estrutural,transporte_publico,pct_matriculas_transporte_publico,4.424778761061947,78.84615384615384,0.05,0.017499999999999998,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,420,55.76923076923077,0.6,0.24,TRUE
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,16,45.19230769230769,0.25,0.1,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,educacao_especial,pct_matriculas_educacao_especial,10.061601642710473,76.92307692307692,0.2,0.06999999999999999,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.882352941176473,55.76923076923077,0.15,0.0525,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,27,100,0.2,0.06999999999999999,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,estrutural,transporte_publico,pct_matriculas_transporte_publico,16.427104722792606,100,0.05,0.017499999999999998,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,2,10.576923076923077,0.15,0.06,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,270,30.76923076923077,0.6,0.24,TRUE
+ESC_043,43293050,EMEF RINCAO,jalize,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,10,17.307692307692307,0.25,0.1,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,educacao_especial,pct_matriculas_educacao_especial,12.261306532663315,90.38461538461539,0.2,0.06999999999999999,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,16.466666666666665,63.46153846153846,0.15,0.0525,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.454545454545453,39.42307692307692,0.2,0.06999999999999999,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,5.668016194331984,36.53846153846154,0.1,0.034999999999999996,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.5175879396984926,71.15384615384616,0.05,0.017499999999999998,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,494,75,0.6,0.24,TRUE
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.70611439842209,23.076923076923077,0.2,0.06999999999999999,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.387096774193548,44.23076923076923,0.15,0.0525,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,21.681818181818183,21.153846153846153,0.2,0.06999999999999999,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,5.031446540880503,34.61538461538461,0.1,0.034999999999999996,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,estrutural,transporte_publico,pct_matriculas_transporte_publico,5.029585798816568,84.61538461538461,0.05,0.017499999999999998,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,477,70.1923076923077,0.6,0.24,TRUE
+ESC_045,43167535,EMEF SAO PEDRO,marian,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.370314842578711,65.38461538461539,0.2,0.06999999999999999,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,16.71875,67.3076923076923,0.15,0.0525,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,25.47619047619047,76.92307692307692,0.2,0.06999999999999999,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,17.94392523364486,61.53846153846154,0.1,0.034999999999999996,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,estrutural,transporte_publico,pct_matriculas_transporte_publico,4.72263868065967,80.76923076923077,0.05,0.017499999999999998,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,535,84.61538461538461,0.6,0.24,TRUE
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,21,76.92307692307692,0.25,0.1,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.295774647887324,63.46153846153846,0.2,0.06999999999999999,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,80,81.73076923076923,0.3,0.105,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,16.045454545454547,59.61538461538461,0.15,0.0525,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,23.533333333333335,53.84615384615385,0.2,0.06999999999999999,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,30.878186968838527,78.84615384615384,0.1,0.034999999999999996,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.14084507042253522,21.153846153846153,0.05,0.017499999999999998,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,353,38.46153846153846,0.6,0.24,TRUE
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,15,37.5,0.25,0.1,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.766022380467955,71.15384615384616,0.2,0.06999999999999999,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,100,24.038461538461533,0.3,0.105,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,14.962962962962964,42.30769230769231,0.15,0.0525,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.444444444444443,36.53846153846154,0.2,0.06999999999999999,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0,10.576923076923077,0.1,0.034999999999999996,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,estrutural,transporte_publico,pct_matriculas_transporte_publico,12.817904374364192,98.07692307692308,0.05,0.017499999999999998,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,404,50,0.6,0.24,TRUE
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,18,53.84615384615385,0.25,0.1,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,educacao_especial,pct_matriculas_educacao_especial,6.63265306122449,21.153846153846153,0.2,0.06999999999999999,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,22.96,98.07692307692308,0.15,0.0525,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.09090909090909,88.46153846153847,0.2,0.06999999999999999,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,36.23693379790941,84.61538461538461,0.1,0.034999999999999996,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.061224489795918,55.76923076923077,0.05,0.017499999999999998,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,574,94.23076923076923,0.6,0.24,TRUE
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,22,87.5,0.25,0.1,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,educacao_especial,pct_matriculas_educacao_especial,10.66481994459834,80.76923076923077,0.2,0.06999999999999999,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,16.65,65.38461538461539,0.15,0.0525,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.2,32.69230769230769,0.2,0.06999999999999999,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,21.62162162162162,71.15384615384616,0.1,0.034999999999999996,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,estrutural,transporte_publico,pct_matriculas_transporte_publico,1.8005540166204983,51.92307692307692,0.05,0.017499999999999998,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,333,34.61538461538461,0.6,0.24,TRUE
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,15,37.5,0.25,0.1,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,educacao_especial,pct_matriculas_educacao_especial,11.580882352941176,86.53846153846153,0.2,0.06999999999999999,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,70,93.26923076923077,0.3,0.105,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,15.655172413793103,50,0.15,0.0525,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,22.7,44.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,6.387665198237886,40.38461538461539,0.1,0.034999999999999996,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,estrutural,transporte_publico,pct_matriculas_transporte_publico,3.4926470588235294,67.3076923076923,0.05,0.017499999999999998,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,4,82.6923076923077,0.15,0.06,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,454,61.53846153846154,0.6,0.24,TRUE
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,20,68.26923076923077,0.25,0.1,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.976525821596244,75,0.2,0.06999999999999999,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,17.84,71.15384615384616,0.15,0.0525,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,26.235294117647054,94.23076923076923,0.2,0.06999999999999999,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,34.75336322869955,80.76923076923077,0.1,0.034999999999999996,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,estrutural,transporte_publico,pct_matriculas_transporte_publico,0.5868544600938967,30.76923076923077,0.05,0.017499999999999998,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,446,59.61538461538461,0.6,0.24,TRUE
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,17,50,0.25,0.1,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,0,0,0.45,0.1125,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,administrativa,historico_cadastral,score_administrativo_historico_cadastral,0,0,0.2,0.05,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,administrativa,transicao_recente,score_administrativo_transicao_recente,0,0,0.35,0.0875,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,educacao_especial,pct_matriculas_educacao_especial,9.70873786407767,67.3076923076923,0.2,0.06999999999999999,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,90,61.53846153846154,0.3,0.105,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,13.962962962962964,30.76923076923077,0.15,0.0525,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,20.944444444444443,15.384615384615385,0.2,0.06999999999999999,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,0.7957559681697612,28.846153846153847,0.1,0.034999999999999996,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,estrutural,transporte_publico,pct_matriculas_transporte_publico,4.854368932038835,82.6923076923077,0.05,0.017499999999999998,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,3,40.38461538461539,0.15,0.06,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,377,45.19230769230769,0.6,0.24,TRUE
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,18,53.84615384615385,0.25,0.1,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,administrativa,arranjo_institucional_especial,score_administrativo_arranjo_especial,100,100,0.45,0.1125,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,administrativa,historico_cadastral,score_administrativo_historico_cadastral,100,100,0.2,0.05,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,administrativa,transicao_recente,score_administrativo_transicao_recente,100,100,0.35,0.0875,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,educacao_especial,pct_matriculas_educacao_especial,5.194805194805195,3.8461538461538463,0.2,0.06999999999999999,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,60,99.03846153846153,0.3,0.105,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,9.058823529411764,9.615384615384615,0.15,0.0525,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,19.25,5.769230769230769,0.2,0.06999999999999999,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,100,95.1923076923077,0.1,0.034999999999999996,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,estrutural,transporte_publico,pct_matriculas_transporte_publico,0,9.615384615384615,0.05,0.017499999999999998,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,volume,amplitude_etapas,numero_etapas_amplas_ofertadas,1,1.9230769230769231,0.15,0.06,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,volume,matriculas_anos_iniciais,matriculas_anos_iniciais,154,9.615384615384615,0.6,0.24,TRUE
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,volume,turmas_anos_iniciais,turmas_anos_iniciais_validas,8,9.615384615384615,0.25,0.1,TRUE

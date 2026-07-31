@@ -1,0 +1,13 @@
+teste,aprovado,observado,esperado
+Todos os candidatos existem,TRUE,21,21
+Todos os candidatos possuem conteúdo,TRUE,21,21
+Seis tabelas para o corpo,TRUE,6,6
+Seis gráficos para o corpo,TRUE,6,6
+Oito tabelas para os anexos,TRUE,8,8
+T01 registra os seis universos/referências,TRUE,6,6
+T04 contém exatamente 11 carteiras,TRUE,11,11
+T05 contém três dimensões por carteira,TRUE,33,33
+Anexo operacional contém 53 escolas,TRUE,53,53
+Anexo não operacional contém três escolas,TRUE,3,3
+Ausência de termos editoriais proibidos,TRUE,21,21
+Ausência de colunas classificatórias proibidas,TRUE,21,21

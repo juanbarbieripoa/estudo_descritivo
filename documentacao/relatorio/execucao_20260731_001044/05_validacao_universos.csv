@@ -1,0 +1,10 @@
+teste,observado,esperado,aprovado
+Escolas no universo institucional,56,56,TRUE
+Escolas no universo operacional de 2026,53,53,TRUE
+Escolas institucionais não operacionais,3,3,TRUE
+Escolas no universo avaliativo de 2025,54,54,TRUE
+Escolas no universo avaliativo de 2026,56,56,TRUE
+Escolas no índice operacional,53,53,TRUE
+Carteiras gerenciais de 2026,11,11,TRUE
+Exposição positiva em 2025,0,0,TRUE
+Escolas operacionais sem assessora,0,0,TRUE

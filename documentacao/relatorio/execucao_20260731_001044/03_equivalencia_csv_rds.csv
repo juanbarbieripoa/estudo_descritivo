@@ -1,0 +1,15 @@
+par,linhas,colunas,chaves,tolerancia_absoluta,tolerancia_relativa,equivalente
+base_final,280,267,id_escola + ano_escolar,1e-10,1e-10,TRUE
+dim_final,56,218,id_escola,1e-10,1e-10,TRUE
+perfil_completo,56,283,id_escola,1e-10,1e-10,TRUE
+perfil_gerencial,56,153,id_escola,1e-10,1e-10,TRUE
+perfil_serie,280,69,id_escola + ano_escolar + componente,1e-10,1e-10,TRUE
+indice,53,24,id_escola,1e-10,1e-10,TRUE
+componentes_indice,636,12,id_escola + dimensao + componente,1e-10,1e-10,TRUE
+diagnostico_educacional_escola_serie,265,27,id_escola + ano_escolar + componente,1e-10,1e-10,TRUE
+analise_carteiras,11,30,assessora_gerencial_2026,1e-10,1e-10,TRUE
+detalhe_carteiras,53,29,assessora_gerencial_2026 + id_escola,1e-10,1e-10,TRUE
+diagnostico_carteiras,11,25,assessora_gerencial_2026,1e-10,1e-10,TRUE
+composicao_carteiras,99,9,assessora_gerencial_2026 + dimensao + metrica,1e-10,1e-10,TRUE
+universo_carteiras,56,13,id_escola,1e-10,1e-10,TRUE
+indice_fichas_carteiras,11,13,assessora_gerencial_2026,1e-10,1e-10,TRUE
