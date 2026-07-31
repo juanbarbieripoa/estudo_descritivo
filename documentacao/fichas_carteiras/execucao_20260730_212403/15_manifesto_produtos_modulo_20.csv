@@ -1,0 +1,6 @@
+arquivo,caminho,existe,tamanho_bytes,md5
+base_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_carteiras.csv,TRUE,6096,3f35c152f5f139dc58b8fefbfd33a2dc
+base_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_fichas_carteiras.rds,TRUE,1873,5481889ae71f3785bbf9a2c29ce0824c
+indice_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_carteiras.csv,TRUE,5778,013d69c7dc6754239e7085664168c3c1
+indice_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_carteiras.rds,TRUE,775,503664ba7a60a26df40e5c3ee15da87e
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/fichas_carteiras/dicionario_base_fichas_carteiras.csv,TRUE,4607,e52d4c37192000121edf7ede7599e690

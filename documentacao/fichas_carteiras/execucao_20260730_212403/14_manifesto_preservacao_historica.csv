@@ -1,0 +1,4 @@
+arquivo,caminho,existe,tamanho_bytes,md5
+base_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/historico/fichas_carteiras/pre_refatoracao_execucao_20260730_212403/base_fichas_carteiras.csv,TRUE,21650,fd127e7937483731df4b863a5efcc51a
+base_rds,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/historico/fichas_carteiras/pre_refatoracao_execucao_20260730_212403/base_fichas_carteiras.rds,TRUE,4420,1a37a81f7762e52cf8e64fedb405eeb1
+dicionario_csv,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/historico/fichas_carteiras/pre_refatoracao_execucao_20260730_212403/dicionario_base_fichas_carteiras.csv,TRUE,7525,0640655326ec3c873570e8751504d3d3
