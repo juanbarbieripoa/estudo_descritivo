@@ -24,3 +24,6 @@ _freeze/
 
 # Local operational diagnostics and working notes
 documentacao/operacional/
+
+# Local transactional candidates and rollback copies
+**/transacoes/
