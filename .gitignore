@@ -1,7 +1,23 @@
-# Configurações locais do RStudio
+# Local RStudio configuration
 .Rproj.user/
 
-# Histórico do R
+# Local R history and workspace
 .Rhistory
 .RData
 .Ruserdata
+
+# Local editor configuration
+.vscode/
+
+# Quarto temporary artifacts and caches
+.quarto/
+_freeze/
+*.knit.md
+*.utf8.md
+
+# Regenerable HTML dependencies
+*_files/
+
+# Temporary files
+*.tmp
+*.bak
