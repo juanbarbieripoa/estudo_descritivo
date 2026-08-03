@@ -1,0 +1,739 @@
+---
+title: "Anexos técnicos — diagnóstico institucional e operacional do assessoramento às escolas"
+subtitle: "Rede Municipal de Ensino de Porto Alegre — anos iniciais do Ensino Fundamental"
+author: "Unidade de Ensino Fundamental — SMED/PMPA"
+date: "2026-08-02"
+date-format: "D [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+    code-fold: false
+    code-tools: false
+    df-print: paged
+  docx:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: false
+params:
+  execucao_modulo_21: "20260731_001044"
+  execucao_modulo_23: "20260802_211916"
+---
+
+```{r}
+#| label: configuracao
+#| include: false
+
+suppressPackageStartupMessages({
+  library(here)
+  library(readr)
+  library(dplyr)
+  library(tidyr)
+  library(stringr)
+  library(purrr)
+  library(knitr)
+  library(scales)
+  library(glue)
+})
+
+execucao_modulo_21 <- params$execucao_modulo_21
+execucao_modulo_23 <- params$execucao_modulo_23
+
+dir_resultados_21 <- here(
+  "resultados",
+  "relatorio",
+  paste0("execucao_", execucao_modulo_21)
+)
+
+dir_documentacao_21 <- here(
+  "documentacao",
+  "relatorio",
+  paste0("execucao_", execucao_modulo_21)
+)
+
+dir_documentacao_23 <- here(
+  "documentacao",
+  "validacao_integrada",
+  paste0("execucao_", execucao_modulo_23)
+)
+
+dir_anexos_21 <- file.path(dir_resultados_21, "anexos", "tabelas")
+dir_graficos_21 <- file.path(dir_resultados_21, "corpo", "graficos")
+
+arquivos <- c(
+  a01 = file.path(dir_anexos_21, "A01_universo_institucional_escolas.csv"),
+  a02 = file.path(dir_anexos_21, "A02_universo_operacional_2026.csv"),
+  a03 = file.path(dir_anexos_21, "A03_resultados_escola_ano_escolar.csv"),
+  a04 = file.path(dir_anexos_21, "A04_indice_operacional_escolas.csv"),
+  a05 = file.path(dir_anexos_21, "A05_componentes_indice_operacional.csv"),
+  a06 = file.path(dir_anexos_21, "A06_composicao_carteiras.csv"),
+  a07 = file.path(dir_anexos_21, "A07_diagnostico_educacional_carteiras.csv"),
+  a08 = file.path(dir_anexos_21, "A08_escolas_institucionais_nao_operacionais.csv"),
+  validacao_23 = file.path(dir_documentacao_23, "11_resultado_testes.csv"),
+  resumo_23 = file.path(dir_documentacao_23, "14_resumo_execucao.txt"),
+  validacao_universos_21 = file.path(dir_documentacao_21, "05_validacao_universos.csv"),
+  session_21 = file.path(dir_documentacao_21, "14_session_info.txt"),
+  g01 = file.path(dir_graficos_21, "G01_universos_estudo.png"),
+  g02 = file.path(dir_graficos_21, "G02_composicao_institucional_rede.png"),
+  g03 = file.path(dir_graficos_21, "G03_participacao_por_ano_escolar.png"),
+  g05 = file.path(dir_graficos_21, "G05_extensao_intensidade_carteiras.png"),
+  g06 = file.path(dir_graficos_21, "G06_dimensoes_operacionais_carteiras.png")
+)
+
+ausentes <- arquivos[!file.exists(arquivos)]
+
+if (length(ausentes) > 0L) {
+  stop(
+    "Arquivos obrigatórios do módulo 24 ausentes:\n- ",
+    paste(ausentes, collapse = "\n- ")
+  )
+}
+
+ler_csv <- function(caminho) {
+  read_csv(
+    caminho,
+    show_col_types = FALSE,
+    progress = FALSE,
+    na = c("", "NA")
+  )
+}
+
+como_logico <- function(x) {
+  if (is.logical(x)) return(x)
+  if (is.numeric(x)) return(x == 1)
+  str_to_upper(str_trim(as.character(x))) %in%
+    c("TRUE", "VERDADEIRO", "SIM", "S", "1", "APROVADO")
+}
+
+fmt_inteiro <- function(x) {
+  format(
+    round(x),
+    big.mark = ".",
+    decimal.mark = ","
+  )
+}
+
+fmt_decimal <- function(x, casas = 1) {
+  format(
+    round(x, casas),
+    nsmall = casas,
+    big.mark = ".",
+    decimal.mark = ","
+  )
+}
+
+fmt_pct <- function(x, casas = 1) {
+  paste0(fmt_decimal(x, casas), "%")
+}
+
+titulo_colunas <- function(dados) {
+  nomes <- names(dados)
+
+  rotulos <- c(
+    id_escola = "ID da escola",
+    codigo_inep = "Código INEP",
+    nome_canonico = "Escola",
+    assessora_vinculo_administrativo = "Assessora de vínculo administrativo",
+    assessora_gerencial_2025 = "Assessora gerencial 2025",
+    assessora_gerencial_2026 = "Assessora gerencial 2026",
+    ano_escolar = "Ano escolar",
+    componente = "Componente",
+    grupo_administrativo_2024_final = "Grupo administrativo",
+    matriculas_anos_iniciais = "Matrículas",
+    turmas_anos_iniciais = "Turmas",
+    docentes_anos_iniciais = "Docentes",
+    alunos_por_turma_anos_iniciais = "Estudantes por turma",
+    pct_matriculas_anos_iniciais_integral = "Matrículas integrais (%)",
+    pct_matriculas_educacao_especial = "Educação especial (%)",
+    indice_infraestrutura_basica = "Infraestrutura",
+    possui_alerta_composicao = "Alerta de composição",
+    previstos_2025 = "Previstos 2025",
+    avaliados_2025 = "Avaliados 2025",
+    taxa_participacao_2025 = "Participação 2025 (%)",
+    proficiencia_media_2025 = "Proficiência 2025",
+    pct_defasagem_2025 = "Defasagem 2025 (%)",
+    pct_adequado_2025 = "Adequado 2025 (%)",
+    previstos_2026 = "Previstos 2026",
+    avaliados_2026 = "Avaliados 2026",
+    taxa_participacao_2026 = "Participação 2026 (%)",
+    proficiencia_media_2026 = "Proficiência 2026",
+    pct_defasagem_2026 = "Defasagem 2026 (%)",
+    pct_adequado_2026 = "Adequado 2026 (%)",
+    delta_participacao = "Variação da participação (p.p.)",
+    delta_proficiencia = "Variação da proficiência",
+    alerta_composicao_serie = "Alerta de composição",
+    observacao_composicao = "Observação de composição",
+    score_dimensao_volume = "Escore de volume",
+    score_dimensao_estrutural = "Escore estrutural",
+    score_dimensao_administrativa = "Escore administrativo",
+    indice_carga_potencial_operacional = "Índice operacional",
+    cobertura_indice_operacional = "Cobertura do índice",
+    nota_uso = "Nota de uso",
+    dimensao = "Dimensão",
+    componente = "Componente",
+    variavel_origem = "Variável de origem",
+    valor_origem = "Valor de origem",
+    score_relativo = "Escore relativo",
+    peso_na_dimensao = "Peso na dimensão",
+    peso_no_indice = "Peso no índice",
+    uso_no_indice = "Uso no índice",
+    numero_escolas = "Número de escolas",
+    metrica = "Métrica",
+    valor = "Valor",
+    tipo_metrica = "Tipo de métrica",
+    nota_metodologica = "Nota metodológica",
+    numero_escolas_diagnostico = "Escolas no diagnóstico",
+    previstos_total_2026 = "Previstos 2026",
+    avaliados_total_2026 = "Avaliados 2026",
+    taxa_participacao_agregada_2026 = "Participação agregada 2026 (%)",
+    proficiencia_2026_ponderada_avaliados = "Proficiência ponderada 2026",
+    pct_defasagem_2026_ponderado_avaliados = "Defasagem ponderada 2026 (%)",
+    pct_adequado_2026_ponderado_avaliados = "Adequado ponderado 2026 (%)",
+    alerta_participacao_composicao = "Alerta de participação/composição",
+    natureza = "Natureza",
+    advertencia = "Advertência",
+    elegivel_assessoramento_2026 = "Elegível ao assessoramento 2026",
+    recebe_assessoramento_2026 = "Recebe assessoramento 2026",
+    incluir_indice_carga_2026 = "Incluída no índice 2026",
+    status_carga_operacional_2026 = "Status da carga operacional",
+    grupo_exposicao_2026 = "Grupo de exposição 2026",
+    incluida_analise_operacional = "Incluída na análise operacional",
+    motivo_nao_inclusao = "Motivo da não inclusão",
+    nota_institucional = "Nota institucional"
+  )
+
+  novos <- ifelse(
+    nomes %in% names(rotulos),
+    unname(rotulos[nomes]),
+    nomes
+  )
+
+  names(dados) <- novos
+  dados
+}
+
+a01 <- ler_csv(arquivos[["a01"]])
+a02 <- ler_csv(arquivos[["a02"]])
+a03 <- ler_csv(arquivos[["a03"]])
+a04 <- ler_csv(arquivos[["a04"]])
+a05 <- ler_csv(arquivos[["a05"]])
+a06 <- ler_csv(arquivos[["a06"]])
+a07 <- ler_csv(arquivos[["a07"]])
+a08 <- ler_csv(arquivos[["a08"]])
+validacao_23 <- ler_csv(arquivos[["validacao_23"]])
+validacao_universos_21 <- ler_csv(arquivos[["validacao_universos_21"]])
+
+# Validações bloqueantes
+if (nrow(a01) != 56L || n_distinct(a01$id_escola) != 56L) {
+  stop("A01 não contém exatamente 56 escolas institucionais únicas.")
+}
+
+if (nrow(a02) != 53L || n_distinct(a02$id_escola) != 53L) {
+  stop("A02 não contém exatamente 53 escolas operacionais únicas.")
+}
+
+if (nrow(a03) != 280L ||
+    n_distinct(interaction(a03$id_escola, a03$ano_escolar, drop = TRUE)) != 280L) {
+  stop("A03 não contém exatamente 280 combinações escola × ano escolar únicas.")
+}
+
+if (nrow(a04) != 53L || n_distinct(a04$id_escola) != 53L) {
+  stop("A04 não contém exatamente 53 escolas operacionais únicas.")
+}
+
+if (n_distinct(a06$assessora_gerencial_2026) != 11L) {
+  stop("A06 não contém exatamente 11 carteiras gerenciais.")
+}
+
+if (nrow(a07) != 11L ||
+    n_distinct(a07$assessora_gerencial_2026) != 11L) {
+  stop("A07 não contém exatamente 11 carteiras gerenciais.")
+}
+
+if (!setequal(sort(a08$id_escola), c("ESC_001", "ESC_055", "ESC_056"))) {
+  stop("A08 não contém exatamente as três escolas institucionais não operacionais.")
+}
+
+if (any(a08$id_escola %in% a04$id_escola)) {
+  stop("Escola institucional não operacional encontrada no índice operacional.")
+}
+
+if (any(is.na(a02$assessora_gerencial_2026)) ||
+    any(str_trim(a02$assessora_gerencial_2026) == "")) {
+  stop("Há escola operacional sem assessora gerencial de 2026.")
+}
+
+if (!all(como_logico(validacao_23$aprovado))) {
+  stop("A validação integrada do módulo 23 não está integralmente aprovada.")
+}
+
+resumo_validacao_23 <- validacao_23 |>
+  count(categoria, status, name = "testes") |>
+  arrange(categoria, status)
+
+total_testes_23 <- nrow(validacao_23)
+total_aprovados_23 <- sum(validacao_23$status == "APROVADO")
+total_falhas_23 <- sum(validacao_23$status == "REPROVADO")
+total_advertencias_23 <- sum(validacao_23$status == "ADVERTENCIA")
+
+catalogo_bases <- tibble::tribble(
+  ~produto, ~unidade_observacao, ~chave, ~linhas_esperadas, ~uso,
+  "A01 — Universo institucional", "escola", "id_escola", 56,
+  "Caracterização da rede e identificação dos universos.",
+  "A02 — Universo operacional", "escola operacional", "id_escola", 53,
+  "Caracterização das escolas que integram a carga operacional de 2026.",
+  "A03 — Resultados educacionais", "escola × ano escolar",
+  "id_escola + ano_escolar", 280,
+  "Descrição de participação, composição e resultados observados.",
+  "A04 — Índice operacional", "escola operacional", "id_escola", 53,
+  "Síntese relativa e descritiva das dimensões operacionais.",
+  "A05 — Componentes do índice", "escola × componente",
+  "id_escola + componente", nrow(a05),
+  "Decomposição auditável do índice operacional.",
+  "A06 — Composição das carteiras", "carteira × métrica",
+  "assessora_gerencial_2026 + metrica", nrow(a06),
+  "Descrição não ordinal das dimensões agregadas.",
+  "A07 — Diagnóstico educacional das carteiras", "carteira",
+  "assessora_gerencial_2026", 11,
+  "Descrição educacional contextual, sem atribuição às assessoras.",
+  "A08 — Escolas não operacionais", "escola", "id_escola", 3,
+  "Documentação das exclusões do universo operacional."
+)
+
+chaves_bases <- tibble::tribble(
+  ~base, ~chave, ~duplicidades_observadas,
+  "A01", "id_escola",
+  nrow(a01) - n_distinct(a01$id_escola),
+  "A02", "id_escola",
+  nrow(a02) - n_distinct(a02$id_escola),
+  "A03", "id_escola + ano_escolar",
+  nrow(a03) -
+    n_distinct(interaction(a03$id_escola, a03$ano_escolar, drop = TRUE)),
+  "A04", "id_escola",
+  nrow(a04) - n_distinct(a04$id_escola),
+  "A05", "id_escola + componente",
+  nrow(a05) -
+    n_distinct(interaction(a05$id_escola, a05$componente, drop = TRUE)),
+  "A06", "assessora_gerencial_2026 + metrica",
+  nrow(a06) -
+    n_distinct(interaction(a06$assessora_gerencial_2026, a06$metrica, drop = TRUE)),
+  "A07", "assessora_gerencial_2026",
+  nrow(a07) - n_distinct(a07$assessora_gerencial_2026),
+  "A08", "id_escola",
+  nrow(a08) - n_distinct(a08$id_escola)
+)
+
+universos_anexo <- tibble::tribble(
+  ~universo, ~periodo, ~unidade, ~total, ~uso,
+  "Institucional", "Cadastro consolidado", "escolas", 56,
+  "Caracterização geral da rede.",
+  "Potencial escola × ano escolar", "2025–2026", "combinações", 280,
+  "Resultados educacionais por escola e ano escolar.",
+  "Avaliativo", "2025", "escolas", 54,
+  "Primeira avaliação anterior ao assessoramento.",
+  "Avaliativo", "2026", "escolas", 56,
+  "Primeira avaliação de 2026.",
+  "Operacional", "2026", "escolas", 53,
+  "Índice operacional e carteiras.",
+  "Gerencial", "2026", "assessoras", 11,
+  "Descrição não ordinal das carteiras.",
+  "Exposição positiva", "2025", "escolas", 0,
+  "Linha de base de dose zero."
+)
+```
+
+::: {.callout-important}
+## Escopo interpretativo
+
+Estes anexos integram um estudo **observacional e descritivo**. A primeira avaliação de 2025 antecede a implantação do assessoramento e corresponde à linha de base de **dose zero**. Resultados educacionais não compõem o índice operacional e não avaliam a qualidade, a produtividade ou a efetividade das assessoras.
+:::
+
+# Apresentação
+
+Os anexos técnicos complementam o relatório principal e preservam o detalhamento necessário à auditoria, à manutenção e à futura atualização do estudo. Eles não constituem um relatório interpretativamente autônomo: sua leitura deve observar as cautelas metodológicas e institucionais registradas no relatório técnico.
+
+A documentação usa os produtos homologados da execução **`r execucao_modulo_21`** do módulo 21 e da execução **`r execucao_modulo_23`** do módulo 23. Nenhuma tabela analítica foi recalculada neste documento.
+
+# Anexo A — Escopo, universos e fontes
+
+## Universos oficiais
+
+```{r}
+#| label: tbl-anexo-a-universos
+#| tbl-cap: "Anexo A — Universos oficiais do estudo"
+
+universos_anexo |>
+  titulo_colunas() |>
+  kable(align = "lllll")
+```
+
+![Universos do estudo](`r arquivos[["g01"]]`){#fig-anexo-a-universos fig-cap="Anexo A — Universos institucional, operacional, avaliativo e gerencial."}
+
+## Fontes e produtos analíticos
+
+```{r}
+#| label: tbl-anexo-a-catalogo
+#| tbl-cap: "Anexo A — Catálogo dos produtos analíticos utilizados"
+
+catalogo_bases |>
+  mutate(linhas_esperadas = fmt_inteiro(linhas_esperadas)) |>
+  titulo_colunas() |>
+  kable(align = "lllll")
+```
+
+# Anexo B — Contratos das bases e chaves
+
+## Unidades de observação e chaves
+
+```{r}
+#| label: tbl-anexo-b-chaves
+#| tbl-cap: "Anexo B — Chaves e duplicidades observadas"
+
+chaves_bases |>
+  mutate(
+    duplicidades_observadas = fmt_inteiro(duplicidades_observadas)
+  ) |>
+  titulo_colunas() |>
+  kable(align = "lll")
+```
+
+Todas as duplicidades observadas devem ser iguais a zero. A distinção entre `assessora_vinculo_administrativo` e `assessora_gerencial_2026` é preservada em todas as tabelas em que ambas são relevantes.
+
+## Campos temporais recomendados para avaliações futuras
+
+Para futuras ondas avaliativas, recomenda-se acrescentar explicitamente:
+
+- `ano_avaliacao`;
+- `numero_avaliacao`;
+- `id_avaliacao`;
+- `data_referencia`.
+
+Esses campos não são criados artificialmente nas bases atuais.
+
+# Anexo C — Universo institucional das escolas
+
+A tabela apresenta as 56 escolas da dimensão institucional. As três escolas não operacionais permanecem na caracterização da rede, mas não integram a carga operacional das carteiras.
+
+```{r}
+#| label: tbl-anexo-c-escolas
+#| tbl-cap: "Anexo C — Universo institucional das escolas"
+
+a01 |>
+  select(
+    id_escola,
+    codigo_inep,
+    nome_canonico,
+    assessora_vinculo_administrativo,
+    assessora_gerencial_2026,
+    recebe_assessoramento_2026,
+    incluir_indice_carga_2026,
+    grupo_administrativo_2024_final,
+    matriculas_anos_iniciais,
+    turmas_anos_iniciais,
+    docentes_anos_iniciais,
+    alunos_por_turma_anos_iniciais,
+    pct_matriculas_anos_iniciais_integral,
+    pct_matriculas_educacao_especial,
+    indice_infraestrutura_basica,
+    possui_alerta_composicao
+  ) |>
+  arrange(nome_canonico) |>
+  titulo_colunas()
+```
+
+![Composição institucional da rede](`r arquivos[["g02"]]`){#fig-anexo-c-composicao fig-cap="Anexo C — Composição institucional do universo de escolas."}
+
+# Anexo D — Universo operacional e índice
+
+## Escolas operacionais
+
+```{r}
+#| label: tbl-anexo-d-universo
+#| tbl-cap: "Anexo D — Universo operacional de 2026"
+
+a02 |>
+  select(
+    id_escola,
+    codigo_inep,
+    nome_canonico,
+    assessora_vinculo_administrativo,
+    assessora_gerencial_2026,
+    grupo_administrativo_2024_final,
+    matriculas_anos_iniciais,
+    turmas_anos_iniciais,
+    docentes_anos_iniciais,
+    alunos_por_turma_anos_iniciais,
+    pct_matriculas_anos_iniciais_integral,
+    pct_matriculas_educacao_especial,
+    indice_infraestrutura_basica,
+    possui_alerta_composicao
+  ) |>
+  arrange(assessora_gerencial_2026, nome_canonico) |>
+  titulo_colunas()
+```
+
+## Índice operacional por escola
+
+::: {.callout-warning}
+O índice operacional é uma medida relativa, descritiva, parcial e não ordinal. Não equivale a horas efetivamente trabalhadas e não deve ser usado isoladamente para ranking, classificação de sobrecarga, avaliação de desempenho ou redistribuição automática de escolas.
+:::
+
+```{r}
+#| label: tbl-anexo-d-indice
+#| tbl-cap: "Anexo D — Índice operacional e dimensões por escola"
+
+a04 |>
+  select(
+    id_escola,
+    nome_canonico,
+    assessora_gerencial_2026,
+    score_dimensao_volume,
+    score_dimensao_estrutural,
+    score_dimensao_administrativa,
+    indice_carga_potencial_operacional,
+    cobertura_indice_operacional,
+    nota_uso
+  ) |>
+  arrange(assessora_gerencial_2026, nome_canonico) |>
+  titulo_colunas()
+```
+
+## Componentes auditáveis do índice
+
+```{r}
+#| label: tbl-anexo-d-componentes
+#| tbl-cap: "Anexo D — Componentes do índice operacional"
+
+a05 |>
+  select(
+    id_escola,
+    nome_canonico,
+    assessora_gerencial_2026,
+    dimensao,
+    componente,
+    variavel_origem,
+    valor_origem,
+    score_relativo,
+    peso_na_dimensao,
+    peso_no_indice,
+    uso_no_indice
+  ) |>
+  arrange(
+    assessora_gerencial_2026,
+    nome_canonico,
+    dimensao,
+    componente
+  ) |>
+  titulo_colunas()
+```
+
+# Anexo E — Resultados educacionais por escola e ano escolar
+
+::: {.callout-warning}
+As diferenças entre 2025 e 2026 devem ser lidas juntamente com participação, cobertura e composição. Elas não identificam efeito causal do assessoramento.
+:::
+
+```{r}
+#| label: tbl-anexo-e-resultados
+#| tbl-cap: "Anexo E — Participação, composição e resultados por escola e ano escolar"
+
+a03 |>
+  select(
+    id_escola,
+    nome_canonico,
+    assessora_gerencial_2026,
+    ano_escolar,
+    componente,
+    previstos_2025,
+    avaliados_2025,
+    taxa_participacao_2025,
+    proficiencia_media_2025,
+    pct_defasagem_2025,
+    pct_adequado_2025,
+    previstos_2026,
+    avaliados_2026,
+    taxa_participacao_2026,
+    proficiencia_media_2026,
+    pct_defasagem_2026,
+    pct_adequado_2026,
+    delta_participacao,
+    delta_proficiencia,
+    alerta_composicao_serie,
+    observacao_composicao
+  ) |>
+  arrange(nome_canonico, ano_escolar) |>
+  titulo_colunas()
+```
+
+![Participação por ano escolar](`r arquivos[["g03"]]`){#fig-anexo-e-participacao fig-cap="Anexo E — Participação observada por ano escolar."}
+
+# Anexo F — Composição operacional das carteiras
+
+A ordenação das carteiras é alfabética. Nenhuma ordenação é baseada no índice operacional ou em resultados educacionais.
+
+```{r}
+#| label: tbl-anexo-f-composicao
+#| tbl-cap: "Anexo F — Métricas de composição das carteiras"
+
+a06 |>
+  select(
+    assessora_gerencial_2026,
+    numero_escolas,
+    dimensao,
+    metrica,
+    valor,
+    tipo_metrica,
+    peso_dimensao_indice,
+    uso_no_indice_operacional,
+    nota_metodologica
+  ) |>
+  arrange(assessora_gerencial_2026, dimensao, metrica) |>
+  titulo_colunas()
+```
+
+![Extensão e intensidade das carteiras](`r arquivos[["g05"]]`){#fig-anexo-f-extensao fig-cap="Anexo F — Extensão e intensidade relativa das carteiras."}
+
+![Dimensões operacionais das carteiras](`r arquivos[["g06"]]`){#fig-anexo-f-dimensoes fig-cap="Anexo F — Dimensões operacionais agregadas das carteiras."}
+
+# Anexo G — Diagnóstico educacional das carteiras
+
+::: {.callout-important}
+Os resultados educacionais deste anexo descrevem as escolas que compõem cada carteira. Eles têm peso zero no índice operacional e não representam qualidade, produtividade, responsabilidade ou efeito atribuível às assessoras.
+:::
+
+```{r}
+#| label: tbl-anexo-g-diagnostico
+#| tbl-cap: "Anexo G — Diagnóstico educacional contextual das carteiras"
+
+a07 |>
+  select(
+    assessora_gerencial_2026,
+    numero_escolas_diagnostico,
+    previstos_total_2026,
+    avaliados_total_2026,
+    taxa_participacao_agregada_2026,
+    proficiencia_2026_ponderada_avaliados,
+    pct_defasagem_2026_ponderado_avaliados,
+    pct_adequado_2026_ponderado_avaliados,
+    series_painel_balanceado,
+    series_alerta_composicao,
+    alerta_participacao_composicao,
+    natureza,
+    advertencia
+  ) |>
+  arrange(assessora_gerencial_2026) |>
+  titulo_colunas()
+```
+
+# Anexo H — Escolas institucionais não operacionais
+
+```{r}
+#| label: tbl-anexo-h-nao-operacionais
+#| tbl-cap: "Anexo H — Escolas institucionais fora do universo operacional"
+
+a08 |>
+  select(
+    id_escola,
+    codigo_inep,
+    nome_canonico,
+    assessora_vinculo_administrativo,
+    assessora_gerencial_2026,
+    elegivel_assessoramento_2026,
+    recebe_assessoramento_2026,
+    incluir_indice_carga_2026,
+    status_carga_operacional_2026,
+    grupo_exposicao_2026,
+    incluida_analise_operacional,
+    motivo_nao_inclusao,
+    nota_institucional
+  ) |>
+  arrange(id_escola) |>
+  titulo_colunas() |>
+  kable()
+```
+
+# Anexo I — Validação integrada
+
+A execução `r execucao_modulo_23` realizou **`r fmt_inteiro(total_testes_23)` testes**. Foram aprovados **`r fmt_inteiro(total_aprovados_23)`**, com **`r fmt_inteiro(total_advertencias_23)` advertências** e **`r fmt_inteiro(total_falhas_23)` falhas bloqueantes**.
+
+## Síntese por categoria
+
+```{r}
+#| label: tbl-anexo-i-sintese
+#| tbl-cap: "Anexo I — Síntese dos testes da validação integrada"
+
+resumo_validacao_23 |>
+  mutate(testes = fmt_inteiro(testes)) |>
+  titulo_colunas() |>
+  kable()
+```
+
+## Relação completa dos testes
+
+```{r}
+#| label: tbl-anexo-i-testes
+#| tbl-cap: "Anexo I — Relação completa dos testes do módulo 23"
+
+validacao_23 |>
+  select(
+    categoria,
+    teste,
+    criticidade,
+    status,
+    observado,
+    esperado,
+    detalhe
+  ) |>
+  arrange(categoria, teste) |>
+  titulo_colunas()
+```
+
+# Anexo J — Limitações e agenda de aprimoramento
+
+As limitações centrais do estudo são:
+
+1. inexistência de medida direta da dose de assessoramento por escola;
+2. ausência de carga horária desagregada por atividade e unidade escolar;
+3. painel temporal curto;
+4. mudança de participação e composição entre avaliações;
+5. impossibilidade de inferência causal;
+6. caráter relativo e parcial do índice operacional;
+7. não incorporação integral de deslocamentos, urgências, articulações e intensidade qualitativa;
+8. dependência de registros administrativos cuja qualidade pode variar entre períodos.
+
+Para futuras atualizações, recomenda-se registrar, em cada ação de assessoramento:
+
+- escola atendida;
+- data;
+- duração;
+- modalidade presencial ou remota;
+- participantes;
+- tipo de atividade;
+- demanda planejada ou emergencial;
+- encaminhamentos;
+- necessidade de retorno;
+- tempo de deslocamento;
+- documentos ou produtos gerados.
+
+Esses registros permitirão construir medidas mais diretas de cobertura, frequência, intensidade e dose, sem transformar automaticamente tais medidas em avaliação de desempenho individual.
+
+# Referência aos arquivos técnicos completos
+
+As tabelas apresentadas neste documento são derivadas dos CSV homologados da execução `r execucao_modulo_21`. Os arquivos técnicos completos permanecem disponíveis em:
+
+```text
+resultados/relatorio/execucao_20260731_001044/anexos/tabelas/
+```
+
+A auditoria integrada permanece disponível em:
+
+```text
+documentacao/validacao_integrada/execucao_20260802_211916/
+```
