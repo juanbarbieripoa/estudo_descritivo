@@ -1,0 +1,7 @@
+id_pacote=entrega_modulos_15_24_c770cf6_v001
+versao=v001
+fase=pre_sumario_apresentacao
+branch=refatoracao_modulo_21
+commit=c770cf6117a6408d787d6fd1eb3f51f48b4b1ca6
+execucao_modulo_25=20260803_003954
+caminho=C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/entrega_final/versoes/entrega_modulos_15_24_c770cf6_v001

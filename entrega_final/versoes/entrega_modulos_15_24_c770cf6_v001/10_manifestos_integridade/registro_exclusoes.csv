@@ -1,0 +1,8 @@
+classe,padrao_ou_caminho,motivo,bloqueante
+cache,.Rproj.user/,Cache local do RStudio.,TRUE
+temporario,*.tmp; *.temp; *.bak; *.lock,Arquivos transitórios.,TRUE
+cache,_cache/; _freeze/; renv/cache/,Caches de renderização/ambiente.,TRUE
+diagnostico,diagnostico_local/,Diagnóstico local não institucional.,TRUE
+futuro,módulos 26 e 27,Ainda não desenvolvidos e homologados.,TRUE
+historico,scripts históricos/concorrentes,Somente scripts canônicos.,TRUE
+fichas,fichas individuais dos módulos 19 e 20,Produtos condicionais não incluídos nesta versão.,FALSE

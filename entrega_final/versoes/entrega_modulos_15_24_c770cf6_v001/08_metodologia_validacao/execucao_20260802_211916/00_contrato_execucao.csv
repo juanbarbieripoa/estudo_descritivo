@@ -1,0 +1,8 @@
+campo,valor
+id_execucao,20260802_211916
+instante_execucao,2026-08-02 21:19:16 -03
+branch_esperada,refatoracao_modulo_21
+commit_esperado,95f77d4dd02bc77c8ae0b843eb3fb512c57df4b5
+execucao_modulo_21,20260731_001044
+modo,auditoria_nao_destrutiva
+politica_falha,falha_bloqueante_impede_promocao

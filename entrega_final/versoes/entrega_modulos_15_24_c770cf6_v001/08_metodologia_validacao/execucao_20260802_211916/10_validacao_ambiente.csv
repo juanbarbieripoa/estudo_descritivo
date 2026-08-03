@@ -1,0 +1,5 @@
+componente,valor,status,criticidade
+R atual,R version 4.4.2 (2024-10-31 ucrt),registrado,informativo
+R módulo 21,R version 4.4.2 (2024-10-31 ucrt),registrado,informativo
+fuso horário,America/Sao_Paulo,registrado,informativo
+Quarto no PATH,C:\PROGRA~1\RStudio\resources\app\bin\quarto\bin\quarto.exe,localizado,advertencia

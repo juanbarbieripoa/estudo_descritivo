@@ -1,0 +1,13 @@
+MÓDULO 23 — VALIDAÇÃO INTEGRADA FINAL
+Execução: 20260802_211916
+Data/hora: 2026-08-02 21:19:16 -03
+Branch: refatoracao_modulo_21
+Commit: 95f77d4dd02bc77c8ae0b843eb3fb512c57df4b5
+Testes: 135
+Aprovados: 135
+Advertências: 0
+Falhas bloqueantes: 0
+Resultado global: APROVADO
+Produto CSV: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/validacao_integrada_final.csv
+Produto RDS: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/validacao_integrada_final.rds
+Documentação: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/validacao_integrada/execucao_20260802_211916

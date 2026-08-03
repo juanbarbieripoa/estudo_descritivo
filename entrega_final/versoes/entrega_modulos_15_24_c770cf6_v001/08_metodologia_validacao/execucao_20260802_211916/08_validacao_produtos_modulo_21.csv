@@ -1,0 +1,9 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe
+m21_validacoes_origem_aprovadas,modulo_21,bloqueante,TRUE,9,9,
+m21_t01_institucional,modulo_21,bloqueante,TRUE,56,56,
+m21_t01_operacional,modulo_21,bloqueante,TRUE,53,53,
+m21_t01_avaliativo_2025,modulo_21,bloqueante,TRUE,54,54,
+m21_t01_avaliativo_2026,modulo_21,bloqueante,TRUE,56,56,
+m21_t01_gerencial,modulo_21,bloqueante,TRUE,11,11,
+m21_t04_onze_carteiras,modulo_21,bloqueante,TRUE,11,11,
+m21_t05_dimensoes_permitidas,modulo_21,bloqueante,TRUE,"Complexidade administrativa, Estrutura, Volume","Complexidade administrativa, Estrutura, Volume",
