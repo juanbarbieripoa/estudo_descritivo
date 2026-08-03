@@ -27,3 +27,6 @@ documentacao/operacional/
 
 # Local transactional candidates and rollback copies
 **/transacoes/
+
+# Local transactions from integrated validation
+dados_finais/transacoes_validacao_integrada/

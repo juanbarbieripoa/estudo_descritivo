@@ -1,0 +1,137 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe,status
+ambiente_r_compativel_modulo_21,ambiente,advertencia,TRUE,R version 4.4.2 (2024-10-31 ucrt),R version 4.4.2,,APROVADO
+quarto_disponivel_path,ambiente,advertencia,TRUE,C:\PROGRA~1\RStudio\resources\app\bin\quarto\bin\quarto.exe,registro informativo; não bloqueante,,APROVADO
+unicidade_base_escola_ano,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+unicidade_detalhe_carteira,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+unicidade_dim_escola,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+unicidade_indice,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+unicidade_perfil_completo,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+unicidade_perfil_gerencial,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,,APROVADO
+base_cobre_dimensao_institucional,coerencia_cruzada,bloqueante,TRUE,56,56,,APROVADO
+carteiras_analise_iguais_indice,coerencia_cruzada,bloqueante,TRUE,analise=11; indice=11,conjuntos idênticos,,APROVADO
+detalhe_carteiras_equivale_indice,coerencia_cruzada,bloqueante,TRUE,detalhe=53; indice=53,conjuntos idênticos,,APROVADO
+indice_equivale_universo_operacional,coerencia_cruzada,bloqueante,TRUE,indice=53; operacional=53,conjuntos idênticos,,APROVADO
+nao_operacionais_fora_indice,coerencia_cruzada,bloqueante,TRUE,,nenhum ID não operacional,"IDs bloqueados: ESC_001, ESC_055, ESC_056",APROVADO
+branch_git,contrato_execucao,bloqueante,TRUE,refatoracao_modulo_21,refatoracao_modulo_21,,APROVADO
+commit_git,contrato_execucao,bloqueante,TRUE,95f77d4dd02bc77c8ae0b843eb3fb512c57df4b5,95f77d4dd02bc77c8ae0b843eb3fb512c57df4b5,,APROVADO
+repositorio_sem_alteracoes_inesperadas,contrato_execucao,bloqueante,TRUE,"?? R/23_validacao_integrada_final.R
+?? documentacao/validacao_integrada/",sem alterações inesperadas; admitem-se apenas o script novo e a pasta de auditoria,,APROVADO
+script_canonico_existe,contrato_execucao,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/23_validacao_integrada_final.R,arquivo existente,,APROVADO
+sincronia_local_remota,contrato_execucao,bloqueante,TRUE,0	0,0 0,,APROVADO
+equivalencia_analise_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x30; rds=11x30,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_base_final,equivalencia_csv_rds,bloqueante,TRUE,csv=280x267; rds=280x267,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_componentes_educacionais,equivalencia_csv_rds,bloqueante,TRUE,csv=265x27; rds=265x27,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_componentes_indice,equivalencia_csv_rds,bloqueante,TRUE,csv=636x12; rds=636x12,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_composicao_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=99x9; rds=99x9,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_detalhe_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=53x29; rds=53x29,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_diagnostico_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x25; rds=11x25,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_dim_final,equivalencia_csv_rds,bloqueante,TRUE,csv=56x218; rds=56x218,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_indice,equivalencia_csv_rds,bloqueante,TRUE,csv=53x24; rds=53x24,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_indice_fichas_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x13; rds=11x13,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_perfil_completo,equivalencia_csv_rds,bloqueante,TRUE,csv=56x283; rds=56x283,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_perfil_gerencial,equivalencia_csv_rds,bloqueante,TRUE,csv=56x153; rds=56x153,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_perfil_serie,equivalencia_csv_rds,bloqueante,TRUE,csv=280x69; rds=280x69,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+equivalencia_universo_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=56x13; rds=56x13,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma,APROVADO
+existencia_analise_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_assessoras.csv,arquivo existente,tamanho_bytes=6717,APROVADO
+existencia_analise_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/analise_carteiras_assessoras.rds,arquivo existente,tamanho_bytes=2051,APROVADO
+existencia_base_final_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_analitica_final_escola_serie.csv,arquivo existente,tamanho_bytes=629573,APROVADO
+existencia_base_final_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/base_analitica_final_escola_serie.rds,arquivo existente,tamanho_bytes=54652,APROVADO
+existencia_componentes_educacionais_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_educacionais_escola_serie.csv,arquivo existente,tamanho_bytes=100732,APROVADO
+existencia_componentes_educacionais_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_educacionais_escola_serie.rds,arquivo existente,tamanho_bytes=17332,APROVADO
+existencia_componentes_indice_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_indice_carga_potencial.csv,arquivo existente,tamanho_bytes=99767,APROVADO
+existencia_componentes_indice_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/componentes_indice_carga_potencial.rds,arquivo existente,tamanho_bytes=6296,APROVADO
+existencia_composicao_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/composicao_operacional_carteiras.csv,arquivo existente,tamanho_bytes=19967,APROVADO
+existencia_composicao_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/composicao_operacional_carteiras.rds,arquivo existente,tamanho_bytes=1318,APROVADO
+existencia_detalhe_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.csv,arquivo existente,tamanho_bytes=24570,APROVADO
+existencia_detalhe_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/carteira_escola_detalhe.rds,arquivo existente,tamanho_bytes=4071,APROVADO
+existencia_diagnostico_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/diagnostico_educacional_carteiras.csv,arquivo existente,tamanho_bytes=6653,APROVADO
+existencia_diagnostico_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/diagnostico_educacional_carteiras.rds,arquivo existente,tamanho_bytes=1699,APROVADO
+existencia_dim_final_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/dim_escola_final.csv,arquivo existente,tamanho_bytes=103886,APROVADO
+existencia_dim_final_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/dim_escola_final.rds,arquivo existente,tamanho_bytes=15706,APROVADO
+existencia_indice_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_carga_potencial_escola.csv,arquivo existente,tamanho_bytes=16326,APROVADO
+existencia_indice_fichas_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_carteiras.csv,arquivo existente,tamanho_bytes=5778,APROVADO
+existencia_indice_fichas_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_fichas_carteiras.rds,arquivo existente,tamanho_bytes=775,APROVADO
+existencia_indice_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/indice_carga_potencial_escola.rds,arquivo existente,tamanho_bytes=3404,APROVADO
+existencia_modulo_21_resumo,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/relatorio/execucao_20260731_001044/15_resumo_execucao.txt,arquivo existente,tamanho_bytes=1012,APROVADO
+existencia_modulo_21_session_info,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/relatorio/execucao_20260731_001044/14_session_info.txt,arquivo existente,tamanho_bytes=1510,APROVADO
+existencia_modulo_21_t01,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T01_universos_cobertura_estudo.csv,arquivo existente,tamanho_bytes=600,APROVADO
+existencia_modulo_21_t02,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T02_perfil_estrutural_universo_institucional.csv,arquivo existente,tamanho_bytes=1022,APROVADO
+existencia_modulo_21_t03,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T03_participacao_composicao_resultados_por_ano.csv,arquivo existente,tamanho_bytes=1433,APROVADO
+existencia_modulo_21_t04,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T04_sintese_nao_ordinal_carteiras_operacionais.csv,arquivo existente,tamanho_bytes=2752,APROVADO
+existencia_modulo_21_t05,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T05_dimensoes_operacionais_carteiras.csv,arquivo existente,tamanho_bytes=926,APROVADO
+existencia_modulo_21_t06,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/resultados/relatorio/execucao_20260731_001044/corpo/tabelas/T06_cautelas_metodologicas.csv,arquivo existente,tamanho_bytes=940,APROVADO
+existencia_modulo_21_validacao_universos,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/relatorio/execucao_20260731_001044/05_validacao_universos.csv,arquivo existente,tamanho_bytes=444,APROVADO
+existencia_modulo_22_html,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/22_relatorio_tecnico.html,arquivo existente,tamanho_bytes=2400576,APROVADO
+existencia_modulo_22_qmd,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/22_relatorio_tecnico.qmd,arquivo existente,tamanho_bytes=22916,APROVADO
+existencia_perfil_completo_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_completo.csv,arquivo existente,tamanho_bytes=151420,APROVADO
+existencia_perfil_completo_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_completo.rds,arquivo existente,tamanho_bytes=30077,APROVADO
+existencia_perfil_gerencial_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_gerencial.csv,arquivo existente,tamanho_bytes=96095,APROVADO
+existencia_perfil_gerencial_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_gerencial.rds,arquivo existente,tamanho_bytes=22605,APROVADO
+existencia_perfil_serie_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_serie_compacto.csv,arquivo existente,tamanho_bytes=247852,APROVADO
+existencia_perfil_serie_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/perfil_escola_serie_compacto.rds,arquivo existente,tamanho_bytes=33017,APROVADO
+existencia_universo_carteiras_csv,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/universo_institucional_carteiras.csv,arquivo existente,tamanho_bytes=9009,APROVADO
+existencia_universo_carteiras_rds,existencia_entradas,bloqueante,TRUE,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/universo_institucional_carteiras.rds,arquivo existente,tamanho_bytes=2051,APROVADO
+hash_manifesto_analise_carteiras_csv,hashes_manifestos,bloqueante,TRUE,09a39c8ff8e99a2e08fa8dcaf1934c8d,09a39c8ff8e99a2e08fa8dcaf1934c8d,,APROVADO
+hash_manifesto_analise_carteiras_rds,hashes_manifestos,bloqueante,TRUE,fd5e0f3a600d7effe9fb49b8f94ae43a,fd5e0f3a600d7effe9fb49b8f94ae43a,,APROVADO
+hash_manifesto_base_final_csv,hashes_manifestos,bloqueante,TRUE,8c284e904dcf61c705d17de57ee4c615,8c284e904dcf61c705d17de57ee4c615,,APROVADO
+hash_manifesto_base_final_rds,hashes_manifestos,bloqueante,TRUE,ae935fe3d6e769d592d88c4c23e84a30,ae935fe3d6e769d592d88c4c23e84a30,,APROVADO
+hash_manifesto_componentes_educacionais_csv,hashes_manifestos,bloqueante,TRUE,c6a452965a7398de2ea6892e1113a833,c6a452965a7398de2ea6892e1113a833,,APROVADO
+hash_manifesto_componentes_educacionais_rds,hashes_manifestos,bloqueante,TRUE,37996354b10460a4d2bcc3969a7ed667,37996354b10460a4d2bcc3969a7ed667,,APROVADO
+hash_manifesto_componentes_indice_csv,hashes_manifestos,bloqueante,TRUE,7a853ba2c301265c6c308dabe72a2eea,7a853ba2c301265c6c308dabe72a2eea,,APROVADO
+hash_manifesto_componentes_indice_rds,hashes_manifestos,bloqueante,TRUE,b6e7dad6279590c3c492966fd4544708,b6e7dad6279590c3c492966fd4544708,,APROVADO
+hash_manifesto_composicao_carteiras_csv,hashes_manifestos,bloqueante,TRUE,1381da73d8e195fd691e41ee8d873274,1381da73d8e195fd691e41ee8d873274,,APROVADO
+hash_manifesto_composicao_carteiras_rds,hashes_manifestos,bloqueante,TRUE,82d8ea30fb598c6a9380d500219fa79c,82d8ea30fb598c6a9380d500219fa79c,,APROVADO
+hash_manifesto_detalhe_carteiras_csv,hashes_manifestos,bloqueante,TRUE,b67c3e52c04086242866809eed56089c,b67c3e52c04086242866809eed56089c,,APROVADO
+hash_manifesto_detalhe_carteiras_rds,hashes_manifestos,bloqueante,TRUE,2ff7621b617715722b652d956d5e2b11,2ff7621b617715722b652d956d5e2b11,,APROVADO
+hash_manifesto_diagnostico_carteiras_csv,hashes_manifestos,bloqueante,TRUE,8526e7bb50d2a85ac34e60197ec94595,8526e7bb50d2a85ac34e60197ec94595,,APROVADO
+hash_manifesto_diagnostico_carteiras_rds,hashes_manifestos,bloqueante,TRUE,4f471bbb40ec0020ddea61a6cfec230b,4f471bbb40ec0020ddea61a6cfec230b,,APROVADO
+hash_manifesto_dim_final_csv,hashes_manifestos,bloqueante,TRUE,4a3874f0287ce16372de4413dfee080c,4a3874f0287ce16372de4413dfee080c,,APROVADO
+hash_manifesto_dim_final_rds,hashes_manifestos,bloqueante,TRUE,39c8f106912fdbcef99caf0434ef11e2,39c8f106912fdbcef99caf0434ef11e2,,APROVADO
+hash_manifesto_indice_csv,hashes_manifestos,bloqueante,TRUE,8cfb06412611985459ffa7a8c2963828,8cfb06412611985459ffa7a8c2963828,,APROVADO
+hash_manifesto_indice_fichas_carteiras_csv,hashes_manifestos,bloqueante,TRUE,013d69c7dc6754239e7085664168c3c1,013d69c7dc6754239e7085664168c3c1,,APROVADO
+hash_manifesto_indice_fichas_carteiras_rds,hashes_manifestos,bloqueante,TRUE,503664ba7a60a26df40e5c3ee15da87e,503664ba7a60a26df40e5c3ee15da87e,,APROVADO
+hash_manifesto_indice_rds,hashes_manifestos,bloqueante,TRUE,7c91709044f94ccfc3b09183f6082a51,7c91709044f94ccfc3b09183f6082a51,,APROVADO
+hash_manifesto_modulo_21_resumo,hashes_manifestos,bloqueante,TRUE,702ba14ae3e6894a0bd0cde09e8b6b1f,hash registrado pelo módulo 23,Entrada sem manifesto anterior; hash incorporado pelo módulo 23.,APROVADO
+hash_manifesto_modulo_21_session_info,hashes_manifestos,bloqueante,TRUE,14696c06e6935b8533f13d8d5719b4e0,hash registrado pelo módulo 23,Entrada sem manifesto anterior; hash incorporado pelo módulo 23.,APROVADO
+hash_manifesto_modulo_21_t01,hashes_manifestos,bloqueante,TRUE,509ff1bd5ea0718ad32f3ae77e635e09,509ff1bd5ea0718ad32f3ae77e635e09,,APROVADO
+hash_manifesto_modulo_21_t02,hashes_manifestos,bloqueante,TRUE,2e3125073f5a5e86c57a39475846360f,2e3125073f5a5e86c57a39475846360f,,APROVADO
+hash_manifesto_modulo_21_t03,hashes_manifestos,bloqueante,TRUE,ec4a37c8f360ccb74801e5607528b7a1,ec4a37c8f360ccb74801e5607528b7a1,,APROVADO
+hash_manifesto_modulo_21_t04,hashes_manifestos,bloqueante,TRUE,f171c224d0b7fabe0617374d4994fe6e,f171c224d0b7fabe0617374d4994fe6e,,APROVADO
+hash_manifesto_modulo_21_t05,hashes_manifestos,bloqueante,TRUE,1180c454cf2d92d2658572193e6f5fb3,1180c454cf2d92d2658572193e6f5fb3,,APROVADO
+hash_manifesto_modulo_21_t06,hashes_manifestos,bloqueante,TRUE,fa5421007a31a68989f84ea785f30e9d,fa5421007a31a68989f84ea785f30e9d,,APROVADO
+hash_manifesto_modulo_21_validacao_universos,hashes_manifestos,bloqueante,TRUE,7a30ee62d8c599dd9537290bad244208,hash registrado pelo módulo 23,Entrada sem manifesto anterior; hash incorporado pelo módulo 23.,APROVADO
+hash_manifesto_modulo_22_html,hashes_manifestos,bloqueante,TRUE,260a839ee053c6ded601cd3cc4b08569,hash registrado pelo módulo 23,Entrada sem manifesto anterior; hash incorporado pelo módulo 23.,APROVADO
+hash_manifesto_modulo_22_qmd,hashes_manifestos,bloqueante,TRUE,6b80b96ea944a64400bae5e27807d2a8,hash registrado pelo módulo 23,Entrada sem manifesto anterior; hash incorporado pelo módulo 23.,APROVADO
+hash_manifesto_perfil_completo_csv,hashes_manifestos,bloqueante,TRUE,8ad85d621421acf672af7ee07c8d1f57,8ad85d621421acf672af7ee07c8d1f57,,APROVADO
+hash_manifesto_perfil_completo_rds,hashes_manifestos,bloqueante,TRUE,1f149a0b968bd3b0d0f43a9e3e0c4ef1,1f149a0b968bd3b0d0f43a9e3e0c4ef1,,APROVADO
+hash_manifesto_perfil_gerencial_csv,hashes_manifestos,bloqueante,TRUE,35e75d94b2f8b6e84a5a51708afb76e6,35e75d94b2f8b6e84a5a51708afb76e6,,APROVADO
+hash_manifesto_perfil_gerencial_rds,hashes_manifestos,bloqueante,TRUE,ba49b4fe72596f4b0c16b7dc7f830646,ba49b4fe72596f4b0c16b7dc7f830646,,APROVADO
+hash_manifesto_perfil_serie_csv,hashes_manifestos,bloqueante,TRUE,9ddb99063daea52ac4efa712fd9fad8b,9ddb99063daea52ac4efa712fd9fad8b,,APROVADO
+hash_manifesto_perfil_serie_rds,hashes_manifestos,bloqueante,TRUE,116a2d0c97085a90aac716d911f75c89,116a2d0c97085a90aac716d911f75c89,,APROVADO
+hash_manifesto_universo_carteiras_csv,hashes_manifestos,bloqueante,TRUE,e2e9d076ae09d8f605c994a97afb722c,e2e9d076ae09d8f605c994a97afb722c,,APROVADO
+hash_manifesto_universo_carteiras_rds,hashes_manifestos,bloqueante,TRUE,36cb738f4233fdab02e38ca0344f0db4,36cb738f4233fdab02e38ca0344f0db4,,APROVADO
+m21_t01_avaliativo_2025,modulo_21,bloqueante,TRUE,54,54,,APROVADO
+m21_t01_avaliativo_2026,modulo_21,bloqueante,TRUE,56,56,,APROVADO
+m21_t01_gerencial,modulo_21,bloqueante,TRUE,11,11,,APROVADO
+m21_t01_institucional,modulo_21,bloqueante,TRUE,56,56,,APROVADO
+m21_t01_operacional,modulo_21,bloqueante,TRUE,53,53,,APROVADO
+m21_t04_onze_carteiras,modulo_21,bloqueante,TRUE,11,11,,APROVADO
+m21_t05_dimensoes_permitidas,modulo_21,bloqueante,TRUE,"Complexidade administrativa, Estrutura, Volume","Complexidade administrativa, Estrutura, Volume",,APROVADO
+m21_validacoes_origem_aprovadas,modulo_21,bloqueante,TRUE,9,9,,APROVADO
+m22_busca_termo_cen_rio_de_redistribui_o,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,cenário de redistribuição,APROVADO
+m22_busca_termo_infer_ncia_causal_afirmativa,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,inferência causal afirmativa,APROVADO
+m22_busca_termo_percentil_anal_tico,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,percentil analítico,APROVADO
+m22_busca_termo_ranking_anal_tico,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,ranking analítico,APROVADO
+m22_data_publicacao,modulo_22,bloqueante,TRUE,2026-08-02,2026-08-02,,APROVADO
+m22_freeze_false,modulo_22,bloqueante,TRUE,freeze: false,freeze: false,,APROVADO
+m22_html_contem_titulo,modulo_22,bloqueante,TRUE,título no HTML,título esperado,,APROVADO
+m22_html_nao_vazio,modulo_22,bloqueante,TRUE,2400576,> 10000 bytes,,APROVADO
+m22_numeração_seções,modulo_22,bloqueante,TRUE,configuração YAML,number-sections: true,,APROVADO
+m22_parametro_execucao_modulo_21,modulo_22,bloqueante,TRUE,20260731_001044,20260731_001044,,APROVADO
+universo_carteiras_gerenciais_2026,universos,bloqueante,TRUE,11,11,,APROVADO
+universo_combinacoes_escola_ano,universos,bloqueante,TRUE,280,280,,APROVADO
+universo_escolas_avaliativas_2025,universos,bloqueante,TRUE,54,54,,APROVADO
+universo_escolas_avaliativas_2026,universos,bloqueante,TRUE,56,56,,APROVADO
+universo_escolas_institucionais,universos,bloqueante,TRUE,56,56,,APROVADO
+universo_escolas_operacionais_2026,universos,bloqueante,TRUE,53,53,,APROVADO
+universo_exposicao_positiva_2025,universos,bloqueante,TRUE,0,0,,APROVADO

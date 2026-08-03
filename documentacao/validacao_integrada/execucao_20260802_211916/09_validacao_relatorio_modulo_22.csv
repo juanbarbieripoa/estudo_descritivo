@@ -1,0 +1,11 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe
+m22_parametro_execucao_modulo_21,modulo_22,bloqueante,TRUE,20260731_001044,20260731_001044,
+m22_freeze_false,modulo_22,bloqueante,TRUE,freeze: false,freeze: false,
+m22_data_publicacao,modulo_22,bloqueante,TRUE,2026-08-02,2026-08-02,
+m22_numeração_seções,modulo_22,bloqueante,TRUE,configuração YAML,number-sections: true,
+m22_html_contem_titulo,modulo_22,bloqueante,TRUE,título no HTML,título esperado,
+m22_html_nao_vazio,modulo_22,bloqueante,TRUE,2400576,> 10000 bytes,
+m22_busca_termo_ranking_anal_tico,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,ranking analítico
+m22_busca_termo_percentil_anal_tico,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,percentil analítico
+m22_busca_termo_cen_rio_de_redistribui_o,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,cenário de redistribuição
+m22_busca_termo_infer_ncia_causal_afirmativa,modulo_22,advertencia,TRUE,termo não localizado,uso apenas em cautela ou proibição metodológica,inferência causal afirmativa
