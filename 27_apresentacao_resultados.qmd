@@ -1,0 +1,681 @@
+---
+pagetitle: "Diagnóstico institucional e operacional do assessoramento às escolas"
+lang: pt-BR
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    chalkboard: false
+    preview-links: false
+    transition: fade
+    background-transition: fade
+    controls: true
+    progress: true
+    center: false
+    width: 1280
+    height: 720
+    margin: 0.06
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: false
+params:
+  id_pacote: "entrega_modulos_15_24_c770cf6_v001"
+  execucao_modulo_25: "20260803_003954"
+  commit_base_modulo_27: "a7c56dbd4e4fef4efefaba58bd0f1c289d270129"
+---
+
+```{r}
+#| label: configuracao
+#| include: false
+
+suppressPackageStartupMessages({
+  library(here)
+  library(readr)
+  library(dplyr)
+  library(glue)
+})
+
+id_pacote <- params$id_pacote
+execucao_modulo_25 <- params$execucao_modulo_25
+commit_base_modulo_27 <- params$commit_base_modulo_27
+
+dir_pacote <- here("entrega_final", "versoes", id_pacote)
+dir_tabelas <- file.path(dir_pacote, "05_tabelas", "corpo")
+dir_graficos <- file.path(dir_pacote, "06_graficos")
+dir_validacao <- file.path(
+  dir_pacote,
+  "08_metodologia_validacao",
+  "execucao_20260802_211916"
+)
+dir_manifestos <- file.path(dir_pacote, "10_manifestos_integridade")
+
+arquivos_obrigatorios <- c(
+  file.path(dir_pacote, "00_leia_me", "LEIA_ME.md"),
+  file.path(dir_tabelas, "T01_universos_cobertura_estudo.csv"),
+  file.path(dir_tabelas, "T02_perfil_estrutural_universo_institucional.csv"),
+  file.path(dir_tabelas, "T03_participacao_composicao_resultados_por_ano.csv"),
+  file.path(dir_tabelas, "T04_sintese_nao_ordinal_carteiras_operacionais.csv"),
+  file.path(dir_tabelas, "T05_dimensoes_operacionais_carteiras.csv"),
+  file.path(dir_tabelas, "T06_cautelas_metodologicas.csv"),
+  file.path(dir_graficos, "G01_universos_estudo.png"),
+  file.path(dir_graficos, "G02_composicao_institucional_rede.png"),
+  file.path(dir_graficos, "G03_participacao_por_ano_escolar.png"),
+  file.path(dir_graficos, "G04_participacao_proficiencia_observada.png"),
+  file.path(dir_graficos, "G05_extensao_intensidade_carteiras.png"),
+  file.path(dir_graficos, "G06_dimensoes_operacionais_carteiras.png"),
+  file.path(dir_validacao, "11_resultado_testes.csv"),
+  file.path(dir_manifestos, "resultado_validacoes_pacote.csv"),
+  file.path(dir_manifestos, "registro_git.csv")
+)
+
+ausentes <- arquivos_obrigatorios[!file.exists(arquivos_obrigatorios)]
+
+if (length(ausentes) > 0L) {
+  stop(
+    "Arquivos obrigatórios do pacote homologado ausentes:\n- ",
+    paste(ausentes, collapse = "\n- ")
+  )
+}
+
+ler_tabela <- function(nome) {
+  read_csv(
+    file.path(dir_tabelas, nome),
+    show_col_types = FALSE,
+    na = c("", "NA")
+  )
+}
+
+t01 <- ler_tabela("T01_universos_cobertura_estudo.csv")
+t02 <- ler_tabela("T02_perfil_estrutural_universo_institucional.csv")
+t03 <- ler_tabela("T03_participacao_composicao_resultados_por_ano.csv")
+t04 <- ler_tabela("T04_sintese_nao_ordinal_carteiras_operacionais.csv")
+t05 <- ler_tabela("T05_dimensoes_operacionais_carteiras.csv")
+t06 <- ler_tabela("T06_cautelas_metodologicas.csv")
+
+testes_23 <- read_csv(
+  file.path(dir_validacao, "11_resultado_testes.csv"),
+  show_col_types = FALSE
+)
+
+validacoes_25 <- read_csv(
+  file.path(dir_manifestos, "resultado_validacoes_pacote.csv"),
+  show_col_types = FALSE
+)
+
+registro_git <- read_csv(
+  file.path(dir_manifestos, "registro_git.csv"),
+  show_col_types = FALSE
+)
+
+if (nrow(testes_23) != 135L || !all(testes_23$status == "APROVADO")) {
+  stop("A validação integrada do módulo 23 não está homologada em 135/135 testes.")
+}
+
+if (nrow(validacoes_25) == 0L || !all(validacoes_25$aprovado)) {
+  stop("O pacote do módulo 25 não está integralmente aprovado.")
+}
+
+commit_pacote <- registro_git |>
+  filter(.data$campo == "commit_observado") |>
+  pull(.data$valor)
+
+if (length(commit_pacote) != 1L || commit_pacote[[1]] != "c770cf6117a6408d787d6fd1eb3f51f48b4b1ca6") {
+  stop("O pacote dos módulos 15-24 não está ancorado no commit homologado esperado.")
+}
+
+fmt_inteiro <- function(x) {
+  format(round(x), big.mark = ".", decimal.mark = ",")
+}
+
+fmt_decimal <- function(x, casas = 1) {
+  format(round(x, casas), nsmall = casas, big.mark = ".", decimal.mark = ",")
+}
+
+fmt_pct <- function(x, casas = 1) {
+  paste0(fmt_decimal(x, casas), "%")
+}
+
+valor_t01 <- function(universo, periodo = NULL) {
+  dados <- t01 |>
+    filter(.data$universo == .env$universo)
+
+  if (!is.null(periodo)) {
+    dados <- dados |>
+      filter(.data$periodo == .env$periodo)
+  }
+
+  valor <- dados$total
+
+  if (length(valor) != 1L) {
+    stop("Valor não único em T01 para universo='", universo, "'.")
+  }
+
+  valor[[1]]
+}
+
+valor_t02 <- function(indicador) {
+  valor <- t02 |>
+    filter(.data$indicador == .env$indicador) |>
+    pull(.data$valor)
+
+  if (length(valor) != 1L) {
+    stop("Valor não único em T02 para indicador='", indicador, "'.")
+  }
+
+  valor[[1]]
+}
+
+caminho_grafico <- function(nome) {
+  caminho <- file.path(dir_graficos, nome)
+  if (!file.exists(caminho)) {
+    stop("Gráfico obrigatório ausente: ", caminho)
+  }
+  gsub("\\\\", "/", caminho)
+}
+
+total_institucional <- valor_t01("Institucional", "Cadastro consolidado")
+total_operacional <- valor_t01("Operacional", "2026")
+total_nao_operacional <- valor_t01("Institucional não operacional", "2026")
+total_avaliativo_2025 <- valor_t01("Avaliativo", "2025")
+total_avaliativo_2026 <- valor_t01("Avaliativo", "2026")
+total_carteiras <- valor_t01("Gerencial", "2026")
+
+matriculas <- valor_t02("Matrículas nos anos iniciais")
+turmas <- valor_t02("Turmas dos anos iniciais")
+docentes <- valor_t02("Docentes dos anos iniciais")
+mediana_matriculas <- valor_t02("Mediana de matrículas por escola")
+media_estudantes_turma <- valor_t02("Média de estudantes por turma")
+pct_integral <- valor_t02("Matrículas em tempo integral")
+pct_educacao_especial <- valor_t02("Matrículas da educação especial")
+indice_infraestrutura <- valor_t02("Índice médio de infraestrutura")
+alertas_composicao <- valor_t02("Escolas com alerta de composição")
+
+participacao_rede_2025 <- weighted.mean(t03$participacao_2025, t03$previstos_2025, na.rm = TRUE)
+participacao_rede_2026 <- weighted.mean(t03$participacao_2026, t03$previstos_2026, na.rm = TRUE)
+delta_participacao_rede <- participacao_rede_2026 - participacao_rede_2025
+
+faixa_numero_escolas <- range(t04$numero_escolas, na.rm = TRUE)
+faixa_matriculas <- range(t04$matriculas_anos_iniciais_total, na.rm = TRUE)
+faixa_turmas <- range(t04$turmas_anos_iniciais_total, na.rm = TRUE)
+faixa_soma_indice <- range(t04$soma_indice_operacional_carteira, na.rm = TRUE)
+faixa_media_indice <- range(t04$media_indice_operacional_escolas, na.rm = TRUE)
+
+dimensoes_esperadas <- c("Complexidade administrativa", "Estrutura", "Volume")
+
+if (!setequal(unique(t05$dimensao), dimensoes_esperadas)) {
+  stop("As dimensões operacionais não correspondem ao contrato esperado.")
+}
+
+if (!identical(as.numeric(total_institucional), 56)) stop("Universo institucional diferente de 56 escolas.")
+if (!identical(as.numeric(total_operacional), 53)) stop("Universo operacional de 2026 diferente de 53 escolas.")
+if (!identical(as.numeric(total_nao_operacional), 3)) stop("Universo institucional não operacional diferente de 3 escolas.")
+if (!identical(as.numeric(total_avaliativo_2025), 54)) stop("Universo avaliativo de 2025 diferente de 54 escolas.")
+if (!identical(as.numeric(total_avaliativo_2026), 56)) stop("Universo avaliativo de 2026 diferente de 56 escolas.")
+if (!identical(as.numeric(total_carteiras), 11)) stop("Universo gerencial de 2026 diferente de 11 carteiras.")
+```
+
+
+
+## Diagnóstico institucional e operacional {.title-slide}
+
+### Assessoramento às escolas — anos iniciais do Ensino Fundamental
+
+Rede Municipal de Ensino de Porto Alegre  
+UEF-SMED/PMPA
+
+::: {.notes}
+Abrir a apresentação reforçando que este é o produto visual do estudo descritivo. A apresentação não substitui o relatório técnico, os anexos ou os arquivos de auditoria.
+:::
+
+<style>
+.reveal {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2933;
+}
+.reveal h1, .reveal h2, .reveal h3 {
+  color: #102a43;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.reveal h2 {
+  font-size: 1.75em;
+}
+.reveal h3 {
+  font-size: 1.05em;
+}
+.reveal p, .reveal li {
+  font-size: 0.74em;
+  line-height: 1.28;
+}
+.reveal ul {
+  margin-top: 0.3em;
+}
+.reveal strong {
+  color: #0b4f6c;
+}
+.statement {
+  font-size: 1.35em;
+  line-height: 1.18;
+  font-weight: 700;
+  color: #0b4f6c;
+  margin: 1.1em 0 0.8em 0;
+}
+.statement-small {
+  font-size: 0.95em;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #0b4f6c;
+  margin-top: 1.1em;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65em;
+  margin-top: 1.4em;
+}
+.metric {
+  border-top: 5px solid #0b4f6c;
+  background: #f3f6f8;
+  padding: 0.75em 0.55em;
+  min-height: 3.4em;
+  font-size: 0.62em;
+}
+.metric span {
+  font-size: 2.15em;
+  font-weight: 700;
+  color: #0b4f6c;
+}
+.metric-list p {
+  border-left: 5px solid #0b4f6c;
+  padding-left: 0.55em;
+  margin: 0.38em 0;
+  font-size: 0.66em;
+}
+.metric-list strong {
+  font-size: 1.75em;
+}
+.bottom-callout {
+  margin-top: 0.35em;
+  padding: 0.45em 0.65em;
+  background: #eef4f7;
+  border-left: 5px solid #0b4f6c;
+  font-size: 0.7em;
+}
+.process {
+  margin-top: 1.0em;
+  font-size: 0.88em;
+  line-height: 1.45;
+}
+.reveal .columns {
+  gap: 1.2em;
+}
+.reveal section img {
+  max-height: 500px;
+}
+.reveal .slide-number {
+  font-size: 0.45em;
+}
+</style>
+
+## A pergunta gerencial
+
+::: {.columns}
+::: {.column width="42%"}
+### Como enxergar a rede sem reduzir tudo a uma contagem?
+
+O estudo organiza três planos de leitura:
+
+- **rede**;
+- **escolas**;
+- **carteiras**.
+:::
+
+::: {.column width="58%"}
+```{r}
+#| label: pergunta-gerencial-numeros
+#| results: asis
+
+cat(
+  '<div class="metric-grid">',
+  '<div class="metric"><span>', fmt_inteiro(total_institucional), '</span><br>escolas institucionais</div>',
+  '<div class="metric"><span>', fmt_inteiro(total_operacional), '</span><br>escolas operacionais</div>',
+  '<div class="metric"><span>', fmt_inteiro(total_carteiras), '</span><br>carteiras gerenciais</div>',
+  '</div>',
+  sep = ''
+)
+```
+:::
+:::
+
+::: {.notes}
+A pergunta não é “qual carteira é melhor ou pior”. A pergunta é como apoiar a gestão para reconhecer diferenças de composição e planejar o assessoramento com mais informação.
+:::
+
+## Contar escolas não basta
+
+::: {.statement}
+O número de escolas é necessário, mas insuficiente para compreender a demanda potencial de assessoramento.
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+### Extensão
+
+- quantidade de escolas;
+- matrículas;
+- turmas;
+- porte da carteira.
+:::
+
+::: {.column width="50%"}
+### Intensidade potencial
+
+- estrutura das escolas;
+- complexidade administrativa;
+- combinação interna da carteira;
+- situações que exigem validação qualitativa.
+:::
+:::
+
+::: {.notes}
+Esta é a tese principal da apresentação. O estudo não produz ranking, nem redistribuição automática. Ele cria uma base comum para discussão técnica.
+:::
+
+## Os universos precisam permanecer separados
+
+```{r}
+#| label: grafico-universos
+#| out-width: "96%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G01_universos_estudo.png"))
+```
+
+::: {.notes}
+Reforçar os quatro universos: institucional, avaliativo, operacional e gerencial. O universo institucional tem 56 escolas; o operacional de 2026 tem 53; o avaliativo tem 54 escolas em 2025 e 56 em 2026; o gerencial organiza 11 carteiras.
+:::
+
+## A rede tem escala e heterogeneidade
+
+::: {.columns}
+::: {.column width="58%"}
+```{r}
+#| label: grafico-composicao-rede
+#| out-width: "100%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G02_composicao_institucional_rede.png"))
+```
+:::
+
+::: {.column width="42%"}
+```{r}
+#| label: rede-numeros
+#| results: asis
+
+cat(
+  '<div class="metric-list">',
+  '<p><strong>', fmt_inteiro(matriculas), '</strong><br>matrículas nos anos iniciais</p>',
+  '<p><strong>', fmt_inteiro(turmas), '</strong><br>turmas</p>',
+  '<p><strong>', fmt_inteiro(docentes), '</strong><br>docentes</p>',
+  '<p><strong>', fmt_inteiro(mediana_matriculas), '</strong><br>matrículas na escola mediana</p>',
+  '</div>',
+  sep = ''
+)
+```
+:::
+:::
+
+::: {.notes}
+O objetivo é mostrar escala e heterogeneidade, não esgotar o perfil estrutural. Indicadores adicionais estão no relatório técnico e nos anexos.
+:::
+
+## A participação aumentou
+
+```{r}
+#| label: grafico-participacao-serie
+#| out-width: "88%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G03_participacao_por_ano_escolar.png"))
+```
+
+```{r}
+#| label: participacao-destaque
+#| results: asis
+
+cat(
+  '<div class="bottom-callout">Participação agregada estimada: <strong>',
+  fmt_pct(participacao_rede_2025),
+  '</strong> em 2025 e <strong>',
+  fmt_pct(participacao_rede_2026),
+  '</strong> em 2026 — variação aproximada de <strong>',
+  fmt_decimal(delta_participacao_rede),
+  ' p.p.</strong></div>',
+  sep = ''
+)
+```
+
+::: {.notes}
+Tratar a ampliação da participação como achado relevante de cobertura. Não interpretar a variação como efeito do programa.
+:::
+
+## Mais cobertura também muda a composição observada
+
+```{r}
+#| label: grafico-participacao-proficiencia
+#| out-width: "90%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G04_participacao_proficiencia_observada.png"))
+```
+
+```{r}
+#| label: alerta-composicao
+#| results: asis
+
+cat(
+  '<div class="bottom-callout">',
+  fmt_inteiro(alertas_composicao),
+  ' escolas apresentam alerta de composição entre 2025 e 2026.</div>',
+  sep = ''
+)
+```
+
+::: {.notes}
+A primeira avaliação de 2025 é linha de base anterior ao assessoramento, com dose zero. Mudanças de cobertura podem alterar a composição dos estudantes avaliados e condicionam a leitura dos resultados.
+:::
+
+## O que os resultados educacionais permitem dizer
+
+::: {.columns}
+::: {.column width="50%"}
+### Permitem
+
+- descrever trajetórias observadas;
+- orientar diálogo pedagógico;
+- identificar perguntas para aprofundamento;
+- qualificar a leitura da rede e das escolas.
+:::
+
+::: {.column width="50%"}
+### Não permitem
+
+- medir efetividade das assessoras;
+- identificar impacto causal;
+- explicar diferenças como efeito do programa;
+- compor o índice operacional.
+:::
+:::
+
+::: {.notes}
+Este slide separa o bloco educacional do bloco operacional. A transição é importante para evitar atribuição indevida dos resultados às carteiras ou às assessoras.
+:::
+
+## O mesmo número de escolas pode esconder demandas distintas
+
+::: {.statement}
+Duas carteiras com número semelhante de escolas podem diferir muito em matrículas, turmas, porte, estrutura e complexidade administrativa.
+:::
+
+::: {.columns}
+::: {.column width="33%"}
+### Volume
+
+Tamanho da demanda potencial.
+:::
+
+::: {.column width="33%"}
+### Estrutura
+
+Condições institucionais das escolas.
+:::
+
+::: {.column width="33%"}
+### Complexidade administrativa
+
+Arranjos e situações que afetam a gestão do acompanhamento.
+:::
+:::
+
+::: {.notes}
+Este slide prepara a leitura dos dois gráficos seguintes. Não criar exemplo fictício com valores inventados; manter o argumento conceitual.
+:::
+
+## As carteiras diferem em extensão e intensidade potencial
+
+```{r}
+#| label: grafico-extensao-intensidade
+#| out-width: "92%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G05_extensao_intensidade_carteiras.png"))
+```
+
+::: {.notes}
+Usar linguagem de faixas e composição. As carteiras têm de 4 a 6 escolas; de 1.261 a 2.753 matrículas; de 55 a 117 turmas; soma do índice entre 139,1 e 249,2; média por escola entre 28,2 e 45,4. Essas faixas não constituem ranking.
+:::
+
+## Três dimensões ajudam a interpretar as carteiras
+
+```{r}
+#| label: grafico-dimensoes-operacionais
+#| out-width: "94%"
+#| fig-align: center
+
+knitr::include_graphics(caminho_grafico("G06_dimensoes_operacionais_carteiras.png"))
+```
+
+::: {.notes}
+As dimensões homologadas do índice operacional são volume, estrutura e complexidade administrativa. Resultados educacionais ficam fora do índice operacional.
+:::
+
+## Como usar o diagnóstico
+
+::: {.process}
+1. **Observar** os indicadores homologados.
+2. **Confrontar** com o conhecimento qualitativo da equipe.
+3. **Discutir** situações que merecem revisão técnica.
+4. **Registrar** decisão, justificativa e critérios de revisão futura.
+:::
+
+::: {.statement-small}
+O diagnóstico apoia uma revisão colegiada. Não substitui a decisão da gestão.
+:::
+
+::: {.notes}
+Este slide deve evitar qualquer recomendação de redistribuição específica. O foco é governança da decisão.
+:::
+
+## O diagnóstico não mede a dose recebida
+
+::: {.statement}
+O índice descreve condições potenciais das escolas e carteiras. Ele não registra o trabalho efetivamente realizado.
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+### Ainda não mede
+
+- frequência das ações;
+- duração;
+- deslocamento;
+- atendimentos remotos;
+- preparação.
+:::
+
+::: {.column width="50%"}
+### Também não mede
+
+- urgências;
+- articulações institucionais;
+- continuidade do acompanhamento;
+- intensidade pedagógica;
+- retornos necessários.
+:::
+:::
+
+::: {.notes}
+Esta é a principal agenda informacional para o próximo ciclo. Sem dose, o estudo permanece diagnóstico e descritivo.
+:::
+
+## Registro mínimo para o próximo ciclo
+
+::: {.columns}
+::: {.column width="50%"}
+### Núcleo de cada ação
+
+- escola;
+- data;
+- modalidade;
+- duração;
+- participantes;
+- finalidade.
+:::
+
+::: {.column width="50%"}
+### Qualificação gerencial
+
+- encaminhamentos;
+- necessidade de retorno;
+- preparação;
+- deslocamento;
+- caráter planejado ou emergencial.
+:::
+:::
+
+::: {.notes}
+O objetivo é começar simples e padronizado. O registro deve permitir estimar cobertura, frequência, intensidade e dose acumulada por escola e carteira.
+:::
+
+## Agenda gerencial imediata
+
+::: {.process}
+1. **Homologar os universos** como referência comum.
+2. **Realizar oficina técnica** sobre a composição das carteiras.
+3. **Implantar registro padronizado** da dose de assessoramento.
+4. **Revisar o diagnóstico** após novo ciclo de dados.
+:::
+
+::: {.statement-small}
+A contribuição do estudo é criar uma linguagem comum para decisões mais transparentes, documentadas e revisáveis.
+:::
+
+::: {.notes}
+Encerrar destacando que o módulo 27 fecha a entrega institucional completa, mas abre uma agenda de gestão de dados para monitoramento futuro.
+:::
+
+## Encerramento
+
+### Diagnóstico descritivo, decisão colegiada, melhoria contínua
+
+::: {.statement}
+O estudo não entrega uma decisão automática. Ele oferece uma base auditável para enxergar a rede, compreender as escolas e qualificar a gestão das carteiras.
+:::
+
+::: {.notes}
+Slide final para perguntas e encaminhamentos. Remeter ao relatório técnico, aos anexos e ao sumário executivo quando houver demanda por detalhe metodológico ou tabelas completas.
+:::
