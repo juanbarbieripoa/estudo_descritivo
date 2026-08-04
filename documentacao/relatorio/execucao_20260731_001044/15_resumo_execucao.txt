@@ -1,0 +1,30 @@
+MÓDULO 21 — TABELAS E GRÁFICOS PARA O RELATÓRIO
+Execução: 20260731_001044
+Branch: refatoracao_modulo_21
+Commit-base: 43b782747cbb9ba6611edac73377bf00ca33c181
+
+Universos:
+- institucional: 56 escolas;
+- operacional de 2026: 53 escolas;
+- institucional não operacional: 3 escolas;
+- avaliativo de 2025: 54 escolas;
+- avaliativo de 2026: 56 escolas;
+- gerencial: 11 assessoras.
+
+Produtos promovidos:
+- tabelas do corpo: 6;
+- gráficos do corpo: 6;
+- tabelas dos anexos: 8;
+- catálogo editorial: 1.
+
+Cautelas:
+- estudo observacional e descritivo;
+- 2025 é linha de base anterior ao assessoramento;
+- educação não integra o índice operacional;
+- resultados escolares não avaliam assessoras;
+- índice operacional não representa integralmente a carga real;
+- não foram produzidos rankings, posições, faixas, percentis ou cenários.
+
+Próximo passo:
+- devolver os produtos listados em 13_produtos_para_homologacao.csv;
+- não iniciar o módulo 22 antes da homologação.

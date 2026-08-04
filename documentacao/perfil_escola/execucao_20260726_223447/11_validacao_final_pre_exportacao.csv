@@ -1,0 +1,27 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Perfil completo: linhas,estrutura,erro,56,56,aprovado,A dimensão final é a única espinha do perfil.
+Perfil completo: IDs únicos,estrutura,erro,56,56,aprovado,Uma linha por escola.
+Perfil gerencial: linhas,estrutura,erro,56,56,aprovado,Uma linha por escola.
+Perfil gerencial: IDs únicos,estrutura,erro,56,56,aprovado,Uma linha por escola.
+Perfil compacto: linhas,estrutura,erro,280,280,aprovado,56 escolas × cinco séries.
+Perfil compacto: IDs únicos,estrutura,erro,56,56,aprovado,Todas as escolas devem permanecer.
+Perfil compacto: chave única,estrutura,erro,0,zero duplicidades,aprovado,Chave id_escola + ano_escolar + componente.
+Contrato temporal mínimo nos três produtos,temporal,erro,TRUE,TRUE,aprovado,Todos os campos mínimos de 2025/2026 devem ser preservados.
+Chaves perdidas,integração,erro,0,zero,aprovado,Confronto com a base homologada do módulo 15.
+Chaves acrescentadas,integração,erro,0,zero,aprovado,Confronto com a base homologada do módulo 15.
+Campos escolares constantes e iguais à dimensão,integração,erro,equivalentes,equivalentes,aprovado,Cada campo escolar selecionado no compacto deve repetir a dimensão.
+Universo avaliativo 2025,universo,erro,54,54 escolas,aprovado,Universo homologado.
+Universo avaliativo 2026,universo,erro,56,56 escolas,aprovado,Universo homologado.
+Universo de carga 2026: IDs,carga,erro,53,53,aprovado,Carga potencial relativa; não é qualidade.
+Universo de carga 2026: linhas compactas,carga,erro,265,265,aprovado,53 escolas × cinco séries.
+Assessoras gerenciais no universo de carga 2026,carga,erro,11,11,aprovado,Contagem apenas entre escolas incluídas na carga.
+Exclusões simultâneas por ID e código INEP,carga,erro,ESC_001=43105416 | ESC_055=43105300 | ESC_056=43189768,ESC_001=43105416 | ESC_055=43105300 | ESC_056=43189768,aprovado,Somente as três escolas homologadas ficam fora da carga.
+Exclusões preservadas no perfil compacto,carga,erro,15,15 linhas,aprovado,"As três escolas permanecem, mas nunca integram a carga."
+Exclusões preservadas nos perfis escolares,carga,erro,completo=3; gerencial=3,três em cada perfil,aprovado,As três escolas permanecem nos perfis completo e gerencial.
+Assessora gerencial 2026 coerente com carga,assessoria,erro,TRUE,TRUE,aprovado,Preenchida no universo de carga e vazia nas três exclusões.
+"Exposição, carga e assessora gerencial em 2025: dimensão",temporal,erro,TRUE,TRUE,aprovado,2025 é linha de base pré-programa.
+"Exposição, carga e assessora gerencial em 2025: perfil gerencial",temporal,erro,TRUE,TRUE,aprovado,2025 é linha de base pré-programa.
+"Exposição, carga e assessora gerencial em 2025: compacto",temporal,erro,TRUE,TRUE,aprovado,2025 é linha de base pré-programa.
+Variável sem período ausente,assessoria,erro,FALSE,FALSE,aprovado,Não existe assessora gerencial sem período.
+Campo legado fora dos produtos gerenciais,assessoria,erro,FALSE,FALSE,aprovado,O campo legado só pode existir no perfil completo.
+Campo legado documentado,dicionário,erro,TRUE,TRUE,aprovado,O dicionário identifica `assessora` como legado exclusivo do perfil completo.

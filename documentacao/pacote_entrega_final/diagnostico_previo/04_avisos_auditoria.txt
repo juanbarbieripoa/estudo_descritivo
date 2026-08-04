@@ -1,0 +1,23 @@
+Mensagens de aviso:
+1: In file.info(path, extra_cols = FALSE) :
+  não é possível abrir o arquivo 'C:/Users/juanb/AppData/Local/Microsoft/WindowsApps/python.exe': Não é possível o acesso ao arquivo pelo sistema
+2: pacote ‘here’ foi compilado no R versão 4.4.3
+3: pacote ‘readr’ foi compilado no R versão 4.4.3
+4: pacote ‘dplyr’ foi compilado no R versão 4.4.3
+5: pacote ‘purrr’ foi compilado no R versão 4.4.3
+6: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 10 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/documentacao/validacao_integrada/execucao_20260802_211916/14_resumo_execucao.txt)
+7: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 9 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/validacao_integrada_final.rds)
+8: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 8 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/dados_finais/validacao_integrada_final.csv)
+9: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 7 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/24_anexos_tecnicos.docx)
+10: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 6 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/24_anexos_tecnicos.html)
+11: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 5 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/24_anexos_tecnicos.qmd)
+12: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 4 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/22_relatorio_tecnico.html)
+13: In for (i in seq_len(n)) { ... :
+  encerrando conexão não utilizada 3 (C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/22_relatorio_tecnico.qmd)

@@ -1,0 +1,3 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos,mesmas_dimensoes,mesmos_valores,detalhe,aprovado
+base_fichas_escolas,56,56,54,54,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+indice_fichas_escolas,56,56,15,15,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

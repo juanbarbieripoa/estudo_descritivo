@@ -1,0 +1,14 @@
+campo,valor
+id_execucao,20260731_001044
+data_hora,2026-07-31 00:10:44
+branch_esperada,refatoracao_modulo_21
+branch_observada,refatoracao_modulo_21
+commit_base,43b782747cbb9ba6611edac73377bf00ca33c181
+commit_observado,43b782747cbb9ba6611edac73377bf00ca33c181
+script_canonico,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/21_tabelas_graficos_relatorio.R
+md5_script_executado,74cb796b25d30716b1689f9d4be1076e
+universo_institucional,56
+universo_operacional_2026,53
+universo_avaliativo_2025,54
+universo_avaliativo_2026,56
+assessoras_gerenciais_2026,11

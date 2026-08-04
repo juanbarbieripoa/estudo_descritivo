@@ -1,0 +1,12 @@
+Módulo 11C — cadastro canônico de exposição ao assessoramento
+Execução: 20260726_141408
+Escolas na dimensão: 56
+Períodos observados: 2
+Registros escola × período: 112
+Universo avaliativo 2025: 54
+Universo avaliativo 2026: 56
+Escolas assessoradas em 2026: 53
+Escolas inelegíveis em 2026: 3
+Avisos não bloqueantes: 0
+Módulo 21: não executado.
+Próximo passo: homologar esta execução antes de refatorar os módulos 15 a 21.

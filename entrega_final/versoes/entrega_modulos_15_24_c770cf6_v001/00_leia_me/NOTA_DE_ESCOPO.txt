@@ -1,0 +1,5 @@
+NOTA DE ESCOPO
+Pacote: entrega_modulos_15_24_c770cf6_v001
+Conteúdo: produtos homologados dos módulos 15 a 24.
+Não contém produtos dos módulos 26 e 27.
+Nenhum resultado foi recalculado pelo módulo 25.

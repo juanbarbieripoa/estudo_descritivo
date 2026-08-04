@@ -1,0 +1,26 @@
+variavel,tipo,descricao,regra
+id_escola,character,Identificador canônico interno da escola,Deve existir em dados_intermediarios/dim_escola.csv
+codigo_inep,character,Código INEP de oito dígitos,Deve coincidir com a dimensão de escolas
+nome_canonico,character,Nome canônico da escola,Deve coincidir com a dimensão após normalização textual
+ano,integer,Ano da onda avaliativa,Integra a chave escola × período
+avaliacao_id,character,Identificador estável da avaliação,Usar chave normalizada sem depender do rótulo de exibição
+avaliacao_rotulo,character,Rótulo observado no painel CAEd,Derivado de dados_processados/painel_escola_serie_ano.csv
+periodo_programa,character,Posição temporal da onda em relação ao programa,Derivado do painel e validado por período
+pertence_universo_avaliativo,character,Indica presença observada da escola na onda,SIM ou NAO; não implica assessoramento
+elegivel_assessoramento,character,Abrangência institucional do programa no período,SIM NAO ou NA_APLICAVEL
+recebe_assessoramento,character,Exposição institucional ao programa no período,SIM ou NAO; não representa dose observada
+exposicao_programa_binaria,integer,Indicador binário de exposição institucional,1 somente quando recebe_assessoramento = SIM
+assessora_vinculo_administrativo,character,Vínculo administrativo constante da dimensão,Não comprova exposição
+assessora_gerencial,character,Responsável homologada pela escola no período,Obrigatória apenas quando recebe_assessoramento = SIM
+status_carga_operacional,character,Conversão da exposição em escopo operacional,ATIVA ZERO_OU_TENDENTE_A_ZERO ou SEM_CARGA_DO_PROGRAMA
+grupo_exposicao,character,Grupo descritivo da escola no período,Não constitui grupo causal
+incluir_diagnostico_avaliativo_ampliado,logical,Indica inclusão no universo avaliado da onda,TRUE quando pertence_universo_avaliativo = SIM
+incluir_resultados_rede_assessorada,logical,Indica inclusão nas sínteses da rede assessorada,Exige presença e recebimento de assessoramento
+incluir_indice_carga,logical,Indica inclusão no índice operacional de carga,Exige elegibilidade exposição ativa e homologação
+incluir_nao_exposto_descritivo,logical,Indica inclusão no grupo não exposto descritivo,Somente ondas pós-início; sem interpretação causal
+fonte_validacao,character,Origem da decisão institucional,Obrigatória em registros pós-início
+data_validacao,date,Data da validação institucional,Formato ISO yyyy-mm-dd
+responsavel_validacao,character,Pessoa ou unidade que confirmou a decisão,Obrigatória em registros pós-início
+observacao_validacao,character,Nota de rastreabilidade da decisão,Pode ser vazia
+status_homologacao,character,Estado de governança do registro,HOMOLOGADO ou REGRA_TEMPORAL_CONFIRMADA
+versao_regra,character,Versão da regra aplicada à onda,Permite bloquear insumos incompatíveis em módulos posteriores

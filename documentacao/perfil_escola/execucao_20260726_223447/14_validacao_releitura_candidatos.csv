@@ -1,0 +1,5 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe_comparacao,aprovado
+candidato_perfil_escola_completo,56,56,283,283,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+candidato_perfil_escola_gerencial,56,56,153,153,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+candidato_perfil_escola_serie_compacto,280,280,69,69,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+candidato_dicionario,317,317,11,11,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

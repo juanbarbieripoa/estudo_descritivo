@@ -1,0 +1,21 @@
+teste,categoria,severidade,valor_observado,criterio,status,detalhe
+Perfil gerencial inicial,universo,erro,56,56 escolas,aprovado,Uma linha por escola antes do filtro.
+Perfil série inicial,universo,erro,280,280 linhas,aprovado,56 escolas × cinco séries.
+Unicidade do perfil gerencial,chaves,erro,0,zero,aprovado,id_escola deve ser único.
+Unicidade escola × série × componente,chaves,erro,0,zero,aprovado,A chave compacta deve ser única.
+Exclusões por ID e código INEP,universo,erro,3,três pares exatos,aprovado,"ESC_001, ESC_055 e ESC_056."
+Universo gerencial de carga,universo,erro,53,53 escolas,aprovado,Somente incluir_indice_carga_2026 == TRUE.
+Universo escola × série de carga,universo,erro,265,265 linhas,aprovado,53 escolas × cinco séries.
+Número de assessoras,universo,erro,11,11 assessoras,aprovado,Contagem no universo oficial.
+Assessora de 2026 preenchida,cadastro,erro,0,zero,aprovado,"Ausência de assessora é erro, não componente."
+Constância e cinco séries,estrutura,erro,0,zero escolas,aprovado,Campos escolares constantes e cinco séries por escola.
+Carga de 2025 vazia,temporal,erro,0,zero escolas,aprovado,2025 é linha de base sem carga do programa.
+Assessora gerencial de 2025 vazia,temporal,erro,0,zero escolas,aprovado,Nenhum vínculo gerencial deve ser imputado a 2025.
+Índice entre 0 e 100,consistencia,erro,0,zero valores fora do intervalo,aprovado,Todos os 53 índices devem estar no intervalo.
+Índice disponível,cobertura,erro,0,zero escolas sem índice,aprovado,Cobertura operacional obrigatória.
+Resultados educacionais ausentes do índice,metodologia,erro,0,zero termos,aprovado,"Proficiência, defasagem e participação ficam no diagnóstico."
+Flag educacional sempre falsa,metodologia,erro,0,zero TRUE,aprovado,Trava explícita no produto principal.
+Diagnóstico educacional com peso zero,metodologia,erro,0,zero linhas com peso diferente de zero,aprovado,Produto paralelo nunca alimenta o índice.
+Produto principal com 53 escolas,universo,erro,53,53,aprovado,Universo oficial.
+Diagnóstico paralelo com 265 linhas,universo,erro,265,265,aprovado,53 escolas × cinco séries.
+Pesos dimensionais do índice,metodologia,erro,1,1,aprovado,Inclui peso educacional explicitamente igual a zero.

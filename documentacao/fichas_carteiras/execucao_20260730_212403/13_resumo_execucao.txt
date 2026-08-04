@@ -1,0 +1,13 @@
+Execução: 20260730_212403
+Branch: refatoracao_modulo_21
+Commit-base: 08909963e394556d32711ceba66d18b80664efff
+MD5: 50ac11259a49e4538c1323b5e42d1458
+Carteiras: 11
+Escolas: 53
+HTMLs: 11
+Gráficos: 44
+PDF: GERADO
+Erros críticos: 0
+
+Resultados educacionais fora do índice.
+Sem ranking, faixa, percentil ou cenário.

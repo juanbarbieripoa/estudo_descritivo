@@ -1,0 +1,2 @@
+id_execucao,executado_em,script_caminho,script_nome,script_md5,commit_git_execucao,commit_base_integracao
+20260726_182530,2026-07-26 18:25:30 -03,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/15_consolidar_base_final.R,15_consolidar_base_final.R,79d71551981aeeefb91b1f8fbcdc72bc,4db7826e49c377541b492789a1a09d81e2beb373,4db7826e49c377541b492789a1a09d81e2beb373

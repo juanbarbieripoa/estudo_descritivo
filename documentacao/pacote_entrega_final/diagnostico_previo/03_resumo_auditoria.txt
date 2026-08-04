@@ -1,0 +1,7 @@
+AUDITORIA PRÉVIA DO MÓDULO 25
+Branch: refatoracao_modulo_21
+Commit: c770cf6117a6408d787d6fd1eb3f51f48b4b1ca6
+Working tree limpo: NÃO
+Arquivos auditados: 8
+Arquivos válidos: 8
+SHA-256 disponível: SIM

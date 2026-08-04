@@ -1,0 +1,7 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe
+unicidade_dim_escola,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,
+unicidade_base_escola_ano,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,
+unicidade_perfil_completo,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,
+unicidade_perfil_gerencial,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,
+unicidade_indice,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,
+unicidade_detalhe_carteira,chaves_duplicidades,bloqueante,TRUE,0,0 duplicidades,

@@ -1,0 +1,10 @@
+teste,esperado,observado,aprovado
+Branch,refatoracao_modulo_21,refatoracao_modulo_21,TRUE
+Commit,c770cf6117a6408d787d6fd1eb3f51f48b4b1ca6,c770cf6117a6408d787d6fd1eb3f51f48b4b1ca6,TRUE
+Execução módulo 21,20260731_001044,20260731_001044,TRUE
+Execução módulo 23,20260802_211916,20260802_211916,TRUE
+Testes integrados,135 aprovados,135 aprovados,TRUE
+Produtos obrigatórios,80,80,TRUE
+Cópias idênticas,80,80,TRUE
+Produtos módulo 26,0,0,TRUE
+Produtos módulo 27,0,0,TRUE

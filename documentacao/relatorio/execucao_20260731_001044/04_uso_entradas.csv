@@ -1,0 +1,15 @@
+base,papel
+base_final,Dependência de integridade da cadeia; não usada em agregação local.
+dim_final,Dependência de integridade da cadeia; não usada em agregação local.
+perfil_completo,Fonte explícita do anexo institucional A01.
+perfil_gerencial,"Fonte do perfil institucional, universos e anexo operacional A02."
+perfil_serie,Fonte das tabelas e gráficos educacionais e do anexo A03.
+indice,Fonte do anexo A04 e validação do universo operacional.
+componentes_indice,Fonte do anexo A05.
+diagnostico_educacional_escola_serie,Dependência de integridade do diagnóstico educacional do módulo 17.
+analise_carteiras,Fonte das tabelas e gráficos de carteiras.
+detalhe_carteiras,Dependência de integridade e validação metodológica das carteiras.
+diagnostico_carteiras,Fonte do anexo A07.
+composicao_carteiras,Fonte do anexo A06.
+universo_carteiras,Fonte do anexo A08.
+indice_fichas_carteiras,Dependência editorial do módulo 20; valida existência das 11 fichas gerenciais.

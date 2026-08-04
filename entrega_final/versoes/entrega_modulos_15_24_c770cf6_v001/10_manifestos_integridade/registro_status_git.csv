@@ -1,0 +1,4 @@
+linha,codigo,caminho,permitido
+?? R/25A_auditar_entradas_pacote.R,??,R/25A_auditar_entradas_pacote.R,TRUE
+?? R/25_pacote_entrega_final.R,??,R/25_pacote_entrega_final.R,TRUE
+?? documentacao/pacote_entrega_final/,??,documentacao/pacote_entrega_final/,TRUE

@@ -1,0 +1,4 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe,aprovado
+perfil_escola_gerencial,56,56,153,153,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+indice_carga_potencial_escola,53,53,24,24,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+componentes_educacionais_escola_serie,265,265,27,27,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

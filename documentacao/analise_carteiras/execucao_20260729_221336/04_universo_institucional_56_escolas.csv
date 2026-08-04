@@ -1,0 +1,57 @@
+id_escola,codigo_inep,nome_canonico,assessora_vinculo_administrativo,assessora_gerencial_2026,elegivel_assessoramento_2026,recebe_assessoramento_2026,incluir_indice_carga_2026,status_carga_operacional_2026,grupo_exposicao_2026,incluida_analise_operacional,motivo_nao_inclusao,nota_institucional
+ESC_001,43105416,EEF PEQUENA CASA DA CRIANCA,outras,,FALSE,FALSE,FALSE,ZERO_OU_TENDENTE_A_ZERO,NAO_EXPOSTA_INELEGIVEL,FALSE,Não elegível ao universo operacional homologado; fora da carga de assessoramento.,"Escola preservada no universo institucional de 56 escolas, mas excluída das carteiras operacionais."
+ESC_055,43105300,ESCOLA DE ENSINO FUNDAMENTAL MADRE RAFFO,outras,,FALSE,FALSE,FALSE,ZERO_OU_TENDENTE_A_ZERO,NAO_EXPOSTA_INELEGIVEL,FALSE,Não elegível ao universo operacional homologado; fora da carga de assessoramento.,"Escola preservada no universo institucional de 56 escolas, mas excluída das carteiras operacionais."
+ESC_056,43189768,EEF ALDEIA LUMIAR,Sem vinculação informada,,FALSE,FALSE,FALSE,ZERO_OU_TENDENTE_A_ZERO,NAO_EXPOSTA_INELEGIVEL,FALSE,Não elegível ao universo operacional homologado; fora da carga de assessoramento.,"Escola preservada no universo institucional de 56 escolas, mas excluída das carteiras operacionais."
+ESC_002,43105505,EMEB DR LIBERATO SALZANO VIEIRA DA CUNHA,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_003,43105440,EMEF AFONSO GUERREIRO LIMA,graziela,graziela,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_004,43105459,EMEF AMERICA,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_005,43105467,EMEF ARAMY SILVA,priscila,priscila,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_006,43173713,EMEF CAMPOS DO CRISTAL,andreia,andreia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_007,43187560,EMEF CHAPEU DO SOL,ruti,ruti,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_008,43177581,EMEF CHICO MENDES,eliane,eliane,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_009,43105475,EMEF DECIO MARTINS COSTA,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_010,43109128,EMEF DEP MARCIRIO GOULART LOUREIRO,marian,marian,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_011,43109225,EMEF DEP VICTOR ISSLER,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_012,43105483,EMEF DOLORES ALCARAZ CALDAS,jalize,jalize,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_013,43106331,EMEF ESPIRITO SANTO,priscila,priscila,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_014,43106382,EMEF EVARISTO GONCALVES NETTO,jalize,jalize,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_015,43109233,EMEF GABRIEL OBINO,amanda,amanda,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_016,43107508,EMEF GOV ILDO MENEGHETTI,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_017,43108571,EMEF GRANDE ORIENTE DO RGS,andreia,andreia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_018,43105548,EMEF HEITOR VILLA LOBOS,jalize,jalize,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_019,43172474,EMEF JEAN PIAGET,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_020,43109217,EMEF JOAO ANTONIO SATTE,eliane,eliane,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_021,43219543,EMEF JOAO CARLOS DAVILA PAIXAO CORTES - LACADOR,julia,julia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_022,43105491,EMEF JOSE LOUREIRO DA SILVA,jalize,jalize,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_023,43169490,EMEF JOSE MARIANO BECK,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_024,43109209,EMEF LAURO RODRIGUES,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_025,43109063,EMEF LEOCADIA FELIZARDO PRESTES,graziela,graziela,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_026,43109144,EMEF LIDOVINO FANTON,julia,julia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_027,43183018,EMEF MARIO QUINTANA,ruti,ruti,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_028,43177018,EMEF MIGRANTES,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_029,43293069,EMEF MORADAS DA HIPICA,amanda,amanda,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_030,43177034,EMEF MORRO DA CRUZ,andreia,andreia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_031,43177042,EMEF NEUSA GOULART BRIZOLA,julia,julia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_032,43105513,EMEF NOSSA SENHORA DE FATIMA,amanda,amanda,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_033,43204643,EMEF NOSSA SENHORA DO CARMO,amanda,amanda,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_034,43105521,EMEF PEPITA DE LEAO,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_035,43048200,EMEF PORTO NOVO,marian,marian,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_036,43108563,EMEF PRES JOAO BELCHIOR MARQUES GOULART,marian,marian,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_037,43105530,EMEF PRESIDENTE VARGAS,eliane,eliane,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_038,43109195,EMEF PROF ANA IRIS DO AMARAL,eliane,eliane,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_039,43172490,EMEF PROF ANISIO TEIXEIRA,andreia,andreia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_040,43109071,EMEF PROF GILBERTO JORGE GONCALVES DA SILVA,ruti,ruti,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_041,43109055,EMEF PROF JUDITH MACEDO DE ARAUJO,graziela,graziela,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_042,43109098,EMEF PROF LARRY JOSE RIBEIRO ALVES,amanda,amanda,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_043,43293050,EMEF RINCAO,jalize,jalize,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_044,43167179,EMEF SAINT HILAIRE,andreia,andreia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_045,43167535,EMEF SAO PEDRO,marian,marian,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_046,43107842,EMEF SEN ALBERTO PASQUALINI,julia,julia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_047,43189253,EMEF TIMBAUVA,nathalia,nathalia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_048,43172482,EMEF VER ANTONIO GIUDICE,clarissa,clarissa,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_049,43109080,EMEF VER CARLOS PESSOA DE BRUM,priscila,priscila,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_050,43109101,EMEF VER MARTIM ARANHA,priscila,priscila,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_051,43175120,EMEF VILA MONTE CRISTO,graziela,graziela,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_052,43173721,EMEF WENCESLAU FONTOURA,eliane,eliane,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_053,43105246,EMEM EMILIO MEYER,ruti,ruti,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.
+ESC_054,43106668,ESC EST ENS FUN PROFESSORA LEOPOLDA BARNEWITZ,julia,julia,TRUE,TRUE,TRUE,ATIVA,ASSESSORADA,TRUE,,Escola incluída no universo operacional de 2026.

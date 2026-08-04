@@ -1,0 +1,13 @@
+Execução: 20260729_233939
+Branch: refatoracao_modulo_21
+Commit-base: d098ad77be7233829bc235112aaa1fe86f9b86a5
+MD5 do script: b0cec7ab570673a022d830ecd2e3ac51
+Fichas institucionais: 56
+Fichas operacionais: 53
+Fichas não operacionais: 3
+PDF compilado: GERADO
+Erros críticos: 0
+
+Resultados educacionais permanecem fora do índice.
+Não foram criados ranking, faixa, percentil ou cenário.
+Vínculo administrativo e assessora gerencial permanecem separados.

@@ -1,0 +1,32 @@
+# Local RStudio configuration
+.Rproj.user/
+
+# Local R history and workspace
+.Rhistory
+.RData
+.Ruserdata
+
+# Local editor configuration
+.vscode/
+
+# Quarto temporary artifacts and caches
+.quarto/
+_freeze/
+*.knit.md
+*.utf8.md
+
+# Regenerable HTML dependencies
+*_files/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Local operational diagnostics and working notes
+documentacao/operacional/
+
+# Local transactional candidates and rollback copies
+**/transacoes/
+
+# Local transactions from integrated validation
+dados_finais/transacoes_validacao_integrada/

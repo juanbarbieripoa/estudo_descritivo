@@ -1,0 +1,4 @@
+fonte,linhas_rds,linhas_csv,colunas_rds,colunas_csv,mesmos_nomes_e_ordem,mesmos_tipos_canonicos,mesmas_dimensoes,mesmos_valores_ordenados,detalhe,aprovado
+indice,53,53,24,24,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+componentes,636,636,12,12,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE
+diagnostico_educacional,265,265,27,27,TRUE,TRUE,TRUE,TRUE,equivalentes,TRUE

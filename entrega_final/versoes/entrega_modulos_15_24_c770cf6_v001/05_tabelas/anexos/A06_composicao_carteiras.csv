@@ -1,0 +1,100 @@
+assessora_gerencial_2026,numero_escolas,metrica,valor,dimensao,tipo_metrica,peso_dimensao_indice,uso_no_indice_operacional,nota_metodologica
+amanda,5,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,media_score_dimensao_estrutural,48.17307692307692,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,participacao_estrutural_soma_escore_pct,45.527716474101,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,soma_contribuicao_estrutural,84.30288461538461,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,media_score_dimensao_volume,50.43269230769231,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,participacao_volume_soma_escore_pct,54.47228352589901,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+amanda,5,soma_contribuicao_volume,100.86538461538463,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,media_score_dimensao_estrutural,58.09615384615385,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,participacao_estrutural_soma_escore_pct,44.879984719539884,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,soma_contribuicao_estrutural,101.66826923076923,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,media_score_dimensao_volume,62.43269230769231,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,participacao_volume_soma_escore_pct,55.120015280460116,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+andreia,5,soma_contribuicao_volume,124.86538461538463,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,media_score_dimensao_estrutural,43.91025641025641,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,participacao_estrutural_soma_escore_pct,37.004167309770025,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,soma_contribuicao_estrutural,92.21153846153845,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,media_score_dimensao_volume,65.40865384615384,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,participacao_volume_soma_escore_pct,62.995832690229975,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+clarissa,6,soma_contribuicao_volume,156.98076923076923,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,media_score_dimensao_estrutural,57.93269230769231,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,participacao_estrutural_soma_escore_pct,52.551242913214125,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,soma_contribuicao_estrutural,101.38221153846153,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,media_score_dimensao_volume,45.76923076923077,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,participacao_volume_soma_escore_pct,47.44875708678587,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+eliane,5,soma_contribuicao_volume,91.53846153846153,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,media_score_dimensao_estrutural,51.94711538461538,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,participacao_estrutural_soma_escore_pct,45.08120995380718,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,soma_contribuicao_estrutural,72.72596153846153,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,media_score_dimensao_volume,55.37259615384615,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,participacao_volume_soma_escore_pct,54.91879004619282,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+graziela,4,soma_contribuicao_volume,88.59615384615385,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,media_score_dimensao_administrativa,16,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,participacao_administrativa_soma_escore_pct,8.819538670284938,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,soma_contribuicao_administrativa,20,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,media_score_dimensao_estrutural,56.61538461538461,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,participacao_estrutural_soma_escore_pct,43.69063772048846,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,soma_contribuicao_estrutural,99.07692307692307,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,media_score_dimensao_volume,53.84615384615385,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,participacao_volume_soma_escore_pct,47.4898236092266,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+jalize,5,soma_contribuicao_volume,107.6923076923077,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,media_score_dimensao_administrativa,31,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,participacao_administrativa_soma_escore_pct,18.901552460015946,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,soma_contribuicao_administrativa,38.75,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,media_score_dimensao_estrutural,50.11538461538461,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,participacao_estrutural_soma_escore_pct,42.77941935181276,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,soma_contribuicao_estrutural,87.70192307692307,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,media_score_dimensao_volume,39.27884615384615,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,participacao_volume_soma_escore_pct,38.31902818817129,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+julia,5,soma_contribuicao_volume,78.5576923076923,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,media_score_dimensao_estrutural,39.855769230769226,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,participacao_estrutural_soma_escore_pct,40.111978986659295,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,soma_contribuicao_estrutural,55.79807692307692,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,media_score_dimensao_volume,52.06730769230769,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,participacao_volume_soma_escore_pct,59.888021013340705,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+marian,4,soma_contribuicao_volume,83.3076923076923,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,media_score_dimensao_estrutural,39.69551282051282,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,participacao_estrutural_soma_escore_pct,49.226357777588504,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,soma_contribuicao_estrutural,83.36057692307692,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,media_score_dimensao_volume,35.82532051282051,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,participacao_volume_soma_escore_pct,50.773642222411496,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+nathalia,6,soma_contribuicao_volume,85.98076923076924,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,media_score_dimensao_administrativa,20,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,participacao_administrativa_soma_escore_pct,12.025206683239869,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,soma_contribuicao_administrativa,20,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,media_score_dimensao_estrutural,49.75961538461539,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,participacao_estrutural_soma_escore_pct,41.88587616349656,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,soma_contribuicao_estrutural,69.66346153846153,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,media_score_dimensao_volume,47.90865384615384,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,participacao_volume_soma_escore_pct,46.088917153263566,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+priscila,4,soma_contribuicao_volume,76.65384615384615,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,media_score_dimensao_administrativa,0,complexidade administrativa,média do escore dimensional,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,participacao_administrativa_soma_escore_pct,0,complexidade administrativa,participação na soma do escore,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,soma_contribuicao_administrativa,0,complexidade administrativa,soma da contribuição no índice,0.25,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,media_score_dimensao_estrutural,56.862980769230774,estrutura,média do escore dimensional,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,participacao_estrutural_soma_escore_pct,55.06559584975307,estrutura,participação na soma do escore,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,soma_contribuicao_estrutural,79.60817307692307,estrutura,soma da contribuição no índice,0.35,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,media_score_dimensao_volume,40.60096153846154,volume,média do escore dimensional,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,participacao_volume_soma_escore_pct,44.93440415024692,volume,participação na soma do escore,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.
+ruti,4,soma_contribuicao_volume,64.96153846153847,volume,soma da contribuição no índice,0.4,TRUE,Decomposição do índice operacional homologado; não inclui resultados educacionais.

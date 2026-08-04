@@ -1,0 +1,16 @@
+dimensao,componente,variavel_origem,sentido,peso_na_dimensao,peso_no_indice,uso_no_indice,justificativa
+volume,matriculas_anos_iniciais,matriculas_anos_iniciais,maior = maior carga,0.6,0.24,TRUE,Volume principal de estudantes potencialmente alcançados.
+volume,turmas_anos_iniciais,turmas_anos_iniciais,maior = maior carga,0.25,0.1,TRUE,Número de grupos escolares acompanhados.
+volume,amplitude_etapas,numero_etapas_amplas_ofertadas,maior = maior carga,0.15,0.06,TRUE,Amplitude organizacional da unidade.
+estrutural,infraestrutura_insuficiente,indice_infraestrutura_basica,menor = maior complexidade,0.3,0.105,TRUE,Infraestrutura relativa potencialmente insuficiente.
+estrutural,pressao_alunos_turma,alunos_por_turma_anos_iniciais,maior = maior complexidade,0.2,0.06999999999999999,TRUE,Pressão organizacional por turma.
+estrutural,pressao_alunos_docente,alunos_por_docente_anos_iniciais,maior = maior complexidade,0.15,0.0525,TRUE,Pressão relativa por docente.
+estrutural,educacao_especial,pct_matriculas_educacao_especial,maior = maior coordenação,0.2,0.06999999999999999,TRUE,Pode requerer articulação e apoio diferenciados; não é déficit.
+estrutural,tempo_integral,pct_matriculas_anos_iniciais_integral,maior = maior organização,0.1,0.034999999999999996,TRUE,Jornada ampliada aumenta a complexidade operacional.
+estrutural,transporte_publico,pct_matriculas_transporte_publico,maior = maior logística,0.05,0.017499999999999998,TRUE,Sinaliza desafios logísticos potenciais.
+administrativa,arranjo_institucional_especial,grupo_administrativo_2024_final,presença = maior complexidade,0.45,0.1125,TRUE,Arranjos especiais exigem articulação institucional.
+administrativa,transicao_recente,"municipalização, possível municipalização ou escola nova",presença = maior complexidade,0.35,0.0875,TRUE,Transições recentes ampliam demandas de integração.
+administrativa,historico_cadastral,requer_revisao_tecnica ou divergencia_censo_cadastro,presença = maior complexidade,0.2,0.05,TRUE,Demandas cadastrais ou históricas adicionais.
+diagnostico_educacional_paralelo,menor_proficiencia,proficiencia_media_2026,menor = maior demanda pedagógica,0,0,FALSE,Preservado fora do índice para futura camada diagnóstica.
+diagnostico_educacional_paralelo,defasagem,pct_defasagem_2026,maior = maior demanda pedagógica,0,0,FALSE,Preservado fora do índice para futura camada diagnóstica.
+diagnostico_educacional_paralelo,participacao,taxa_participacao_2026,menor = maior cautela de cobertura,0,0,FALSE,Condiciona a leitura; não é componente de carga operacional.

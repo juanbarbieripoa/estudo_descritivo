@@ -1,0 +1,3 @@
+ano,avaliacao_id,avaliacao_rotulo,periodo_programa,chave_periodo,escolas_cadastradas,escolas_universo_avaliativo,escolas_assessoradas,escolas_avaliadas_nao_assessoradas,escolas_elegiveis,escolas_inelegiveis,escolas_indice_carga,identidade_universos_valida
+2025,1a_avaliacao_formativa,1ª Avaliação Formativa,linha_base_pre_programa,2025_1a_avaliacao_formativa,56,54,0,54,0,0,0,TRUE
+2026,1a_avaliacao_formativa,1ª Avaliação Formativa,pos_inicio_programa,2026_1a_avaliacao_formativa,56,56,53,3,53,3,53,TRUE

@@ -1,0 +1,25 @@
+teste,categoria,severidade,valor_observado,criterio,resultado,nivel,observacao
+Branch correta,execucao,erro,refatoracao_modulo_21,refatoracao_modulo_21,TRUE,OK,Bloqueio do ambiente Git.
+HEAD homologado,execucao,erro,5b75ba8ff3288afb4b2e956e6f68be26517d5c6f,5b75ba8ff3288afb4b2e956e6f68be26517d5c6f,TRUE,OK,Execução antes de qualquer alteração do módulo 18.
+Caminho canônico do script,execucao,erro,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/18_analisar_carteiras_assessoras.R,C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/18_analisar_carteiras_assessoras.R,TRUE,OK,Variantes corrigidas não devem ser executadas.
+Equivalência CSV–RDS das entradas,integridade,erro,3,3 de 3 fontes equivalentes,TRUE,OK,"Perfil, índice e diagnóstico educacional."
+Perfil institucional com 56 escolas,universo,erro,56,56,TRUE,OK,Universo institucional oficial.
+Índice operacional com 53 escolas,universo,erro,53,53,TRUE,OK,Universo operacional oficial.
+Diagnóstico educacional com 265 linhas,universo,erro,265,265,TRUE,OK,53 escolas × cinco séries.
+Exclusões operacionais exatas,universo,erro,ESC_001; ESC_055; ESC_056,ESC_001; ESC_055; ESC_056,TRUE,OK,Nenhuma outra escola pode ser excluída.
+Onze assessoras gerenciais,universo,erro,11,11,TRUE,OK,Carteiras formadas por assessora_gerencial_2026.
+Síntese com 11 linhas,produto,erro,11,11,TRUE,OK,Uma linha por assessora.
+Detalhe com 53 linhas,produto,erro,53,53,TRUE,OK,Uma linha por escola elegível.
+Universo institucional com 56 linhas,produto,erro,56,56,TRUE,OK,Inclui as três escolas não elegíveis.
+Composição operacional com 99 linhas,produto,erro,99,99,TRUE,OK,11 assessoras × três dimensões × três métricas.
+Diagnóstico educacional com 11 linhas,produto,erro,11,11,TRUE,OK,Uma linha contextual por assessora.
+Soma das escolas das carteiras,consistencia,erro,53,53,TRUE,OK,Recomposição do universo operacional.
+Índice recomposto por contribuições,metodologia,erro,3.5527136788005e-15,diferença máxima < 1e-10,TRUE,OK,"Pesos 40%, 35% e 25% já homologados."
+Soma do índice preservada,consistencia,erro,2066.25,2066.25,TRUE,OK,Agregação não altera os escores escolares.
+Soma dos componentes preservada,consistencia,erro,2066.25,2066.25,TRUE,OK,Contribuições recompõem o índice operacional.
+Resultados educacionais fora do índice,metodologia,erro,0,zero TRUE,TRUE,OK,Trava herdada do módulo 17.
+Diagnóstico educacional com peso zero,metodologia,erro,0,zero,TRUE,OK,Produto paralelo.
+Diagnóstico educacional não usado no índice,metodologia,erro,0,zero TRUE,TRUE,OK,Produto paralelo.
+"Ausência de novos rankings, faixas e cenários",metodologia,erro,0,zero ocorrências,TRUE,OK,Nenhuma ordenação gerencial nova.
+Vínculos preservados separadamente,metodologia,erro,TRUE,duas variáveis presentes,TRUE,OK,Nenhuma variável é inferida da outra.
+Nenhuma categoria residual operacional,universo,erro,0,zero,TRUE,OK,Somente 11 carteiras nominais.

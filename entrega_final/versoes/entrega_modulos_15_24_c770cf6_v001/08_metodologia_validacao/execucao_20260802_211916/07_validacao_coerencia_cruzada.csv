@@ -1,0 +1,6 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe
+base_cobre_dimensao_institucional,coerencia_cruzada,bloqueante,TRUE,56,56,
+indice_equivale_universo_operacional,coerencia_cruzada,bloqueante,TRUE,indice=53; operacional=53,conjuntos idênticos,
+detalhe_carteiras_equivale_indice,coerencia_cruzada,bloqueante,TRUE,detalhe=53; indice=53,conjuntos idênticos,
+nao_operacionais_fora_indice,coerencia_cruzada,bloqueante,TRUE,,nenhum ID não operacional,"IDs bloqueados: ESC_001, ESC_055, ESC_056"
+carteiras_analise_iguais_indice,coerencia_cruzada,bloqueante,TRUE,analise=11; indice=11,conjuntos idênticos,

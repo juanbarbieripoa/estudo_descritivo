@@ -1,0 +1,22 @@
+id,destino,tipo,titulo,universo,decisao
+T01,Corpo,Tabela,Universos e cobertura do estudo,Múltiplos universos,Produzir
+T02,Corpo,Tabela,Perfil estrutural do universo institucional,56 escolas,Produzir
+T03,Corpo,Tabela,"Participação, composição e resultados por ano escolar",54/56 escolas avaliativas,Produzir
+T04,Corpo,Tabela,Síntese não ordinal das carteiras operacionais,53 escolas / 11 assessoras,Produzir
+T05,Corpo,Tabela,Dimensões operacionais das carteiras,53 escolas / 11 assessoras,Produzir
+T06,Corpo,Tabela,Cautelas metodológicas e institucionais,Aplicação transversal,Produzir
+G01,Corpo,Gráfico,Universos do estudo,Múltiplos universos,Produzir
+G02,Corpo,Gráfico,Composição administrativa institucional,56 escolas,Produzir
+G03,Corpo,Gráfico,Participação por ano escolar,54/56 escolas avaliativas,Produzir
+G04,Corpo,Gráfico,Participação e proficiência observada,54/56 escolas avaliativas,Produzir
+G05,Corpo,Gráfico,Extensão e intensidade das carteiras,53 escolas / 11 assessoras,Produzir
+G06,Corpo,Gráfico,Dimensões operacionais das carteiras,53 escolas / 11 assessoras,Produzir
+A01,Anexo,Tabela,Universo institucional das escolas,56 escolas,Selecionar
+A02,Anexo,Tabela,Universo operacional de 2026,53 escolas,Selecionar
+A03,Anexo,Tabela,Resultados escola × ano escolar,Universos avaliativos,Selecionar
+A04,Anexo,Tabela,Índice operacional por escola,53 escolas,Selecionar
+A05,Anexo,Tabela,Componentes do índice operacional,53 escolas,Selecionar
+A06,Anexo,Tabela,Composição das carteiras,53 escolas / 11 assessoras,Selecionar
+A07,Anexo,Tabela,Diagnóstico educacional das carteiras,11 assessoras,Selecionar
+A08,Anexo,Tabela,Escolas institucionais não operacionais,3 escolas,Selecionar
+A09,Anexo,Tabela,Catálogo editorial,Produtos do módulo 21,Produzir

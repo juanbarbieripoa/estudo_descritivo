@@ -1,0 +1,8 @@
+id_execucao: 20260803_003954
+data_hora: 2026-08-03 00:39:54 -03
+R: R version 4.4.2 (2024-10-31 ucrt)
+plataforma: x86_64-w64-mingw32
+diretorio_projeto: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo
+script: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/25_pacote_entrega_final.R
+md5_script: 242873fbfa5b7d934563800429b1f849
+sha256_script: ca4265914826baedeaf1898c77d1be95f3873ed45e3f9b747f5e76b0c10f6275

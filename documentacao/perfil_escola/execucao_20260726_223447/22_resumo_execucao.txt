@@ -1,0 +1,20 @@
+Execução: 20260726_223447
+Branch: refatoracao_modulo_21
+Commit-base de integração: e51000aa0c58cab3b7ae1a238a6c3b12ed7563d3
+Commit Git da execução: e51000aa0c58cab3b7ae1a238a6c3b12ed7563d3
+Script: C:/Users/juanb/OneDrive/_prefPOA_/SMED/_indicadores/estudo_descritivo/R/16_criar_perfil_escola.R
+MD5 do script: 3f750f7b551868bf5440689f27d97cc7
+Escolas no perfil completo: 56
+Escolas no perfil gerencial: 56
+Linhas no perfil compacto: 280
+Escolas na carga 2026: 53
+Assessoras na carga 2026: 11
+
+Observações metodológicas:
+- Estudo observacional e descritivo; não identifica efeitos.
+- Resultados educacionais não são atribuídos às assessoras.
+- Sínteses multissérie são descrições operacionais, não índices ou rankings.
+- Proficiência ±2 pontos e participação ±5 p.p. são heurísticas diagnósticas.
+- Alertas de participação ±10 p.p. e composição 20% também são heurísticos.
+- Quartis contextuais foram herdados do módulo 15/contexto 2024.
+- Nenhuma consulta ou junção com BigQuery foi realizada.

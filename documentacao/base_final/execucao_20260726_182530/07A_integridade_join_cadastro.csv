@@ -1,0 +1,9 @@
+indicador,valor_observado,criterio
+linhas_nucleo_antes,280,280
+linhas_base_depois,280,280
+escolas_nucleo_antes,56,56
+escolas_base_depois,56,56
+chaves_perdidas,0,0
+chaves_acrescentadas,0,0
+campos_educacionais_identicos,TRUE,TRUE
+escolas_sem_cinco_series,0,0

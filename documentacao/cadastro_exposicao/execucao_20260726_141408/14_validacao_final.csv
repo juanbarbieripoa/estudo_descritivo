@@ -1,0 +1,24 @@
+id_teste,descricao,observado,esperado,criticidade,status
+V01,Dimensão de escolas possui chave única,0,0,ERRO,OK
+V01A,Dimensão de escolas possui chaves e identificação completas,0,0,ERRO,OK
+V02,Fonte manual possui chave escola × período única,0,0,ERRO,OK
+V03,Fonte manual contém somente escolas conhecidas,0,0,ERRO,OK
+V03A,Painel contém somente escolas conhecidas na dimensão,0,0,ERRO,OK
+V04,Código INEP e nome coincidem com a dimensão,0,0,ERRO,OK
+V05,Períodos do painel possuem definição temporal única,0,0,ERRO,OK
+V06,Fonte manual não contém período inexistente no painel,0,0,ERRO,OK
+V07,Todas as escolas em períodos pós-início possuem homologação,0,0,ERRO,OK
+V08,Regras da fonte manual são internamente coerentes,0,0,ERRO,OK
+V09,Cadastro canônico possui chave única,0,0,ERRO,OK
+V10,Cadastro canônico cobre escola × todos os períodos observados,112,112,ERRO,OK
+V11,Cadastro canônico não contém inconsistências substantivas,0,0,ERRO,OK
+V12,Identidade avaliada = assessorada + avaliada não assessorada,0,0,ERRO,OK
+V13,Universo avaliativo observado em 2025,54,54,ERRO,OK
+V14,Universo avaliativo observado em 2026,56,56,ERRO,OK
+V15,Escolas efetivamente assessoradas em 2026,53,53,ERRO,OK
+V16,Escolas inelegíveis em 2026,3,3,ERRO,OK
+V17,Inelegíveis de 2026 são exatamente as três conveniadas,43105300 | 43105416 | 43189768,43105300 | 43105416 | 43189768,ERRO,OK
+V18,Nenhuma escola inelegível entra no índice de carga,0,0,ERRO,OK
+V18A,Índice de carga contém as 53 escolas assessoradas homologadas,53,53,ERRO,OK
+V19,Linha de base de 2025 possui exposição zero,0,0,ERRO,OK
+V20,Data institucional da homologação de 2026,2026-07-24,2026-07-24,ERRO,OK

@@ -1,0 +1,15 @@
+teste,categoria,criticidade,aprovado,observado,esperado,detalhe
+equivalencia_base_final,equivalencia_csv_rds,bloqueante,TRUE,csv=280x267; rds=280x267,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_dim_final,equivalencia_csv_rds,bloqueante,TRUE,csv=56x218; rds=56x218,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_perfil_completo,equivalencia_csv_rds,bloqueante,TRUE,csv=56x283; rds=56x283,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_perfil_gerencial,equivalencia_csv_rds,bloqueante,TRUE,csv=56x153; rds=56x153,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_perfil_serie,equivalencia_csv_rds,bloqueante,TRUE,csv=280x69; rds=280x69,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_indice,equivalencia_csv_rds,bloqueante,TRUE,csv=53x24; rds=53x24,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_componentes_indice,equivalencia_csv_rds,bloqueante,TRUE,csv=636x12; rds=636x12,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_componentes_educacionais,equivalencia_csv_rds,bloqueante,TRUE,csv=265x27; rds=265x27,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_analise_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x30; rds=11x30,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_detalhe_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=53x29; rds=53x29,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_diagnostico_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x25; rds=11x25,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_composicao_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=99x9; rds=99x9,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_universo_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=56x13; rds=56x13,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
+equivalencia_indice_fichas_carteiras,equivalencia_csv_rds,bloqueante,TRUE,csv=11x13; rds=11x13,"mesmas colunas, dimensões e valores após normalização de tipos",colunas=TRUE; dimensoes=TRUE; divergentes=nenhuma
